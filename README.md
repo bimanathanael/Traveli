@@ -1,2 +1,2 @@
 # Travelio
-a Travel website with CMS using React Js and Node Js
+a Travel company profile's website with CMS using React Js and Node Js
