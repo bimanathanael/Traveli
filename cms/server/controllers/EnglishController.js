@@ -6,7 +6,6 @@ class EnglishController {
       const data = await EnglishModel.getAll();
       const result = [];
       data.forEach((doc) => {
-        console.log(doc.id, "cek");
         result.push(doc.data());
       });
       return res.status(200).json({ message: result });
@@ -49,7 +48,6 @@ class EnglishController {
         let sortedList = {};
         for (let [key, value] of Object.entries(ordered)) {
           if (key.slice(0, content.length) === content) {
-            console.log("masuk");
             sortedList[key] = value;
           }
         }
@@ -94,10 +92,8 @@ class EnglishController {
 
   static async updateData(req, res) {
     try {
-      console.log(req.body, "ini body");
       let pages = req.params.pages;
 
-      console.log("SS");
       const result = await EnglishModel.updateEnglish(req.body, pages);
       const refetchData = await EnglishModel.getOne(pages);
 

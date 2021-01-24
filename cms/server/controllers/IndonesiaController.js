@@ -6,7 +6,6 @@ class IndonesiaController {
       const data = await IndonesiaModel.getAll();
       const result = [];
       data.forEach((doc) => {
-        console.log(doc.id, "cek");
         result.push(doc.data());
       });
       return res.status(200).json({ message: result });
@@ -48,13 +47,21 @@ class IndonesiaController {
           .reduce((o, [k, v]) => ((o[k] = v), o), {});
         let sortedList = {};
         for (let [key, value] of Object.entries(ordered)) {
-          console.log(key.slice(0, content.length), "cek");
           if (key.slice(0, content.length) === content) {
-            console.log("masuk");
             sortedList[key] = value;
           }
         }
-        return res.status(200).json({ message: sortedList });
+        let checkContent = 0;
+        for (var key in sortedList) {
+          if (sortedList.hasOwnProperty(key)) {
+            checkContent += 1;
+          }
+        }
+        if (checkContent === 0) {
+          return res.status(404).json({ message: "data not found" });
+        } else {
+          return res.status(200).json({ message: sortedList });
+        }
       }
     } catch (err) {
       return res.status(404).json({ message: err });
@@ -85,10 +92,8 @@ class IndonesiaController {
 
   static async updateData(req, res) {
     try {
-      console.log(req.body, "ini body");
       let pages = req.params.pages;
 
-      console.log("SS");
       const result = await IndonesiaModel.updateBahasa(req.body, pages);
       const refetchData = await IndonesiaModel.getOne(pages);
 

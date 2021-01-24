@@ -32,6 +32,7 @@ router.put("/en/:pages", authentication, EnglishController.updateData);
 
 router.get("/id/", IndonesiaController.readData);
 router.get("/id/:pages", IndonesiaController.readOneData);
+router.get("/id/:pages/:content", IndonesiaController.readSpecifyData);
 router.post("/id", authentication, IndonesiaController.addData);
 router.put("/id/:pages", authentication, IndonesiaController.updateData);
 
