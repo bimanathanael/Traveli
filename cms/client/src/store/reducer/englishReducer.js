@@ -1,4 +1,4 @@
-const initialState = { english: [], englishUpdate: {} };
+const initialState = { english: [], englishUpdate: {}, formEnglishUpdate: {} };
 
 function englishReducer(state = initialState, action) {
   switch (action.type) {

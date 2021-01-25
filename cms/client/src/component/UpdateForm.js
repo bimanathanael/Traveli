@@ -29,6 +29,7 @@ const UpdateForm = ({ setDataForm, dataForm, data, language }) => {
       setDataForm("");
     }
   };
+
   const filteringData = () => {
     const newList = {};
     for (const [key, value] of Object.entries(data)) {

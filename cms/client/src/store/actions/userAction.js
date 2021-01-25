@@ -30,8 +30,9 @@ export const loginAdmin = (data, history, setUsername, setPassword) => {
         localStorage.setItem("username", jwtUsername);
         setUsername("");
         setPassword("");
+
         history.push("/cms/en");
-        Swal.fire({ icon: "success", text: "success login!" });
+        window.location.reload();
       })
       .catch((err) => {
         err.text().then((errorMessage) => {
