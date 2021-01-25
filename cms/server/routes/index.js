@@ -26,13 +26,13 @@ router.put("/:username", authentication, UserController.updateUser);
 
 router.get("/en/", EnglishController.readData);
 router.get("/en/:pages", EnglishController.readOneData);
-router.get("/en/:pages/:content", EnglishController.readSpecifyData);
+router.get("/en/:pages/:section", EnglishController.readSpecifyData);
 router.post("/en", authentication, EnglishController.addData);
 router.put("/en/:pages", authentication, EnglishController.updateData);
 
 router.get("/id/", IndonesiaController.readData);
 router.get("/id/:pages", IndonesiaController.readOneData);
-router.get("/id/:pages/:content", IndonesiaController.readSpecifyData);
+router.get("/id/:pages/:section", IndonesiaController.readSpecifyData);
 router.post("/id", authentication, IndonesiaController.addData);
 router.put("/id/:pages", authentication, IndonesiaController.updateData);
 

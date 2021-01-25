@@ -1,4 +1,5 @@
 const { jwtVerifyUsername } = require("../helpers/jsonwebtoken");
+
 let _nav = [
   {
     _tag: "CSidebarNavDropdown",
@@ -25,11 +26,21 @@ let _nav = [
     icon: "cil-history",
   },
 ];
-
+if (localStorage.getItem("username")) {
+  console.log("SSS");
+  console.log(
+    jwtVerifyUsername(localStorage.getItem("username")),
+    "<<<ini username"
+  );
+}
 if (
   localStorage.getItem("username") &&
   jwtVerifyUsername(localStorage.getItem("username")) === "admin1223"
 ) {
+  console.log(
+    jwtVerifyUsername(localStorage.getItem("username")),
+    "<<<<apakah masuk"
+  );
   _nav.push({
     _tag: "CSidebarNavItem",
     name: "Admin",

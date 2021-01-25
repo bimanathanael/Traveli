@@ -53,6 +53,39 @@ export const getEnglishByPages = (pages = "homepage", history) => {
   };
 };
 
+export const getEnglishByPagesAndSection = (
+  pages = "homepage",
+  section,
+  history
+) => {
+  return (dispatch, getState) => {
+    fetch(`http://localhost:3000/en/${pages}/${section}`, {
+      method: "GET",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then((resp) => {
+        if (resp.ok) {
+          return resp.json();
+        } else {
+          throw resp;
+        }
+      })
+      .then(({ message }) => {
+        dispatch({
+          type: "SET_ENGLISH_UPDATE",
+          payload: message,
+        });
+      })
+      .catch((err) => {
+        err.status === 404 && history.push("/cms/en");
+      });
+  };
+};
+
 export const updateEnglish = (paramPages, data, history, paramSection) => {
   return (dispatch, getState) => {
     fetch(`http://localhost:3000/en/${paramPages}`, {

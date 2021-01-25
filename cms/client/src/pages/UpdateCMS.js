@@ -24,7 +24,7 @@ const UpdateCMS = () => {
   useEffect(() => {
     language === "en" && dispatch(getEnglishByPages(pages, history));
     language === "id" && dispatch(getIndonesiaByPages(pages, history));
-  }, [pages, section, dispatch, history, language]);
+  }, [pages, dispatch, history, language]);
 
   useEffect(() => {
     if (language === "en" && dataEnglish) {
