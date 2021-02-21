@@ -26,6 +26,7 @@ let _nav = [
   },
 ];
 
+console.log(jwtVerifyUsername(localStorage.getItem("username")), " <<<<jwtVerifyUsername");
 if (
   localStorage.getItem("username") &&
   jwtVerifyUsername(localStorage.getItem("username")) === "admin1223"
