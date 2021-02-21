@@ -36,7 +36,7 @@ class IndonesiaController {
   static async readSpecifyData(req, res) {
     try {
       const pages = req.params.pages;
-      const content = req.params.content;
+      const section = req.params.section;
       const data = await IndonesiaModel.getOne(pages);
       if (!data.data()) {
         return res.status(404).json({ message: "data not found" });
@@ -47,20 +47,26 @@ class IndonesiaController {
           .reduce((o, [k, v]) => ((o[k] = v), o), {});
         let sortedList = {};
         for (let [key, value] of Object.entries(ordered)) {
-          if (key.slice(0, content.length) === content) {
+          if (key.slice(0, section.length) === section) {
             sortedList[key] = value;
           }
         }
-        let checkContent = 0;
+        let checkSection = 0;
         for (var key in sortedList) {
           if (sortedList.hasOwnProperty(key)) {
-            checkContent += 1;
+            checkSection += 1;
           }
         }
-        if (checkContent === 0) {
+        if (checkSection === 0) {
           return res.status(404).json({ message: "data not found" });
         } else {
-          return res.status(200).json({ message: sortedList });
+          const newList = {};
+          for (const [key, value] of Object.entries(sortedList)) {
+            if (key !== pages && key.split(/(?=[A-Z])/)[0] === section) {
+              newList[key] = value;
+            }
+          }
+          return res.status(200).json({ message: newList });
         }
       }
     } catch (err) {

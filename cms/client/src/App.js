@@ -9,7 +9,8 @@ import { ProtectedRouteBeforeLogin } from "./protectedRoute";
 import "./scss/style.scss";
 import Login from "./pages/Login";
 import Page404 from "./pages/Page404";
-import TheLayout from "./containers/TheLayout";
+// import TheLayout from "./containers/TheLayout";
+const TheLayout = React.lazy(() => import("./containers/TheLayout"));
 
 const loading = (
   <div className="pt-3 text-center">
