@@ -1,0 +1,124 @@
+.navbar{
+  padding-left: 6% ;
+  padding-top: 1%;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color:white;
+  background-color: #4db6d8;
+  /* background: linear-gradient(0deg, rgba(255, 255, 255, 0.8) 10%, rgba(255,255,255,1) 10%); */
+}
+
+.navbarBlue{
+  background-color: rgb(70 174 218 / 0.8) !important;
+}
+
+.nav-link{
+  font-weight: 400;
+  padding-left: 0px;
+}
+
+.logo{
+  width: 80%;
+  padding-top: 3%;
+  padding-right: 0%;
+}
+
+.logo-link{
+  width: 300px;
+}
+
+#navbarSupportedContent{
+  padding-top: 2%;
+  margin-left: 16rem!important;
+}
+
+.nav-link{
+  color: black;
+}
+
+.nav-item{
+  width: 134px;
+  text-align: center;
+}
+
+.space-left{
+  padding-left: 20%;
+}
+
+.navbar-left{
+  margin-right: 193px;
+}
+
+.button-nav{
+  margin:  4.5% 0% 4% 0%;
+}
+
+.space-top{
+  padding-top: 0.5rem!important;
+}
+
+.yellow-active{
+  background-color: #f9ee6f;
+  color: black !important;
+}
+
+.blue-active{
+  background-color: #00add9;
+  color: white !important;
+  border-radius: 10px;
+}
+
+.w-100{
+  width: 77px !important;
+}
+
+.bg-transBlue{
+  background-color: rgb(70 174 218 / 0.8) !important;
+}
+
+.bg-transBlue .nav-link{
+  color: white;
+}
+
+.btn-join{
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  padding: 3% 10% 3% 10%;
+  background-color: #48afd7;
+  -webkit-box-shadow: 0px 6px 11px 2px rgba(0,0,0,0.15) !important; 
+  -moz-box-shadow: 0px 6px 11px 2px rgba(0,0,0,0.15) !important; 
+  box-shadow: 0px 6px 11px 2px rgba(0,0,0,0.15) !important;
+}
+
+.btn-yellow{
+  border-radius: 5px;
+  color: white;
+  font-size: 1.2rem;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  border: white 1px solid
+  /* -webkit-box-shadow: 0px 6px 11px 2px rgba(0,0,0,0.15) !important;
+  -moz-box-shadow: 0px 6px 11px 2px rgba(0,0,0,0.15) !important;
+  box-shadow: 0px 6px 11px 2px rgba(0,0,0,0.15) !important */
+}
+
+.dropdown:hover .dropdown-menu{
+  padding: 12px 0px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-item{
+  color: #48afd7;
+}
+
+.dropdown-menu{
+  border: 0px;
+  border-radius: 10px;
+  -webkit-box-shadow: -1px 7px 30px -11px rgba(0,0,0,0.39);
+  -moz-box-shadow: -1px 7px 30px -11px rgba(0,0,0,0.39);
+  box-shadow: -1px 7px 30px -11px rgba(0,0,0,0.39);
+}

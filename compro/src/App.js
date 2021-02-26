@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import './assets/css/SmoothScroll.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import React, { useEffect } from 'react';
+import LocomotiveScroll from "locomotive-scroll";
+import './assets/css/App.css';
+
+import { Home } from './pages/Home';
+import { ParallaxProvider } from "react-scroll-parallax";
+
 
 function App() {
+
+  const scrollRef = React.createRef();
+  // useEffect(()=>{
+    // const scroll = new LocomotiveScroll({
+      // el: document.querySelector('[data-scroll-container]'),
+      // smooth: true
+    // });
+
+  // },[])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ParallaxProvider >
+        {/* <div  data-scroll-container> */}
+        <Router>
+          <Switch>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </Router>
+        {/* </div> */}
+    </ParallaxProvider>
   );
 }
 
