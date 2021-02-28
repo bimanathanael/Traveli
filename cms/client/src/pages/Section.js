@@ -28,7 +28,7 @@ const TableProduct = () => {
     return (
       <div>
         <Navigation language={"English"} pages={pages} mainParam={language} />
-        <TableSection data={dataEnglish} language={language} />
+        <TableSection data={dataEnglish} language={language} pages={pages} />
       </div>
     );
   }
@@ -37,7 +37,7 @@ const TableProduct = () => {
     return (
       <div>
         <Navigation language={"Indonesia"} pages={pages} mainParam={language} />
-        <TableSection data={dataIndonesia} language={language} />
+        <TableSection data={dataIndonesia} language={language} pages={pages} />
       </div>
     );
   }

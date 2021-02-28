@@ -18,7 +18,7 @@ export const getHistory = () => {
         });
       })
       .catch((err) => {
-        <Redirect to="/cms/en" />;
+        <Redirect to="/" />;
       });
   };
 };

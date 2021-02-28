@@ -39,7 +39,7 @@ class App extends Component {
             />
 
             <Route path="/" name="Home" component={TheLayout} />
-            <Redirect to="/cms/en" />
+            <Redirect to="/" />
           </Switch>
         </React.Suspense>
       </Router>

@@ -1,0 +1,30 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+  match /users/{user}{
+  	allow read;
+    allow write: if isLoggedIn();
+    allow update: if isLoggedIn();
+    allow delete: if isLoggedIn(); 
+    }
+  match /Histories/{History}{
+  	allow read;
+    allow write: if isLoggedIn();
+   
+    }
+  match /Indonesia/{Indonesia}{
+  	allow read;
+    allow write: if isLoggedIn();
+    allow update: if isLoggedIn();
+    }
+  match /English/{English}{
+  	allow read;
+    allow write: if isLoggedIn();
+    allow update: if isLoggedIn();
+    }
+  }
+}
+
+function isLoggedIn(){
+	return request.auth != null
+}

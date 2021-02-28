@@ -5,7 +5,17 @@ import {
   ProtectedRouteAfterLogin,
   ProtectedRouteAfterLoginForSuperAdmin,
 } from "../protectedRoute";
-import { Pages, Admin, Section, UpdateCMS, History } from "../pages";
+import {
+  Pages,
+  Admin,
+  Section,
+  UpdateCMS,
+  History,
+  Promo,
+  Newsletter,
+  PromoDetail,
+  Home,
+} from "../pages";
 
 const loading = (
   <div className="pt-3 text-center">
@@ -28,13 +38,13 @@ const TheContent = () => {
             <ProtectedRouteAfterLogin
               exact
               name="Section"
-              path="/cms/:language/update/:pages"
+              path="/cms/:language/:pages"
               component={Section}
             />
 
             <ProtectedRouteAfterLogin
               exact
-              path="/cms/:language/update/:pages/:section"
+              path="/cms/:language/:pages/:section/update"
               name="UpdateCMS"
               component={UpdateCMS}
             />
@@ -46,13 +56,41 @@ const TheContent = () => {
               component={History}
             />
 
+            <ProtectedRouteAfterLogin
+              exact
+              name="Promo"
+              path="/promo"
+              component={Promo}
+            />
+
+            <ProtectedRouteAfterLogin
+              exact
+              name="Newsletter"
+              path="/newsletter"
+              component={Newsletter}
+            />
+
+            <ProtectedRouteAfterLogin
+              exact
+              path="/promo/detail"
+              name="PromoDetail"
+              component={PromoDetail}
+            />
+
+            <ProtectedRouteAfterLogin
+              exact
+              path="/"
+              name="Home"
+              component={Home}
+            />
             <ProtectedRouteAfterLoginForSuperAdmin
               exact
               path="/admin"
               name="Admin"
               component={Admin}
             />
-            <Redirect from="/" to="/cms/en" />
+
+            <Redirect from="/" to="/" />
           </Switch>
         </Suspense>
       </CContainer>
