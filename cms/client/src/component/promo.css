@@ -1,0 +1,248 @@
+.button-container {
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* place-items: center; */
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.cards {
+  height: auto;
+  display: flex;
+  margin: 10px;
+}
+.card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  box-shadow: white 0px 0px 3px 0px;
+  border-radius: 10px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  width: 192px;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 200px;
+  height: 180px;
+  margin: 0;
+}
+
+.card-content {
+  margin: 0;
+}
+.card-title {
+  padding: 6px 6px 0px 6px;
+  margin: 0;
+  height: 70px;
+}
+
+.card-time {
+  margin: 0;
+  text-align: right;
+  padding: 6px 6px 0px 6px;
+}
+
+.container-image {
+  place-items: center;
+  text-align: center;
+  display: grid;
+  /* height: 100%; */
+}
+.container-formImage {
+  height: 350px;
+  width: 430px;
+  position: relative;
+}
+.container-formImage .wrapper {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  border-radius: 10px;
+  background: red;
+  border-width: 20px;
+  border-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.wrapper.active {
+  border: none;
+}
+.wrapper .image {
+  max-height: 350px;
+  max-width: 430px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.wrapper .icon {
+  font-size: 100px;
+  color: #9658fe;
+}
+.wrapper .text {
+  font-size: 20px;
+  font-weight: 500;
+  color: #5b5b7b;
+}
+.wrapper #cancel-btn i {
+  position: absolute;
+  font-size: 20px;
+  right: 15px;
+  top: 15px;
+  color: #9658fe;
+  cursor: pointer;
+  display: none;
+}
+.wrapper.active:hover #cancel-btn i {
+  display: block;
+}
+.wrapper #cancel-btn i:hover {
+  color: #e74c3c;
+}
+.wrapper .file-name {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 8px 0;
+  font-size: 18px;
+  color: #fff;
+  display: none;
+  background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+}
+.wrapper.active:hover .file-name {
+  display: block;
+}
+.container-formImage #custom-btn {
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+}
+
+#input[type="file"] {
+  display: none;
+}
+.container-formImage #text-custom-btn {
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.drag-area {
+  border: 2px dashed black;
+  height: 500px;
+  width: 700px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.drag-area.active {
+  border: 2px solid #fff;
+}
+.drag-area .icon {
+  font-size: 100px;
+  color: #fff;
+}
+.drag-area header {
+  font-size: 30px;
+  font-weight: 500;
+  color: black;
+}
+.drag-area span {
+  font-size: 25px;
+  font-weight: 500;
+  color: black;
+  margin: 10px 0 15px 0;
+}
+.drag-area button {
+  padding: 10px 25px;
+  font-size: 20px;
+  font-weight: 500;
+  border-width: 1px;
+  outline: none;
+  background: white;
+  border-color: black;
+  color: #5256ad;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.drag-area img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.container-imageUpload {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.body-imageUpload {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* background: #5256ad; */
+}
+
+#custom-btn2 {
+  margin-top: 10px;
+  display: block;
+  width: 50%;
+  height: 50px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+}
+
+.container-buttonImage {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+#input2[type="file"] {
+  display: none;
+}
+#text-custom-btn2 {
+  padding-top: 10px;
+  cursor: pointer;
+}

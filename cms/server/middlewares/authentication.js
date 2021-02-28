@@ -5,7 +5,7 @@ const authentication = async function (req, res, next) {
   try {
     const access_token = req.headers.access_token;
     if (!access_token) {
-      throw { message: "please login first!" };
+      throw { message: "login first!" };
     } else {
       const checkData = jwtVerify(access_token);
       req.username = checkData.username;

@@ -19,7 +19,7 @@ export const getEnglish = () => {
         });
       })
       .catch((err) => {
-        <Redirect to="/cms/en" />;
+        <Redirect to="/" />;
       });
   };
 };
@@ -48,7 +48,7 @@ export const getEnglishByPages = (pages = "homepage", history) => {
         });
       })
       .catch((err) => {
-        err.status === 404 && history.push("/cms/en");
+        err.status === 404 && history.push("/");
       });
   };
 };
@@ -81,14 +81,14 @@ export const getEnglishByPagesAndSection = (
         });
       })
       .catch((err) => {
-        err.status === 404 && history.push("/cms/en");
+        err.status === 404 && history.push("/");
       });
   };
 };
 
 export const updateEnglish = (paramPages, data, history, paramSection) => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/en/${paramPages}`, {
+    fetch(`http://localhost:3000/en/${paramPages}/${paramSection}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -145,11 +145,11 @@ export const updateEnglish = (paramPages, data, history, paramSection) => {
           icon: "success",
           text: "Success update!",
         });
-        history.push("/cms/en");
+        history.push("/");
       })
 
       .catch((err) => {
-        <Redirect to="/cms/en" />;
+        <Redirect to="/" />;
       });
   };
 };

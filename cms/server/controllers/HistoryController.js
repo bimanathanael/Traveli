@@ -22,7 +22,7 @@ class HistoryController {
     try {
       const username = req.body.username;
       const pages = req.body.pages;
-      const section = req.body.section;
+      const section = req.body.section.split(/(?=[A-Z])/).join(" ");
       const time = new Date();
       const timeInNumber = time.getTime();
 

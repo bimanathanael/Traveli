@@ -2,23 +2,24 @@ import React from "react";
 import { Table, Button, Container } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 
-const TableSection = ({ data, language }) => {
+const TableSection = ({ data, language, pages }) => {
   const history = useHistory();
-  const listData = () => {
-    const listObj = {};
-    for (const [key] of Object.entries(data)) {
-      if (key !== "pages") {
-        listObj[key.split(/(?=[A-Z])/)[0]] = key.split(/(?=[A-Z])/)[0];
-      }
-    }
-    return Object.keys(listObj);
-  };
+  // const listData = () => {
+  //   const listObj = {};
+  //   for (const [key] of Object.entries(data)) {
+  //     if (key !== "pages") {
+  //       listObj[key.split(/(?=[A-Z])/)[0]] = key.split(/(?=[A-Z])/)[0];
+  //     }
+  //   }
+  //   return Object.keys(listObj);
+  // };
   const moveToFormUpdate = (dataFromTable) => {
     history.push({
-      pathname: `/cms/${language}/update/${data.pages}/${dataFromTable}`,
+      pathname: `/cms/${language}/${pages}/${dataFromTable}/update`,
       mainData: data,
       dataUpdate: dataFromTable,
     });
+    window.location.reload();
   };
   return (
     <div style={{ textAlign: "center" }}>
@@ -32,9 +33,9 @@ const TableSection = ({ data, language }) => {
           </thead>
           <tbody>
             {data &&
-              listData().map((dataEng, idx) => (
+              Object.keys(data).map((dataEng, idx) => (
                 <tr key={idx}>
-                  <td>{dataEng}</td>
+                  <td>{dataEng.split(/(?=[A-Z])/).join(" ")}</td>
                   <td>
                     <Button
                       variant="info"

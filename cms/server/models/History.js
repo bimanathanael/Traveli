@@ -1,4 +1,4 @@
-const db = require("../config/firebaseSetup");
+const { db } = require("../config/firebaseSetup");
 const historyCollection = db.collection("Histories");
 
 class History {

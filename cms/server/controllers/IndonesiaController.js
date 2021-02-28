@@ -75,7 +75,8 @@ class IndonesiaController {
   }
   static async addData(req, res) {
     try {
-      let pages = req.body.pages;
+      let pages = req.params.pages;
+      let section = req.params.section;
 
       const dataFromDB = await IndonesiaModel.getAll();
       let idAllData = [];
@@ -88,7 +89,10 @@ class IndonesiaController {
           .status(400)
           .json({ message: "this pages has been registered before" });
       } else {
-        const result = await IndonesiaModel.addBahasa(req.body, pages);
+        const newData = {
+          [section]: req.body,
+        };
+        const result = await IndonesiaModel.addBahasa(newData, pages);
         return res.status(201).json({ message: "success add Data" });
       }
     } catch (err) {
@@ -99,8 +103,11 @@ class IndonesiaController {
   static async updateData(req, res) {
     try {
       let pages = req.params.pages;
-
-      const result = await IndonesiaModel.updateBahasa(req.body, pages);
+      let section = req.params.section;
+      const updateData = {
+        [section]: req.body,
+      };
+      const result = await IndonesiaModel.updateBahasa(updateData, pages);
       const refetchData = await IndonesiaModel.getOne(pages);
 
       return res.status(201).json({ message: refetchData.data() });
