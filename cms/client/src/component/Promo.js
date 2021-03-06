@@ -27,6 +27,13 @@ const Promo = ({ data }) => {
 
   const imageHandler = (e) => {
     const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+      if (reader.readyState === 2) {
+        setImageUrl(reader.result);
+      }
+    };
+    reader.readAsDataURL(e.target.files[0]);
     setImagePath(file);
   };
 
@@ -86,40 +93,31 @@ const Promo = ({ data }) => {
               </Form.Group>
               <Form.Group>
                 <label htmlFor="container-image">Images</label>
-                <div>
-                  {/* <div className="container-imageUpload">
-                    <div className="body-imageUpload">
-                      <div class="drag-area">
-                        <div class="icon">
-                          <i className="fas fa-cloud-upload-alt"></i>
-                        </div>
-                        <header>Drag & Drop to Upload File</header>
-                        <span>OR</span>
-                      </div>
-                    </div>
-                  </div> */}
-
-                  <div className="container-image">
-                    <div className="container-formImage">
-                      <div className="wrapper">
+                {imageUrl && (
+                  <div className="container-imagePromo">
+                    <div className="container-formPromo">
+                      <div className="wrapperPromo">
                         <div className="image">
                           <img src={imageUrl} alt="" />
                         </div>
-                        <div className="file-name">File name here</div>
-                      </div>
-                      <input
-                        id="input"
-                        accept="image/*"
-                        type="file"
-                        onChange={(e) => imageHandler(e)}
-                      />
-                      <div id="custom-btn">
-                        <label htmlFor="input" id="text-custom-btn">
-                          Add Image
-                        </label>
                       </div>
                     </div>
                   </div>
+                )}
+
+                <div className="button-promo">
+                  <input
+                    id="input-promo"
+                    accept="image/*"
+                    type="file"
+                    style={{ width: "200px", cursor: "pointer" }}
+                    onChange={(e) => imageHandler(e)}
+                  />
+                  {/* <div id="custom-btnPromo">
+                    <label htmlFor="input" id="text-custom-btnPromo">
+                      Add Image
+                    </label>
+                  </div> */}
                 </div>
               </Form.Group>
               <Form.Group>
