@@ -4,42 +4,156 @@ a Travel company profile's website with CMS using React Js and Node Js
 
 List Pages:
 
-- Distributor
-- Supplier
-- Solution
-- Company
+- Home
+- How It Works (Not Ready)
+- Members Supplier
+- Members Wholesaler
+- Members Reseller
+- Members List Supplier (Not Ready)
+- Members List Distributor (Not Ready)
+- Traveli Kuy
+- Promo (Not Ready)
+- Profile
+- News and Updates (Not Ready)
+- Contact Us
 
 List Section:
 
-For Distributor:
+For Home (Sorted From Top to Bottom):
 
-- Benefit
-- Digital
-- Features1
-- Features2
-- Hero
-- Solution
+- Home
+- Why Choose Traveli
+  - Title
+  - Description
+- What We Provide
+  - Title
+  - Description
+- Traveli Membership
+  - Supplier
+    - Header
+    - Benefit
+    - Condition
+  - Wholesaler
+    - Header
+    - Benefit
+    - Condition
+  - Agency
+    - Header
+    - Benefit
+    - Condition
+  - Corporate
+    - Header
+    - Benefit
+    - Condition
+  - Personal Traveli
+    - Header
+    - Benefit
+    - Condition
+- Key Benefit
+  - Title
+  - Description
+- Our Partners
 - Testimonials
-- Work
+  - Header
+  - Job
+  - Name
+  - Description
 
-For Supplier:
+For How It Works (Not Ready).
 
-- Benefit
-- Digital
-- Features
-- Hero
-- Solution
-- Testimonials
-- Work
-
-For Solutions:
+For Members Supplier (Sorted From Top to Bottom):
 
 - Hero
-- Menu1
-- Menu2
-- Menu3
-- Menu4
-- Menu5
+- What We Offer
+  - Title
+  - Description
+- How Supplier Works
+  - Title
+  - Description
+- Conditions
+- Key Features For Supplier
+  - Web Portal Management
+  - Online Billing Document
+  - Supporting Tools
+
+For Members Wholesaler (Sorted From Top to Bottom):
+
+- Hero
+- What We Offer
+  - Title
+  - Description
+- How Wholesaler Works
+  - Title
+  - Description
+- Conditions
+- Key Features For Wholesaler
+  - Web Portal Management
+  - Online Billing Document
+  - Supporting Tools
+
+For Members Reseller (Sorted From Top to Bottom):
+
+- Hero
+- What We Offer
+  - Title
+  - Description
+- How Agency Or Sub Agent Works
+  - Title
+  - Description
+- How Corporate Works
+  - Title
+  - Description
+- Conditions
+- Key Features For Reseller
+
+  - Web Portal Management
+  - Online Billing Document
+  - Supporting Tools
+
+For Members List Supplier (Not Ready)
+
+For Members List Distributor (Not Ready)
+
+For Traveli Kuy
+
+- Hero
+- Benefit For Petra
+  - Title
+  - Description
+- Benefit For Customer
+  - Title
+  - Description
+- How Petra Works
+  - Title
+  - Description
+- How Corporate Works
+  - Title
+  - Description
+- How Customer Works
+  - Title
+  - Description
+- Conditions Petra
+- Key Features For Petra
+  - Web Portal
+  - Online Report
+  - Others
+
+For Profile
+
+- Hero
+- About Us
+- Visi Misi
+- Our Team
+  - Header
+  - Name
+  - Job Title
+  - Profil Picture
+  - Description Top
+  - Description Bottom
+
+For Contact Us
+
+- Contact Information
 
 ## RESTful endpoints
 
@@ -71,27 +185,28 @@ _Response (200)_
 {
     "message": [
         {
-            "Features1GeneratorDescription2": "Filter untuk mencari produk yang sesuai dengan preferensi anda",
-            "WorkStep5Subtitle": "lorem dolor",
-            "Features2AccountingTitle1": "Billing Document",
-            "Features2AccountingTitle2": "Deposit Status",
-            "WorkStep4Title": "Lengkapi produk",
-            "Features1GeneratorDescription1": "Memudahkan anda untuk memilih dan menyimpan produk yang ingin dibeli",
-            "WorkStep4Subtitle": "lorem dolor",
-            "SolutionDescription2": "lorom dolor",
-            "WorkTitle": "title",
-            "WorkStep3Title": "Unggah produk",
-            "Features1GeneratorTitle1": "Cart Shopping",
-            "SolutionDescription3": "lorem dolor",
-            "SolutionMainSubtitle": "lorem dolor",
-            "Features1GeneratorMainTitle": "Pakesuka Generator",
-            "HeroDevice3": "Transaksi dan akses produk antar penyedia lebih mudah dengan Shopping Cart",
-            "SolutionSubTitile3": "Penginapan dan Akomodasi",
-            "WorkStep6Subtitle": "lorem dolor",
-            "WorkStep1Subtitle": "lorem dolor",
-            "TestimonialsName2": "Kevin Noboa",
-            ..........]
-        }
+            "TestimonialsName": {
+                "Name2": "Kevin Noboa",
+                "Name1": "Nout Goldstein"
+            },
+            "TraveliMembershipAgencyCondition": {
+                "Condition1": "Comply with all terms and conditions determined by the parent",
+                "Condition2": "Agree with Traveli's application of merchant fees",
+                "Condition3": "Manages activities of the website independently"
+            },
+            "TraveliMembershipSupplierCondition": {
+                "Condition3": "Manages activities of the website independently",
+                "Condition1": "Has credentials for tourism products",
+                "Condition2": "Agree with Traveli's application of merchant fees"
+            },
+            "KeyBenefitsTitle": {
+                "Title3": "GROW YOUR INVENTORY",
+                "Title1": "ZERO INITIAL FEES AND INVESMENT",
+                "Title2": "GET YOUR OWN WEBSITE",
+                "Title4": "EXPAND SELLING CHANNELS"
+            },
+            ..........dst
+        }]
 }
 
 
@@ -123,17 +238,25 @@ _Response (200)_
 
 ```
 {
-    "message": [
-        {
-        "BenefitSubtitle1": "lorem dolor",
-        "BenefitSubtitle2": "lorem dolor",
-        "BenefitSubtitle3": "lorem dolor",
-        "BenefitTitle1": "Perluas jaringan penjualan",
-        "BenefitTitle2": "Pengaturan secara mudah",
-        "BenefitTitle3": "Pengaturan secara mudah",
-        "DigitalSubtitle1": "Platform Traveli diimplementasikan pada wabsite pengguna dan telat disupport dalam format mobile apps (android dan iOs) kami akan membantu proses registrasi dan aktivasi pada play store, google store, ataupun Apple store",
-            ..........]
-        }
+    "message": {
+        "Hero": {
+            "Title": "DIGITALLY TRANSFORM YOUR TRAVEL AND TOURISM BUSINESS s",
+            "Description": "Traveli is digital tourism platform where you can expands and sells your travel products. By building synergic relationships between seller and buyer in one integrated system"
+        },
+        "KeyBenefitsDescription": {
+            "Description2": "You can modify your business assest easily in short time. Everything in Traveli is meant to boost your business productivity",
+            "Description3": "Jangkau pasar yang lebih luas secara online. Sehingga potensi penjualan product dan keuntungan kamu otomatis akan meningkat",
+            "Description4": "Jangkau pasar yang lebih luas secara online. Sehingga potensi penjualan product dan keuntungan kamu otomatis akan meningkat",
+            "Description1": "Reach a wider market with going online. Your product potential and your transaction will automatic increase"
+        },
+        "KeyBenefitsTitle": {
+            "Title3": "GROW YOUR INVENTORY",
+            "Title1": "ZERO INITIAL FEES AND INVESMENT",
+            "Title4": "EXPAND SELLING CHANNELS",
+            "Title2": "GET YOUR OWN WEBSITE"
+        },
+        .....
+    }
 }
 
 
@@ -166,11 +289,8 @@ _Response (200)_
 ```
 {
     "message": {
-        "HeroDevice1": "Modifikasi paket Travel sesuai dengan keinginan anda dengan Tour Generator",
-        "HeroDevice2": "Pembayaran tidak perlu menunggu lama karena semua bersistem online dan Real-Time Payment",
-        "HeroDevice3": "Transaksi dan akses produk antar penyedia lebih mudah dengan Shopping Cart",
-        "HeroSubtitle": "Traveli adalah platform digital kepariwisataan yang menampilkan, mendistribusikan, dan menjual produk-produk wisata yang anda miliki dalam suatu sistem yang terintegrasi",
-        "HeroTitle": "Transformasi Digital Bisnis Kepariwisataan"
+        "Title": "DIGITALLY TRANSFORM YOUR TRAVEL AND TOURISM BUSINESS s",
+        "Description": "Traveli is digital tourism platform where you can expands and sells your travel products. By building synergic relationships between seller and buyer in one integrated system"
     }
 }
 
