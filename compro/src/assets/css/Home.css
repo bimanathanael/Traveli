@@ -1,18 +1,34 @@
-.hero{
+.heroContainer{
   background: #48AFD7;
   background-image: url('../images/home_Hero.png');
+  padding: 4% 0% 4% 7%;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .hero-title{
-  font-size: 3.5rem !important;
+  font-family: 'Bristone';
+  font-size: 2.4rem;
   margin-bottom: 4%;
-  font-weight: 600;
+  margin-top: 15%;
+  font-weight: 400;
   color: white;
-  line-height: 42pt;
+  text-transform: uppercase;
+  line-height: 3rem;
+  word-spacing: 0.5rem;
 }
 
 .hero-subtitle{
-  font-size: 1.5rem !important;
+  font-size: 2.5rem;
+  margin-bottom: 4%;
+  font-weight: 400;
+  color: white;
+  text-transform: uppercase;
+  line-height: 3rem;
+}
+
+.hero-desc{
+  font-size: 1.5rem;
   margin-bottom: 0%;
   padding-left: 0%;
   color: white;
@@ -61,10 +77,6 @@
   font-size: 1.3rem;
 }
 
-.hero{
-  padding: 6%
-}
-
 .heroSulutions{
   padding: 6% 6% 0% 6%;
 }
@@ -80,7 +92,38 @@
 
 .container-joinUs{
   background-color: white;
-  padding: 10% 6% 6% 6%;;
+  padding: 10% 6% 6% 6%;
+}
+
+.container-news{
+  padding: 6% 13%;
+}
+
+.pt-8{
+  padding-top: 8%;
+}
+
+.newsImageOther{
+  width: 100%;
+}
+
+.newsImageTop{
+  width: 100%;
+}
+
+.subHeadingTestimonials{
+  font-weight: 600;
+  font-size: 40pt;
+}
+
+.quote{
+  border-radius: 15px;
+}
+
+.cardTesti{
+  background-color: #d0e6ef;
+  border-radius: 15px;
+  padding: 3%;
 }
 
 .container-howItWorks{
@@ -91,6 +134,23 @@
   background-repeat: no-repeat;
   min-height: 220vh;
   padding: 10% 6% 0% 6%;
+}
+
+.container-partners{
+  background-color: #ffffff;
+  background-image: url('../images/partners.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 10% 6% 0% 6%;
+}
+
+.container-testimonials{
+  background-color: #ffffff;
+  background-image: url('../images/testimonial.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 
 .pLR-6{
@@ -259,9 +319,74 @@ p{
 }
 
 .container-benefits{
-  background-color: #eeeeee;
+  background-image: url('../images/home_benefits.png');
+  padding: 15% 0% 10% 0%;
+  height: 127vh;
+  background-size: cover;
+}
+
+.headingMembership{
+  font-family: 'Bristone';
+  font-size: 1.8rem;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+.stepImg{
+  width: 100%;
+  height: auto;
+}
+
+.container-why{
   padding: 4% 0% 10% 0%;
-  height: 93vh;
+}
+
+.container-provide{
+  background-image: url('../images/membership.png');
+  padding: 4% 0% 10% 0%;
+  background-size: cover;
+  height: 250vh;
+}
+
+.f-15{
+  font-size: 15pt;
+}
+
+.f-14{
+  font-size: 14;
+}
+
+.f-13{
+  font-size: 13pt;
+}
+
+.fb-13{
+  font-size: 13pt;
+  font-weight: 500;
+}
+
+.bold{
+  font-size: 15pt;
+  font-weight: 600;
+}
+
+.bold2{
+  font-size: 17pt;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.membership-section{
+  margin-top:18% ;
+}
+
+.thumbnail-provide{
+  width: 90%;
+  height: auto;
+}
+
+.radius-1{
+  border-radius: 5px;
 }
 
 .container-solution{
@@ -270,11 +395,18 @@ p{
 }
 
 .container-footer{
-  background-color: #eeeeee;
+  background-color: #48afd7;
   margin-top: 2%;
-  background-image: url('../images/footer_group.jpg');
-  padding: 6%;
-  background-size: cover;
+  /* background-image: url('../images/footer_group.jpg'); */
+  padding: 2% 6% 1% 6%;
+  /* background-size: cover; */
+}
+
+.bg-blue2{
+  background-color: #b0dcec;
+  border-radius: 5px;
+  margin-top: 1%;
+
 }
 
 .MuiIconButton-label .MuiSvgIcon-root{
@@ -287,6 +419,14 @@ p{
 
 .position-initial{
   position: initial;
+}
+
+.card-style{
+  border-radius: 30px;
+  -moz-box-shadow: 0px 5px 43px -11px rgba(0,0,0,0.39) !important;
+  box-shadow: 0px 5px 43px -11px rgba(0,0,0,0.39) !important;
+  /* border: 1px solid grey; */
+  background-color: white;
 }
 
 .btnArrow{
@@ -339,13 +479,19 @@ button{
   overflow:hidden;
 }
 
-.img-fluid{
-  width: 830px !important;
-  min-height: 417px;
+.cardBenefits{
   border-radius: 20px;
   -webkit-box-shadow: 0px 5px 43px -11px rgba(0,0,0,0.39) !important;
   -moz-box-shadow: 0px 5px 43px -11px rgba(0,0,0,0.39) !important;
   box-shadow: 0px 5px 43px -11px rgba(0,0,0,0.39) !important;
+}
+
+.img-fluid{
+  border-radius: 20px;
+}
+
+.text-black{
+  color: black;
 }
 
 .carousel-item-next{
@@ -379,6 +525,53 @@ button{
   max-width: 100%;
 }
 
+.btn-membership{
+  font-size: 18pt;
+  border-radius: 15px;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 5%;
+  text-transform: uppercase;
+}
+
+.membership-active{
+  font-weight: 700;
+  background-color: #d0e6ef;
+}
+
+.subMenu{
+  height: 30px;
+}
+
+.sub-menu-button{
+  text-transform: uppercase;
+  color: #b2e6f2;
+  font-size: 14pt;
+  padding-left: 20%; 
+  padding-right: 20%; 
+  margin: 0px 10px;
+  letter-spacing: 2px;
+}
+
+
+.sub-menu-button-active{
+  border-radius: 10px;
+  color: white;
+  border: 1px solid white;
+}
+
+.blue-soft{
+  color: #b2e6f2;
+}
+
+.sub-menu{
+  font-size: 15pt;
+  cursor: pointer;
+}
+
+.sub-menu-active{
+  font-weight: 600;
+}
 
 .btn-traveli{
   font-size: 1.2rem;
@@ -389,7 +582,7 @@ button{
   color: black;
   padding-left: 0px;
   width: 220px;
-  z-index: 100;
+  z-index: 0;
 }
 
 .btn-traveli:hover .arrow{
@@ -398,6 +591,16 @@ button{
 }
 
 .btn-font{
+  font-size: 1.1rem;
+  padding-top: 6%;
+  padding-left: 9%;
+  transition: 0.2s all;
+  text-decoration: underline;
+  text-decoration-color: #48afd7;
+  color: #48afd7;
+}
+
+.btn-blueTraveli{
   font-size: 1.1rem;
   padding-top: 6%;
   padding-left: 9%;
@@ -441,12 +644,15 @@ button{
 
 .btn-v3-hero:hover .arrow{
   background-position: left;
-  padding: 14px 160px 15px 17px;
+  padding: 14px 150px 15px 17px;
 }
 
 .btn-v3-hero:hover .btn-font{
   color: #59a9da;
+  padding-right: 50px;
+
 }
+
 
 .btn-v3-hero .btn-font{
   text-decoration: underline;
@@ -455,6 +661,40 @@ button{
   padding-top: 5%;
 }
 
+.btn-v3-hero .btn-font-blue{
+  text-decoration: underline;
+  text-decoration-color: white;
+  color: white;
+  padding-top: 5%;
+}
+
+
+.btn-v3-hero:hover .btn-blueTraveli{
+  color: #59a9da;
+  padding-right: 50px;
+
+}
+
+.btn-v3-hero .btn-blueTraveli{
+  text-decoration: underline;
+  text-decoration-color: #59a9da;
+  color: #59a9da;
+  padding-top: 5%;
+}
+
+.btn-v3-hero .btn-blueTraveli{
+  text-decoration: underline;
+  text-decoration-color: #59a9da;
+  color: #59a9da;
+  padding-top: 5%;
+}
+
+.btn-v3-hero .MuiSvgIcon-root{
+  color: #4ab1d8;
+  font-size: 1.5rem !important;
+}
+
+
 .btn-v4{
   width: 240px;
 }
@@ -462,6 +702,11 @@ button{
 .btn-v4:hover .arrow{
   background-position: left;
   padding: 14px 160px 15px 17px;
+}
+
+.btn-v4 .MuiSvgIcon-root{
+  color: #4ab1d8;
+  font-size: 1.5rem !important;
 }
 
 .btn-v5{
@@ -498,21 +743,197 @@ button{
   padding: 14px 160px 15px 17px;
 }
 
+.btn-v7-hero{
+  width: 310px;
+}
+
+.btn-v7-hero:hover .arrow{
+  background-position: left;
+  padding: 14px 180px 15px 17px;
+}
+
+.btn-v7-hero:hover .btn-font{
+  color: #59a9da;
+  padding-right: 50px;
+}
+
+.btn-v7-hero .btn-font{
+  text-decoration: underline;
+  text-decoration-color: white;
+  color: white;
+  padding-top: 5%;
+  padding-left: 0;
+}
+
+.btn-v7-hero .btn-font-blue{
+  text-decoration: underline;
+  text-decoration-color: white;
+  color: white;
+  padding-top: 5%;
+}
+
+
+.btn-v7-hero:hover .btn-blueTraveli{
+  color: #59a9da;
+  padding-right: 50px;
+}
+
+.btn-v7-hero .btn-blueTraveli{
+  text-decoration: underline;
+  text-decoration-color: #59a9da;
+  color: #59a9da;
+  padding-top: 5%;
+}
+
+.btn-v7-hero .btn-blueTraveli{
+  text-decoration: underline;
+  text-decoration-color: #59a9da;
+  color: #59a9da;
+  padding-top: 5%;
+}
+
+.btn-v7-hero .MuiSvgIcon-root{
+  color: #4ab1d8;
+  font-size: 1.5rem !important;
+}
+
 .MuiAccordionSummary-root{
   padding: 0px 31px !important;
   height: 72px !important;
 }
 
-.btn-v3-hero .MuiSvgIcon-root{
-  color: #4ab1d8;
-  font-size: 1.5rem !important;
+.blueTraveli{
+  color: #49b1d8;
+}
+
+.mt-5{
+  margin-top: 5rem ;
+}
+
+.mt-10{
+  margin-top: 10rem ;
+}
+
+.menu-section{
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: inherit;
+  font-family: 'Bristone';
+
+}
+
+.responsiveImg{
+  width: 100%;
+  height: auto;
+}
+
+.clientLogo{
+  width: 75%;
+  height: auto;
+}
+
+.menu-heading{
+  font-size: 2rem;
+  margin-top: 2%;
+  letter-spacing: inherit;
+}
+
+.menu-desc{
+  margin-top: 3%;
+  font-size: 15pt;
+  font-weight: 500;
+}
+
+.ml-6{
+  margin-left: 4rem !important;
+}
+
+.cardNews{
+  border: 1px solid #efe7e7;
+  border-radius: 10px;
+  padding: 2%;
+  transition: 0.3s all;
+}
+
+.cardNews:hover{
+  -webkit-box-shadow: 0px 6px 71px 11px rgba(0,0,0,0.15) !important;
+  -moz-box-shadow: 0px 6px 71px 11px rgba(0,0,0,0.15) !important;
+  box-shadow: 0px 6px 71px 11px rgba(0,0,0,0.15) !important;
+}
+
+.browseAll{
+  background-color: #f9ee6f;
+  height: 60px;
+  width: 200px;
+  font-size: 17pt;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+}
+
+.headingNews{
+  font-size: 2.5rem;
+  font-weight: 400;
+  padding-left: 50px;
+  color:#48afd7;
+  font-family: 'Bristone';
+
 }
 
 .headingBenefit{
-  font-size: 3.5rem;
-  color: #2f7996;
-  font-weight: 600;
+  font-family: 'Bristone';
+  font-size: 2.5rem;
+  font-weight: 400;
   padding-left: 50px;
+  color:white;
+}
+
+
+.headingPartners{
+  font-family: 'Bristone';
+  font-size: 1.5rem;
+  color: #48afd7;
+  font-weight: 400;
+  letter-spacing: 5px;
+  /* padding-left: 50px; */
+}
+
+.headingWhy{
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 400;
+  font-family: 'Bristone';
+  padding-left: 50px; 
+  word-spacing: 5px;
+  line-height: 64px;
+}
+
+.floatingWA{
+  width: 4rem;
+  position: fixed;
+  right: 2.5rem;
+  bottom: 2.5rem;
+  z-index: 3;
+  transition: 0.3s all;
+}
+
+.floatingWA:hover{
+  width: 4.5rem;
+}
+
+.whySectionImg{
+  width: 100%;
+}
+
+.headingMember{
+  font-family: 'Bristone';
+  font-size: 5vh;
+  color: #46add8;
+  font-weight: 400;
+
+  padding-left: 50px; 
+  word-spacing: 5px;
+  line-height: 64px;
 }
 
 .solutionDesc{
@@ -522,7 +943,6 @@ button{
   font-size: 1rem;
   color: black;
   margin-top: 3%;
-
 }
 
 .solutionTitle{
@@ -576,6 +996,21 @@ button{
 .textSlider{
   margin-top: 3%;
   min-height: 57vh;
+}
+
+.traveliColor{
+  color: #59a9da;
+}
+
+.benefitTitle{
+  font-weight: 600;
+}
+
+.benefitDesc{
+  font-weight: 500;
+    font-size: 14pt;
+    margin-top: 8%;
+    line-height: 26pt;
 }
 
 .bg-yellow2{
@@ -851,7 +1286,11 @@ button{
     display: inline-block;
     /* min-height: 250px; */
     min-width: 287px;
+    white-space: normal;
     margin: 2em 1.5em;
+    max-width: 900px;
+    background-color: white;
+    border-radius: 20px;
     @media screen and (max-width: 500px) {
       min-height: 200px;
       min-width: 200px;
@@ -1173,16 +1612,20 @@ button{
   }
 
   .modal-content{
-    width: 60vw;
-    height: 70vh;
-    margin-top: 13%;
+    color: white;
+    width: 84rem;
+    height: 21rem;
+    position: fixed;
+    background-color: #48afd7;
+    left: 15rem;
+    bottom: 2rem;
     border-radius: 29px;
   }
 
   iframe{
-    width: 24vw;
-    height: 36vh;
-    border-radius: 29px;
+    width: 20vw;
+    height: 24vh;
+    border-radius: 15px;
   }
 }
 
@@ -1197,4 +1640,31 @@ button{
   width: 29vw;
   border: 1px solid #f9ee6f;
   overflow: hidden;
+}
+
+.promoModalHead{
+  font-size: 2.3rem;
+}
+
+.promoModalDesc{
+  font-size: 1.1rem;
+  color: white;
+}
+
+.btnYellowPromo{
+  width: 15rem;
+  height: 3rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #f7ec1e;
+  -webkit-box-shadow: 0px 5px 43px 3px rgba(0,0,0,0.39) !important;
+  -moz-box-shadow: 0px 5px 43px 3px rgba(0,0,0,0.39) !important;
+  box-shadow: 0px 5px 43px 3px rgba(0,0,0,0.39) !important;
+}
+
+.imagePromo{
+  -webkit-box-shadow: 0px 5px 43px 3px rgba(0,0,0,0.39) !important;
+  -moz-box-shadow: 0px 5px 43px 3px rgba(0,0,0,0.39) !important;
+  box-shadow: 0px 5px 43px 3px rgba(0,0,0,0.39) !important;
+  border-radius: 15px;
 }

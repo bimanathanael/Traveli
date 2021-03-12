@@ -1,12 +1,9 @@
-/* 
+
 @font-face {
   font-family: 'Bristone';
   src: url('../font/Bristone.otf');
-  src:  url('../font/Bristone.ttf') format('truetype'),
-        url('webfont.eot?#iefix') format('embedded-opentype'), 
-        url('webfont.woff') format('woff'), 
-        url('webfont.svg#svgFontName') format('svg');
-} */
+  src:  url('../font/Bristone.ttf') format('truetype')
+}
 
 
 .App {
