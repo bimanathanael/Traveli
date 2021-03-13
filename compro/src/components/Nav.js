@@ -23,6 +23,8 @@ export const Nav = () => {
     memberListUnderline = true
   } else if ( locationNow == "/supplier" || locationNow == "/wholesalerMember" || locationNow == "/reseller") {
     memberUnderline = true
+  } else if (locationNow == '/promo'){
+    navbarClass += 'navBlue'
   }
 
   return (
@@ -39,7 +41,7 @@ export const Nav = () => {
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0 ml-4">
             <li className="nav-item">
               <Link to="/howitworks">
-                <a className={`nav-link text-white ${locationNow == "/howitworks" ? "yellow-underline" : ""} `} >
+                <a className={`nav-link text-white ${locationNow == "/howitworks" ? "yellow-underline" : ""} `} id="howItWorks">
                   How It Works
                 </a>
               </Link>
@@ -166,7 +168,7 @@ export const Nav = () => {
             </li>
           </ul>
           <ul className="navbar-nav my-2 my-lg-0 pr-5 pt-2">
-            <li className="nav-item dropdown space-left">
+            <li className="nav-item dropdown space-left text-right">
               <a className="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 ID
               </a>
@@ -175,10 +177,10 @@ export const Nav = () => {
                 <a className="dropdown-item" href="#">EN</a>
               </div>
             </li>
-            <li className="nav-item w-100">
+            <li className="nav-item text-right">
               <button type="button" className="btn btn-login">Login</button>
             </li>
-            <li className="nav-item w-100">
+            <li className="nav-item">
               <button type="button" className="btn btn-join">Join Us</button>
             </li>
           </ul>

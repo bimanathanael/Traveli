@@ -137,7 +137,7 @@ export const Provide = () => {
         ],
       },{
         isActive: false,
-        section: "Wholeseller",
+        section: "Wholesaler",
         availMenu: [
           {
             isActive: true,
@@ -433,7 +433,7 @@ export const Provide = () => {
           <div className="row">
             <div className="col-md-3 offset-md-1 text-left pl-5">
               <ScrollAnimation animateIn='bounceInLeft' >
-                <p className="headingWhy">
+                <p className="headingWhy mt-5">
                   WHAT WE PROVIDE
                 </p>
               </ScrollAnimation>
@@ -454,7 +454,7 @@ export const Provide = () => {
                 {
                   provideSectionData.map(data => {
                     return (
-                      <div className="col-md-2 mb-3">
+                      <div className="col-md-2 mb-3 pr-0">
                         <img className="responsiveImg" src={data.isActive == true ? data.iconActive : data.icon}
                         onClick={ () => clickIcon(data.section)}/>
                       </div>
@@ -492,9 +492,9 @@ export const Provide = () => {
                       <div className="col-3 ml-0 pl-0">
                         <a className="arrow"> <ArrowForwardIosOutlinedIcon/> </a> 
                       </div>
-                        <div className="col btn-blueTraveli">
-                          Try it for Free
-                        </div>
+                      <div className="col btn-font traveliColor">
+                        Try it for Free
+                      </div>
                     </div>
                   </button>
                 </ScrollAnimation>
@@ -509,20 +509,20 @@ export const Provide = () => {
               <div className="col-md-5 offset-md-1 text-left pl-5">
                 <div className="col-md-8 pb-2">
                   <ScrollAnimation animateIn='bounceInLeft' >
-                      <p className="headingMember">
+                      <p className="headingMember mt-5">
                         TRAVELI MEMBERSHIP
                       </p>
                   </ScrollAnimation>
                 </div>
                   <ScrollAnimation animateIn='bounceInLeft' >
                     <div className="row mt-5">
-                      <div className="col-md-5 mt-5 pl-5">
+                      <div className="col-md-6 mt-5">
                         {
                           membershipSectionData.map(data => {
                             return (
                                 data.isActive == true ? 
                                   <div className="row mb-4">
-                                    <div className="col-md-1 pt-4">
+                                    <div className="col-md-1 padding-7">
                                       <img src={arrowTraveli}/>
                                     </div>
                                     <div className="col-md-9 pl-4">
@@ -550,10 +550,10 @@ export const Provide = () => {
                               return(
                                 data.isActive == true ? 
                                   <div className="row subMenu mt-2">
-                                    <div className="col-md-1 offset-md-2">
-                                      <img src={radioSelected}/>
+                                    <div className="col-md-3 offset-md-2 text-center">
+                                      <img className="radio" src={radioSelected}/>
                                     </div>
-                                    <div className="col-md-8 pl-4">
+                                    <div className="col-md-7 pl-4">
                                       <p className="sub-menu sub-menu-active" onClick={() => changeSubMenu(data.section) } > 
                                         { data.section } 
                                       </p>
@@ -561,10 +561,10 @@ export const Provide = () => {
                                   </div>
                                 :
                                   <div className="row subMenu mt-2">
-                                    <div className="col-md-1 offset-md-2">
-                                      <img src={radio}/>
+                                    <div className="col-md-3 offset-md-2 text-center">
+                                      <img className="radio" src={radio}/>
                                     </div>
-                                    <div className="col-md-8 pl-4">
+                                    <div className="col-md-7 pl-4">
                                       <p className="sub-menu" onClick={() => changeSubMenu(data.section) } > 
                                         { data.section } 
                                       </p>
@@ -591,8 +591,8 @@ export const Provide = () => {
                 </ScrollAnimation>
                 <ScrollAnimation animateIn="fadeIn">
                   <div className="row">
-                    <div className="col-md-3 offset-md-8">
-                      <button type="button" className="ml-3 btn btn-traveli btn-v7-hero">
+                    <div className="col-md-3 offset-md-7">
+                      {/* <button type="button" className="ml-3 btn btn-traveli btn-v7-hero">
                         <div className="row">
                           <div className="col-3 ml-0 pl-0">
                             <a className="arrow"> <ArrowForwardIosOutlinedIcon/> </a> 
@@ -601,7 +601,7 @@ export const Provide = () => {
                             Join as {currMembership.section}
                           </div>
                         </div>
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 </ScrollAnimation>
@@ -636,7 +636,7 @@ export const Provide = () => {
                             </h3>
                           </div>
                           <div className="col-md-11 ml-4">
-                            <p className="text-white f-14">
+                            <p className="text-white oneRem">
                               {data.desc}
                             </p>
                           </div>

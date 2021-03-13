@@ -48,15 +48,16 @@ export const News = () => {
     return (
         <>
             <div className="container-news">
-                <div className="row mb-5">
-                    <div className="col text-center">
+                <div className="row mb-5  d-flex justify-content-center">
+                    <div className="col-md-9 text-center">
                         <ScrollAnimation animateIn="fadeIn">
                             <p className="headingNews">
                                 NEWS AND UPDATES
                             </p>
-                            <p className="f-15">
-                                See the fave of mars See the fave of mars See the fave of mars
-                                See the fave of mars See the fave of mars See the fave of mars
+                            <p className="oneRem">
+                                See the face of mars, anyhow and that will be a rare experience seems to me that 
+                                a biew of the heavenly bodies through a fine telescope, as well as a tour round 
+                                the world
                             </p>
                         </ScrollAnimation>
                     </div>
@@ -73,15 +74,15 @@ export const News = () => {
                                             </div>
                                             <div className="col-md-6">
                                                 <div className="row pt-5">
-                                                    <div className="col-md-8">
-                                                        <h3> 
+                                                    <div className="col-md-10">
+                                                        <h3 className="newsHeadingHome"> 
                                                             {item.heading}
                                                         </h3>
                                                     </div>
                                                 </div>
                                                 <div className="row">
                                                     <div className="col-md-12">
-                                                        <p>
+                                                        <p  className="newsDescHome">
                                                             {item.desc}
                                                         </p>
                                                     </div>
@@ -96,7 +97,7 @@ export const News = () => {
                                                 <img className="newsImageOther" src={item.image}/>
                                             </div>
                                             <div className="col-md-10 offset-md-1 mt-3">
-                                                <h3> 
+                                                <h3 className="newsSecHeading"> 
                                                     {item.heading}
                                                 </h3>
                                             </div>

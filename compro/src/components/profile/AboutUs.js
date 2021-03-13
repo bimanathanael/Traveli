@@ -81,7 +81,7 @@ export const AboutUs = () => {
                 <ScrollAnimation animateIn='zoomIn'>
                     <div className="row mb-4 mt-7 d-flex justify-content-center">
                         <div className="col-md-8 text-center">
-                            <h1>
+                            <h1 className="c">
                                 Dengan prinsip tumbuh bersama, Traveli terus bersemangat untuk menciptakan 
                                 ekosistem digital di industri pariwisata
                             </h1>

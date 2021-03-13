@@ -32,7 +32,7 @@ export const ContactInfo = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-3 offset-md-1 contactSection">
+                    <div className="col-md-3 offset-md-1 contactSection oneRem">
                         <p className="headingContact">
                             Contact Information
                         </p>

@@ -35,8 +35,8 @@ export const Why = () => {
                     <div className="row mb-5 d-flex justify-content-center">
                         <div className="col-md-3 text-center card-style m-4 p-5">
                             <img className="whySectionImg" src={cardImage1}/>
-                            <h3> Transformasi Digital</h3>
-                            <p>
+                            <h3 className="headWhy"> Transformasi Digital</h3>
+                            <p className="descWhy">
                                 Dengan mendigitalisasi travel agent konvensional menjadi OTA,
                                 Traveli mampu menjawab fenomena disrupsi di industri pariwisata,
                                 memfasilitasi para penggiat bisnis pariwisata dengan patform digitalyang modern dan 
@@ -45,8 +45,8 @@ export const Why = () => {
                         </div>
                         <div className="col-md-3 text-center card-style m-4 p-5">
                             <img className="whySectionImg" src={cardImage2}/>
-                            <h3> Cross Border Inventory</h3>
-                            <p>
+                            <h3 className="headWhy"> Cross Border Inventory</h3>
+                            <p className="descWhy">
                                 Dengan konsep cross border inventory, di Traveli para travel agent dapat langsung
                                 mengakses dan membeli maupun menjual langsung produk-produk kepariwisataan
                                 yang mereka inginkan
@@ -54,8 +54,8 @@ export const Why = () => {
                         </div>
                         <div className="col-md-3 text-center card-style m-4 p-5">
                             <img className="whySectionImg" src={cardImage3}/>
-                            <h3>Zero Fees and Investment</h3>
-                            <p>
+                            <h3 className="headWhy">Zero Fees and Investment</h3>
+                            <p className="descWhy">
                                 Bertumbuh bersama menjadi prinsip utama Traveli, sehingga tidak perlu biaya 
                                 investasi maupun berbayar untuk bergabung menjadi member Traveli. Cukup daftarkan
                                 dan registrasi bisnis anda dengan langkah yang mudah.

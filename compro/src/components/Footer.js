@@ -17,7 +17,7 @@ export const Footer = () => {
   return (
     <>
       <div className="container-footer text-white">
-        <div className="row">
+        <div className="row oneRem">
           <div className="col-md-3">
             <img className="w70" src={traveliFooter}/>
             <div className="row">
@@ -107,7 +107,7 @@ export const Footer = () => {
             </div>
             <div className="row d-flex pr-7 mt-4">
               <div className="col-md-12 text-center">
-                <h4>
+                <h4 className="oneRem">
                   Follow Us
                 </h4>
               </div>

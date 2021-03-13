@@ -13,6 +13,7 @@ import './assets/css/App.css';
 import { Home } from './pages/Home';
 import { Profile } from './pages/Profile';
 import { ContactUs } from './pages/ContactUs';
+import { Promo } from './pages/Promo';
 import { Nav } from './components/Nav';
 import { Footer } from './components/Footer'
 import { ParallaxProvider } from "react-scroll-parallax";
@@ -39,6 +40,9 @@ function App() {
             </Route>
             <Route path="/contactUs">
               <ContactUs />
+            </Route>
+            <Route path="/promo">
+              <Promo />
             </Route>
             <Route path="/">
               <Home />

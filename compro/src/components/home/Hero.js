@@ -5,11 +5,14 @@ import whatsapp2 from '../../assets/images/whatsapp2.png'
 import promo from '../../assets/images/promo.png'
 
 export const Hero = () => {
+
+  let monthsList = ["January", "February", "March", "April","May",
+  "June","July","August","September","October","November","December"]
   return (
     <>
       <div className="heroContainer">
         <div className="row ml-3">
-          <div className="col-md-6">
+          <div className="col-md-5">
             <div className="row pl-3">
               <ScrollAnimation animateIn='zoomIn'animateOut='fadeOut'>
                 <h1 className="hero-title">
@@ -79,7 +82,7 @@ export const Hero = () => {
                           <h2 className="promoModalHead"> 
                             Get 25% Off tax-saving commuter benefits to all Lyft Line cities
                           </h2>
-                          <p className="promoModalDesc">
+                          <p className="oneRem text-white">
                             Get 25% Off tax-saving commuter benefits to all Lyft Line cities
                             Get 25% Off tax-saving commuter benefits to all Lyft Line cities
                           </p>
@@ -92,6 +95,13 @@ export const Hero = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="col-md-1 offset-md-4 d-flex align-items-end pb-5">
+            <div className="cardDate text-white">
+              { new Date().getDate() + '' }
+              <br/>
+              { monthsList[ new Date().getMonth() ] }
             </div>
           </div>
         </div>
