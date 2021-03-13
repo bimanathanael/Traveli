@@ -16,7 +16,7 @@ $(window).on('load', function() {
   $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
     console.log(scroll, "scroll")
-    if(scroll > 500){
+    if(scroll > 100){
       $('#mainNavbar').addClass("bg-transBlue").fadeIn()
     }else {
       $('#mainNavbar').removeClass("bg-transBlue")

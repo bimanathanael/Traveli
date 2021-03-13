@@ -10,7 +10,7 @@ export const Hero = () => {
     <>
       <div className="heroContainer">
         <div className="row ml-3">
-          <div className="col-md-5">
+          <div className="col-md-6">
             <div className="row pl-3">
               <ScrollAnimation animateIn='zoomIn'animateOut='fadeOut'>
                 <h1 className="hero-title">
@@ -74,7 +74,7 @@ export const Hero = () => {
                     <div className="modal-body">
                       <div className="row">
                         <div className="col-md-6">
-                          <img className="imagePromo" src={promo}/>
+                          <img className="imagePromo w100" src={promo}/>
                         </div>
                         <div className="col-md-6 text-left">
                           <h2 className="promoModalHead"> 

@@ -40,10 +40,16 @@ import arrowTraveli from '../../assets/images/arrowTraveli.png';
 import radio from '../../assets/images/radio.png';
 import radioSelected from '../../assets/images/radioSelected.png';
 
-import resellerPersonalStep from '../../assets/images/resellerPersonalStep.png';
+import petraStepImg from '../../assets/images/petraStepImg.png';
+import corporateStepImg from '../../assets/images/corporateStepImg.png';
+import agencyStepImg from '../../assets/images/agencyStepImg.png';
+import wholesalerStepImg from '../../assets/images/wholesalerStepImg.png';
+import supplierStepImg from '../../assets/images/supplierStepImg.png';
 import supplierImg from '../../assets/images/supplierImg.png';
-import resellerImg from '../../assets/images/resellerImg.png';
-import wholeSellerImg from '../../assets/images/wholeSellerImg.png';
+import wholesalerImg from '../../assets/images/wholesalerImg.png';
+import petraImg from '../../assets/images/petraImg.png';
+import agencyImg from '../../assets/images/agencyImg.png';
+import corporateImg from '../../assets/images/corporateImg.png';
 import checklist from '../../assets/images/checklist.png';
 
 import { useEffect, useState } from 'react';
@@ -73,13 +79,13 @@ export const Provide = () => {
     const [currMembership, setCurrMembership] = useState({
       isActive: true,
       section: "Supplier",
-      img: supplierImg,
       availMenu: [
         {
           isActive: true,
           section: "Supplier",
           heading: "BECOME A MERCHANT (B2B)",
-          stepImg: resellerPersonalStep,
+          img: supplierImg,
+          stepImg: supplierStepImg,
           desc: `Supplier adalah penyedia produk kepariwisataan, dimana produk mereka akan di distribusikan oleh 
           distributor. Siapapun bisa menjadi supplier, cukup daftar dan unggah produk kepariwisataan yang dimiliki sesuai
           dengan T&C Traveli.`,
@@ -104,13 +110,13 @@ export const Provide = () => {
       {
         isActive: true,
         section: "Supplier",
-        img: supplierImg,
         availMenu: [
           {
             isActive: true,
             section: "Supplier",
             heading: "BECOME A MERCHANT (B2B)",
-            stepImg: resellerPersonalStep,
+            img: supplierImg,
+            stepImg: supplierStepImg,
             desc: `Supplier adalah penyedia produk kepariwisataan, dimana produk mereka akan di distribusikan oleh 
             distributor. Siapapun bisa menjadi supplier, cukup daftar dan unggah produk kepariwisataan yang dimiliki sesuai
             dengan T&C Traveli.`,
@@ -132,13 +138,13 @@ export const Provide = () => {
       },{
         isActive: false,
         section: "Wholeseller",
-        img: wholeSellerImg,
         availMenu: [
           {
             isActive: true,
             section: "Wholesaler",
             heading: "BECOME A WHOLESALER (B2B2C)",
-            stepImg: resellerPersonalStep,
+            img: wholesalerImg,
+            stepImg: wholesalerStepImg,
             desc: `Traveli agent yang memiliki credential produk kepariwisataan dan melakikan
             kegiatan jual beli secara digital (lisensi dan otoritas) Distributor/Wholesaler 
             dapat menjadi penyedia produk bagi Agency, Korporasi dan PeTra`,
@@ -160,13 +166,13 @@ export const Provide = () => {
       },{
         isActive: false,
         section: "Reseller",
-        img: resellerImg,
         availMenu: [
           {
             isActive: true,
             section: "Agency",
             heading: "FOR AGENCY / SUB-AGENT (B2B2C)",
-            stepImg: resellerPersonalStep,
+            img: agencyImg,
+            stepImg: agencyStepImg,
             desc: `Sub-agent yang tidak memiliki credential namun memiliki network dan market yang luas.`,
             benefits: [
               "Cross Border Inventory",
@@ -185,7 +191,8 @@ export const Provide = () => {
             isActive: false,
             section: "Corporate",
             heading: "FOR CORPORATE (B2B2C)",
-            stepImg: resellerPersonalStep,
+            img: corporateImg,
+            stepImg: corporateStepImg,
             desc: `Perusahaan yang tidak memiliki credential namun berminat untuk mengembangkan bisnis
             di industry pariwisata`,
             benefits: [
@@ -205,7 +212,8 @@ export const Provide = () => {
             isActive: false,
             section: "Petra",
             heading: "PERSONAL TRAVELI / PETRA (B2C)",
-            stepImg: resellerPersonalStep,
+            img: petraImg,
+            stepImg: petraStepImg,
             desc: `Salah satu unit Travel Agent yang ditujukan khusus untuk pribadi/perseorangan yang memiliki
             minat untuk bergabung menjalankan bisnis kepairisataan`,
             benefits: [
@@ -570,7 +578,14 @@ export const Provide = () => {
                         
                       </div>
                     <div className="col-md-6 mt-5">
-                      <img className="responsiveImg" src={currMembership.img}/>
+                      { currMembership.availMenu.map( data => {
+                        return (
+                          data.isActive == true ?
+                          <img className="responsiveImg" src={data.img}/>
+                        :
+                          null
+                        )
+                      })}
                     </div>
                   </div>
                 </ScrollAnimation>
