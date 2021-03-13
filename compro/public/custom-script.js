@@ -4,17 +4,22 @@ $(window).on('load', function() {
 
   $('#exampleModal').modal('show');
 
+  $('#closeModal').click(function(){
+  $('#exampleModal').modal('hide');
+
+  })
+
   const currLoc = window.location.pathname
 
   console.log(currLoc),"currLoccurrLoc";
   
   $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
-    
-    if(scroll > 500){
+    console.log(scroll, "scroll")
+    if(scroll > 100){
       $('#mainNavbar').addClass("bg-transBlue").fadeIn()
     }else {
-      $('#mainNavbar').removeClass("bg-transBlue").fadeOut()
+      $('#mainNavbar').removeClass("bg-transBlue")
     }
   });
 
@@ -83,7 +88,7 @@ $(window).on('load', function() {
       // }
       console.log(currSlider, "<currSlider")
 
-      if(currSlider > -1200){
+      if(currSlider > -2200){
         currSlider -= 300
         $(".items").animate({left: currSlider});
       }
