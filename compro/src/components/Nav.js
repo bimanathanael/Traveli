@@ -12,6 +12,18 @@ export const Nav = () => {
   const navbarClass = "navbar navbar-expand-lg navbar-light"
   const locationNow = location.pathname
 
+  let aboutUsUnderline = false
+  let memberUnderline = false
+  let memberListUnderline = false
+  
+  if ( locationNow == "/profile" || locationNow == "/news" || locationNow == "/contactUs") {
+    aboutUsUnderline = true
+  } else if ( locationNow == "/supplierList" || locationNow == "/wholesaler" ) {
+    memberListUnderline = true
+  } else if ( locationNow == "/supplier" || locationNow == "/wholesalerMember" || locationNow == "/reseller") {
+    memberUnderline = true
+  }
+
   return (
     <>
       <nav className={navbarClass}  id="mainNavbar">
@@ -33,7 +45,8 @@ export const Nav = () => {
               {/* <a className="nav-link text-white" href="#">How It Works <span className="sr-only">(current)</span></a> */}
             </li>
             <li className="nav-item dropdown ml-3 members-dropdown supplier-menu">
-              <a className="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a className={`nav-link text-white dropdown-toggle ${memberUnderline ? "yellow-underline" : ""}`} 
+               href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Members
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -41,7 +54,7 @@ export const Nav = () => {
                   <div className="col-md-4">
                     <div className="row">
                       <div className="col-md-8">
-                        <a className="dropdown-item" href="#">SUPPLIER</a>
+                        <a className="dropdown-item menu-heading" href="#">SUPPLIER</a>
                       </div>
                     </div>
                     <div className="row">
@@ -59,7 +72,7 @@ export const Nav = () => {
                   <div className="col-md-4 borderLeft">
                     <div className="row">
                       <div className="col-md-8">
-                        <a className="dropdown-item menu-heading" href="#">WHOLESELLER</a>
+                        <a className="dropdown-item menu-heading" href="#">WHOLESALER</a>
                       </div>
                     </div>
                     <div className="row">
@@ -96,7 +109,8 @@ export const Nav = () => {
               </div>
             </li>
             <li className="nav-item dropdown ml-3 member-list-dropdown">
-              <a className="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a className={`nav-link text-white dropdown-toggle ${memberListUnderline ? "yellow-underline" : ""}`} 
+              href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Member List
               </a>
               <div className="dropdown-menu p23" aria-labelledby="navbarDropdown">
@@ -133,7 +147,8 @@ export const Nav = () => {
               </Link>
             </li>
             <li className="nav-item dropdown ml-2">
-              <a className="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a className={`nav-link text-white dropdown-toggle ${aboutUsUnderline ? "yellow-underline" : ""}`} 
+              href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 About Us
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
