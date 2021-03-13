@@ -6,28 +6,6 @@
   background-size: contain;
 }
 
-.heroProfileContainer{
-  background: #48AFD7;
-  background-image: url('../images/bgProfile.png');
-  padding: 4% 0% 4% 7%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: brightness(0.9);
-  height: 55rem;
-}
-
-.hero-profile-title{
-  font-family: 'Bristone';
-  font-size: 3.3rem;
-  margin-bottom: 4%;
-  margin-top: 33%;
-  font-weight: 400;
-  color: white;
-  text-transform: uppercase;
-  line-height: 4rem;
-  word-spacing: 0.5rem;
-}
-
 .hero-title{
   font-family: 'Bristone';
   font-size: 2.4rem;
@@ -355,42 +333,6 @@ p{
   font-weight: 600;
 }
 
-.headingAboutUs{
-  font-weight: 600 !important;
-}
-
-.headingVM{
-  font-family: 'Bristone';
-  font-size: 1.8rem;
-  letter-spacing: 3px;
-  font-weight: 400;
-  color: #f8f092;
-  text-transform: uppercase;
-}
-
-.descVM{
-  font-size: 2rem;
-  color: white;
-  font-weight: 600;
-}
-
-.mt-6{
-  margin-top: 6rem;
-}
-
-.descAboutUs{
-  font-size: 1.3rem;
-  font-weight: 400;
-  color: black;
-  margin-top: 2rem;
-  text-align: justify;
-  padding-right: 3rem;
-}
-
-.aboutUsImg{
-  border-radius: 20px;
-}
-
 .stepImg{
   width: 100%;
   height: auto;
@@ -398,30 +340,6 @@ p{
 
 .container-why{
   padding: 4% 0% 10% 0%;
-}
-
-.container-profile-why{
-  padding: 4% 0% 10% 0%;
-  background-image: url('../images/bgAbout.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-
-.container-profile-team{
-  margin-bottom: 7%;
-  margin-top: 10%;
-  background-image: url('../images/bgTeam.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.container-vision-mission{
-  padding: 6% 0% 2% 0%;
-  margin-top: 3%;
-  background-image: url('../images/bgVisiMisi.png');
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .container-provide{
@@ -980,18 +898,7 @@ button{
   padding-left: 50px;
   color:#48afd7;
   font-family: 'Bristone';
-}
 
-.headingTeam{
-  font-size: 2.5rem;
-  font-weight: 400;
-  color:#48afd7;
-  font-family: 'Bristone';
-}
-
-.descTeam{
-  font-size: 1.2rem;
-  font-weight: 400;
 }
 
 .headingBenefit{
@@ -1048,27 +955,6 @@ button{
   padding-left: 50px; 
   word-spacing: 5px;
   line-height: 64px;
-}
-
-.teamImg{
-  border-radius: 15px;
-  width: 100%;
-}
-  
-.teamCard{
-  border-radius: 30px;
-  -moz-box-shadow: 0px 5px 43px -11px rgba(0,0,0,0.39) !important;
-  box-shadow: 0px 5px 43px -11px rgba(0,0,0,0.39) !important;
-  background-color: white;
-  width: 74.5%;
-}
-
-.descTeam{
-  padding: 4% 0% 9% 9%;
-}
-
-.teamPos{
-  color: #46add8;
 }
 
 .solutionDesc{

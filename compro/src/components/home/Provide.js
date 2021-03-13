@@ -642,7 +642,7 @@ export const Provide = () => {
                           </div>
                           <div className="col-md-11 ml-4 mb-5 mt-4">
                             <a className="text-white bold" href="#">
-                              Learn more >>
+                              {"Learn more >>"}
                             </a>
                           </div>
                           <div className="col-md-3 pl-4 ml-3 mb-4">

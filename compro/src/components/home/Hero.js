@@ -1,4 +1,3 @@
-import '../../assets/css/Home.css'
 import ScrollAnimation from 'react-animate-on-scroll';
 
 import ArrowForwardIosOutlinedIcon from '@material-ui/icons/ArrowForwardIosOutlined';

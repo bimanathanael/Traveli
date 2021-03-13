@@ -1,6 +1,3 @@
-import { Nav } from '../components/Nav';
-import { Footer } from '../components/Footer'
-
 import { Hero } from '../components/home/Hero'
 import { Benefits } from '../components/home/Benefits'
 import { News } from '../components/home/News'
@@ -13,8 +10,7 @@ export const Home = () => {
 
   return (
     <>
-      <div className="Home">
-        <Nav/>  
+      <div>
         <Hero/>
         <Why/>
         <Provide/>
@@ -22,7 +18,6 @@ export const Home = () => {
         <News/>
         <Partners/>
         <Testimonials/>
-        <Footer/>
       </div>
     </>
   )

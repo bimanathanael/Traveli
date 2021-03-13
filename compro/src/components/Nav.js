@@ -1,9 +1,9 @@
+import '../assets/css/Nav.css';
 import { Link, useLocation } from "react-router-dom";
 import logo3 from '../assets/images/traveli_white.png'
 import distributorImg from '../assets/images/distributorImg.png'
 import supplierImg from '../assets/images/supplierImg.png'
 import resellerImg from '../assets/images/resellerImg.png'
-import '../assets/css/Nav.css';
 
 export const Nav = () => {
 
@@ -137,7 +137,9 @@ export const Nav = () => {
                 About Us
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item" href="#">Profile</a>
+                <Link to="/profile">
+                  <a className="dropdown-item" href="#">Profile</a>
+                </Link>
                 <a className="dropdown-item" href="#">News and Updates</a>
                 <a className="dropdown-item" href="#">Contact Us</a>
               </div>
