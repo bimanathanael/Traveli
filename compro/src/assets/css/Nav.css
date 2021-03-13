@@ -12,6 +12,10 @@
   height: 8rem;
 }
 
+.navBlue{
+  background-color: rgb(70 174 218 / 0.8) !important;
+}
+
 .bg-transBlue{
   background-color: rgb(70 174 218 / 0.8) !important;
   height: 5rem;

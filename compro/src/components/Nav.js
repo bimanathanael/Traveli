@@ -9,7 +9,7 @@ export const Nav = () => {
 
   const location = useLocation()
 
-  const navbarClass = "navbar navbar-expand-lg navbar-light"
+  let navbarClass = "navbar navbar-expand-lg navbar-light "
   const locationNow = location.pathname
 
   let aboutUsUnderline = false
@@ -18,6 +18,7 @@ export const Nav = () => {
   
   if ( locationNow == "/profile" || locationNow == "/news" || locationNow == "/contactUs") {
     aboutUsUnderline = true
+    navbarClass += 'navBlue'
   } else if ( locationNow == "/supplierList" || locationNow == "/wholesaler" ) {
     memberListUnderline = true
   } else if ( locationNow == "/supplier" || locationNow == "/wholesalerMember" || locationNow == "/reseller") {
@@ -155,8 +156,12 @@ export const Nav = () => {
                 <Link to="/profile">
                   <a className="dropdown-item" href="#">Profile</a>
                 </Link>
-                <a className="dropdown-item" href="#">News and Updates</a>
-                <a className="dropdown-item" href="#">Contact Us</a>
+                <Link to="/news">
+                  <a className="dropdown-item" href="#">News and Updates</a>
+                </Link>
+                <Link to="/contactUs">
+                  <a className="dropdown-item" href="#">Contact Us</a>
+                </Link>
               </div>
             </li>
           </ul>

@@ -407,6 +407,13 @@ p{
   background-repeat: no-repeat;
 }
 
+.container-contact{
+  padding: 10% 0% 10% 0%;
+  background-image: url('../images/bgAbout.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 
 .container-profile-team{
   margin-bottom: 7%;
@@ -429,6 +436,27 @@ p{
   padding: 4% 0% 10% 0%;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+/* Set the size of the div element that contains the map */
+.mapouter{
+  height:55rem;
+  width:100%;
+}
+
+.gmap_canvas {
+  height:100%;
+  width:100%;
+}
+
+#gmap_canvas{
+  height: 90%;
+  width: 110%;
+  border-radius: 20px;
+}
+
+.contactSection{
+  padding-top: 10%;
 }
 
 .f-15{
@@ -982,6 +1010,13 @@ button{
   font-family: 'Bristone';
 }
 
+.headingContact{
+  font-size: 2.5rem;
+  font-weight: 400;
+  color:#48afd7;
+  font-family: 'Bristone';
+}
+
 .headingTeam{
   font-size: 2.5rem;
   font-weight: 400;
@@ -1054,7 +1089,7 @@ button{
   border-radius: 15px;
   width: 100%;
 }
-  
+
 .teamCard{
   border-radius: 30px;
   -moz-box-shadow: 0px 5px 43px -11px rgba(0,0,0,0.39) !important;
