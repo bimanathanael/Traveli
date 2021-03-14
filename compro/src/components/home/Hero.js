@@ -97,13 +97,13 @@ export const Hero = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-1 offset-md-4 d-flex align-items-end pb-5">
+          {/* <div className="col-md-1 offset-md-4 d-flex align-items-end pb-5">
             <div className="cardDate text-white">
               { new Date().getDate() + '' }
               <br/>
               { monthsList[ new Date().getMonth() ] }
             </div>
-          </div>
+          </div> */}
         </div>
         <a href="http://wa.me/+6285712559445?text=Hallo%20Customer%20Care%20Traveli"  target="_blank">
           <img className="floatingWA" src={whatsapp2}/>

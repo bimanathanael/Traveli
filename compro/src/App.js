@@ -14,6 +14,8 @@ import { Home } from './pages/Home';
 import { Profile } from './pages/Profile';
 import { ContactUs } from './pages/ContactUs';
 import { Promo } from './pages/Promo';
+import { Login } from './pages/Login';
+import { JoinUs } from './pages/JoinUs';
 import { Nav } from './components/Nav';
 import { Footer } from './components/Footer'
 import { ParallaxProvider } from "react-scroll-parallax";
@@ -43,6 +45,12 @@ function App() {
             </Route>
             <Route path="/promo">
               <Promo />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/joinUs">
+              <JoinUs />
             </Route>
             <Route path="/">
               <Home />
