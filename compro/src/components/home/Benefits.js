@@ -26,14 +26,16 @@ export const Benefits = () => {
         <>
             <div className="container-benefits">
                 <div className="row mb-5">
-                    <div className="col text-center">
+                    <div className="col-md-5 text-center">
                         <ScrollAnimation animateIn="bounceInLeft" animateOut='bounceOutLeft'>
                             <p className="headingBenefit">
                                 KEY BENEFITS
                             </p>
                         </ScrollAnimation>
                     </div>
-                    <div className="col-md-3 offset-md-5">
+                </div>
+                <div className="row">
+                    <div className="col-md-5 offset-md-1 pl-5">
                         <button className="btnArrow prev"> <ArrowBackIcon/> </button>
                         <button className="btnArrow next ml-4"> <ArrowForwardIcon/>  </button>
                     </div>

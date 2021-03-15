@@ -78,7 +78,8 @@
 }
 
 #howItWorks{
-  width: 132px;
+  width: 111px;
+
 }
 
 .space-left{
@@ -217,7 +218,9 @@ a:hover {
 
 .menu-heading{
   letter-spacing: 6px;
+  font-size: 1.2rem !important;
   padding-left: 0;
+  font-family: 'Bristone';
 }
 
 .dropdown-menu{

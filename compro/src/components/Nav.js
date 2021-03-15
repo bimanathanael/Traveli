@@ -2,7 +2,7 @@ import '../assets/css/Nav.css';
 import { Link, useLocation } from "react-router-dom";
 import logo3 from '../assets/images/traveli_white.png'
 import distributorImg from '../assets/images/distributorImg.png'
-import supplierImg from '../assets/images/supplierImg.png'
+import suppImg from '../assets/images/suppImg.png'
 import resellerImg from '../assets/images/resellerImg.png'
 
 export const Nav = () => {
@@ -41,7 +41,7 @@ export const Nav = () => {
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0 ml-4">
             <li className="nav-item">
               <Link to="/howitworks">
-                <a className={`nav-link text-white ${locationNow == "/howitworks" ? "yellow-underline" : ""} `} id="howItWorks">
+                <a className={`mr-3 nav-link text-white ${locationNow == "/howitworks" ? "yellow-underline" : ""} `} id="howItWorks">
                   How It Works
                 </a>
               </Link>
@@ -62,7 +62,7 @@ export const Nav = () => {
                     </div>
                     <div className="row">
                       <div className="col-md-5 p-0">
-                        <img className="membersImg" src={supplierImg}/>
+                        <img className="membersImg" src={suppImg}/>
                       </div>
                       <div className="col-md-7 p-0">
                         <p>
