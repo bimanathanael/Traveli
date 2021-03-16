@@ -12,7 +12,7 @@ export const Hero = () => {
     <>
       <div className="heroContainer">
         <div className="row ml-3">
-          <div className="col-md-5">
+          <div className="col-md-7 specialCol">
             <div className="row pl-3">
               <ScrollAnimation animateIn='zoomIn'animateOut='fadeOut'>
                 <h1 className="hero-title">
@@ -25,7 +25,7 @@ export const Hero = () => {
               </ScrollAnimation>
             </div>
             <div className="row">
-              <div className="col-md-12 pl-3">
+              <div className="col-md-9 pl-3">
                 <ScrollAnimation animateIn='zoomIn'animateOut='fadeOut' delay="200">
                   <p className="hero-desc">
                     Traveli adalah platform digital kepariwisataan yang
@@ -37,7 +37,7 @@ export const Hero = () => {
                 </ScrollAnimation>
               </div>
             </div>
-            <div className="row mt-2 pl-0">
+            <div className="row mt-2 pl-2">
               <div className="col-3 pl-0 mb-5">
                 <ScrollAnimation animateIn='zoomIn'animateOut='fadeOut' delay="400">
                   <button type="button" className="btn btn-traveli btn-v3-hero">
@@ -55,7 +55,7 @@ export const Hero = () => {
             </div>
             <div className="row">
               <ScrollAnimation animateIn='zoomIn'animateOut='fadeOut' delay="600">
-                <div className="modal-body">
+                <div className="modal-body" style={{ "visibility": "hidden"}}>
                   <iframe width="120" height="115"
                   // src="https://www.youtube.com/embed/YuAya0hRjwU?autoplay=1&mute=1"
                   src="https://www.youtube.com/embed/YuAya0hRjwU"

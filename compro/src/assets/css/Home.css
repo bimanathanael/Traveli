@@ -9,7 +9,7 @@
   }
 
   .hero-title {
-    font-size: 1rem !important;
+    font-size: 1.4rem !important;
     margin-bottom: 4%;
   }
 
@@ -26,10 +26,10 @@
 
   body .hero-title {
     font-family: 'Bristone';
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 4%;
     margin-top: 15%;
-    font-weight: 400;
+    font-weight: 300;
     color: white;
     text-transform: uppercase;
     line-height: 2rem;
@@ -41,11 +41,17 @@
   }
 
   body .MuiSvgIcon-root{
-    width: 0.8em;
+    width: .6em;
+    height: 2rem;
+  }
+
+  body .arrow .MuiSvgIcon-root{
+    width: 1em;
+    height: 1em;
   }
 
   body .bg-transBlue .logo{
-    width: 4rem !important;
+    width: 8rem !important;
   }
 
   body .logo{
@@ -62,7 +68,7 @@
 
   body .hero-subtitle{
     font-size: 1.5rem;
-    margin-bottom: 4%;
+    margin-bottom: 1%;
     font-weight: 400;
     color: white;
     text-transform: uppercase;
@@ -209,6 +215,10 @@
   }  
 
   body .menu-heading{
+    font-size: 1.2rem;
+  }
+  
+  body .menu-heading-provide{
     font-size: 1.2rem;
   }
 
@@ -408,6 +418,12 @@
   body .teamPos{
     font-size: 1.1rem;
   }
+
+  body .specialCol{
+    -ms-flex: 0 0 50% !important;
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1300px) { 
@@ -461,6 +477,13 @@
   text-align: center !important;
 }
 
+.descJoinUs{
+  font-size: 1rem ;
+  text-align: center !important;
+  min-height: 7rem;
+  color: white;
+}
+
 .MuiSvgIcon-root{
   width: 1rem;
 }
@@ -490,8 +513,8 @@
   background-color: rgb(255 255 255 / 0.9);
 }
 
-.border-top{
-  border-top: 1px solid white;
+.borderTop{
+  border-top: 2px solid white;
 }
 
 .loginContainer{
@@ -505,7 +528,7 @@
 .heroContainer{
   background: #00ADD9;
   background-image: url('../images/home_Hero.png');
-  padding: 4% 0% 4% 7%;
+  padding: 3% 0% 4% 7%;
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -532,12 +555,18 @@
   word-spacing: 0.5rem;
 }
 
+.specialCol{
+  -ms-flex: 0 0 58.333333% !important;
+  flex: 0 0 58.333333% !important;
+  max-width: 58.333333% !important;
+}
+
 .hero-title{
   font-family: 'Bristone';
-  font-size: 2rem;
+  font-size: 2.4rem;
   margin-bottom: 4%;
   margin-top: 15%;
-  font-weight: 400;
+  font-weight: 300;
   color: white;
   text-transform: uppercase;
   line-height: 3rem;
@@ -546,7 +575,7 @@
 
 .hero-subtitle{
   font-size: 2.5rem;
-  margin-bottom: 4%;
+  margin-bottom: 1%;
   font-weight: 400;
   color: white;
   text-transform: uppercase;
@@ -1036,7 +1065,12 @@ p{
 }
 
 .thumbnail-provide{
-  width: 90%;
+  max-width: 90%;
+  height: auto;
+}
+
+.icon-provide{
+  width: 4rem;
   height: auto;
 }
 
@@ -1106,7 +1140,6 @@ p{
 
 .btnArrow{
   padding: 0px;
-  border: 2px solid #48afd7;
   border-radius: 48px;
 }
 
@@ -1523,6 +1556,13 @@ button{
   letter-spacing: inherit !important;
 }
 
+.menu-heading-provide{
+  font-size: 1.5rem;
+  margin-top: 2%;
+  font-family: 'roboto';
+  letter-spacing: inherit !important;
+}
+
 .menu-desc{
   margin-top: 3%;
   font-size: 1.1rem;
@@ -1612,7 +1652,7 @@ button{
 }
 
 .floatingWA{
-  width: 3rem;
+  width: 3.4rem;
   position: fixed;
   right: 2.5rem;
   bottom: 2.5rem;
@@ -1621,7 +1661,7 @@ button{
 }
 
 .floatingWA:hover{
-  width: 3.5rem;
+  width: 3.9rem;
 }
 
 .whySectionImg{

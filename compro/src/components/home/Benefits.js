@@ -7,7 +7,8 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 // import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 // import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
 import ScrollAnimation from 'react-animate-on-scroll';
-
+import prev from '../../assets/images/prev.png';
+import next from '../../assets/images/next.png';
 
 
 export const Benefits = () => {
@@ -36,8 +37,10 @@ export const Benefits = () => {
                 </div>
                 <div className="row">
                     <div className="col-md-5 offset-md-1 pl-5">
-                        <button className="btnArrow prev"> <ArrowBackIcon/> </button>
-                        <button className="btnArrow next ml-4"> <ArrowForwardIcon/>  </button>
+                        <img className="btnArrow prev"  src={prev} />
+                        <img className="btnArrow next ml-4" src={next} />
+                        {/* <button className="btnArrow prev"> <ArrowBackIcon/> </button>
+                        <button className="btnArrow next ml-4"> <ArrowForwardIcon/>  </button> */}
                     </div>
                 </div>
                 <ScrollAnimation animateIn="bounceInRight" animateOut='bounceOutRight'>

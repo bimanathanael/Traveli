@@ -15,9 +15,9 @@ export const Home = () => {
         <Why/>
         <Provide/>
         <Benefits/>
-        <News/>
-        <Partners/>
-        <Testimonials/>
+        {/* <News/> */}
+        {/* <Partners/> */}
+        {/* <Testimonials/> */}
       </div>
     </>
   )

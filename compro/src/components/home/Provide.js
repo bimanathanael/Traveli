@@ -455,7 +455,7 @@ export const Provide = () => {
                   provideSectionData.map(data => {
                     return (
                       <div className="col-md-2 mb-3 pr-0">
-                        <img className="responsiveImg" src={data.isActive == true ? data.iconActive : data.icon}
+                        <img className="icon-provide" src={data.isActive == true ? data.iconActive : data.icon}
                         onClick={ () => clickIcon(data.section)}/>
                       </div>
                     )
@@ -471,7 +471,7 @@ export const Provide = () => {
                   </h3>
                 </div>
                 <div className="col-md-8">
-                  <h4 className="menu-heading">
+                  <h4 className="menu-heading-provide">
                     <ScrollAnimation animateIn='bounceInRight'>
                       {currProvide.heading}
                     </ScrollAnimation>

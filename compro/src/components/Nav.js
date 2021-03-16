@@ -39,13 +39,12 @@ export const Nav = () => {
 
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0 ml-4">
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to="/howitworks">
                 <a className={`mr-3 nav-link text-white ${locationNow == "/howitworks" ? "yellow-underline" : ""} `} id="howItWorks">
                   How It Works
                 </a>
               </Link>
-              {/* <a className="nav-link text-white" href="#">How It Works <span className="sr-only">(current)</span></a> */}
             </li>
             <li className="nav-item dropdown ml-3 members-dropdown supplier-menu">
               <a className={`nav-link text-white dropdown-toggle ${memberUnderline ? "yellow-underline" : ""}`} 
@@ -165,10 +164,10 @@ export const Nav = () => {
                   <a className="dropdown-item" href="#">Contact Us</a>
                 </Link>
               </div>
-            </li>
+            </li> */}
           </ul>
           <ul className="navbar-nav my-2 my-lg-0 pr-5 pt-2">
-            <li className="nav-item dropdown space-left text-right">
+            {/* <li className="nav-item dropdown space-left text-right">
               <a className="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 ID
               </a>
@@ -176,7 +175,7 @@ export const Nav = () => {
                 <a className="dropdown-item" href="#">ID</a>
                 <a className="dropdown-item" href="#">EN</a>
               </div>
-            </li>
+            </li> */}
             <Link to="/login">
               <li className="nav-item text-right">
                 <button type="button" className="btn btn-login">Login</button>
