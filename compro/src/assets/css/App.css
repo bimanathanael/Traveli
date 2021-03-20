@@ -1,12 +1,9 @@
-/* 
+
 @font-face {
   font-family: 'Bristone';
   src: url('../font/Bristone.otf');
-  src:  url('../font/Bristone.ttf') format('truetype'),
-        url('webfont.eot?#iefix') format('embedded-opentype'), 
-        url('webfont.woff') format('woff'), 
-        url('webfont.svg#svgFontName') format('svg');
-} */
+  src:  url('../font/Bristone.ttf') format('truetype')
+}
 
 
 .App {
@@ -408,23 +405,3 @@ body{
   overflow:hidden;
 }
 
-
-@media (min-width: 300px) and (max-width: 560px) { 
-  .navbar{
-    padding-left: 0%;
-  }
-
-  .logo{
-    width: 50%;
-  }
-
-  .hero-title {
-    font-size: 2.5rem !important;
-    margin-bottom: 4%;
-  }
-
-  .mobile-center{
-    text-align: center;
-  }
-
-}

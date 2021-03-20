@@ -1,12 +1,18 @@
-import benefit1ID from '../../assets/images/benefit1ID.png';
-import benefit2ID from '../../assets/images/benefit2ID.png';
-import benefit3ID from '../../assets/images/benefit3ID.png';
+import benefits1 from '../../assets/images/benefits1.png';
+import benefits1New from '../../assets/images/benefits1New.gif';
+import benefits2 from '../../assets/images/benefits2.png';
+import benefits2New from '../../assets/images/benefits2New.gif';
+import benefits3New from '../../assets/images/benefits3New.gif';
+import benefits4New from '../../assets/images/benefits4New.gif';
 import { useEffect, useState } from 'react';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 // import ArrowForwardIosOutlinedIcon from '@material-ui/icons/ArrowForwardIosOutlined';
 // import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 // import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
+import ScrollAnimation from 'react-animate-on-scroll';
+import prev from '../../assets/images/prev.png';
+import next from '../../assets/images/next.png';
 
 
 export const Benefits = () => {
@@ -25,192 +31,118 @@ export const Benefits = () => {
         <>
             <div className="container-benefits">
                 <div className="row mb-5">
-                    <div className="col text-center">
-                        <p className="headingBenefit">
-                            MENGAPA TRAVELI?
-                        </p>
-                    </div>
-                    <div className="col-md-3 offset-md-5">
-                        <button className="btnArrow prev"> <ArrowBackIcon/> </button>
-                        <button className="btnArrow next ml-4"> <ArrowForwardIcon/>  </button>
+                    <div className="col-md-5 text-center">
+                        <ScrollAnimation animateIn="bounceInLeft" animateOut='bounceOutLeft'>
+                            <p className="headingBenefit">
+                                KEY BENEFITS
+                            </p>
+                        </ScrollAnimation>
                     </div>
                 </div>
-                <div className="row cardSlider">
-                    <div className="col-md-12 cardSliderRoom">
-                        <div className="grid-container">
-                            <main className="grid-item main">
-                                <div className="items">
-                                    <div className="item item0">
-                                    </div>
-                                    <div className="item item1">
-                                        <img className="img-fluid" src={benefit1ID} alt="Carousel 1"/>
-                                    </div>
-                                    <div className="item item2">
-                                        <img className="img-fluid" src={benefit2ID} alt="Carousel 1"/>
-                                    </div>
-                                    <div className="item item3">
-                                        <img className="img-fluid" src={benefit3ID} alt="Carousel 1"/>
-                                    </div>
-                                </div>
-                            </main>
-                        </div>
+                <div className="row">
+                    <div className="col-md-5 offset-md-1 pl-5">
+                        <img className="btnArrow prev"  src={prev} />
+                        <img className="btnArrow next ml-4" src={next} />
+                        {/* <button className="btnArrow prev"> <ArrowBackIcon/> </button>
+                        <button className="btnArrow next ml-4"> <ArrowForwardIcon/>  </button> */}
                     </div>
                 </div>
-                {/* <div className="row">
-                    <div className="col-md-3 offset-md-1">
-                        <button type="button" className="btn btn-traveli btn-v2">
-                            <div className="row">
-                            <div className="col-3 ml-0">
-                                <a className="arrow"> <ArrowForwardIosOutlinedIcon/> </a> 
-                            </div>
-                            <div className="col btn-font">
-                                See How it Works
-                            </div>
-                            </div>
-                        </button>
-                    </div>
-                    <div className="col-md-3 offset-md-1 pt-3 pl-7">
-                       <img className="radioEmpty rad1"/>
-                       <img className="radioEmpty rad2"/>
-                       <img className="radioEmpty rad3"/>
-                       <img className="radioEmpty rad4"/>
-                    </div>
-                </div> */}
+                <ScrollAnimation animateIn="bounceInRight" animateOut='bounceOutRight'>
+                    <div className="row cardSlider">
 
-                {/* <section className="container p-t-3">
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <h3 >Key Benefits</h3>
-                        </div>
-                    </div>
-                </section>
-                <section className="carousel slide m-auto" data-ride="carousel" id="postsCarousel">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-xs-12 text-md-right lead">
-                                <a className="btn btn-outline-secondary prev" href="" title="go back"><i className="fa fa-lg fa-chevron-left"></i></a>
-                                <a className="btn btn-outline-secondary next" href="" title="more"><i className="fa fa-lg fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    {
-                        mobileView <= 560 ? 
-                        
-                    <div className="container p-t-0 m-t-2 carousel-inner carousel-mobile">
-                        <div className="row row-equal carousel-item active m-t-0">
-                            <div className="col-md-12">
-                                <div className="card">
-                                    <div className="card-img-top card-img-top-250">
-                                        <img className="img-fluid" src={contoh} alt="Carousel 1"/>
+                        <div className="col-md-12 cardSliderRoom">
+                            <div className="grid-container">
+                                <main className="grid-item main">
+                                    <div className="items">
+                                        <div className="item item0">
+                                        </div>
+                                        <div className="item item1 cardBenefits">
+                                            <div className="row p-5 right0">
+                                                <div className="col-md-7">
+                                                    <h1 className="benefitTitle traveliColor">
+                                                        PEMBAYARAN REAL-TIME
+                                                    </h1>
+                                                    <p className="benefitDesc">
+                                                        Dengan sistem yang sudah online dan terintegrasi, anda bisa
+                                                        langsung menikmati hasil transaksi anda secara real-time.
+                                                        Kalau bisa langsung, buar apa menunggu?
+                                                    </p>
+                                                </div>
+                                                <div className="col-md-5 text-center">
+                                                    <img className="img-fluid responsiveImg2" src={benefits1New} alt="Carousel 1"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="item item2 cardBenefits">
+                                            <div className="row p-5 right0">
+                                                <div className="col-md-7">
+                                                    <h1 className="benefitTitle traveliColor">
+                                                        KUSTOMISASI WEBSITE SESUAI KEINGINAN ANDA
+                                                    </h1>
+                                                    <p className="benefitDesc">
+                                                        Anda memiliki kebebasan untuk memakai domain dan logo anda sendiri
+                                                        pada website yang disediakan Traveli, Sehingga identitas brand anda bis dikenal
+                                                        dengan mudah
+                                                    </p>
+                                                </div>
+                                                <div className="col-md-5 text-center">
+                                                    <img className="img-fluid responsiveImg2" src={benefits2New} alt="Carousel 1"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="item item3 cardBenefits">
+                                            <div className="row p-5 right0">
+                                                <div className="col-md-7">
+                                                    <h1 className="benefitTitle traveliColor">
+                                                        TANPA BIAYA DI MUKA ATAU INVESTASI APAPUN
+                                                    </h1>
+                                                    <p className="benefitDesc">
+                                                        Di Traveli, anda tidak perlu repot-repot memikirkan berapa modal
+                                                        yang diperlukan untuk menjadi member. Cukup registrasi dan anda langsung
+                                                        dapat bertransaksi
+                                                    </p>
+                                                </div>
+                                                <div className="col-md-5 text-center">
+                                                    <img className="img-fluid responsiveImg2" src={benefits3New} alt="Carousel 1"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="item item4 cardBenefits">
+                                            <div className="row p-5 right0">
+                                                <div className="col-md-7">
+                                                    <h1 className="benefitTitle traveliColor">
+                                                        PERLUAS JARINGAN BISNIS ANDA
+                                                    </h1>
+                                                    <p className="benefitDesc">
+                                                        Pada ekosistem platform Traveli, kami menghubungkan
+                                                        anda langsung ke market yang berpotensial. Mulai dari 
+                                                        penyedia produk hingga pembeli yang prospektif, semua 
+                                                        dalam 1 tempat.
+                                                    </p>
+                                                </div>
+                                                <div className="col-md-5 text-center">
+                                                    <img className="img-fluid responsiveImg2" src={benefits4New} alt="Carousel 1"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* <div className="item item4 cardBenefits">
+                                            <div className="row p-5 right0">
+                                                <div className="col-md-7">
+                                                    <h1 className="benefitTitle traveliColor">
+                                                    </h1>
+                                                    <p className="benefitDesc">
+                                                    </p>
+                                                </div>
+                                                <div className="col-md-5 text-center">
+                                                </div>
+                                            </div>
+                                        </div> */}
                                     </div>
-                                    <div className="card-block p-t-2">
-                                        <h6 className="small text-wide p-b-2">Insight</h6>
-                                        <h5>
-                                            <a href="">Why Stuff Happens Every Year.</a>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row row-equal carousel-item m-t-0">
-                            <div className="col-md-12 fadeIn wow">
-                                <div className="card">
-                                    <div className="card-img-top card-img-top-250">
-                                        <img className="img-fluid" src={contoh}/>
-                                    </div>
-                                    <div className="card-block p-t-2">
-                                        <h6 className="small text-wide p-b-2">Category 3</h6>
-                                        <h5>
-                                            <a href="">Catchy Title of a Blog Post.</a>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row row-equal carousel-item m-t-0">
-                            <div className="col-md-12 fadeIn wow">
-                                <div className="card">
-                                    <div className="card-img-top card-img-top-250">
-                                        <img className="img-fluid" src={contoh}/>
-                                    </div>
-                                    <div className="card-block p-t-2">
-                                        <h6 className="small text-wide p-b-2">Category 3</h6>
-                                        <h5>
-                                            <a href="">Lorem ipsum dolor sit amet, </a>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    :
-
-                    <div className="container p-t-0 m-t-2 carousel-inner carousel-web">
-
-                        <div className="row row-equal carousel-item active m-t-0">
-                            <div className="col-md-6">
-                                <div className="card">
-                                    <div className="card-img-top card-img-top-250">
-                                        <img className="img-fluid" src={contoh} alt="Carousel 1"/>
-                                    </div>
-                                    <div className="card-block p-t-2">
-                                        <h6 className="small text-wide p-b-2">Insight</h6>
-                                        <h5>
-                                            <a href="">Why Stuff Happens Every Year.</a>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-6">
-                                <div className="card">
-                                    <div className="card-img-top card-img-top-250">
-                                        <img className="img-fluid" src={contoh} alt="Carousel 2"/>
-                                    </div>
-                                    <div className="card-block p-t-2">
-                                        <h6 className="small text-wide p-b-2">Development</h6>
-                                        <h5>
-                                            <a href="">How to Make Every Line Count.</a>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row row-equal carousel-item m-t-0">
-                            <div className="col-md-6">
-                                <div className="card">
-                                    <div className="card-img-top card-img-top-250">
-                                        <img className="img-fluid" src={contoh}/>
-                                    </div>
-                                    <div className="card-block p-t-2">
-                                        <h6 className="small text-wide p-b-2"><span className="pull-xs-right">12.04</span> Category 1</h6>
-                                        <h5>
-                                            <a href="">This is a Blog Title.</a>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-6 fadeIn wow">
-                                <div className="card">
-                                    <div className="card-img-top card-img-top-250">
-                                        <img className="img-fluid" src={contoh}/>
-                                    </div>
-                                    <div className="card-block p-t-2">
-                                        <h6 className="small text-wide p-b-2">Category 3</h6>
-                                        <h5>
-                                            <a href="">Catchy Title of a Blog Post.</a>
-                                        </h5>
-                                    </div>
-                                </div>
+                                </main>
                             </div>
                         </div>
                     </div>
-
-                    }
-
-
-                </section> */}
+                </ScrollAnimation>
         </div>
     </>
   )
