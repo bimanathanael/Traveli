@@ -1,5 +1,9 @@
 import benefits1 from '../../assets/images/benefits1.png';
+import benefits1New from '../../assets/images/benefits1New.gif';
 import benefits2 from '../../assets/images/benefits2.png';
+import benefits2New from '../../assets/images/benefits2New.gif';
+import benefits3New from '../../assets/images/benefits3New.gif';
+import benefits4New from '../../assets/images/benefits4New.gif';
 import { useEffect, useState } from 'react';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
@@ -65,7 +69,7 @@ export const Benefits = () => {
                                                     </p>
                                                 </div>
                                                 <div className="col-md-5 text-center">
-                                                    <img className="img-fluid responsiveImg2" src={benefits1} alt="Carousel 1"/>
+                                                    <img className="img-fluid responsiveImg2" src={benefits1New} alt="Carousel 1"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -82,7 +86,7 @@ export const Benefits = () => {
                                                     </p>
                                                 </div>
                                                 <div className="col-md-5 text-center">
-                                                    <img className="img-fluid responsiveImg2" src={benefits2} alt="Carousel 1"/>
+                                                    <img className="img-fluid responsiveImg2" src={benefits2New} alt="Carousel 1"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -99,7 +103,7 @@ export const Benefits = () => {
                                                     </p>
                                                 </div>
                                                 <div className="col-md-5 text-center">
-                                                    <img className="img-fluid responsiveImg2" src={benefits1} alt="Carousel 1"/>
+                                                    <img className="img-fluid responsiveImg2" src={benefits3New} alt="Carousel 1"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -117,10 +121,22 @@ export const Benefits = () => {
                                                     </p>
                                                 </div>
                                                 <div className="col-md-5 text-center">
-                                                    <img className="img-fluid responsiveImg2" src={benefits1} alt="Carousel 1"/>
+                                                    <img className="img-fluid responsiveImg2" src={benefits4New} alt="Carousel 1"/>
                                                 </div>
                                             </div>
                                         </div>
+                                        {/* <div className="item item4 cardBenefits">
+                                            <div className="row p-5 right0">
+                                                <div className="col-md-7">
+                                                    <h1 className="benefitTitle traveliColor">
+                                                    </h1>
+                                                    <p className="benefitDesc">
+                                                    </p>
+                                                </div>
+                                                <div className="col-md-5 text-center">
+                                                </div>
+                                            </div>
+                                        </div> */}
                                     </div>
                                 </main>
                             </div>

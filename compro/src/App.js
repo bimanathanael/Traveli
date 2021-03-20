@@ -15,6 +15,7 @@ import { Profile } from './pages/Profile';
 import { ContactUs } from './pages/ContactUs';
 import { Promo } from './pages/Promo';
 import { Login } from './pages/Login';
+import { News } from './pages/News';
 import { JoinUs } from './pages/JoinUs';
 import { Nav } from './components/Nav';
 import { Footer } from './components/Footer'
@@ -33,33 +34,36 @@ function App() {
 
   return (
     <ParallaxProvider >
-        {/* <div  data-scroll-container> */}
-        <Router>
-          <Nav/>
-          <Switch>
-            <Route path="/profile">
-              <Profile />
-            </Route>
-            <Route path="/contactUs">
-              <ContactUs />
-            </Route>
-            <Route path="/promo">
-              <Promo />
-            </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/joinUs">
-              <JoinUs />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-          <Footer/>
-        </Router>
+      {/* <div  data-scroll-container> */}
+      <Router>
+        <Nav/>
+        <Switch>
+          <Route path="/profile">
+            <Profile />
+          </Route>
+          <Route path="/news">
+            <News />
+          </Route>
+          <Route path="/contactUs">
+            <ContactUs />
+          </Route>
+          <Route path="/promo">
+            <Promo />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/joinUs">
+            <JoinUs />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+        <Footer/>
+      </Router>
 
-        {/* </div> */}
+      {/* </div> */}
     </ParallaxProvider>
   );
 }

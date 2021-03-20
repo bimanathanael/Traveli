@@ -2,20 +2,18 @@ $(window).on('load', function() {
   // $('.next').click(function(){ $('.carousel').carousel('next');return false; });
   // $('.prev').click(function(){ $('.carousel').carousel('prev');return false; });  
 
-  $('#exampleModal').modal('show');
-
-  $('#closeModal').click(function(){
-  $('#exampleModal').modal('hide');
-
-  })
+  // $('#exampleModal').modal('show');
+  // $('#closeModal').click(function(){
+  //   $('#exampleModal').modal('hide');
+  // })
 
   const currLoc = window.location.pathname
 
-  console.log(currLoc),"currLoccurrLoc";
+  // console.log(currLoc),"currLoccurrLoc";
   
   $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
-    console.log(scroll, "scroll")
+    // console.log(scroll, "scroll")
     if(scroll > 100){
       $('#mainNavbar').addClass("bg-transBlue").fadeIn()
     }else {
@@ -50,7 +48,7 @@ $(window).on('load', function() {
       const x = e.pageX - slider.offsetLeft;
       const walk = (x - startX) * 1; //scroll-fast
       slider.scrollLeft = scrollLeft - walk;
-      console.log(walk, slider.scrollLeft);
+      // console.log(walk, slider.scrollLeft);
       // checkRadio();
     });
 
@@ -65,13 +63,13 @@ $(window).on('load', function() {
       //   }, 120);
       //   i -= 1
       // }
-      console.log(currSlider, "<currSlider")
+      // console.log(currSlider, "<currSlider")
       if( currSlider < 0 ){
         currSlider += 300
         $(".items").animate({left: currSlider});
       }
       
-      console.log(slider.scrollLeft);
+      // console.log(slider.scrollLeft);
       // checkRadio();
 
       // var currentPositionOfPage = window.scrollX;
@@ -86,14 +84,14 @@ $(window).on('load', function() {
       //   }, 120);
       //   i -= 1
       // }
-      console.log(currSlider, "<currSlider")
+      // console.log(currSlider, "<currSlider")
 
-      if(currSlider > -2200){
+      if(currSlider > -2500){
         currSlider -= 300
         $(".items").animate({left: currSlider});
       }
       
-      console.log(slider.scrollLeft);
+      // console.log(slider.scrollLeft);
       // checkRadio();
     });
 
@@ -134,7 +132,7 @@ $(window).on('load', function() {
 
     // features2
     $(".section2-1").mouseover(function(){
-      console.log("masuk");
+      // console.log("masuk");
       $(".supplier-overview2").addClass("imageSection1");
     });
 

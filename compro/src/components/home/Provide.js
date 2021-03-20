@@ -52,9 +52,7 @@ import agencyImg from '../../assets/images/agencyImg.png';
 import corporateImg from '../../assets/images/corporateImg.png';
 import checklist from '../../assets/images/checklist.png';
 
-import { useEffect, useState } from 'react';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import { useState } from 'react';
 // import ArrowForwardIosOutlinedIcon from '@material-ui/icons/ArrowForwardIosOutlined';
 // import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 // import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
@@ -177,15 +175,15 @@ export const Provide = () => {
             benefits: [
               "Cross Border Inventory",
               "Ekspansi Jaringan",
-              "Multi Member Benefit dan Akses",
+              "Pembayaran Realtime",
               "Customer Care",
-              "Virtual Account",
               "Laporan Penjualan Online",
+              "Virtual Account",
             ],
             conditions: [
-              "Memiliki kredensial untuk produk pariwisata",
               "Mengatur kegiatan para website secara independent",
-              "Menyetujui skema pembagian hasil merchant"
+              "Menyetujui segala persyaratan dan skema bisnis Traveli",
+              "Menyetujui semua persyaratan yang diberikan oleh Parent/Upline",
             ]
           },{
             isActive: false,
@@ -200,13 +198,13 @@ export const Provide = () => {
               "Ekspansi Jaringan",
               "Multi Member Benefit dan Akses",
               "Customer Care",
-              "Virtual Account",
               "Laporan Penjualan Online",
+              "Virtual Account",
             ],
             conditions: [
-              "Memiliki kredensial untuk produk pariwisata",
               "Mengatur kegiatan para website secara independent",
-              "Menyetujui skema pembagian hasil merchant"
+              "Menyetujui segala persyaratan dan skema bisnis Traveli",
+              "Menyetujui semua persyaratan yang diberikan oleh Parent/Upline",
             ]
           },{
             isActive: false,
@@ -646,7 +644,7 @@ export const Provide = () => {
                             </a>
                           </div>
                           <div className="col-md-3 pl-4 ml-3 mb-4">
-                            <h5 className="text-white bold2">
+                            <h5 className="text-white pointMembership">
                               BENEFITS
                             </h5>
                           </div>
@@ -667,7 +665,7 @@ export const Provide = () => {
                             })}
                           </div>
                           <div className="col-md-3 mt-4 pl-4 ml-3">
-                            <h5 className="text-white bold2">
+                            <h5 className="text-white pointMembership">
                               CONDITION
                             </h5>
                           </div>

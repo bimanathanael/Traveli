@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
-
+import { Link } from "react-router-dom";
 
 export const JoinUs = () => {
 
@@ -50,18 +50,22 @@ export const JoinUs = () => {
         <ScrollAnimation animateIn='bounceInLeft'>
           <div className="row d-flex justify-content-center mb-5">
             <div className="col-3 text-center mt-3">
-              <button className="btnOnLogin" 
-                onMouseEnter={ ()=> { setDesc(texts.supplier) }}
-                onMouseLeave={ ()=> { setDesc("") }}>
-                SUPPLIER
-              </button>
+              <a href="http://tstore.traveli.co.id/" target ="__">
+                <button className="btnOnLogin" 
+                  onMouseEnter={ ()=> { setDesc(texts.supplier) }}
+                  onMouseLeave={ ()=> { setDesc("") }}>
+                  SUPPLIER 
+                </button>
+              </a>
             </div>
             <div className="col-3 text-center mt-3">
-              <button className="btnOnLogin"
-              onMouseEnter={ ()=> { setDesc(texts.wholesaler) }}
-              onMouseLeave={ ()=> { setDesc("") }}>
-                WHOLESALER
-              </button>
+              <a href="https://portal.traveli.co.id/signup" target="__">
+                <button className="btnOnLogin"
+                onMouseEnter={ ()=> { setDesc(texts.wholesaler) }}
+                onMouseLeave={ ()=> { setDesc("") }}>
+                  WHOLESALER
+                </button>
+              </a>
             </div>
           </div>
         </ScrollAnimation>

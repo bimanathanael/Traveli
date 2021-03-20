@@ -1,9 +1,9 @@
 import '../assets/css/Nav.css';
 import { Link, useLocation } from "react-router-dom";
-import logo3 from '../assets/images/traveli_white.png'
-import distributorImg from '../assets/images/distributorImg.png'
-import suppImg from '../assets/images/suppImg.png'
-import resellerImg from '../assets/images/resellerImg.png'
+import logo3 from '../assets/images/traveli_white2.png'
+// import distributorImg from '../assets/images/distributorImg.png'
+// import suppImg from '../assets/images/suppImg.png'
+// import resellerImg from '../assets/images/resellerImg.png'
 
 export const Nav = () => {
 
@@ -30,9 +30,11 @@ export const Nav = () => {
   return (
     <>
       <nav className={navbarClass}  id="mainNavbar">
-        <Link className="nav-link logo-link" to="/">
-          <img className="logo" src={logo3}/>
-        </Link>
+        <a href="/">
+          {/* <Link className="nav-link logo-link" to="/"> */}
+            <img className="logo" src={logo3}/>
+          {/* </Link> */}
+        </a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -176,16 +178,21 @@ export const Nav = () => {
                 <a className="dropdown-item" href="#">EN</a>
               </div>
             </li> */}
-            <Link to="/login">
+            {/* <Link to="/login"> */}
+              <a href="/login">
+
               <li className="nav-item text-right">
                 <button type="button" className="btn btn-login">Login</button>
               </li>
-            </Link>
-            <Link to="/joinUs">
-              <li className="nav-item">
-                <button type="button" className="btn btn-join">Join Us</button>
-              </li>
-            </Link>
+              </a>
+            {/* </Link> */}
+            {/* <Link to="/joinUs"> */}
+              <a href="/joinUs">
+                <li className="nav-item">
+                  <button type="button" className="btn btn-join">Join Us</button>
+                </li>
+              </a>
+            {/* </Link> */}
           </ul>
         </div>
       </nav>
