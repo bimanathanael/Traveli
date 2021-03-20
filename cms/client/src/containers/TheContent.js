@@ -15,6 +15,7 @@ import {
   Newsletter,
   PromoDetail,
   Home,
+  NewsletterDetail,
 } from "../pages";
 
 const loading = (
@@ -75,6 +76,13 @@ const TheContent = () => {
               path="/promo/detail"
               name="PromoDetail"
               component={PromoDetail}
+            />
+
+            <ProtectedRouteAfterLogin
+              exact
+              path="/newsletter/detail"
+              name="NewsletterDetail"
+              component={NewsletterDetail}
             />
 
             <ProtectedRouteAfterLogin

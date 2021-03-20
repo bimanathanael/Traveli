@@ -1,16 +1,16 @@
-.button-containerPromo {
+.button-containerNewsletter {
   margin-top: 10px;
   display: flex;
   justify-content: center;
 }
 
-.cards-containerPromo {
+.cards-containerNewsletter {
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
 }
 
-.cardsPromo {
+.cardsNewsletter {
   height: auto;
   display: flex;
   margin: 10px;
@@ -18,7 +18,7 @@
   border-radius: 5px;
   height: 320px;
 }
-.cardPromo {
+.cardNewsletter {
   cursor: pointer;
   display: flex;
   padding: 10px;
@@ -28,70 +28,70 @@
   overflow: hidden;
 }
 
-.card-divImagePromo {
+.card-divImageNewsletter {
   display: flex;
   justify-content: center;
 }
-.card-imagePromo {
+.card-imageNewsletter {
   padding: 0px;
   height: 180px;
-  margin: 0;
   object-fit: cover;
+  margin: 0;
 }
 
-.card-contentPromo {
+.card-contentNewsletter {
   margin: 0;
   padding: 10px;
 }
-.card-titlePromo {
+.card-titleNewsletter {
   margin: 0;
   margin-top: 10px;
   height: 40px;
   color: #2ab9dc;
   font-size: 12px;
 }
-.card-contentsPromo {
+
+.card-contentsNewsletter {
   margin: 0;
   color: #7d7d7d;
   font-size: 10px;
 }
-.card-readmorePromo {
+.card-timeNewsletter {
+  font-size: 9px;
+  margin: 0;
+}
+
+.card-readmoreNewsletter {
   margin: 0;
   color: black;
   text-align: right;
   margin-top: 10px;
   font-size: 8px;
 }
-
-.card-timePromo {
-  font-size: 9px;
-  margin: 0;
-}
-
-.image-divPromo {
+.image-divNewsletter {
   display: flex;
   justify-content: center;
   margin-bottom: 40px;
 }
 
-.image-promo {
+.image-newsletter {
   max-height: 400px;
   max-width: 670px;
 }
 @media only screen and (max-width: 991px) {
-  .image-promo {
+  .image-newsletter {
     max-height: 400px;
     max-width: 440px;
   }
 }
 @media only screen and (max-width: 500px) {
-  .image-promo {
+  .image-newsletter {
     max-height: 400px;
     max-width: 280px;
   }
 }
 
-.button-promo {
+.button-newsletter {
   place-items: center;
   text-align: center;
 }
