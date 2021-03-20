@@ -85,10 +85,11 @@ class PromoController {
         return res.status(404).json({ message: "data not found" });
       } else {
         const update = await PromoModel.updatePromo(req.body, timeInNumber);
+        req.body.time = data.data().time;
+        req.body.timeInNumber = data.data().timeInNumber;
+        req.body.image_path = data.data().image_path;
         return res.status(200).json({ message: req.body });
       }
-
-      return res.status(200).json({ message: req.body });
     } catch (err) {
       return res.status(500).json({ message: err });
     }
