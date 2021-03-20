@@ -6,26 +6,32 @@ export const News = () => {
 
   let newsList = [
     {
+      id: 0,
       img: newsPage1,
       title: "1Traveli expands tax-saving commuter benefits to all it's members and user",
       desc: "1bound of xomponents will help you to prototype design &build much faster bound of xomponents will help you to prototype design &build much faster bound of xomponents will help you to prototype design &build much faster bound of xomponents will help you to prototype design &build much faster"
     },{
+      id: 1,
       img: newsPage3,
       title: "2Traveli expands tax-saving commuter benefits to all it's members and user",
       desc: "2bound of xomponents will help you to prototype design &build much faster bound of xomponents will help you to prototype design &build much faster bound of xomponents will help you to prototype design &build much faster bound of xomponents will help you to prototype design &build much faster"
     },{
+      id: 2,
       img: newsPage3,
       title: "3Traveli expands tax-saving commuter benefits to all it's members and user",
       desc: "3bound of xomponents will help you to prototype design &build much faster bound of xomponents will help you to prototype design &build much faster bound of xomponents will help you to prototype design &build much faster bound of xomponents will help you to prototype design &build much faster"
     },{
+      id: 3,
       img: newsPage3,
       title: "3Traveli expands tax-saving commuter benefits to all it's members and user",
       desc: "3bound of xomponents will help you to prototype design &build much faster bound of xomponents will help you to prototype design &build much faster bound of xomponents will help you to prototype design &build much faster bound of xomponents will help you to prototype design &build much faster"
     },{
+      id: 4,
       img: newsPage2,
       title: "3Traveli expands tax-saving commuter benefits to all it's members and user",
       desc: "3bound of xomponents will help you to prototype design &build much faster bound of xomponents will help you to prototype design &build much faster bound of xomponents will help you to prototype design &build much faster bound of xomponents will help you to prototype design &build much faster"
     },{
+      id: 5,
       img: newsPage2,
       title: "3Traveli expands tax-saving commuter benefits to all it's members and user",
       desc: "3bound of xomponents will help you to prototype design &build much faster bound of xomponents will help you to prototype design &build much faster bound of xomponents will help you to prototype design &build much faster bound of xomponents will help you to prototype design &build much faster"
@@ -59,7 +65,9 @@ export const News = () => {
                   <div className="row text-right mt-5">
                     <div className="col">
                       <p className="readMore">
-                        READ MORE
+                        <a href={ '/news/'+oneNews.id }>
+                          READ MORE
+                        </a>
                       </p>
                     </div>
                   </div>
@@ -79,7 +87,9 @@ export const News = () => {
                     </p>
                     <div className="col-md-12 text-right mt-2">
                       <p className="readMoreBot">
-                        READ MORE
+                        <a href={ '/news/'+oneNews.id }>
+                          READ MORE
+                        </a>
                       </p>
                     </div>
                   </div>

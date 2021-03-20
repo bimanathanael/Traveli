@@ -16,6 +16,7 @@ import { ContactUs } from './pages/ContactUs';
 import { Promo } from './pages/Promo';
 import { Login } from './pages/Login';
 import { News } from './pages/News';
+import { NewsDetails } from './pages/NewsDetails';
 import { JoinUs } from './pages/JoinUs';
 import { Nav } from './components/Nav';
 import { Footer } from './components/Footer'
@@ -40,6 +41,9 @@ function App() {
         <Switch>
           <Route path="/profile">
             <Profile />
+          </Route>
+          <Route path="/news/:id">
+            <NewsDetails />
           </Route>
           <Route path="/news">
             <News />

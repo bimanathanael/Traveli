@@ -1,5 +1,5 @@
 import '../assets/css/Nav.css';
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import logo3 from '../assets/images/traveli_white2.png'
 // import distributorImg from '../assets/images/distributorImg.png'
 // import suppImg from '../assets/images/suppImg.png'
@@ -8,15 +8,15 @@ import logo3 from '../assets/images/traveli_white2.png'
 export const Nav = () => {
 
   const location = useLocation()
-
+  
   let navbarClass = "navbar navbar-expand-lg navbar-light "
   const locationNow = location.pathname
-
+  
   let aboutUsUnderline = false
   let memberUnderline = false
   let memberListUnderline = false
   
-  if ( locationNow == "/profile" || locationNow == "/news" || locationNow == "/contactUs") {
+  if ( locationNow == "/profile" || locationNow == "/news" || locationNow.slice(0,5) === "/news" || locationNow == "/contactUs") {
     aboutUsUnderline = true
     navbarClass += 'navBlue'
   } else if ( locationNow == "/supplierList" || locationNow == "/wholesaler" ) {
