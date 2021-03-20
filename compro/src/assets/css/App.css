@@ -405,23 +405,3 @@ body{
   overflow:hidden;
 }
 
-
-@media (min-width: 300px) and (max-width: 560px) { 
-  .navbar{
-    padding-left: 0%;
-  }
-
-  .logo{
-    width: 50%;
-  }
-
-  .hero-title {
-    font-size: 2.5rem !important;
-    margin-bottom: 4%;
-  }
-
-  .mobile-center{
-    text-align: center;
-  }
-
-}

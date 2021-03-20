@@ -52,9 +52,7 @@ import agencyImg from '../../assets/images/agencyImg.png';
 import corporateImg from '../../assets/images/corporateImg.png';
 import checklist from '../../assets/images/checklist.png';
 
-import { useEffect, useState } from 'react';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import { useState } from 'react';
 // import ArrowForwardIosOutlinedIcon from '@material-ui/icons/ArrowForwardIosOutlined';
 // import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 // import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
@@ -137,7 +135,7 @@ export const Provide = () => {
         ],
       },{
         isActive: false,
-        section: "Wholeseller",
+        section: "Wholesaler",
         availMenu: [
           {
             isActive: true,
@@ -177,15 +175,15 @@ export const Provide = () => {
             benefits: [
               "Cross Border Inventory",
               "Ekspansi Jaringan",
-              "Multi Member Benefit dan Akses",
+              "Pembayaran Realtime",
               "Customer Care",
-              "Virtual Account",
               "Laporan Penjualan Online",
+              "Virtual Account",
             ],
             conditions: [
-              "Memiliki kredensial untuk produk pariwisata",
               "Mengatur kegiatan para website secara independent",
-              "Menyetujui skema pembagian hasil merchant"
+              "Menyetujui segala persyaratan dan skema bisnis Traveli",
+              "Menyetujui semua persyaratan yang diberikan oleh Parent/Upline",
             ]
           },{
             isActive: false,
@@ -200,13 +198,13 @@ export const Provide = () => {
               "Ekspansi Jaringan",
               "Multi Member Benefit dan Akses",
               "Customer Care",
-              "Virtual Account",
               "Laporan Penjualan Online",
+              "Virtual Account",
             ],
             conditions: [
-              "Memiliki kredensial untuk produk pariwisata",
               "Mengatur kegiatan para website secara independent",
-              "Menyetujui skema pembagian hasil merchant"
+              "Menyetujui segala persyaratan dan skema bisnis Traveli",
+              "Menyetujui semua persyaratan yang diberikan oleh Parent/Upline",
             ]
           },{
             isActive: false,
@@ -433,7 +431,7 @@ export const Provide = () => {
           <div className="row">
             <div className="col-md-3 offset-md-1 text-left pl-5">
               <ScrollAnimation animateIn='bounceInLeft' >
-                <p className="headingWhy">
+                <p className="headingWhy mt-5">
                   WHAT WE PROVIDE
                 </p>
               </ScrollAnimation>
@@ -454,8 +452,8 @@ export const Provide = () => {
                 {
                   provideSectionData.map(data => {
                     return (
-                      <div className="col-md-2 mb-3">
-                        <img className="responsiveImg" src={data.isActive == true ? data.iconActive : data.icon}
+                      <div className="col-md-2 mb-3 pr-0">
+                        <img className="icon-provide" src={data.isActive == true ? data.iconActive : data.icon}
                         onClick={ () => clickIcon(data.section)}/>
                       </div>
                     )
@@ -471,7 +469,7 @@ export const Provide = () => {
                   </h3>
                 </div>
                 <div className="col-md-8">
-                  <h4 className="menu-heading">
+                  <h4 className="menu-heading-provide">
                     <ScrollAnimation animateIn='bounceInRight'>
                       {currProvide.heading}
                     </ScrollAnimation>
@@ -492,9 +490,9 @@ export const Provide = () => {
                       <div className="col-3 ml-0 pl-0">
                         <a className="arrow"> <ArrowForwardIosOutlinedIcon/> </a> 
                       </div>
-                        <div className="col btn-blueTraveli">
-                          Try it for Free
-                        </div>
+                      <div className="col btn-font traveliColor">
+                        Try it for Free
+                      </div>
                     </div>
                   </button>
                 </ScrollAnimation>
@@ -509,20 +507,20 @@ export const Provide = () => {
               <div className="col-md-5 offset-md-1 text-left pl-5">
                 <div className="col-md-8 pb-2">
                   <ScrollAnimation animateIn='bounceInLeft' >
-                      <p className="headingMember">
+                      <p className="headingMember mt-5">
                         TRAVELI MEMBERSHIP
                       </p>
                   </ScrollAnimation>
                 </div>
                   <ScrollAnimation animateIn='bounceInLeft' >
                     <div className="row mt-5">
-                      <div className="col-md-5 mt-5 pl-5">
+                      <div className="col-md-6 mt-5">
                         {
                           membershipSectionData.map(data => {
                             return (
                                 data.isActive == true ? 
                                   <div className="row mb-4">
-                                    <div className="col-md-1 pt-4">
+                                    <div className="col-md-1 padding-7">
                                       <img src={arrowTraveli}/>
                                     </div>
                                     <div className="col-md-9 pl-4">
@@ -550,10 +548,10 @@ export const Provide = () => {
                               return(
                                 data.isActive == true ? 
                                   <div className="row subMenu mt-2">
-                                    <div className="col-md-1 offset-md-2">
-                                      <img src={radioSelected}/>
+                                    <div className="col-md-3 offset-md-2 text-center">
+                                      <img className="radio" src={radioSelected}/>
                                     </div>
-                                    <div className="col-md-8 pl-4">
+                                    <div className="col-md-7 pl-4">
                                       <p className="sub-menu sub-menu-active" onClick={() => changeSubMenu(data.section) } > 
                                         { data.section } 
                                       </p>
@@ -561,10 +559,10 @@ export const Provide = () => {
                                   </div>
                                 :
                                   <div className="row subMenu mt-2">
-                                    <div className="col-md-1 offset-md-2">
-                                      <img src={radio}/>
+                                    <div className="col-md-3 offset-md-2 text-center">
+                                      <img className="radio" src={radio}/>
                                     </div>
-                                    <div className="col-md-8 pl-4">
+                                    <div className="col-md-7 pl-4">
                                       <p className="sub-menu" onClick={() => changeSubMenu(data.section) } > 
                                         { data.section } 
                                       </p>
@@ -591,8 +589,8 @@ export const Provide = () => {
                 </ScrollAnimation>
                 <ScrollAnimation animateIn="fadeIn">
                   <div className="row">
-                    <div className="col-md-3 offset-md-8">
-                      <button type="button" className="ml-3 btn btn-traveli btn-v7-hero">
+                    <div className="col-md-3 offset-md-7">
+                      {/* <button type="button" className="ml-3 btn btn-traveli btn-v7-hero">
                         <div className="row">
                           <div className="col-3 ml-0 pl-0">
                             <a className="arrow"> <ArrowForwardIosOutlinedIcon/> </a> 
@@ -601,7 +599,7 @@ export const Provide = () => {
                             Join as {currMembership.section}
                           </div>
                         </div>
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 </ScrollAnimation>
@@ -636,17 +634,17 @@ export const Provide = () => {
                             </h3>
                           </div>
                           <div className="col-md-11 ml-4">
-                            <p className="text-white f-14">
+                            <p className="text-white oneRem">
                               {data.desc}
                             </p>
                           </div>
                           <div className="col-md-11 ml-4 mb-5 mt-4">
                             <a className="text-white bold" href="#">
-                              Learn more >>
+                              {"Learn more >>"}
                             </a>
                           </div>
                           <div className="col-md-3 pl-4 ml-3 mb-4">
-                            <h5 className="text-white bold2">
+                            <h5 className="text-white pointMembership">
                               BENEFITS
                             </h5>
                           </div>
@@ -667,7 +665,7 @@ export const Provide = () => {
                             })}
                           </div>
                           <div className="col-md-3 mt-4 pl-4 ml-3">
-                            <h5 className="text-white bold2">
+                            <h5 className="text-white pointMembership">
                               CONDITION
                             </h5>
                           </div>

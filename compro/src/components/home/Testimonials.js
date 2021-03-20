@@ -23,7 +23,7 @@ export const Testimonials = () => {
     
     return (
         <>
-            <div className="container-testimonials">
+            <div className="mt-7">
                 <ScrollAnimation animateIn="fadeIn">
                     <div className="row">
                         <div className="col text-center">
@@ -35,6 +35,10 @@ export const Testimonials = () => {
                             </p>
                         </div>
                     </div>
+                </ScrollAnimation>
+            </div>
+            <div className="container-testimonials">
+                <ScrollAnimation animateIn="fadeIn">
                     <div className="row d-flex justify-content-center">
                         <div className="col-md-4 cardTesti">
                             <div className="row">
@@ -42,7 +46,7 @@ export const Testimonials = () => {
                                     <img className="quote" src={quote}/>
                                 </div>
                                 <div className="col-md-12 mt-5 f-15">
-                                    <p>
+                                    <p className="oneRem">
                                         "i shall see the fae of mars,
                                         i shall see the fae of mars
                                         i shall see the fae of mars,
@@ -52,13 +56,13 @@ export const Testimonials = () => {
                                 <div className="col-md-12 mt-3">
                                     <div className="row">
                                         <div className="col-md-3">
-                                            <img src={people1}/>
+                                            <img className="w100" src={people1}/>
                                         </div>
-                                        <div className="col-md-9">
-                                            <h2>
+                                        <div className="col-md-9 ">
+                                            <h2 className="oneHalfRem">
                                                 Nout Goldstein
                                             </h2>
-                                            <p className="f-13">
+                                            <p className="oneRem">
                                                 Apple Manager
                                             </p>
                                         </div>
@@ -72,7 +76,7 @@ export const Testimonials = () => {
                                     <img className="quote" src={quote}/>
                                 </div>
                                 <div className="col-md-12 mt-5 f-15">
-                                    <p>
+                                    <p className="oneRem">
                                         "i shall see the fae of mars,
                                         i shall see the fae of mars
                                         i shall see the fae of mars,
@@ -82,13 +86,13 @@ export const Testimonials = () => {
                                 <div className="col-md-12 mt-3">
                                     <div className="row">
                                         <div className="col-md-3">
-                                            <img src={people2}/>
+                                            <img className="w100" src={people2}/>
                                         </div>
-                                        <div className="col-md-9">
-                                            <h2>
+                                        <div className="col-md-9 ">
+                                            <h2 className="oneHalfRem">
                                                 Nout Goldstein
                                             </h2>
-                                            <p className="f-13">
+                                            <p className="oneRem">
                                                 Apple Manager
                                             </p>
                                         </div>

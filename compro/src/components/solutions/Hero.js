@@ -1,4 +1,4 @@
-import '../../assets/css/Home.css'
+
 import ArrowForwardIosOutlinedIcon from '@material-ui/icons/ArrowForwardIosOutlined';
 import playvideo from '../../assets/images/playvideo.png'
 

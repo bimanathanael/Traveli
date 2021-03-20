@@ -1,5 +1,9 @@
 import benefits1 from '../../assets/images/benefits1.png';
+import benefits1New from '../../assets/images/benefits1New.gif';
 import benefits2 from '../../assets/images/benefits2.png';
+import benefits2New from '../../assets/images/benefits2New.gif';
+import benefits3New from '../../assets/images/benefits3New.gif';
+import benefits4New from '../../assets/images/benefits4New.gif';
 import { useEffect, useState } from 'react';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
@@ -7,7 +11,8 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 // import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 // import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
 import ScrollAnimation from 'react-animate-on-scroll';
-
+import prev from '../../assets/images/prev.png';
+import next from '../../assets/images/next.png';
 
 
 export const Benefits = () => {
@@ -26,16 +31,20 @@ export const Benefits = () => {
         <>
             <div className="container-benefits">
                 <div className="row mb-5">
-                    <div className="col text-center">
+                    <div className="col-md-5 text-center">
                         <ScrollAnimation animateIn="bounceInLeft" animateOut='bounceOutLeft'>
                             <p className="headingBenefit">
                                 KEY BENEFITS
                             </p>
                         </ScrollAnimation>
                     </div>
-                    <div className="col-md-3 offset-md-5">
-                        <button className="btnArrow prev"> <ArrowBackIcon/> </button>
-                        <button className="btnArrow next ml-4"> <ArrowForwardIcon/>  </button>
+                </div>
+                <div className="row">
+                    <div className="col-md-5 offset-md-1 pl-5">
+                        <img className="btnArrow prev"  src={prev} />
+                        <img className="btnArrow next ml-4" src={next} />
+                        {/* <button className="btnArrow prev"> <ArrowBackIcon/> </button>
+                        <button className="btnArrow next ml-4"> <ArrowForwardIcon/>  </button> */}
                     </div>
                 </div>
                 <ScrollAnimation animateIn="bounceInRight" animateOut='bounceOutRight'>
@@ -48,7 +57,7 @@ export const Benefits = () => {
                                         <div className="item item0">
                                         </div>
                                         <div className="item item1 cardBenefits">
-                                            <div className="row p-5">
+                                            <div className="row p-5 right0">
                                                 <div className="col-md-7">
                                                     <h1 className="benefitTitle traveliColor">
                                                         PEMBAYARAN REAL-TIME
@@ -59,13 +68,13 @@ export const Benefits = () => {
                                                         Kalau bisa langsung, buar apa menunggu?
                                                     </p>
                                                 </div>
-                                                <div className="col-md-5">
-                                                    <img className="img-fluid responsiveImg" src={benefits1} alt="Carousel 1"/>
+                                                <div className="col-md-5 text-center">
+                                                    <img className="img-fluid responsiveImg2" src={benefits1New} alt="Carousel 1"/>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="item item2 cardBenefits">
-                                            <div className="row p-5">
+                                            <div className="row p-5 right0">
                                                 <div className="col-md-7">
                                                     <h1 className="benefitTitle traveliColor">
                                                         KUSTOMISASI WEBSITE SESUAI KEINGINAN ANDA
@@ -76,13 +85,13 @@ export const Benefits = () => {
                                                         dengan mudah
                                                     </p>
                                                 </div>
-                                                <div className="col-md-5">
-                                                    <img className="img-fluid responsiveImg" src={benefits2} alt="Carousel 1"/>
+                                                <div className="col-md-5 text-center">
+                                                    <img className="img-fluid responsiveImg2" src={benefits2New} alt="Carousel 1"/>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="item item3 cardBenefits">
-                                            <div className="row p-5">
+                                            <div className="row p-5 right0">
                                                 <div className="col-md-7">
                                                     <h1 className="benefitTitle traveliColor">
                                                         TANPA BIAYA DI MUKA ATAU INVESTASI APAPUN
@@ -93,13 +102,13 @@ export const Benefits = () => {
                                                         dapat bertransaksi
                                                     </p>
                                                 </div>
-                                                <div className="col-md-5">
-                                                    <img className="img-fluid responsiveImg" src={benefits1} alt="Carousel 1"/>
+                                                <div className="col-md-5 text-center">
+                                                    <img className="img-fluid responsiveImg2" src={benefits3New} alt="Carousel 1"/>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="item item4 cardBenefits">
-                                            <div className="row p-5">
+                                            <div className="row p-5 right0">
                                                 <div className="col-md-7">
                                                     <h1 className="benefitTitle traveliColor">
                                                         PERLUAS JARINGAN BISNIS ANDA
@@ -111,11 +120,23 @@ export const Benefits = () => {
                                                         dalam 1 tempat.
                                                     </p>
                                                 </div>
-                                                <div className="col-md-5">
-                                                    <img className="img-fluid responsiveImg" src={benefits1} alt="Carousel 1"/>
+                                                <div className="col-md-5 text-center">
+                                                    <img className="img-fluid responsiveImg2" src={benefits4New} alt="Carousel 1"/>
                                                 </div>
                                             </div>
                                         </div>
+                                        {/* <div className="item item4 cardBenefits">
+                                            <div className="row p-5 right0">
+                                                <div className="col-md-7">
+                                                    <h1 className="benefitTitle traveliColor">
+                                                    </h1>
+                                                    <p className="benefitDesc">
+                                                    </p>
+                                                </div>
+                                                <div className="col-md-5 text-center">
+                                                </div>
+                                            </div>
+                                        </div> */}
                                     </div>
                                 </main>
                             </div>

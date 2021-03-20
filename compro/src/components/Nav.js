@@ -1,39 +1,56 @@
-import { Link, useLocation } from "react-router-dom";
-import logo3 from '../assets/images/traveli_white.png'
-import distributorImg from '../assets/images/distributorImg.png'
-import supplierImg from '../assets/images/supplierImg.png'
-import resellerImg from '../assets/images/resellerImg.png'
 import '../assets/css/Nav.css';
+import { Link, useLocation } from "react-router-dom";
+import logo3 from '../assets/images/traveli_white2.png'
+// import distributorImg from '../assets/images/distributorImg.png'
+// import suppImg from '../assets/images/suppImg.png'
+// import resellerImg from '../assets/images/resellerImg.png'
 
 export const Nav = () => {
 
   const location = useLocation()
 
-  const navbarClass = "navbar navbar-expand-lg navbar-light"
+  let navbarClass = "navbar navbar-expand-lg navbar-light "
   const locationNow = location.pathname
+
+  let aboutUsUnderline = false
+  let memberUnderline = false
+  let memberListUnderline = false
+  
+  if ( locationNow == "/profile" || locationNow == "/news" || locationNow == "/contactUs") {
+    aboutUsUnderline = true
+    navbarClass += 'navBlue'
+  } else if ( locationNow == "/supplierList" || locationNow == "/wholesaler" ) {
+    memberListUnderline = true
+  } else if ( locationNow == "/supplier" || locationNow == "/wholesalerMember" || locationNow == "/reseller") {
+    memberUnderline = true
+  } else if (locationNow == '/promo' || locationNow == '/login' || locationNow == '/joinUs' ){
+    navbarClass += 'navBlue'
+  }
 
   return (
     <>
       <nav className={navbarClass}  id="mainNavbar">
-        <Link className="nav-link logo-link" to="/">
-          <img className="logo" src={logo3}/>
-        </Link>
+        <a href="/">
+          {/* <Link className="nav-link logo-link" to="/"> */}
+            <img className="logo" src={logo3}/>
+          {/* </Link> */}
+        </a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
 
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0 ml-4">
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to="/howitworks">
-                <a className={`nav-link text-white ${locationNow == "/howitworks" ? "yellow-underline" : ""} `} >
+                <a className={`mr-3 nav-link text-white ${locationNow == "/howitworks" ? "yellow-underline" : ""} `} id="howItWorks">
                   How It Works
                 </a>
               </Link>
-              {/* <a className="nav-link text-white" href="#">How It Works <span className="sr-only">(current)</span></a> */}
             </li>
             <li className="nav-item dropdown ml-3 members-dropdown supplier-menu">
-              <a className="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a className={`nav-link text-white dropdown-toggle ${memberUnderline ? "yellow-underline" : ""}`} 
+               href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Members
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -41,12 +58,12 @@ export const Nav = () => {
                   <div className="col-md-4">
                     <div className="row">
                       <div className="col-md-8">
-                        <a className="dropdown-item" href="#">SUPPLIER</a>
+                        <a className="dropdown-item menu-heading" href="#">SUPPLIER</a>
                       </div>
                     </div>
                     <div className="row">
                       <div className="col-md-5 p-0">
-                        <img className="membersImg" src={supplierImg}/>
+                        <img className="membersImg" src={suppImg}/>
                       </div>
                       <div className="col-md-7 p-0">
                         <p>
@@ -59,7 +76,7 @@ export const Nav = () => {
                   <div className="col-md-4 borderLeft">
                     <div className="row">
                       <div className="col-md-8">
-                        <a className="dropdown-item menu-heading" href="#">WHOLESELLER</a>
+                        <a className="dropdown-item menu-heading" href="#">WHOLESALER</a>
                       </div>
                     </div>
                     <div className="row">
@@ -96,7 +113,8 @@ export const Nav = () => {
               </div>
             </li>
             <li className="nav-item dropdown ml-3 member-list-dropdown">
-              <a className="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a className={`nav-link text-white dropdown-toggle ${memberListUnderline ? "yellow-underline" : ""}`} 
+              href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Member List
               </a>
               <div className="dropdown-menu p23" aria-labelledby="navbarDropdown">
@@ -133,18 +151,25 @@ export const Nav = () => {
               </Link>
             </li>
             <li className="nav-item dropdown ml-2">
-              <a className="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a className={`nav-link text-white dropdown-toggle ${aboutUsUnderline ? "yellow-underline" : ""}`} 
+              href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 About Us
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item" href="#">Profile</a>
-                <a className="dropdown-item" href="#">News and Updates</a>
-                <a className="dropdown-item" href="#">Contact Us</a>
+                <Link to="/profile">
+                  <a className="dropdown-item" href="#">Profile</a>
+                </Link>
+                <Link to="/news">
+                  <a className="dropdown-item" href="#">News and Updates</a>
+                </Link>
+                <Link to="/contactUs">
+                  <a className="dropdown-item" href="#">Contact Us</a>
+                </Link>
               </div>
-            </li>
+            </li> */}
           </ul>
           <ul className="navbar-nav my-2 my-lg-0 pr-5 pt-2">
-            <li className="nav-item dropdown space-left">
+            {/* <li className="nav-item dropdown space-left text-right">
               <a className="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 ID
               </a>
@@ -152,13 +177,22 @@ export const Nav = () => {
                 <a className="dropdown-item" href="#">ID</a>
                 <a className="dropdown-item" href="#">EN</a>
               </div>
-            </li>
-            <li className="nav-item w-100">
-              <button type="button" className="btn btn-login">Login</button>
-            </li>
-            <li className="nav-item w-100">
-              <button type="button" className="btn btn-join">Join Us</button>
-            </li>
+            </li> */}
+            {/* <Link to="/login"> */}
+              <a href="/login">
+
+              <li className="nav-item text-right">
+                <button type="button" className="btn btn-login">Login</button>
+              </li>
+              </a>
+            {/* </Link> */}
+            {/* <Link to="/joinUs"> */}
+              <a href="/joinUs">
+                <li className="nav-item">
+                  <button type="button" className="btn btn-join">Join Us</button>
+                </li>
+              </a>
+            {/* </Link> */}
           </ul>
         </div>
       </nav>

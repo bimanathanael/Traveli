@@ -17,24 +17,9 @@ export const Footer = () => {
   return (
     <>
       <div className="container-footer text-white">
-        <div className="row">
+        <div className="row oneRem">
           <div className="col-md-3">
             <img className="w70" src={traveliFooter}/>
-            <div className="row">
-              <div className="col-md-3">
-                <img className="w100" src={whatsapp}/>
-              </div>
-              <div className="col-md-9">
-                <div className="col-md-12">
-                  Whatsapp
-                </div>
-                <div className="col-md-12">
-                  <b>
-                    0858 1150 0888
-                  </b>
-                </div>
-              </div>
-            </div>
             <div className="row">
               <div className="col-md-3">
                 <img className="w100" src={email}/>
@@ -52,15 +37,30 @@ export const Footer = () => {
             </div>
             <div className="row">
               <div className="col-md-3">
-                <img className="w100" src={callCenter}/>
+                {/* <img className="w100" src={whatsapp}/> */}
+              </div>
+              <div className="col-md-9">
+                <div className="col-md-12">
+                  {/* Whatsapp */}
+                </div>
+                <div className="col-md-12">
+                  <b>
+                    {/* 0858 1150 0888 */}
+                  </b>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-md-3">
+                {/* <img className="w100" src={callCenter}/> */}
               </div>
               <div className="col-md-9">
                 <div className="col-md-12 text-white">
-                  Call Center
+                  {/* Call Center */}
                 </div>
                 <div className="col-md-12 text-white">
                   <b>
-                    021-71793669
+                    {/* 021-71793669 */}
                   </b>
                 </div>
               </div>
@@ -107,7 +107,7 @@ export const Footer = () => {
             </div>
             <div className="row d-flex pr-7 mt-4">
               <div className="col-md-12 text-center">
-                <h4>
+                <h4 className="oneRem">
                   Follow Us
                 </h4>
               </div>
@@ -130,7 +130,7 @@ export const Footer = () => {
               <br/>
               DKI Jakarta 12160
               <br/>
-              Tel. 021-71793669
+              {/* Tel. 021-71793669 */}
             </p>
             <div className="col mt-4 pr-0 pt-4">
               <img className="radius-1 ml-2 mb-2 w50" src={appStore}/>
