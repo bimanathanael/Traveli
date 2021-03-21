@@ -1,7 +1,6 @@
 
 import { useState } from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
-import { Link } from "react-router-dom";
 
 export const JoinUs = () => {
 
