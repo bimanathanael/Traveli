@@ -149,10 +149,7 @@ const Newsletter = ({ data }) => {
                 </div>
                 <div className="card-contentNewsletter container">
                   <div className="card-timeNewsletter">
-                    <p style={{ margin: "0" }}>
-                      <AiOutlineCalendar />{" "}
-                      {result.time.split(" ").splice(1, 3).join(" ")}
-                    </p>
+                    <p style={{ margin: "0" }}>{result.time}</p>
                   </div>
                   <div className="card-titleNewsletter">
                     {result.title.length < 50 ? (

@@ -178,9 +178,7 @@ const PromoDetail = ({ data }) => {
         </div>
         <div className="container content-promo">
           <div className="date-detailPromo">
-            <p>
-              <AiOutlineCalendar /> {data.time.split(" ").slice(1, 4).join(" ")}
-            </p>
+            <p>{data.time}</p>
           </div>
           <div className="title-detailPromo">
             <h1>{data.title}</h1>

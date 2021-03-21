@@ -150,10 +150,7 @@ const Promo = ({ data }) => {
                 </div>
                 <div className="card-contentPromo container">
                   <div className="card-timePromo">
-                    <p style={{ margin: "0" }}>
-                      <AiOutlineCalendar />{" "}
-                      {result.time.split(" ").splice(1, 3).join(" ")}
-                    </p>
+                    <p style={{ margin: "0" }}>{result.time}</p>
                   </div>
                   <div className="card-titlePromo">
                     {result.title.length < 50 ? (

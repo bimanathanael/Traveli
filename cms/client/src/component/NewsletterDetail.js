@@ -187,9 +187,7 @@ const NewsletterDetail = ({ data }) => {
         </div>
         <div className="container content-newsletter">
           <div className="date-detailNewsletter">
-            <p>
-              <AiOutlineCalendar /> {data.time.split(" ").slice(1, 4).join(" ")}
-            </p>
+            <p>{data.time}</p>
           </div>
           <div className="title-detailNewsletter">
             <h2>{data.title}</h2>
