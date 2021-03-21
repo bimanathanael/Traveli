@@ -37,11 +37,28 @@ class NewsletterController {
 
   static async addData(req, res) {
     try {
+      let date = new Date();
+      const listMonth = [
+        "Januari",
+        "Februari",
+        "Maret",
+        "April",
+        "Mei",
+        "Juni",
+        "Juli",
+        "Agustus",
+        "September",
+        "Oktober",
+        "November",
+        "Desember",
+      ];
       let title = req.body.title;
       let image_url = req.body.image_url;
       let image_path = req.body.image_path;
       let content = req.body.content;
-      const time = Date().split(" ").splice(0, 5).join(" ");
+      const time = `${date.getDate()} ${
+        listMonth[date.getMonth()]
+      } ${date.getFullYear()}`;
       const timeInNumber = Date.now();
 
       const dataFromDB = await NewsletterModel.getAll();
