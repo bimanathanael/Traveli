@@ -9,9 +9,11 @@ class NewsletterModel {
   static getOne(id) {
     return newsletterCollection.doc(id).get();
   }
+
   static addNewsletter(data, time) {
     return newsletterCollection.doc(time).set(data);
   }
+
   static deleteNewsletter(time) {
     return newsletterCollection.doc(time).delete();
   }

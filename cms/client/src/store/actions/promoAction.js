@@ -1,8 +1,9 @@
 import Swal from "sweetalert2";
 import { Redirect } from "react-router-dom";
+
 export const getPromo = () => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/promo`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/promo`, {
       headers: { access_token: localStorage.getItem("access_token") },
     })
       .then((resp) => {
@@ -20,9 +21,9 @@ export const getPromo = () => {
   };
 };
 
-export const getOnePromo = (titleId) => {
+export const getOnePromo = (timeInNumber) => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/promo/${titleId}`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/promo/${timeInNumber}`, {
       headers: { access_token: localStorage.getItem("access_token") },
     })
       .then((resp) => {
@@ -42,7 +43,7 @@ export const getOnePromo = (titleId) => {
 
 export const addPromo = (data, setShow) => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/promo`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/promo`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -68,7 +69,6 @@ export const addPromo = (data, setShow) => {
         Swal.fire({ icon: "success", text: "Success add new Promo!" });
       })
       .catch((err) => {
-        console.log("SDSD");
         err.text().then((errorMessage) => {
           Swal.fire({ icon: "error", text: JSON.parse(errorMessage).message });
         });
@@ -78,7 +78,7 @@ export const addPromo = (data, setShow) => {
 
 export const deletePromo = (time, history) => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/promo/${time}`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/promo/${time}`, {
       method: "DELETE",
       headers: {
         access_token: localStorage.getItem("access_token"),
@@ -109,17 +109,9 @@ export const deletePromo = (time, history) => {
   };
 };
 
-export const updatePromo = (
-  dataPromo,
-  time,
-  setShow,
-  history,
-  setOldPassword,
-  setNewPassword,
-  setConfirmPassword
-) => {
+export const updatePromo = (dataPromo, time, setShow, history) => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/promo/${time}`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/promo/${time}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -137,47 +129,13 @@ export const updatePromo = (
       })
       .then(({ message }) => {
         setShow(false);
+
         dispatch({
           type: "UPDATE_PROMO",
           payload: message,
         });
-
         Swal.fire({ icon: "success", text: "Success update promo!" });
-      })
-      .catch((err) => {
-        err.text().then((errorMessage) => {
-          if (JSON.parse(errorMessage).message) {
-            Swal.fire({
-              icon: "error",
-              text: JSON.parse(errorMessage).message,
-            });
-          }
-        });
-      });
-  };
-};
-
-export const uploadImages = (data) => {
-  console.log(data, "cek data apa aja");
-  return (dispatch, getState) => {
-    fetch(`http://localhost:3000/promo/addImage/new`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        access_token: localStorage.getItem("access_token"),
-      },
-      body: JSON.stringify(data),
-    })
-      .then((resp) => {
-        if (resp.ok) {
-          return resp.json();
-        } else {
-          throw resp;
-        }
-      })
-      .then(({ message }) => {
-        console.log(message, "cek message");
+        history.push("/promo");
       })
       .catch((err) => {
         err.text().then((errorMessage) => {

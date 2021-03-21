@@ -33,13 +33,13 @@ let _nav = [
       },
       {
         _tag: "CSidebarNavItem",
-        name: "Members List Supplier",
+        name: "Member List Supplier",
         to: "/cms/id/MembersListSupplier",
       },
       {
         _tag: "CSidebarNavItem",
-        name: "Members List Distributor",
-        to: "/cms/id/MembersListDistributor",
+        name: "Member List Wholesaler",
+        to: "/cms/id/MembersListWholesaler",
       },
       {
         _tag: "CSidebarNavItem",
@@ -90,13 +90,13 @@ let _nav = [
       },
       {
         _tag: "CSidebarNavItem",
-        name: "Members List Supplier",
+        name: "Member List Supplier",
         to: "/cms/en/MembersListSupplier",
       },
       {
         _tag: "CSidebarNavItem",
-        name: "Members List Distributor",
-        to: "/cms/en/MembersListDistributor",
+        name: "Member List Wholesaler",
+        to: "/cms/en/MembersListWholesaler",
       },
       {
         _tag: "CSidebarNavItem",

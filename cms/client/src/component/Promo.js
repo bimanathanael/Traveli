@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import "./promo.css";
-import { AiOutlineCalendar } from "react-icons/ai";
+// import { AiOutlineCalendar } from "react-icons/ai";
 import { useHistory } from "react-router-dom";
 import { Button, Modal, Form } from "react-bootstrap";
 import { addPromo } from "../store/actions/promoAction";
 import { app } from "../base";
 import { useDispatch } from "react-redux";
+// import parserText from "html-react-parser";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 const Promo = ({ data }) => {
@@ -59,6 +60,7 @@ const Promo = ({ data }) => {
       };
       dispatch(addPromo(newPromo, setShow));
       setTitle("");
+      setImageUrl("");
       setImagePath("");
       setContent("");
     }
@@ -71,7 +73,7 @@ const Promo = ({ data }) => {
 
   return (
     <div>
-      <div className="button-container">
+      <div className="button-containerPromo">
         <Button variant="primary" onClick={handleShow}>
           Add
         </Button>
@@ -94,14 +96,12 @@ const Promo = ({ data }) => {
               <Form.Group>
                 <label htmlFor="container-image">Images</label>
                 {imageUrl && (
-                  <div className="container-imagePromo">
-                    <div className="container-formPromo">
-                      <div className="wrapperPromo">
-                        <div className="image">
-                          <img src={imageUrl} alt="" />
-                        </div>
-                      </div>
-                    </div>
+                  <div className="image-divPromo ">
+                    <img
+                      src={imageUrl}
+                      className="image-promo shadow"
+                      alt="detail"
+                    />
                   </div>
                 )}
 
@@ -113,11 +113,6 @@ const Promo = ({ data }) => {
                     style={{ width: "200px", cursor: "pointer" }}
                     onChange={(e) => imageHandler(e)}
                   />
-                  {/* <div id="custom-btnPromo">
-                    <label htmlFor="input" id="text-custom-btnPromo">
-                      Add Image
-                    </label>
-                  </div> */}
                 </div>
               </Form.Group>
               <Form.Group>
@@ -136,37 +131,49 @@ const Promo = ({ data }) => {
           </Form>
         </Modal>
       </div>
-      <div className="cards-container">
+      <div className="cards-containerPromo container">
         {data.map((result, idx) => (
           <div key={idx}>
-            <div className="cards">
+            <div className="cardsPromo shadow">
               <div
-                className="card"
+                className="cardPromo container "
                 onClick={() =>
                   moveToPromoDetail(result.timeInNumber, result.title)
                 }
               >
-                <div>
+                <div className="card-divImagePromo ">
                   <img
-                    className="card-image"
+                    className="card-imagePromo shadow container rounded "
                     src={result.image_url}
                     alt="promo-images"
                   />
                 </div>
-                <div className="card-content">
-                  <div className="card-title">
-                    {result.title.length < 45 ? (
-                      <p>{result.title}</p>
+                <div className="card-contentPromo container">
+                  <div className="card-timePromo">
+                    <p style={{ margin: "0" }}>{result.time}</p>
+                  </div>
+                  <div className="card-titlePromo">
+                    {result.title.length < 50 ? (
+                      <p style={{ margin: "0" }}>{result.title}</p>
                     ) : (
-                      <p>{result.title.substring(0, 45) + "..."}</p>
+                      <p style={{ margin: "8px 0 8px 0" }}>
+                        {result.title.substring(0, 50) + "..."}
+                      </p>
                     )}
                   </div>
-                  <div className="card-time">
-                    <p>
-                      <AiOutlineCalendar />
-                      {result.time.split(" ").splice(1, 3).join(" ")}
+                  <div className="card-contentsPromo">
+                    <p style={{ margin: "0" }}>
+                      {result.content
+                        .split("<p>")
+                        .join(" ")
+                        .split("</p>")
+                        .join(" ")
+                        .substring(0, 60) + "..."}
                     </p>
                   </div>
+                  {/* <div className="card-readmorePromo">
+                    <p>READ MORE</p>
+                  </div> */}
                 </div>
               </div>
             </div>

@@ -1,12 +1,12 @@
-.containers {
-  display: table;
+.containers-promoDetail {
+  width: 50%;
   margin: 0 auto 40px auto;
-  border-radius: 40px;
 }
 
 .button-container {
-  display: table;
-  margin: 0 auto 20px auto;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 40px auto;
 }
 
 .button-item {
@@ -18,21 +18,37 @@
   border: black;
   max-width: 700px;
 }
-.image-div {
-  text-align: center;
-}
-.image-detail {
-  max-width: 700px;
+
+.image-divDetailPromo {
+  display: flex;
+  justify-content: center;
 }
 
-.title-detail {
-  color: black;
+.image-detailPromo {
+  border-radius: 20px 20px 0px 0px;
+  height: 350px;
+  object-fit: cover;
+}
+
+.date-detailPromo {
+}
+.title-detailPromo {
+  color: #2ab9dc;
   font-weight: bold;
+  text-align: left;
 }
 
-.content-container {
-  background-color: white;
-  padding: 20px;
+.content-promo {
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 80px;
+  padding-top: 20px;
+}
+
+.content-titlePromo {
+  color: #7d7d7d;
+  text-align: left;
+  font-size: 14px;
 }
 
 .time-detail {

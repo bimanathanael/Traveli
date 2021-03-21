@@ -59,13 +59,22 @@ const UpdateForm = ({ setDataForm, dataForm, data, language }) => {
                   <Form.Label style={{ textAlign: "left" }}>
                     {value[0].split(/(?=[A-Z])/).join(" ")}
                   </Form.Label>
-                  <Form.Control
-                    type="text"
-                    onChange={(e) => dataFormHandler(e)}
-                    name={value[0]}
-                    placeholder="Enter Header"
-                    defaultValue={value[1]}
-                  />
+                  {value[1].length < 120 ? (
+                    <Form.Control
+                      type="text"
+                      onChange={(e) => dataFormHandler(e)}
+                      name={value[0]}
+                      defaultValue={value[1]}
+                    />
+                  ) : (
+                    <Form.Control
+                      as="textarea"
+                      onChange={(e) => dataFormHandler(e)}
+                      name={value[0]}
+                      defaultValue={value[1]}
+                      rows={3}
+                    />
+                  )}
                 </Form.Group>
               </div>
             ))}

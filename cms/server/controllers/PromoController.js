@@ -37,11 +37,28 @@ class PromoController {
 
   static async addData(req, res) {
     try {
+      let date = new Date();
+      const listMonth = [
+        "Januari",
+        "Februari",
+        "Maret",
+        "April",
+        "Mei",
+        "Juni",
+        "Juli",
+        "Agustus",
+        "September",
+        "Oktober",
+        "November",
+        "Desember",
+      ];
       let title = req.body.title;
       let image_url = req.body.image_url;
       let image_path = req.body.image_path;
       let content = req.body.content;
-      const time = Date().split(" ").splice(0, 5).join(" ");
+      const time = `${date.getDate()} ${
+        listMonth[date.getMonth()]
+      } ${date.getFullYear()}`;
       const timeInNumber = Date.now();
 
       const dataFromDB = await PromoModel.getAll();
@@ -85,10 +102,11 @@ class PromoController {
         return res.status(404).json({ message: "data not found" });
       } else {
         const update = await PromoModel.updatePromo(req.body, timeInNumber);
+        req.body.time = data.data().time;
+        req.body.timeInNumber = data.data().timeInNumber;
+        req.body.image_path = data.data().image_path;
         return res.status(200).json({ message: req.body });
       }
-
-      return res.status(200).json({ message: req.body });
     } catch (err) {
       return res.status(500).json({ message: err });
     }

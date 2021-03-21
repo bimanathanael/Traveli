@@ -23,9 +23,7 @@ function promoReducer(state = initialState, action) {
       return {
         ...state,
         promo: state.promo
-          .filter(
-            (data) => data.title !== action.payload.title.split("-").join(" ")
-          )
+          .filter((data) => data.timeInNumber !== action.payload.timeInNumber)
           .concat(action.payload),
         promoDetail: action.payload,
       };

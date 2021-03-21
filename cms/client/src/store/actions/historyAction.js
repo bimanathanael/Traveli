@@ -1,7 +1,7 @@
 import { Redirect } from "react-router-dom";
 export const getHistory = () => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/history/`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/history/`, {
       headers: { access_token: localStorage.getItem("access_token") },
     })
       .then((resp) => {

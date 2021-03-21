@@ -8,7 +8,7 @@ const Swal = require("sweetalert2");
 
 export const loginAdmin = (data, history, setUsername, setPassword) => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/login`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -49,7 +49,7 @@ export const loginAdmin = (data, history, setUsername, setPassword) => {
 
 export const getAdmin = () => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/listAdmin`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/listAdmin`, {
       headers: { access_token: localStorage.getItem("access_token") },
     })
       .then((resp) => {
@@ -76,7 +76,7 @@ export const addAdmin = (
   setConfirmPassword
 ) => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/register`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -114,7 +114,7 @@ export const addAdmin = (
 
 export const deleteAdmin = (adminId) => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/${adminId}`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/${adminId}`, {
       method: "DELETE",
       headers: {
         access_token: localStorage.getItem("access_token"),
@@ -152,7 +152,7 @@ export const updateAdmin = (
   setConfirmPassword
 ) => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/${data.username}`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/${data.username}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

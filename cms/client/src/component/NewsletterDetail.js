@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-import "./PromoDetail.css";
+import "./newsletterDetail.css";
 import { Button, Modal, Form } from "react-bootstrap";
 import { BsTrashFill } from "react-icons/bs";
 // import { AiOutlineCalendar } from "react-icons/ai";
 import { GrUpdate } from "react-icons/gr";
-import { updatePromo, deletePromo } from "../store/actions/promoAction";
+import {
+  updateNewsletter,
+  deleteNewsletter,
+} from "../store/actions/newsletterAction";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -12,7 +15,7 @@ import { app } from "../base";
 import parserText from "html-react-parser";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-const PromoDetail = ({ data }) => {
+const NewsletterDetail = ({ data }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [show, setShow] = useState(false);
@@ -61,38 +64,44 @@ const PromoDetail = ({ data }) => {
       fileUrl = await fileRef.getDownloadURL();
     }
 
-    const updatedPromo = {
+    const updatedNewsletter = {
       title,
       image_url: imageUrl !== data.image_url ? fileUrl : imageUrl,
       image_path: imagePath.name,
       content,
     };
 
-    dispatch(updatePromo(updatedPromo, data.timeInNumber, setShow, history));
+    dispatch(
+      updateNewsletter(updatedNewsletter, data.timeInNumber, setShow, history)
+    );
     setTitle("");
     setImageUrl("");
     setImagePath("");
     setContent("");
   };
 
-  const deletingPromo = () => {
+  const deletingNewsletter = () => {
     Swal.fire({
-      title: "Are you sure want to delete this promo?",
+      title: "Are you sure want to delete this Newsletter?",
       showCancelButton: true,
       confirmButtonText: `Delete`,
     }).then((result) => {
       if (result.isConfirmed) {
-        dispatch(deletePromo(data.timeInNumber, history));
+        dispatch(deleteNewsletter(data.timeInNumber, history));
       }
     });
   };
   return (
     <div>
-      <div className="button-container">
-        <Button variant="info" className="button-item" onClick={handleShow}>
+      <div className="button-containerNewsletterDetail">
+        <Button
+          variant="info"
+          className="button-itemNewsletterDetail"
+          onClick={handleShow}
+        >
           <GrUpdate /> Update
         </Button>
-        <Button variant="danger" onClick={(e) => deletingPromo()}>
+        <Button variant="danger" onClick={(e) => deletingNewsletter()}>
           <BsTrashFill /> delete
         </Button>
       </div>
@@ -100,7 +109,7 @@ const PromoDetail = ({ data }) => {
         <Modal show={show} onHide={handleClose} size="lg">
           <Form onSubmit={(e) => saveUpdate(e)}>
             <Modal.Header closeButton>
-              <Modal.Title>Update Promo</Modal.Title>
+              <Modal.Title>Update Newsletter</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <Form.Group>
@@ -114,18 +123,18 @@ const PromoDetail = ({ data }) => {
               </Form.Group>
 
               <Form.Group>
-                <label htmlFor="container-image">Images</label>
-                <div className="image-divPromo ">
+                <label htmlFor="container-imageNewsletter">Images</label>
+                <div className="image-divNewsletter ">
                   <img
                     src={imageUrl}
-                    className="image-promo shadow"
+                    className="image-newsletter shadow"
                     alt="detail"
                   />
                 </div>
 
-                <div className="button-promo">
+                <div className="button-newsletter">
                   <input
-                    id="input-promo"
+                    id="input-newsletter"
                     accept="image/*"
                     type="file"
                     style={{ width: "200px", cursor: "pointer" }}
@@ -168,22 +177,22 @@ const PromoDetail = ({ data }) => {
           marginBottom: "30px",
         }}
       >
-        <div className="image-divDetailPromo  ">
+        <div className="image-divDetailNewsletter ">
           <img
             src={data.image_url}
-            className="container image-detailPromo shadow"
+            className="container shadow image-detailNewsletter"
             style={{ padding: "0" }}
             alt="detail"
           />
         </div>
-        <div className="container content-promo">
-          <div className="date-detailPromo">
+        <div className="container content-newsletter">
+          <div className="date-detailNewsletter">
             <p>{data.time}</p>
           </div>
-          <div className="title-detailPromo">
-            <h1>{data.title}</h1>
+          <div className="title-detailNewsletter">
+            <h2>{data.title}</h2>
           </div>
-          <div className="content-titlePromo">
+          <div className="content-titleNewsletter">
             <p>{parserText(data.content)}</p>
           </div>
         </div>
@@ -192,4 +201,4 @@ const PromoDetail = ({ data }) => {
   );
 };
 
-export default PromoDetail;
+export default NewsletterDetail;
