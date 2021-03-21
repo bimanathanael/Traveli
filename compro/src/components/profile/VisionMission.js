@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 
-export const VisionMission = () => {
+export const VisionMission = ({data}) => {
     const [mobileView, setMobileView] = useState(window.innerWidth)
      
     useEffect(()=> {
@@ -25,18 +25,14 @@ export const VisionMission = () => {
                                 our vision
                             </p>
                             <p className="descVM">
-                                Menjadi jendela dunia untuk kekayaan dan 
-                                keindahan destinasi wisata di Indonesia 
-                                dengan segala kelengkapannya
+                                {data.Visi}
                             </p>
                             <br/>
                             <p className="headingVM " >
                                 our mission
                             </p>
                             <p className="descVM">
-                                Memberdayakan dan mengembangkan komunitas \
-                                bisnis pariwisata melalui platform digital 
-                                dengan konsep tumbuh bersama
+                                {data.Misi}
                             </p>
                         </div>
                     </div>

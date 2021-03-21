@@ -4,7 +4,8 @@ import ArrowForwardIosOutlinedIcon from '@material-ui/icons/ArrowForwardIosOutli
 import whatsapp2 from '../../assets/images/whatsapp2.png'
 import promo from '../../assets/images/promo.png'
 
-export const Hero = () => {
+export const Hero = ({data}) => {
+
   return (
     <>
       <div className="heroProfileContainer">
@@ -12,7 +13,7 @@ export const Hero = () => {
             <div className="col-md-7 text-center">
               <ScrollAnimation animateIn='zoomIn'>
                 <h2 className="hero-profile-title">
-                  pt. traveli caraka nuswantara (TCN)
+                  {data.Title}
                 </h2>
               </ScrollAnimation>
             </div>
