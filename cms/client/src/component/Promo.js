@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import "./promo.css";
-import { AiOutlineCalendar } from "react-icons/ai";
+// import { AiOutlineCalendar } from "react-icons/ai";
 import { useHistory } from "react-router-dom";
 import { Button, Modal, Form } from "react-bootstrap";
 import { addPromo } from "../store/actions/promoAction";
 import { app } from "../base";
 import { useDispatch } from "react-redux";
-import parserText from "html-react-parser";
+// import parserText from "html-react-parser";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 const Promo = ({ data }) => {

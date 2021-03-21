@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import "./newsletter.css";
-import { AiOutlineCalendar } from "react-icons/ai";
+// import { AiOutlineCalendar } from "react-icons/ai";
 import { useHistory } from "react-router-dom";
 import { Button, Modal, Form } from "react-bootstrap";
 import { addNewsletter } from "../store/actions/newsletterAction";

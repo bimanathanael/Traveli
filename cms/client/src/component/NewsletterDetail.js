@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./newsletterDetail.css";
 import { Button, Modal, Form } from "react-bootstrap";
 import { BsTrashFill } from "react-icons/bs";
-import { AiOutlineCalendar } from "react-icons/ai";
+// import { AiOutlineCalendar } from "react-icons/ai";
 import { GrUpdate } from "react-icons/gr";
 import {
   updateNewsletter,

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./PromoDetail.css";
 import { Button, Modal, Form } from "react-bootstrap";
 import { BsTrashFill } from "react-icons/bs";
-import { AiOutlineCalendar } from "react-icons/ai";
+// import { AiOutlineCalendar } from "react-icons/ai";
 import { GrUpdate } from "react-icons/gr";
 import { updatePromo, deletePromo } from "../store/actions/promoAction";
 import { useDispatch } from "react-redux";

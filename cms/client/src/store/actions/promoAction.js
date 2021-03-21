@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom";
 
 export const getPromo = () => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/promo`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/promo`, {
       headers: { access_token: localStorage.getItem("access_token") },
     })
       .then((resp) => {
@@ -23,7 +23,7 @@ export const getPromo = () => {
 
 export const getOnePromo = (timeInNumber) => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/promo/${timeInNumber}`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/promo/${timeInNumber}`, {
       headers: { access_token: localStorage.getItem("access_token") },
     })
       .then((resp) => {
@@ -43,7 +43,7 @@ export const getOnePromo = (timeInNumber) => {
 
 export const addPromo = (data, setShow) => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/promo`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/promo`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -78,7 +78,7 @@ export const addPromo = (data, setShow) => {
 
 export const deletePromo = (time, history) => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/promo/${time}`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/promo/${time}`, {
       method: "DELETE",
       headers: {
         access_token: localStorage.getItem("access_token"),
@@ -111,7 +111,7 @@ export const deletePromo = (time, history) => {
 
 export const updatePromo = (dataPromo, time, setShow, history) => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/promo/${time}`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/promo/${time}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

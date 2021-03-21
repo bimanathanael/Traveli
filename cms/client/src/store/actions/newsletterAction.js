@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom";
 
 export const getNewsletter = () => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/newsletter`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/newsletter`, {
       headers: { access_token: localStorage.getItem("access_token") },
     })
       .then((resp) => {
@@ -23,9 +23,12 @@ export const getNewsletter = () => {
 
 export const getOneNewsletter = (timeInNumber) => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/newsletter/${timeInNumber}`, {
-      headers: { access_token: localStorage.getItem("access_token") },
-    })
+    fetch(
+      `https://pacific-hamlet-79377.herokuapp.com/newsletter/${timeInNumber}`,
+      {
+        headers: { access_token: localStorage.getItem("access_token") },
+      }
+    )
       .then((resp) => {
         return resp.json();
       })
@@ -43,7 +46,7 @@ export const getOneNewsletter = (timeInNumber) => {
 
 export const addNewsletter = (data, setShow) => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/newsletter`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/newsletter`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -78,7 +81,7 @@ export const addNewsletter = (data, setShow) => {
 
 export const deleteNewsletter = (time, history) => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/newsletter/${time}`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/newsletter/${time}`, {
       method: "DELETE",
       headers: {
         access_token: localStorage.getItem("access_token"),
@@ -111,7 +114,7 @@ export const deleteNewsletter = (time, history) => {
 
 export const updateNewsletter = (dataNewsletter, time, setShow, history) => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/newsletter/${time}`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/newsletter/${time}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
