@@ -15,7 +15,7 @@ import prev from '../../assets/images/prev.png';
 import next from '../../assets/images/next.png';
 
 
-export const Benefits = () => {
+export const Benefits = ({dataTitle, dataDesc}) => {
     const [mobileView, setMobileView] = useState(window.innerWidth)
      
     useEffect(()=> {
@@ -26,7 +26,7 @@ export const Benefits = () => {
         window.addEventListener('resize', handleResize)
     },[])
 
-
+    console.log("masuk benefit", dataTitle)
     return (
         <>
             <div className="container-benefits">
@@ -60,12 +60,10 @@ export const Benefits = () => {
                                             <div className="row p-5 right0">
                                                 <div className="col-md-7">
                                                     <h1 className="benefitTitle traveliColor">
-                                                        PEMBAYARAN REAL-TIME
+                                                        {dataTitle.Title1}
                                                     </h1>
                                                     <p className="benefitDesc">
-                                                        Dengan sistem yang sudah online dan terintegrasi, anda bisa
-                                                        langsung menikmati hasil transaksi anda secara real-time.
-                                                        Kalau bisa langsung, buar apa menunggu?
+                                                        {dataDesc.Description1}
                                                     </p>
                                                 </div>
                                                 <div className="col-md-5 text-center">
@@ -77,12 +75,10 @@ export const Benefits = () => {
                                             <div className="row p-5 right0">
                                                 <div className="col-md-7">
                                                     <h1 className="benefitTitle traveliColor">
-                                                        KUSTOMISASI WEBSITE SESUAI KEINGINAN ANDA
+                                                        {dataTitle.Title2}
                                                     </h1>
                                                     <p className="benefitDesc">
-                                                        Anda memiliki kebebasan untuk memakai domain dan logo anda sendiri
-                                                        pada website yang disediakan Traveli, Sehingga identitas brand anda bis dikenal
-                                                        dengan mudah
+                                                        {dataDesc.Description2}
                                                     </p>
                                                 </div>
                                                 <div className="col-md-5 text-center">
@@ -94,12 +90,10 @@ export const Benefits = () => {
                                             <div className="row p-5 right0">
                                                 <div className="col-md-7">
                                                     <h1 className="benefitTitle traveliColor">
-                                                        TANPA BIAYA DI MUKA ATAU INVESTASI APAPUN
+                                                        {dataTitle.Title3}
                                                     </h1>
                                                     <p className="benefitDesc">
-                                                        Di Traveli, anda tidak perlu repot-repot memikirkan berapa modal
-                                                        yang diperlukan untuk menjadi member. Cukup registrasi dan anda langsung
-                                                        dapat bertransaksi
+                                                        {dataDesc.Description3}
                                                     </p>
                                                 </div>
                                                 <div className="col-md-5 text-center">
@@ -111,13 +105,10 @@ export const Benefits = () => {
                                             <div className="row p-5 right0">
                                                 <div className="col-md-7">
                                                     <h1 className="benefitTitle traveliColor">
-                                                        PERLUAS JARINGAN BISNIS ANDA
+                                                        {dataTitle.Title4}
                                                     </h1>
                                                     <p className="benefitDesc">
-                                                        Pada ekosistem platform Traveli, kami menghubungkan
-                                                        anda langsung ke market yang berpotensial. Mulai dari 
-                                                        penyedia produk hingga pembeli yang prospektif, semua 
-                                                        dalam 1 tempat.
+                                                        {dataDesc.Description4}
                                                     </p>
                                                 </div>
                                                 <div className="col-md-5 text-center">

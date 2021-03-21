@@ -5,7 +5,7 @@ import ArrowForwardIosOutlinedIcon from '@material-ui/icons/ArrowForwardIosOutli
 import whatsapp2 from '../../assets/images/whatsapp2.png'
 import promo from '../../assets/images/promo.png'
 
-export const Hero = () => {
+export const Hero = ({data}) => {
 
   let monthsList = ["January", "February", "March", "April","May",
   "June","July","August","September","October","November","December"]
@@ -17,11 +17,10 @@ export const Hero = () => {
             <div className="row pl-3">
               <ScrollAnimation animateIn='zoomIn'animateOut='fadeOut'>
                 <h1 className="hero-title">
-                  hi sobat traveli, yuk kembangkan bisnis pariwisata anda
-                  bersama kami
+                  {data.Title}
                 </h1>
                 <h4 className="hero-subtitle">
-                  "together, we grow"
+                  {data.Caption}
                 </h4>
               </ScrollAnimation>
             </div>
@@ -29,11 +28,7 @@ export const Hero = () => {
               <div className="col-md-9 pl-3">
                 <ScrollAnimation animateIn='zoomIn'animateOut='fadeOut' delay="200">
                   <p className="hero-desc">
-                    Traveli adalah platform digital kepariwisataan yang
-                    menampilkan, mendistribusikan, dan menjual produk-produk 
-                    wisata yang anda miliki dengan membangun relasi sinergis antar 
-                    penggunanya mulai dari pemasok, penjual dan pembeli dalam satu 
-                    sistem yang terintegrasi
+                    {data.Description}
                   </p>
                 </ScrollAnimation>
               </div>
