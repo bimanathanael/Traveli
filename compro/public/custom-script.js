@@ -21,37 +21,38 @@ $(window).on('load', function() {
     }
   });
 
-  if( currLoc === '/' || currLoc === '/homeSupp'){
-    const slider = document.querySelector('.items');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-  
-    // checkRadio();
+  if( currLoc === '/'  ){
+    setTimeout(function()   {
+      const slider = document.querySelector('.items');
+      let isDown = false;
+      let startX;
+      let scrollLeft;
     
-    slider.addEventListener('mousedown', (e) => {
-      isDown = true;
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-    slider.addEventListener('mouseleave', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-    slider.addEventListener('mouseup', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-    slider.addEventListener('mousemove', (e) => {
-      if(!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 1; //scroll-fast
-      slider.scrollLeft = scrollLeft - walk;
-      // console.log(walk, slider.scrollLeft);
       // checkRadio();
-    });
-
+      
+      slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+      slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.classList.remove('active');
+      });
+      slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.classList.remove('active');
+      });
+      slider.addEventListener('mousemove', (e) => {
+        if(!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 1; //scroll-fast
+        slider.scrollLeft = scrollLeft - walk;
+        // console.log(walk, slider.scrollLeft);
+        // checkRadio();
+      });
+    }, 4000);
 
     let currSlider = 0
 
@@ -165,25 +166,25 @@ $(window).on('load', function() {
       $(".supplier-overview2").removeClass("imageSection6");
     });
 
-    $(".rad1").click(function(){
-      slider.scrollLeft = 0
-      // checkRadio()
-    })
+    // $(".rad1").click(function(){
+    //   slider.scrollLeft = 0
+    //   // checkRadio()
+    // })
 
-    $(".rad2").click(function(){
-      slider.scrollLeft = 900
-      // checkRadio()
-    })
+    // $(".rad2").click(function(){
+    //   slider.scrollLeft = 900
+    //   // checkRadio()
+    // })
 
-    $(".rad3").click(function(){
-      slider.scrollLeft = 1800
-      // checkRadio()
-    })
+    // $(".rad3").click(function(){
+    //   slider.scrollLeft = 1800
+    //   // checkRadio()
+    // })
 
-    $(".rad4").click(function(){
-      slider.scrollLeft = 2700
-      // checkRadio()
-    })
+    // $(".rad4").click(function(){
+    //   slider.scrollLeft = 2700
+    //   // checkRadio()
+    // })
 
     // function checkRadio(){
     //   if (slider.scrollLeft >= 0 && slider.scrollLeft < 900) {

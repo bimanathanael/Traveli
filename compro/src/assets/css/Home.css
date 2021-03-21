@@ -1278,9 +1278,8 @@ button{
 .sub-menu-button{
   text-transform: uppercase;
   color: #b2e6f2;
-  font-size: 14pt;
-  padding-left: 20%; 
-  padding-right: 20%; 
+  font-size: 1rem;
+  padding: 0% 7% !important;
   margin: 0px 10px;
   letter-spacing: 2px;
 }

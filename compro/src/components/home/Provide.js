@@ -58,7 +58,15 @@ import { useState } from 'react';
 // import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
 
 
-export const Provide = () => {
+export const Provide = ({
+  dataProvideTitle, 
+  dataProvideDesc,
+  supplier,
+  wholesaler,
+  agency,
+  corporate,
+  petra
+}) => {
     // const [mobileView, setMobileView] = useState(window.innerWidth)
     let [trigger, setTrigger] = useState(1)
     
@@ -66,9 +74,8 @@ export const Provide = () => {
       index: 0,
       isActive: true,
       section: "FLIGHTS",
-      heading: "400+ Penerbangan Domestik dan Internasional",
-      desc: `Kami menyediakan berbagai macam pilihan tiket penerbangan yang disediakan oleh member kami,
-      mulai dari tiket antar kota, pulau, hingga negara, semuanya dalam 1 tempat`,
+      heading: dataProvideTitle.Flights,
+      desc: dataProvideDesc.Flights,
       icon: plane,    
       iconActive: planeActive, 
       thumbnail: planeThumbnail,
@@ -81,24 +88,22 @@ export const Provide = () => {
         {
           isActive: true,
           section: "Supplier",
-          heading: "BECOME A MERCHANT (B2B)",
+          heading: supplier.header.Title,
           img: supplierImg,
           stepImg: supplierStepImg,
-          desc: `Supplier adalah penyedia produk kepariwisataan, dimana produk mereka akan di distribusikan oleh 
-          distributor. Siapapun bisa menjadi supplier, cukup daftar dan unggah produk kepariwisataan yang dimiliki sesuai
-          dengan T&C Traveli.`,
+          desc: supplier.header.Description,
           benefits: [
-            "Ekspansi Jaringan",
-            "Gratis Registrasi",
-            "Pembayaran Realtime",
-            "Customer Care",
-            "Laporan Penjualan Online",
-            "Virtual Account",
+            supplier.benefits.Benefit1,
+            supplier.benefits.Benefit2,
+            supplier.benefits.Benefit3,
+            supplier.benefits.Benefit4,
+            supplier.benefits.Benefit5,
+            supplier.benefits.Benefit6,
           ],
           conditions: [
-            "Memiliki kredensial untuk produk pariwisata",
-            "Mengatur kegiatan para website secara independent",
-            "Menyetujui skema pembagian hasil merchant"
+            supplier.conditions.Condition1,
+            supplier.conditions.Condition2,
+            supplier.conditions.Condition3,
           ]
         }
       ],
@@ -112,24 +117,22 @@ export const Provide = () => {
           {
             isActive: true,
             section: "Supplier",
-            heading: "BECOME A MERCHANT (B2B)",
+            heading: supplier.header.Title,
             img: supplierImg,
             stepImg: supplierStepImg,
-            desc: `Supplier adalah penyedia produk kepariwisataan, dimana produk mereka akan di distribusikan oleh 
-            distributor. Siapapun bisa menjadi supplier, cukup daftar dan unggah produk kepariwisataan yang dimiliki sesuai
-            dengan T&C Traveli.`,
+            desc: supplier.header.Description,
             benefits: [
-              "Ekspansi Jaringan",
-              "Gratis Registrasi",
-              "Pembayaran Realtime",
-              "Customer Care",
-              "Laporan Penjualan Online",
-              "Virtual Account",
+              supplier.benefits.Benefit1,
+              supplier.benefits.Benefit2,
+              supplier.benefits.Benefit3,
+              supplier.benefits.Benefit4,
+              supplier.benefits.Benefit5,
+              supplier.benefits.Benefit6,
             ],
             conditions: [
-              "Memiliki kredensial untuk produk pariwisata",
-              "Mengatur kegiatan para website secara independent",
-              "Menyetujui skema pembagian hasil merchant"
+              supplier.conditions.Condition1,
+              supplier.conditions.Condition2,
+              supplier.conditions.Condition3,
             ]
           }
         ],
@@ -140,24 +143,22 @@ export const Provide = () => {
           {
             isActive: true,
             section: "Wholesaler",
-            heading: "BECOME A WHOLESALER (B2B2C)",
+            heading: wholesaler.header.Title,
             img: wholesalerImg,
             stepImg: wholesalerStepImg,
-            desc: `Traveli agent yang memiliki credential produk kepariwisataan dan melakikan
-            kegiatan jual beli secara digital (lisensi dan otoritas) Distributor/Wholesaler 
-            dapat menjadi penyedia produk bagi Agency, Korporasi dan PeTra`,
+            desc: wholesaler.header.Description,
             benefits: [
-              "Cross Border Inventory",
-              "Ekspansi Jaringan",
-              "Multi Member Benefit dan Akses",
-              "Customer Care",
-              "Virtual Account",
-              "Laporan Penjualan Online",
+              wholesaler.benefits.Benefit1,
+              wholesaler.benefits.Benefit2,
+              wholesaler.benefits.Benefit3,
+              wholesaler.benefits.Benefit4,
+              wholesaler.benefits.Benefit5,
+              wholesaler.benefits.Benefit6,
             ],
             conditions: [
-              "Memiliki kredensial untuk produk pariwisata",
-              "Mengatur kegiatan para website secara independent",
-              "Menyetujui skema pembagian hasil merchant"
+              wholesaler.conditions.Condition1,
+              wholesaler.conditions.Condition2,
+              wholesaler.conditions.Condition3,
             ]
           }
         ],
@@ -168,64 +169,62 @@ export const Provide = () => {
           {
             isActive: true,
             section: "Agency",
-            heading: "FOR AGENCY / SUB-AGENT (B2B2C)",
+            heading: agency.header.Title,
             img: agencyImg,
             stepImg: agencyStepImg,
-            desc: `Sub-agent yang tidak memiliki credential namun memiliki network dan market yang luas.`,
+            desc: agency.header.Description,
             benefits: [
-              "Cross Border Inventory",
-              "Ekspansi Jaringan",
-              "Pembayaran Realtime",
-              "Customer Care",
-              "Laporan Penjualan Online",
-              "Virtual Account",
+              agency.benefits.Benefit1,
+              agency.benefits.Benefit2,
+              agency.benefits.Benefit3,
+              agency.benefits.Benefit4,
+              agency.benefits.Benefit5,
+              agency.benefits.Benefit6,
             ],
             conditions: [
-              "Mengatur kegiatan para website secara independent",
-              "Menyetujui segala persyaratan dan skema bisnis Traveli",
-              "Menyetujui semua persyaratan yang diberikan oleh Parent/Upline",
+              agency.conditions.Condition1,
+              agency.conditions.Condition2,
+              agency.conditions.Condition3,
             ]
           },{
             isActive: false,
             section: "Corporate",
-            heading: "FOR CORPORATE (B2B2C)",
+            heading: corporate.header.Title,
             img: corporateImg,
             stepImg: corporateStepImg,
-            desc: `Perusahaan yang tidak memiliki credential namun berminat untuk mengembangkan bisnis
-            di industry pariwisata`,
+            desc: corporate.header.Description,
             benefits: [
-              "Cross Border Inventory",
-              "Ekspansi Jaringan",
-              "Multi Member Benefit dan Akses",
-              "Customer Care",
-              "Laporan Penjualan Online",
-              "Virtual Account",
+              corporate.benefits.Benefit1,
+              corporate.benefits.Benefit2,
+              corporate.benefits.Benefit3,
+              corporate.benefits.Benefit4,
+              corporate.benefits.Benefit5,
+              corporate.benefits.Benefit6,
             ],
             conditions: [
-              "Mengatur kegiatan para website secara independent",
-              "Menyetujui segala persyaratan dan skema bisnis Traveli",
-              "Menyetujui semua persyaratan yang diberikan oleh Parent/Upline",
+              corporate.conditions.Condition1,
+              corporate.conditions.Condition2,
+              corporate.conditions.Condition3,
             ]
           },{
             isActive: false,
             section: "Petra",
-            heading: "PERSONAL TRAVELI / PETRA (B2C)",
+            heading: petra.header.Title,
             img: petraImg,
             stepImg: petraStepImg,
-            desc: `Salah satu unit Travel Agent yang ditujukan khusus untuk pribadi/perseorangan yang memiliki
-            minat untuk bergabung menjalankan bisnis kepairisataan`,
+            desc: petra.header.Description,
             benefits: [
-              "Akses Ke Produk Wisata",
-              "Pembayaran Realtime",
-              "Laporan Penjualan Online",
-              "Insentif Berdasarkan Performa",
-              "Ekspansi Jaringan",
-              "Virtual Account",
+              petra.benefits.Benefit1,
+              petra.benefits.Benefit2,
+              petra.benefits.Benefit3,
+              petra.benefits.Benefit4,
+              petra.benefits.Benefit5,
+              petra.benefits.Benefit6,
             ],
             conditions: [
-              "Mengatur kegiatan para website secara independent",
-              "Menyetujui segala persyaratan dan skema bisnis Traveli",
-              "Menyetujui semua persyaratan yang diberikan oleh Parent/Upline",
+              petra.conditions.Condition1,
+              petra.conditions.Condition2,
+              petra.conditions.Condition3,
             ]
           }
         ],
@@ -237,9 +236,8 @@ export const Provide = () => {
         index: 0,
         isActive: true,
         section: "FLIGHTS",
-        heading: "400+ Penerbangan Domestik dan Internasional",
-        desc: `Kami menyediakan berbagai macam pilihan tiket penerbangan yang disediakan oleh member kami,
-        mulai dari tiket antar kota, pulau, hingga negara, semuanya dalam 1 tempat`,
+        heading: dataProvideTitle.Flights,
+        desc: dataProvideDesc.Flights,
         icon: plane,    
         iconActive: planeActive, 
         thumbnail: planeThumbnail,
@@ -247,9 +245,8 @@ export const Provide = () => {
         index: 1,
         isActive: false,
         section: "ACCOMMODATIONS",
-        heading: "5000+ Akomodasi",
-        desc: `Membertikan anda variasi pilihan penginapan yang sudah tersedia pada sistem kami, 
-        mulai dari hotel, villa, hingga guest house dan homestay`,
+        heading: dataProvideTitle.Accomodations,
+        desc: dataProvideDesc.Accomodations,
         icon: acc,    
         iconActive: accActive, 
         thumbnail: accThumbnail,
@@ -257,19 +254,17 @@ export const Provide = () => {
         index: 2,
         isActive: false,
         section: "TRAINS",
-        heading: "Dapatkan Tiket KAI anda disini",
-        desc: `Memberikan anda kemudahan untuk mencari produk KAI yang sudah ada dalam libary inventory
-        Traveli Store dan dapat langsung diakses melalui masing-masing website Agent.`,
+        heading: dataProvideTitle.Trains,
+        desc: dataProvideDesc.Trains,
         icon: train,    
         iconActive: trainActive, 
         thumbnail: trainThumbnail,
       },{
         index: 3,
         isActive: false,
-        section: "LAND TRANSPORTATION",
-        heading: "Cari kendaraan untuk mobilitas sehari-hari kini lebih mudah",
-        desc: `Kami memiliki berbagai variasi jenis kendaraan darat yang dapat mendukung dan memudahkan
-        mobilitas anda.`,
+        section: "Land Transportation",
+        heading: dataProvideTitle.LandTransportation,
+        desc: dataProvideDesc.LandTransportation,
         icon: car,    
         iconActive: carActive, 
         thumbnail: carThumbnail,
@@ -277,9 +272,8 @@ export const Provide = () => {
         index: 4,
         isActive: false,
         section: "CRUISE",
-        heading: "Dapatkan kapal pesiar pilihan anda dengan mudah",
-        desc: `Memberikan anda kemudahan untuk mencari kapal pesiar segala kelas dan dapat langsung
-        diakses melalui masing-masing website Agent`,
+        heading: dataProvideTitle.Cruise,
+        desc: dataProvideDesc.Cruise,
         icon: ship,    
         iconActive: shipActive, 
         thumbnail: shipThumbnail,
@@ -287,8 +281,8 @@ export const Provide = () => {
         index: 5,
         isActive: false,
         section: "TRAVEL DOCUMENTS",
-        heading: "500+Agen Siap Membantu Mengurus Dokumen Anda",
-        desc: `Pilihan agen dari berbagai pelosok kota selalu siap untuk membantu mengurus dokumen anda.`,
+        heading: dataProvideTitle.TravelDocuments,
+        desc: dataProvideDesc.TravelDocuments,
         icon: passport,    
         iconActive: passportActive, 
         thumbnail: passportThumbnail,
@@ -296,9 +290,8 @@ export const Provide = () => {
         index: 6,
         isActive: false,
         section: "TOUR PACKAGE",
-        heading: "Paket Liburan Kini Sudah Tidak Suli Lagi Untuk Dicari",
-        desc: `Kami memiliki ratusan paket liburan terbaik yang siap anda pilih dan dapat langsung anda
-        gunakan!`,
+        heading: dataProvideTitle.TourPackage,
+        desc: dataProvideDesc.TourPackage,
         icon: maps,    
         iconActive: mapsActive, 
         thumbnail: mapsThumbnail,
@@ -306,9 +299,8 @@ export const Provide = () => {
         index: 7,
         isActive: false,
         section: "LEISURE PACKAGE",
-        heading: "Tersedia 200+ Lebih Tempat Hiburan Kesukaanmu Di Traveli",
-        desc: `Cari tempat hiburan lebih mudah di Traveli, apapun dan kemanapun yang anda mau ada di
-        Traveli Store dan dapat langsung diakses melalui masing-masing website Agent`,
+        heading: dataProvideTitle.LeisurePackage,
+        desc: dataProvideDesc.LeisurePackage,
         icon: beach,    
         iconActive: beachActive, 
         thumbnail: beachThumbnail,
@@ -316,9 +308,8 @@ export const Provide = () => {
         index: 8,
         isActive: false,
         section: "UMROH PACKAGE",
-        heading: "Cari Paket Umroh Lebih Aman di Traveli",
-        desc: `Berbagai pilihan tiket Umroh tersedia di Traveli Store, dan terntunya lebih aman
-        dan nyaman. Semua dapat langsung diakses melalui masing-masing website Agent`,
+        heading: dataProvideTitle.UmrohPackage,
+        desc: dataProvideDesc.UmrohPackage,
         icon: umroh,    
         iconActive: umrohActive, 
         thumbnail: umrohThumbnail,
@@ -326,8 +317,8 @@ export const Provide = () => {
         index: 9,
         isActive: false,
         section: "TRAVEL INSURANCE",
-        heading: "100+ Produk Asuransi Perjalanan Tersedia di Traveli",
-        desc: `Di Traveli, cari produk asuransi perjalanan lebih mudah dan terpercaya`,
+        heading: dataProvideTitle.TravelInsurance,
+        desc: dataProvideDesc.TravelInsurance,
         icon: profile,    
         iconActive: profileActive, 
         thumbnail: profileThumbnail,
@@ -335,10 +326,8 @@ export const Provide = () => {
         index: 10,
         isActive: false,
         section: "P.P.O.B",
-        heading: "Membayar Kebutuhan Sehari-hari Cukup di Satu Platform Saja",
-        desc: `Beli token PLNm Bayar TV Kabel, bahkan BPJS online dengan mudah dan cepat di Traveli.
-        Anda tidak perlu mengantri di gerai atau mengunjungi ATM. Cukup bermodalkan ponsel atau komputer saja,
-        Anda bisa beli secara online.`,
+        heading: dataProvideTitle.Ppob,
+        desc: dataProvideDesc.Ppob,
         icon: card,    
         iconActive: cardActive, 
         thumbnail: cardThumbnail,
