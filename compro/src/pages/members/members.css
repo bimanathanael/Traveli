@@ -1,20 +1,42 @@
-/* hero */
-.hero-members {
-  background-image: url("../../assets/images/members/HERO.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-  position: relative;
+.members-page h1 {
+  font-size: 2rem;
 }
 
-.content-header-members {
+.members-page p {
+  font-size: 0.8rem;
+  color: white;
+}
+
+/* hero */
+.members-hero {
+  /* background-image: url("../../assets/images/members/HERO.png"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  /* position: relative; */
+}
+
+.members-content-header {
   padding-left: 6rem;
   padding-top: 7rem;
   color: white;
 }
 
-.content-members {
-  max-width: 20rem;
+.members-content {
+  max-width: 25rem;
+  margin-bottom: 2rem;
+}
+
+.members-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.members-button-watch-icon {
+  color: white;
+  size: 10em;
 }
 
 @media screen and (max-width: 600px) {
@@ -25,20 +47,21 @@
 
 .button-content {
   display: flex;
-  align-items: center;
-  font-size: 0.75em;
-  margin-top: 3rem;
 }
 
 .button-try {
-  display: flex;
-  align-items: center;
+  padding: 0.35rem;
   border-radius: 300px;
   background-color: #f6eb52;
+  transition: 0.2s ease-out;
 }
 
-.button-try a,
-.button-watch span {
+.members-button:hover .button-try {
+  background-position: left;
+  padding: 0.35rem 2rem 0.35rem 0.35rem;
+}
+
+.members-button span {
   color: white;
   font-weight: bold;
   font-size: 0.75rem;
@@ -63,13 +86,15 @@
 }
 
 .hero-content-footer {
-  background-image: linear-gradient(#f6eb52, white);
-  width: 20rem;
+  background-image: linear-gradient(#ebe485, white);
+  max-width: 25rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 18px 0 rgba(0, 0, 0, 0.19);
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   position: absolute;
+  margin-top: -3rem;
+  z-index: 1;
   left: 50%;
-  bottom: 0;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
 }
@@ -81,16 +106,15 @@
 
 /* benefit */
 .benefit-members {
-  background-image: url("../../assets/images/members/key-benefits.png");
-  background-size: 1000px;
+  /* background-image: url("../../assets/images/members/benefits-key.png"); */
+  background-size: 73rem;
   background-repeat: no-repeat;
   min-height: 100vh;
-  min-width: 100vh;
   background-position: center;
 }
 
 .key-feature-members {
-  background-image: url("../../assets/images/members/key-features.png");
+  /* background-image: url("../../assets/images/members/key-features.png"); */
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 2000px;
