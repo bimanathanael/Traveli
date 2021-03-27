@@ -52,6 +52,8 @@ import agencyImg from '../../assets/images/agencyImg.png';
 import corporateImg from '../../assets/images/corporateImg.png';
 import checklist from '../../assets/images/checklist.png';
 
+// import { MembershipMobile } from './MembershipMobile.js'
+
 import { useState } from 'react';
 // import ArrowForwardIosOutlinedIcon from '@material-ui/icons/ArrowForwardIosOutlined';
 // import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
@@ -417,31 +419,31 @@ export const Provide = ({
         <div className="container-provide">
 
           {/* provide section */}
-          <div className="row">
+          <div className="row ">
             <div className="col-md-3 offset-md-1 text-left pl-5">
               <ScrollAnimation animateIn='bounceInLeft' >
-                <p className="headingWhy mt-5">
+                <p className="headingProvide mt-5 mobile-2">
                   WHAT WE PROVIDE
                 </p>
               </ScrollAnimation>
             </div>
-            <div className="col-md-3 offset-md-2 text-left p-5 ">
-              <img onClick={ () => { onMove("prev")} } className="mr-3 ml-5" src={prev} />
+            <div className="col-md-3 offset-md-2 text-left p-5 mobile-1-padding arrow-provide">
+              <img onClick={ () => { onMove("prev")} } className="mr-3 ml-5 arrow-provide-left" src={prev} />
               <img onClick={ () => { onMove("next")} } src={next} />
             </div>
           </div>
           <div className="row">
-            <div className="col-md-5 offset-md-1 text-right mt-5">
+            <div className="col-md-5 offset-md-1 text-right mt-5 no-mobile">
               <ScrollAnimation animateIn='bounceInLeft' >
-                <img class="thumbnail-provide" src={currProvide.thumbnail}/>
+                <img class="thumbnail-provide " src={currProvide.thumbnail}/>
               </ScrollAnimation>
             </div>
-            <div className="col-md-5 text-left ml-5 pl-5">
+            <div className="col-md-5 text-left ml-5 pl-5 mobile-provide-box">
               <div className="row mb-5 d-flex justify-content-center">
                 {
                   provideSectionData.map(data => {
                     return (
-                      <div className="col-md-2 mb-3 pr-0">
+                      <div className="col-md-2 mb-3 pr-0 mobile-icon">
                         <img className="icon-provide" src={data.isActive == true ? data.iconActive : data.icon}
                         onClick={ () => clickIcon(data.section)}/>
                       </div>
@@ -451,30 +453,30 @@ export const Provide = ({
               </div>
               <div className="row">
                 <div className="col-md-12">
-                  <h3 className="menu-section blueTraveli">
+                  <h3 className="menu-section blueTraveli mobile-2 mobile-center mobile-margin-left">
                     <ScrollAnimation animateIn='bounceInRight'>
                       {currProvide.section}
                     </ScrollAnimation>
                   </h3>
                 </div>
                 <div className="col-md-8">
-                  <h4 className="menu-heading-provide">
+                  <h4 className="menu-heading-provide mobile-1 mobile-center mobile-margin-left">
                     <ScrollAnimation animateIn='bounceInRight'>
                       {currProvide.heading}
                     </ScrollAnimation>
                   </h4>
                 </div>
                 <div className="col-md-12">
-                  <p className="menu-desc">
+                  <p className="menu-desc mobile-1 mobile-center mobile-margin-left">
                     <ScrollAnimation animateIn='bounceInRight'>
                       {currProvide.desc}
                     </ScrollAnimation>
                   </p>
                 </div>
               </div>
-              <div className="row mt-5">
+              <div className="row mt-5 mobile-no-margin mobile-center">
                 <ScrollAnimation animateIn="fadeIn">
-                  <button type="button" className="btn btn-traveli btn-v3-hero">
+                  <button type="button" className="btn btn-traveli btn-v3-hero no-mobile">
                     <div className="row">
                       <div className="col-3 ml-0 pl-0">
                         <a className="arrow"> <ArrowForwardIosOutlinedIcon/> </a> 
@@ -484,50 +486,68 @@ export const Provide = ({
                       </div>
                     </div>
                   </button>
+                  <button className="mobile-only btn btn-yellow mt-3">
+                    Try it for Free
+                  </button>
                 </ScrollAnimation>
               </div>
             </div>
           </div>
           
-          
           {/* membership section */}
           <div className="membership-section">
             <div className="row">
               <div className="col-md-5 offset-md-1 text-left pl-5">
-                <div className="col-md-8 pb-2">
+                <div className="col-md-8 pb-2 mobile-center">
                   <ScrollAnimation animateIn='bounceInLeft' >
-                      <p className="headingMember mt-5">
+                      <p className="headingMember mt-5 mobile-2">
                         TRAVELI MEMBERSHIP
                       </p>
                   </ScrollAnimation>
                 </div>
                   <ScrollAnimation animateIn='bounceInLeft' >
-                    <div className="row mt-5">
-                      <div className="col-md-6 mt-5">
+                    <div className="row mt-5 mobile-no-margin">
+                      <div className="col-md-6 mt-5 mobile-no-margin">
                         {
                           membershipSectionData.map(data => {
                             return (
-                                data.isActive == true ? 
-                                  <div className="row mb-4">
-                                    <div className="col-md-1 padding-7">
-                                      <img src={arrowTraveli}/>
-                                    </div>
-                                    <div className="col-md-9 pl-4">
-                                      <button className="btn btn-membership membership-active" onClick={() => changeMenu(data.section) } >
+                              data.isActive == true ? 
+                                <div className="row mb-4 mobile-left-padding">
+                                  <div className="col-md-1 padding-7 no-mobile">
+                                    <img src={arrowTraveli}/>
+                                  </div>
+                                  <div className="col-md-9 pl-4 no-mobile">
+                                    <button className="btn btn-membership membership-active" onClick={() => changeMenu(data.section) } >
+                                      { data.section } 
+                                    </button>
+                                  </div>
+                                  <div className="col-md-9 pl-4 mobile-only">
+                                    <a href={`/${data.section}`}>
+                                      <button className="btn btn-yellow mobile-width-100" 
+                                      onClick={() => changeMenu(data.section) } >
                                         { data.section } 
                                       </button>
-                                    </div>
+                                    </a>
                                   </div>
-                                :
-                                  <div className="row mb-4">
-                                    <div className="col-md-1 pt-4">
-                                    </div>
-                                    <div className="col-md-9 pl-4">
-                                      <button className="btn btn-membership" onClick={() => changeMenu(data.section) } > 
+                                </div>
+                              :
+                                <div className="row mb-4 mobile-left-padding">
+                                  <div className="col-md-1 pt-4 no-mobile">
+                                  </div>
+                                  <div className="col-md-9 pl-4 no-mobile">
+                                    <button className="btn btn-membership" onClick={() => changeMenu(data.section) } > 
+                                      { data.section } 
+                                    </button>
+                                  </div>
+                                  <div className="col-md-9 pl-4 mobile-only">
+                                    <a href={`/${data.section}`}>
+                                      <button className="btn btn-yellow mobile-width-100" 
+                                      onClick={() => changeMenu(data.section) } >
                                         { data.section } 
                                       </button>
-                                    </div>
+                                    </a>
                                   </div>
+                                </div>
                             )
                           })
                         }
@@ -536,7 +556,7 @@ export const Provide = ({
                             currMembership.availMenu.map( data => {
                               return(
                                 data.isActive == true ? 
-                                  <div className="row subMenu mt-2">
+                                  <div className="row subMenu mt-2 no-mobile">
                                     <div className="col-md-3 offset-md-2 text-center">
                                       <img className="radio" src={radioSelected}/>
                                     </div>
@@ -547,7 +567,7 @@ export const Provide = ({
                                     </div>
                                   </div>
                                 :
-                                  <div className="row subMenu mt-2">
+                                  <div className="row subMenu mt-2 no-mobile">
                                     <div className="col-md-3 offset-md-2 text-center">
                                       <img className="radio" src={radio}/>
                                     </div>
@@ -564,7 +584,7 @@ export const Provide = ({
                         }
                         
                       </div>
-                    <div className="col-md-6 mt-5">
+                    <div className="col-md-6 mt-5 no-mobile">
                       { currMembership.availMenu.map( data => {
                         return (
                           data.isActive == true ?
@@ -577,7 +597,7 @@ export const Provide = ({
                   </div>
                 </ScrollAnimation>
                 <ScrollAnimation animateIn="fadeIn">
-                  <div className="row">
+                  <div className="row no-mobile">
                     <div className="col-md-3 offset-md-7">
                       {/* <button type="button" className="ml-3 btn btn-traveli btn-v7-hero">
                         <div className="row">
@@ -593,7 +613,7 @@ export const Provide = ({
                   </div>
                 </ScrollAnimation>
               </div>
-              <div className="col-md-6 ">
+              <div className="col-md-6 no-mobile">
                 <ScrollAnimation animateIn='bounceInRight'>
                   <div className="row mt-5">
                     {currMembership.availMenu.map(data => {
@@ -686,6 +706,7 @@ export const Provide = ({
               </div>
             </div>
           </div>
+          {/* <MembershipMobile data={ currMembership }/> */}
         </div>
       </>
     )

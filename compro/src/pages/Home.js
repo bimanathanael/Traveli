@@ -7,12 +7,14 @@ import { Why } from '../components/home/Why'
 import { Provide } from '../components/home/Provide'
 import { useEffect, useState } from 'react'
 
-export const Home = () => {
+export const Home = ({url}) => {
   const [data, setData] = useState();
+  const [news, setNews] = useState();
+  const [promo, setPromo] = useState();
   let supplier, wholesaler, agency, corporate, petra
 
   useEffect(() => {
-    fetch(`https://pacific-hamlet-79377.herokuapp.com/id/Home`)
+    fetch( url + `id/Home`)
       .then((resp) => {
         if (resp.ok) {
           return resp.json();
@@ -24,6 +26,35 @@ export const Home = () => {
       .then(({ message }) => {
         console.log(message,"<<< home")
         setData(message);
+      })
+      .catch((err) => {});
+
+    fetch( url + `lastFourNews`)
+      .then((resp) => {
+        if (resp.ok) {
+          return resp.json();
+        } else {
+          console.log(resp)
+          throw resp;
+        }
+      })
+      .then(({ message }) => {
+        console.log(message, "<< news")
+        setNews(message);
+      })
+      .catch((err) => {});
+
+    fetch( url + `lastPromo`)
+      .then((resp) => {
+        if (resp.ok) {
+          return resp.json();
+        } else {
+          console.log(resp)
+          throw resp;
+        }
+      })
+      .then(({ message }) => {
+        setPromo(message);
       })
       .catch((err) => {});
   }, []);
@@ -58,9 +89,10 @@ export const Home = () => {
 
   return (
     <>
-      {data !== undefined && (
+      {data !== undefined && news !== undefined && promo !== undefined && (
         <div>
-          <Hero data={ data.Hero }/>
+          {/* <Hero data={ data.Hero } /> */}
+          <Hero data={ data.Hero } promo={promo}/>
           <Why 
             dataDesc={ data.WhyChooseTraveliDescription } 
             dataTitle={ data.WhyChooseTraveliTitle } />
@@ -76,9 +108,9 @@ export const Home = () => {
           <Benefits 
             dataTitle={ data.KeyBenefitsTitle } 
             dataDesc={ data.KeyBenefitsDescription } />
-          {/* <News/> */}
-          {/* <Partners/> */}
-          {/* <Testimonials/> */}
+          {/* <News news={news} /> */}
+          <Partners/>
+          <Testimonials/>
         </div>
       )}
     </>

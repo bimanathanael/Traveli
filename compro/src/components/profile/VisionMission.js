@@ -16,13 +16,13 @@ export const VisionMission = ({ dataVisiMisi }) => {
     <>
       <div className="container-vision-mission">
         <ScrollAnimation animateIn="zoomIn">
-          <div className="row mb-5 d-flex justify-content-center">
-            <div className="col-7 text-center">
-              <p className="headingVM ">our vision</p>
-              <p className="descVM">{dataVisiMisi.Visi}</p>
+          <div className="row d-flex justify-content-center">
+            <div className="col-7 mobile-full-100 text-center">
+              <p className="headingVM mobile-2">our vision</p>
+              <p className="descVM mobile-1">{dataVisiMisi.Visi}</p>
               <br />
-              <p className="headingVM ">our mission</p>
-              <p className="descVM">{dataVisiMisi.Misi}</p>
+              <p className="headingVM mobile-2">our mission</p>
+              <p className="descVM mobile-1">{dataVisiMisi.Misi}</p>
             </div>
           </div>
         </ScrollAnimation>

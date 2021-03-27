@@ -1,7 +1,19 @@
 
-@media (min-width: 300px) and (max-width: 560px) { 
+@media (min-width: 300px) and (max-width: 600px) { 
   .navbar{
     padding-left: 0%;
+  }
+
+  body .shortDesc{
+    margin-top: 0px;
+  }
+
+  body .container-promo{
+    padding: 30% 0% 10% 6%;
+  }
+
+  body .headingPromo{
+    padding-left: 0px;
   }
 
   .logo{
@@ -15,6 +27,309 @@
 
   .mobile-center{
     text-align: center;
+  }
+
+  body .headingOffer{
+    height: 7rem;
+    margin-top: 25%;
+    font-size: 1.5rem;
+  }
+
+  body .loginContainer{
+    background-position: 48% 0%;
+    padding: 10% 10% 10% 15%;
+  }
+
+  body .btnOnLogin{
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  body .hero-profile-title{
+    font-size: 1.8rem;
+    margin-top: 70%;
+    line-height: 2rem;
+    word-spacing: 0.5rem;
+  }
+
+  body .container-profile-why{
+    padding: 4% 0% 10% 5%;
+  }
+
+  body .headingAboutUs{
+    text-align: center;
+  }
+
+  body .descAboutUs{
+    font-size: 1rem;
+  }
+
+  body .aboutUsImg{
+    padding-right: 0px !important;
+  }
+
+  body .headingAboutUs{
+    font-size: 1rem;
+  }
+
+  body .headingNews{
+    font-size: 1.5rem;
+  }
+
+  body .descJoinUs{
+    display: none;
+  }
+
+  body .mobile-bottom-margin{
+    margin-bottom: 0rem !important;
+  }
+
+  body .mobile-top-padding{
+    padding-top: 1rem !important;
+  }
+
+  body .container-footer{
+    text-align: center;
+    padding: 0% 0% 0% 5%;
+  }
+
+  body .cardNewsPageDetail{
+    padding-left: 0px;
+  }
+
+  body .mobile-no-margin-padding{
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+
+  body .mobile-no-margin-bottom{
+    margin-bottom: 0px !important;
+  }
+
+  body .mobile-no-margin{
+    margin: 0px !important;
+  }
+
+  body .mobile-no-padding{
+    padding: 0px !important;
+  }
+
+  body .mobile-1-padding-top{
+    padding-top: 1rem !important;
+  }
+
+  body .arrow-provide{
+    text-align: center !important;
+
+  }
+
+  body .mobile-1-padding{
+    padding: 1rem !important;
+  }
+
+  body .mobile-h-2{
+    height: 10rem;
+  }
+
+  body .no-mobile{
+    display: none !important;
+  }
+
+  body .mobile-icon{
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  body .mobile-center{
+    text-align: center !important;
+  }
+
+  body .arrow-provide-left{
+    margin: 1rem !important;
+  }
+
+  body .cardTesti{
+    margin-left: 2rem;
+    margin-top: 1rem;
+  }
+
+  body .cardTesti .w100{
+    width: 54%;
+  }
+
+  body .mobile-provide-box{
+    padding-left: 0px !important;
+    margin-left: 3rem !important;
+  }
+
+  body .mobile-top-margin{
+    margin-top: 1rem;
+  }
+
+  body .headingNews{
+    padding-left: 0px;
+  }
+
+  body .headingWhy{
+    padding-left: 2rem !important;
+  }
+  
+  body .headingProvide{
+    padding-left: 0rem !important;
+  }
+
+  body .mobile-2{
+    font-size: 1.2rem;
+  }
+
+  body .mobile-full-100{
+    -ms-flex: 0 0 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  body .mobile-1{
+     font-size: 1rem;
+  }
+
+  body .cardNewsPageBot{
+    text-align: center;
+  }
+
+  body .containerHowItWorks{
+    padding: 40% 11% 11% 11%;
+  }
+
+  body .containerNewsDetails{
+    padding: 20% 11% 11% 11%;
+  }
+
+  body .newsBotTitle{
+    margin-top: 1rem;
+  }
+
+  body .mobile-center{
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  body .cardNewsPage{
+    padding-left: 2rem !important;
+  }
+
+  body .whySectionImg{
+    width: 73%;
+  }
+
+  body .containerNews{
+    padding: 40% 11% 11% 11%;
+  }
+
+  body .newsTopImg{
+    height: 10rem;
+  }
+
+  body .mobile-only{
+    display: block;
+  }
+
+  body .mobile-inline-block{
+    display: inline-block i !important;
+  }
+
+  body .container-news{
+    padding: 6% 6% 6% 13%;
+  }
+
+  body .heroContainer{
+    padding: 20% 5% 0% 5%;
+    background-image: none;
+  }
+
+  body .headingWhy{
+    color: #8e8787;
+    padding: 0px;
+    text-align: center;
+  }
+
+  body .headingProvide{
+    color: #8e8787;
+    padding: 0px;
+    text-align: center;
+  }
+
+  body .container-provide{
+    background-image: none;
+    padding: 4% 0% 10% 0%;
+    background-size: cover;
+    background-repeat: round;
+  }
+
+  body .mobile-margin-left{
+    margin-left: 2rem;
+  }
+
+  body .headingMember{
+    margin-top: 2rem !important;
+  }
+
+  body .mobile-width-100{
+    width: 100% !important;
+  }
+
+  body .benefitTitle{
+    min-height: 0rem;
+  }
+
+  body .hero-title{
+
+    line-height: unset;
+  }
+
+  body .hero-desc{
+    line-height: unset;
+  }
+
+  body .benefitDesc{
+    margin-top: 0rem;
+  }
+
+  body .animated{
+    animation-duration: 0s !important;
+    opacity: 1 !important;
+    animation-name: none !important;
+  }
+
+  body .mobile-left-padding{
+    padding-left: 1rem;
+  }
+
+  body .specialCol {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  body .item {
+    max-width: 31rem;
+  }
+
+  body .btn-yellow{
+    background-color: #f9ee6f;
+    color: black;
+    font-size: 1rem;
+  }
+
+  body .container-why{
+    padding: 10% 5% 5% 5%;
+  }
+
+  body .container-partners{
+    padding-left: 4rem;
+  }
+  
+  body .rowTesti{
+    padding-left: 2rem;
   }
 }
 
@@ -36,7 +351,7 @@
   }
 
   body #navbarDropdown{
-    padding-top: 9%;
+    padding-top: 7%;
   }
 
   body .MuiSvgIcon-root{
@@ -50,11 +365,11 @@
   }
 
   body .bg-transBlue .logo{
-    width: 8rem !important;
+    width: 10rem !important;
   }
 
   body .logo{
-    width: 8rem;
+    width: 10rem;
   }
 
   body .btn-login{
@@ -188,6 +503,14 @@
     font-size: 1.5rem;
   }
 
+  body .headingWhy{
+    font-size: 1.5rem;
+  }
+  
+  body .headingProvide{
+    font-size: 1.5rem;
+  }
+
   body .descWhy{
     font-size: 0.8rem;
     text-align: justify;
@@ -202,6 +525,10 @@
   }
 
   body .headingWhy{
+    font-size: 1.5rem;
+  }
+  
+  body .headingProvide{
     font-size: 1.5rem;
   }
   
@@ -454,9 +781,7 @@
   body .modal-content{
     height: 16rem;
   }
-
 }
-
 
 @media only screen and (min-width: 1500px) and (max-width: 1800px) { 
   body .hero-profile-title{
@@ -473,6 +798,9 @@
   color: black !important;
 }
 
+.mobile-only{
+  display: none !important;
+}
 
 .headWhy{
   font-size: 2rem ;
@@ -542,10 +870,10 @@
 
 .heroContainer{
   background: #00ADD9;
-  background-image: url('../images/home_Hero.png');
-  padding: 3% 0% 4% 7%;
+  background-image: url('../images/home_Hero.jpg');
+  padding: 3% 0% 0% 6%;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 .heroProfileContainer{
@@ -556,6 +884,10 @@
   background-size: cover;
   filter: brightness(0.9);
   height: 55rem;
+}
+
+.mobile-inline-block{
+  display: none !important;
 }
 
 .hero-profile-title{
@@ -652,6 +984,22 @@
   font-family: 'Bristone';
 }
 
+.headingWhy{
+  font-size: 2.5rem;
+  font-weight: 400;
+  padding-left: 50px;
+  color:#48afd7;
+  font-family: 'Bristone';
+}
+
+.headingProvide{
+  font-size: 2.5rem;
+  font-weight: 400;
+  padding-left: 50px;
+  color:#48afd7;
+  font-family: 'Bristone';
+}
+
 .needs-subheader{
   font-size: 1.3rem;
 }
@@ -684,10 +1032,12 @@
 
 .newsImageOther{
   width: 100%;
+  height: 8rem;
 }
 
 .newsImageTop{
   width: 100%;
+  height: 11rem;
 }
 
 .subHeadingTestimonials{
@@ -704,6 +1054,7 @@
   background-color: rgb(147 200 221 / 0.6);
   border-radius: 15px;
   padding: 3%;
+  margin-left: 1rem;
 }
 
 .container-howItWorks{
@@ -940,7 +1291,6 @@ p{
   color: black;
   margin-top: 2rem;
   text-align: justify;
-  padding-right: 3rem;
 }
 
 .aboutUsImg{
@@ -998,7 +1348,7 @@ p{
 }
 
 .container-vision-mission{
-  padding: 6% 0% 2% 0%;
+  padding: 6% 2% 4% 2%;
   margin-top: 3%;
   background-image: url('../images/bgVisiMisi.png');
   background-size: cover;
@@ -1588,6 +1938,17 @@ button{
   margin-left: 4rem !important;
 }
 
+
+.cardNewsPageDetail{
+  border: 1px solid #efe7e7;
+  border-radius: 25px;
+  padding: 2%;
+  transition: 0.3s all;
+  -webkit-box-shadow: 0px 6px 71px 11px rgba(0,0,0,0.15) !important;
+  -moz-box-shadow: 0px 6px 71px 11px rgba(0,0,0,0.15) !important;
+  box-shadow: 0px 6px 71px 11px rgba(0,0,0,0.15) !important;
+}
+
 .cardNewsPage{
   border: 1px solid #efe7e7;
   border-radius: 25px;
@@ -1676,6 +2037,15 @@ button{
   /* padding-left: 50px; */
 }
 
+.headingTesti{
+  font-family: 'Bristone';
+  font-size: 1.5rem;
+  color: #48afd7;
+  font-weight: 400;
+  letter-spacing: 5px;
+  /* padding-left: 50px; */
+}
+
 .headingWhy{
   font-size: 2rem;
   color: white;
@@ -1723,6 +2093,7 @@ button{
   box-shadow: 0px 5px 43px -11px rgba(0,0,0,0.39) !important;
   background-color: white;
   width: 74.5%;
+  margin-bottom: 1rem;
 }
 
 .descTeam{
@@ -2090,7 +2461,21 @@ button{
     white-space: normal;
     margin: 2em 1.5em;
     max-width: 51rem;
-    background-color: white;
+    background-color: #fbfbfb;
+    border-radius: 20px;
+    @media screen and (max-width: 500px) {
+      min-height: 200px;
+      min-width: 200px;
+    }
+  }
+
+  .itemGanjel{
+    display: inline-block;
+    min-width: 9rem;
+    white-space: normal;
+    margin: 2em 1.5em;
+    max-width: 70rem;
+    background-color: #fbfbfb;
     border-radius: 20px;
     @media screen and (max-width: 500px) {
       min-height: 200px;
@@ -2207,9 +2592,9 @@ button{
 
 .newsTopImg{
   width: 95%;
-  -webkit-box-shadow: 0px 8px 21px 16px rgba(0,0,0,0.15) !important; 
-  -moz-box-shadow: 0px 8px 21px 16px rgba(0,0,0,0.15) !important; 
-  box-shadow: 0px 8px 21px 16px rgba(0,0,0,0.15) !important;
+  -webkit-box-shadow: 0px 16px 30px 3px rgba(0,0,0,0.15) !important; 
+  -moz-box-shadow: 0px 16px 30px 3px rgba(0,0,0,0.15) !important; 
+  box-shadow: 0px 16px 30px 3px rgba(0,0,0,0.15) !important;
   border-radius: 25px;
 }
 
@@ -2231,6 +2616,11 @@ button{
   -moz-box-shadow: 0px 2px 15px 3px rgba(0,0,0,0.15) !important; 
   box-shadow: 0px 2px 15px 3px rgba(0,0,0,0.15) !important;
   border-radius: 1px;
+  height: 9rem;
+}
+
+.containerHowItWorks{
+  padding: 15% 5% 5% 5% ;
 }
 
 .containerNews{
@@ -2248,13 +2638,14 @@ button{
 }
 
 .dateNews{
-  margin-top: 2rem;
-  font-size: 1rem;
+  margin-top: 1rem;
+  font-size: 0.7rem;
 }
 
 .dateNewsBot{
-  margin-top: 1rem;
-  font-size: 0.7rem;
+  margin-top: 0.5rem;
+  font-size: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
 .hover-effect:hover .hover-image{
@@ -2548,5 +2939,6 @@ button{
   box-shadow: 0px 5px 43px 3px rgba(0,0,0,0.39) !important;
   border-radius: 15px;
   width: 70%;
+  height: 10rem;
 }
 

@@ -4,16 +4,15 @@ import { AboutUs } from "../components/profile/AboutUs";
 import { VisionMission } from "../components/profile/VisionMission";
 import { Team } from "../components/profile/Team";
 
-export const Profile = () => {
+export const Profile = ({url}) => {
   const [data, setData] = useState("");
 
   useEffect(() => {
-    fetch(`https://pacific-hamlet-79377.herokuapp.com/id/Profile`)
+    fetch( url + `id/Profile`)
       .then((resp) => {
         if (resp.ok) {
           return resp.json();
         } else {
-          console.log(resp)
           throw resp;
         }
       })

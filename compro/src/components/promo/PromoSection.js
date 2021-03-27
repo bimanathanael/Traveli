@@ -1,62 +1,48 @@
 import left from '../../assets/images/left.png';
-import promo1 from '../../assets/images/promo1.png';
-import promo2 from '../../assets/images/promo2.png';
-import promo3 from '../../assets/images/promo3.png';
 import right from '../../assets/images/right.png';
 import { useEffect, useState } from 'react';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ScrollAnimation from 'react-animate-on-scroll';
+import parse from 'html-react-parser';
 
 
-export const PromoSection = () => {
-    const [mobileView, setMobileView] = useState(window.innerWidth)
+export const PromoSection = ({url}) => {
+    // const [mobileView, setMobileView] = useState(window.innerWidth)
      
-    useEffect(()=> {
-        function handleResize() {
-            setMobileView(window.innerWidth)
-        }
+    // useEffect(()=> {
+    //     function handleResize() {
+    //         setMobileView(window.innerWidth)
+    //     }
 
-        window.addEventListener('resize', handleResize)
-    },[])
+    //     window.addEventListener('resize', handleResize)
+    // },[])
 
     let [curr, setCurr] = useState(0)
+    let [news, setNews] = useState();
+    let promos = []
 
-    let promos = [
-        {
-            img: promo1,
-            title: `Numero 1 Traveli expands tax-saving commuter benefits to all its members and users`,
-            detail: `1 Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when 
-            an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-            It has survived not only five centuries, but also the leap into electronic typesetting, 
-            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset 
-            sheets containing Lorem Ipsum passages, and more recently with desktop publishing software 
-            like Aldus PageMaker including versions of Lorem Ipsum`
-        },{
-            img: promo2,
-            title: `Numero 2 Traveli expands tax-saving commuter benefits to all its members and users`,
-            detail: `2 Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when 
-            an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-            It has survived not only five centuries, but also the leap into electronic typesetting, 
-            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset 
-            sheets containing Lorem Ipsum passages, and more recently with desktop publishing software 
-            like Aldus PageMaker including versions of Lorem Ipsum`
-        },{
-            img: promo3,
-            title: `Numero 3 Traveli expands tax-saving commuter benefits to all its members and users`,
-            detail: `3 Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when 
-            an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-            It has survived not only five centuries, but also the leap into electronic typesetting, 
-            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset 
-            sheets containing Lorem Ipsum passages, and more recently with desktop publishing software 
-            like Aldus PageMaker including versions of Lorem Ipsum`
-        },
-    ]
+    useEffect(()=> {
+        fetch( url + `promo`)
+        .then((resp) => {
+            if (resp.ok) {
+            return resp.json();
+            } else {
+            console.log(resp)
+            throw resp;
+            }
+        })
+        .then(({ message }) => {
+            setNews(message);
+        })
+        .catch((err) => {});
+    },[])
 
-    console.log(curr)
+    if(news != undefined){
+        for (var key in news) {
+            if (news.hasOwnProperty(key)) {
+                promos.push(news[key])
+            }
+        }
+    }
 
     const move = (direction) => {
         if( direction == "left" && curr - 1 >= 0){
@@ -68,45 +54,66 @@ export const PromoSection = () => {
         }
     }
 
-
     return (
         <>
-            <div className="container-promo">
-                <div className="row">
-                    <div className="col text-center mt-5">
-                        <ScrollAnimation animateIn='zoomIn'>
-                            <p className="headingPromo">
-                                our offers
-                            </p>
-                        </ScrollAnimation>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-md-1 text-right d-flex align-items-center">
-                        <div>
-                            <img className="w-55" src={left} onClick={ ()=> move("left") } />
+            { promos.length !== 0 &&
+                <div className="container-promo">
+                    <div className="row">
+                        <div className="col text-center mt-5">
+                            <ScrollAnimation animateIn='zoomIn'>
+                                <p className="headingPromo mobile-2">
+                                    our offers
+                                </p>
+                            </ScrollAnimation>
                         </div>
                     </div>
-                    <div className="col-md-10 text-center d-flex align-items-center">
-                        <div>
-                            <img className="promoImage" src={promos[curr].img}/>
+
+                    {/* desktop only */}
+                    <div className="row no-mobile">
+                        <div className="col-md-1 text-right d-flex align-items-center">
+                            <div>
+                                <img className="w-55" src={left} onClick={ ()=> move("left") } />
+                            </div>
+                        </div>
+                        <div className="col-md-10 text-center d-flex align-items-center">
+                            <div>
+                                <img className="promoImage" src={promos[curr].image_url}/>
+                            </div>
+                        </div>
+                        <div className="col-md-1 text-left d-flex align-items-center">
+                            <div>
+                                <img className="w-55" src={right} onClick={ ()=> move("right") }/>
+                            </div>
                         </div>
                     </div>
-                    <div className="col-md-1 text-left d-flex align-items-center">
-                        <div>
-                            <img className="w-55" src={right} onClick={ ()=> move("right") }/>
+
+                    {/* mobile only */}
+                    <div className="row mobile-only">
+                        <div className="col-md-12 mobile-center mb-2">
+                            <div>
+                                <img className="w-55" src={left} onClick={ ()=> move("left") } />
+                            </div>
+                            <div>
+                                <img className="w-55" src={right} onClick={ ()=> move("right") }/>
+                            </div>
+                        </div>
+                        <div className="col-md-10 text-center d-flex align-items-center">
+                            <div>
+                                <img className="promoImage" src={promos[curr].image_url}/>
+                            </div>
                         </div>
                     </div>
+                    <div className="row d-flex justify-content-center mt-5">
+                        <h5 className="col-md-6 blueTraveli text-center titlePromo">
+                            {promos[curr].title}
+                        </h5>
+                        <p className="col-md-9 text-justify mt-3">
+                            {parse(promos[curr].content)}
+                        </p>
+                    </div>
                 </div>
-                <div className="row d-flex justify-content-center mt-5">
-                    <h5 className="col-md-6 blueTraveli text-center titlePromo">
-                        {promos[curr].title}
-                    </h5>
-                    <p className="col-md-9 text-justify mt-3">
-                        {promos[curr].detail}
-                    </p>
-                </div>
-            </div>
+            }
+
         </>
     )
 }

@@ -47,7 +47,7 @@ export const AboutUs = ({
             <div className="col-md-5 offset-md-1">
               <img className="w100 aboutUsImg pr-5" src={profileImg2} />
             </div>
-            <div className="col-md-5 p4-5">
+            <div className="col-md-5 p-4">
               <h1 className="headingAboutUs">{dataAboutUsBottom.Title}</h1>
               <p className="descAboutUs">
                 {dataAboutUsBottom.Description1}
