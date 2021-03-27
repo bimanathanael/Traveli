@@ -25,7 +25,7 @@ export const Partners = () => {
                 <ScrollAnimation animateIn="fadeIn">
                     <div className="row">
                         <div className="col text-center">
-                            <p className="headingPartners">
+                            <p className="headingPartners mobile-2">
                                 OUR PARTNERS
                             </p>
                         </div>

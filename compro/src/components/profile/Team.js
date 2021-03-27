@@ -28,8 +28,8 @@ export const Team = () => {
         <div className="row mb-5 mt-5 d-flex justify-content-center">
           <div className="col-md-7 text-center">
             <ScrollAnimation animateIn="zoomIn">
-              <p className="headingTeam">our team</p>
-              <p className="descTeam">
+              <p className="headingTeam mobile-2">our team</p>
+              <p className="descTeam mobile-1">
                 TCN didukung oleh para tenaga ahli yang berpengalaman di bisnis
                 perjalanan dan kepariwisataan, termasuk tim pengembang ecommerce
                 yang handal serta dilengkapi dengan tim layanan pengguna yang
@@ -39,62 +39,62 @@ export const Team = () => {
           </div>
         </div>
         <ScrollAnimation animateIn="bounceInRight">
-          <div className="row mb-5 mt-5 d-flex justify-content-center">
-            <div className="col-md-3 d-flex justify-content-end">
-              <div className="teamCard">
+          <div className="row mb-5 mt-5 d-flex justify-content-center pl-5">
+            <div className="col-md-3 d-flex justify-content-end mobile-center">
+              <div className="teamCard ">
                 <img className="teamImg" src={deny} />
                 <div className="descTeam">
-                  <h3 className="teamName">Deny Fajar</h3>
-                  <h5 className="teamPos">{"Founder & CEO"}</h5>
+                  <h3 className="teamName mobile-1">Deny Fajar</h3>
+                  <h5 className="teamPos mobile-1">{"Founder & CEO"}</h5>
                 </div>
               </div>
             </div>
-            <div className="col-md-3 d-flex justify-content-center">
-              <div className="teamCard">
+            <div className="col-md-3 d-flex justify-content-center mobile-center">
+              <div className="teamCard ">
                 <img className="teamImg" src={deka} />
                 <div className="descTeam">
-                  <h3 className="teamName">Deka Fandestia</h3>
-                  <h5 className="teamPos">{"Co-Founder"}</h5>
+                  <h3 className="teamName mobile-1">Deka Fandestia</h3>
+                  <h5 className="teamPos mobile-1">{"Co-Founder"}</h5>
                 </div>
               </div>
             </div>
-            <div className="col-md-3 d-flex justify-content-start">
-              <div className="teamCard">
+            <div className="col-md-3 d-flex justify-content-start mobile-center">
+              <div className="teamCard ">
                 <img className="teamImg" src={jefry} />
                 <div className="descTeam">
-                  <h3 className="teamName">Jefry L. Lydia</h3>
-                  <h5 className="teamPos">{"Co-Founder"}</h5>
+                  <h3 className="teamName mobile-1">Jefry L. Lydia</h3>
+                  <h5 className="teamPos mobile-1">{"Co-Founder"}</h5>
                 </div>
               </div>
             </div>
           </div>
         </ScrollAnimation>
         <ScrollAnimation animateIn="bounceInLeft">
-          <div className="row mb-5 mt-5 d-flex justify-content-center">
-            <div className="col-md-3 d-flex justify-content-end">
-              <div className="teamCard">
+          <div className="row mb-5 mt-5 d-flex justify-content-center pl-5">
+            <div className="col-md-3 d-flex justify-content-end mobile-center">
+              <div className="teamCard ">
                 <img className="teamImg" src={rivan} />
                 <div className="descTeam">
-                  <h3 className="teamName">Rivan</h3>
-                  <h5 className="teamPos">{"Business Development"}</h5>
+                  <h3 className="teamName mobile-1">Rivan</h3>
+                  <h5 className="teamPos mobile-1">{"Business Development"}</h5>
                 </div>
               </div>
             </div>
-            <div className="col-md-3 d-flex justify-content-center">
-              <div className="teamCard">
+            <div className="col-md-3 d-flex justify-content-center mobile-center">
+              <div className="teamCard ">
                 <img className="teamImg" src={pongky} />
                 <div className="descTeam">
-                  <h3 className="teamName">Pongku Koesasi</h3>
-                  <h5 className="teamPos">{"Sales & Marketing"}</h5>
+                  <h3 className="teamName mobile-1">Pongku Koesasi</h3>
+                  <h5 className="teamPos mobile-1">{"Sales & Marketing"}</h5>
                 </div>
               </div>
             </div>
-            <div className="col-md-3 d-flex justify-content-start">
-              <div className="teamCard">
+            <div className="col-md-3 d-flex justify-content-start mobile-center">
+              <div className="teamCard ">
                 <img className="teamImg" src={aafiyah} />
                 <div className="descTeam">
-                  <h3 className="teamName">Aafiyah Salam</h3>
-                  <h5 className="teamPos">{"Corporate Secretary"}</h5>
+                  <h3 className="teamName mobile-1">Aafiyah Salam</h3>
+                  <h5 className="teamPos mobile-1">{"Corporate Secretary"}</h5>
                 </div>
               </div>
             </div>

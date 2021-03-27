@@ -18,12 +18,14 @@ import { Login } from './pages/Login';
 import { News } from './pages/News';
 import { NewsDetails } from './pages/NewsDetails';
 import { JoinUs } from './pages/JoinUs';
+import { HowItWorks } from './pages/HowItWorks';
 import { Nav } from './components/Nav';
 import { Footer } from './components/Footer'
 import { ParallaxProvider } from "react-scroll-parallax";
 
 function App() {
 
+  const url = "https://pacific-hamlet-79377.herokuapp.com/"
   const scrollRef = React.createRef();
   // useEffect(()=>{
     // const scroll = new LocomotiveScroll({
@@ -37,34 +39,37 @@ function App() {
     <ParallaxProvider >
       {/* <div  data-scroll-container> */}
       <Router>
-        <Nav/>
+        <Nav url={url}/>
         <Switch>
+          <Route path="/howItWorks">
+            <HowItWorks url={url}/>
+          </Route>
           <Route path="/profile">
-            <Profile />
+            <Profile url={url}/>
           </Route>
           <Route path="/news/:id">
-            <NewsDetails />
+            <NewsDetails url={url}/>
           </Route>
           <Route path="/news">
-            <News />
+            <News url={url} />
           </Route>
           <Route path="/contactUs">
-            <ContactUs />
+            <ContactUs url={url} />
           </Route>
           <Route path="/promo">
-            <Promo />
+            <Promo url={url} />
           </Route>
           <Route path="/login">
-            <Login />
+            <Login url={url} />
           </Route>
           <Route path="/joinUs">
-            <JoinUs />
+            <JoinUs url={url} />
           </Route>
           <Route path="/">
-            <Home />
+            <Home url={url} />
           </Route>
         </Switch>
-        <Footer/>
+        <Footer url={url}/>
       </Router>
 
       {/* </div> */}

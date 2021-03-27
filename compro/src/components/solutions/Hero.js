@@ -2,7 +2,9 @@
 import ArrowForwardIosOutlinedIcon from '@material-ui/icons/ArrowForwardIosOutlined';
 import playvideo from '../../assets/images/playvideo.png'
 
-export const Hero = () => {
+export const Hero = ({data}) => {
+
+  console.log(data,"<hero")
   return (
     <>
       <div className="heroSulutions">
@@ -59,7 +61,7 @@ export const Hero = () => {
             </div>
           </div>
         </div>
-        </div>
+      </div>
     </>
   )
 }

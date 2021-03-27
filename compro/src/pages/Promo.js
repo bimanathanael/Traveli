@@ -1,11 +1,11 @@
 import { PromoSection } from '../components/promo/PromoSection'
 
-export const Promo = () => {
+export const Promo = ({url}) => {
 
   return (
     <>
       <div>
-        <PromoSection/>
+        <PromoSection url={url}/>
       </div>
     </>
   )
