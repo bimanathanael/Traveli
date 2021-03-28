@@ -250,7 +250,13 @@ const DistributorList = ({ url }) => {
               </div>
               <div style={{ margin: "10rem auto 0 auto" }}>
                 <ScrollAnimation animateIn="fadeIn">
-                  <div>
+                  <div
+                    style={{
+                      width: "90%",
+                      textAlign: "center",
+                      margin: "0 auto",
+                    }}
+                  >
                     <h6>{`PILIH MEMBER KAMI SEBAGAI PARENT UNTUK USAHA ANDA`}</h6>
                   </div>
                   <div

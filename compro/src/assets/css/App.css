@@ -409,3 +409,6 @@ body {
   transition: 0.4s;
   border-style: none;
 }
+
+@media screen and (max-width: 600px) {
+}

@@ -50,11 +50,18 @@ const Reseller = ({ url }) => {
           // What We Offer
           let whatWeOffer = [];
           if (dataRaw.WhatWeOfferTitle) {
-            for (let key in dataRaw.WhatWeOfferTitle) {
+            const ordered = Object.entries(dataRaw.WhatWeOfferTitle)
+              .sort()
+              .reduce((o, [k, v]) => ((o[k] = v), o), {});
+            const orderedDesc = Object.entries(dataRaw.WhatWeOfferDescription)
+              .sort()
+              .reduce((o, [k, v]) => ((o[k] = v), o), {});
+
+            for (let key in ordered) {
               whatWeOffer.push({ title: dataRaw.WhatWeOfferTitle[key] });
             }
             let index = 0;
-            for (let key in dataRaw.WhatWeOfferDescription) {
+            for (let key in orderedDesc) {
               whatWeOffer[index].description =
                 dataRaw.WhatWeOfferDescription[key];
               index++;

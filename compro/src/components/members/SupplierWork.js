@@ -9,6 +9,15 @@ const useStyles = makeStyles((theme) => ({
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     minHeight: "140vh",
+    [theme.breakpoints.down("sm")]: {
+      minHeight: "110vh",
+    },
+  },
+  titleContent: {
+    color: "#07AED6",
+    margin: "2rem auto",
+    textAlign: "center",
+    width: "80%",
   },
 }));
 
@@ -19,15 +28,8 @@ const SupplierWork = ({ content, title, workBackground }) => {
       className={classes.supplierContainer}
       style={{ backgroundImage: `url(${workBackground})` }}
     >
-      <div className="row">
-        <div
-          className="col-12"
-          style={{
-            color: "#07AED6",
-            marginBottom: "2rem",
-            textAlign: "center",
-          }}
-        >
+      <div>
+        <div className={`col-12 ${classes.titleContent}`}>
           <ScrollAnimation animateIn="zoomIn">
             <h2>{title}</h2>
           </ScrollAnimation>
