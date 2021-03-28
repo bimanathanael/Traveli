@@ -30,7 +30,7 @@ export const Home = ({ url }) => {
       })
       .catch((err) => {});
 
-    fetch(url + `lastFourNews`)
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/lastFourNews`)
       .then((resp) => {
         if (resp.ok) {
           return resp.json();
@@ -45,7 +45,7 @@ export const Home = ({ url }) => {
       })
       .catch((err) => {});
 
-    fetch(url + `lastPromo`)
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/lastPromo`)
       .then((resp) => {
         if (resp.ok) {
           return resp.json();
@@ -58,7 +58,7 @@ export const Home = ({ url }) => {
         setPromo(message);
       })
       .catch((err) => {});
-  }, []);
+  }, [url]);
 
   if (data !== undefined) {
     supplier = {

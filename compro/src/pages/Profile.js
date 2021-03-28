@@ -20,7 +20,7 @@ export const Profile = ({ url }) => {
         setData(message);
       })
       .catch((err) => {});
-  }, []);
+  }, [url]);
 
   const filteringData = (section) => {
     let sortedList = {};

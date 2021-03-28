@@ -27,7 +27,7 @@ export const ContactInfo = ({ url }) => {
         setData(message);
       })
       .catch((err) => {});
-  }, []);
+  }, [url]);
 
   console.log(data, "<<<contactInfo");
 
