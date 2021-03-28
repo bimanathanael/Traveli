@@ -36,18 +36,27 @@ const Supplier = ({ url }) => {
           const hero = {
             title: dataRaw.Hero.Title,
             description: dataRaw.Hero.Description,
-            footer: "ARE YOU PRODUCT OWNERS LOOKING EXPAND SELLING CHANNEL?",
+            footer: dataRaw.Hero.Footer,
           };
           setHeroContent(hero);
 
           // What We Offer
-          let whatWeOffer = [];
           if (dataRaw.WhatWeOfferTitle) {
-            for (let key in dataRaw.WhatWeOfferTitle) {
+            let whatWeOffer = [];
+            const ordered = Object.entries(dataRaw.WhatWeOfferTitle)
+              .sort()
+              .reduce((o, [k, v]) => ((o[k] = v), o), {});
+            const orderedDesc = Object.entries(dataRaw.WhatWeOfferDescription)
+              .sort()
+              .reduce((o, [k, v]) => ((o[k] = v), o), {});
+            console.log(ordered, `order`);
+            for (let key in ordered) {
+              console.log(key);
               whatWeOffer.push({ title: dataRaw.WhatWeOfferTitle[key] });
             }
             let index = 0;
-            for (let key in dataRaw.WhatWeOfferDescription) {
+            for (let key in orderedDesc) {
+              console.log(key);
               whatWeOffer[index].description =
                 dataRaw.WhatWeOfferDescription[key];
               index++;

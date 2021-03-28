@@ -10,6 +10,13 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: "center",
     minHeight: "140vh",
   },
+  buttonOptionTitle: {
+    [theme.breakpoints.down("sm")]: {
+      width: "50%",
+      textAlign: "center",
+      margin: "0 auto 1rem auto ",
+    },
+  },
 }));
 
 const SupplierWorkReseller = ({
@@ -30,6 +37,7 @@ const SupplierWorkReseller = ({
   const [content, setContent] = useState(contentAgent);
 
   useEffect(() => {
+    setContent(contentAgent);
     if (contentAgent && contentCorporate) {
       if (triggerSub === "agent") {
         setContent(contentAgent);
@@ -77,12 +85,16 @@ const SupplierWorkReseller = ({
         </div>
         <div style={{ margin: "2rem auto 0 auto" }}>
           <ScrollAnimation animateIn="fadeIn">
-            <div>
+            <div className={classes.buttonOptionTitle}>
               <h6>{`ARE YOU AN AGENT OR RESELLER LOOKING TO GAIN A COMPETITIVE ADVANTAGE?`}</h6>
             </div>
             <div
               className="button-container"
-              style={{ backgroundColor: "white", width: "60%" }}
+              style={{
+                backgroundColor: "white",
+                width: "60%",
+                margin: "2rem auto",
+              }}
             >
               <Button
                 style={{

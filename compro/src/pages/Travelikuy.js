@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 // package
 import axios from "axios";
-import { Button } from "@material-ui/core";
+import { Button, makeStyles } from "@material-ui/core";
 import ScrollAnimation from "react-animate-on-scroll";
 
 // component
@@ -25,6 +25,25 @@ import WorkTwoCustomer from "../assets/images/travelikuy/customer/work-2.png";
 import processImage from "../assets/images/travelikuy/process.png";
 import processCustomer from "../assets/images/travelikuy/process-customer.png";
 import workBackground from "../assets/images/travelikuy/bg_petra.png";
+
+const useStyles = makeStyles((theme) => ({
+  buttonOption: {
+    backgroundColor: "white",
+    width: "30%",
+    marginTop: "2rem",
+    [theme.breakpoints.down("sm")]: {
+      width: "80%",
+    },
+  },
+  optionTitle: {
+    textAlign: "center",
+    marginTop: "2rem",
+    [theme.breakpoints.down("sm")]: {
+      width: "80%",
+      margin: "2rem auto",
+    },
+  },
+}));
 
 const Supplier = ({ url }) => {
   const [contentPetra, setContentPetra] = useState(null);
@@ -65,11 +84,20 @@ const Supplier = ({ url }) => {
           // What We Offer Petra
           if (dataRaw.BenefitsForPetraTitle) {
             let whatWeOffer = [];
-            for (let key in dataRaw.BenefitsForPetraTitle) {
+            const ordered = Object.entries(dataRaw.BenefitsForPetraTitle)
+              .sort()
+              .reduce((o, [k, v]) => ((o[k] = v), o), {});
+            const orderedDesc = Object.entries(
+              dataRaw.BenefitsForPetraDescription
+            )
+              .sort()
+              .reduce((o, [k, v]) => ((o[k] = v), o), {});
+
+            for (let key in ordered) {
               whatWeOffer.push({ title: dataRaw.BenefitsForPetraTitle[key] });
             }
             let index = 0;
-            for (let key in dataRaw.BenefitsForPetraDescription) {
+            for (let key in orderedDesc) {
               whatWeOffer[index].description =
                 dataRaw.BenefitsForPetraDescription[key];
               index++;
@@ -80,12 +108,21 @@ const Supplier = ({ url }) => {
           // What We Offer Customer
           if (dataRaw.BenefitForCustomerTitle) {
             let whatWeOffer = [];
-            for (let key in dataRaw.BenefitForCustomerTitle) {
+            const ordered = Object.entries(dataRaw.BenefitForCustomerTitle)
+              .sort()
+              .reduce((o, [k, v]) => ((o[k] = v), o), {});
+            const orderedDesc = Object.entries(
+              dataRaw.BenefitForCustomerDescription
+            )
+              .sort()
+              .reduce((o, [k, v]) => ((o[k] = v), o), {});
+
+            for (let key in ordered) {
               // console.log(key)
               whatWeOffer.push({ title: dataRaw.BenefitForCustomerTitle[key] });
             }
             let index = 0;
-            for (let key in dataRaw.BenefitForCustomerDescription) {
+            for (let key in orderedDesc) {
               // console.log(key)
               whatWeOffer[index].description =
                 dataRaw.BenefitForCustomerDescription[key];
@@ -200,6 +237,7 @@ const Supplier = ({ url }) => {
     setTriggerSub("petra");
     setPetraPage(true);
     setBenefitTitle("FOR PETRA");
+    setTitleWork("HOW PETRA WORKS");
   };
 
   const handleButtonTwo = () => {
@@ -213,6 +251,8 @@ const Supplier = ({ url }) => {
     setBenefitTitle("FOR CUSTOMERS");
   };
 
+  const classes = useStyles();
+
   return (
     <div className="members-page">
       <HeroMembers
@@ -222,17 +262,10 @@ const Supplier = ({ url }) => {
       />
       <div style={{ margin: "4rem auto 0 auto" }}>
         <ScrollAnimation animateIn="fadeIn">
-          <div style={{ textAlign: "center", marginTop: "2rem" }}>
+          <div className={classes.optionTitle}>
             <h6>{`DO YOU WANT TO HAVE EXTRA INCOME?`}</h6>
           </div>
-          <div
-            className="button-container"
-            style={{
-              backgroundColor: "white",
-              width: "30%",
-              marginTop: "2rem",
-            }}
-          >
+          <div className={`button-container ${classes.buttonOption}`}>
             <Button
               style={{
                 backgroundColor: colorButtonOne,

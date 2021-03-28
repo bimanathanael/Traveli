@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core";
 import ButtonTry from "../ButtonTry";
 import ButtonWatch from "../ButtonWatch";
@@ -11,19 +11,43 @@ const useStyles = makeStyles((themes) => ({
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     minHeight: "120vh",
+    [themes.breakpoints.down("sm")]: {
+      minHeight: "100vh",
+    },
   },
   headerMembers: {
     paddingLeft: "6rem",
     paddingTop: "10rem",
     color: "white",
+    [themes.breakpoints.down("sm")]: {
+      paddingLeft: "0",
+      paddingRight: "0",
+      width: "85%",
+      margin: "0 auto",
+      paddingTop: "10rem",
+    },
   },
   contentMembers: {
     maxWidth: "25rem",
     marginBottom: "2rem",
+    [themes.breakpoints.down("sm")]: {
+      backgroundColor: `rgb(0,0,0, 0.3)`,
+      padding: "1rem",
+      borderRadius: "1rem",
+    },
   },
   buttonMembers: {
     display: "flex",
     alignItems: "center",
+    [themes.breakpoints.down("sm")]: {
+      // flexDirection: "column",
+      // justifyContent: "center",
+      backgroundColor: `rgb(0,0,0, 0.3)`,
+      padding: "1rem",
+      borderRadius: "1rem",
+      maxWidth: "25rem",
+      width: "100%",
+    },
   },
   footerMembers: {
     maxWidth: "25rem",
@@ -38,15 +62,25 @@ const useStyles = makeStyles((themes) => ({
     left: "50%",
     WebkitTransform: "translateX(-50%)",
     transform: "translateX(-50%)",
+    [themes.breakpoints.down("sm")]: {
+      width: "80%",
+    },
   },
   footerTypography: {
     textAlign: "center",
     padding: "1rem 1rem 0 1rem",
   },
+  heroDesc: {
+    marginBottom: "0",
+  },
 }));
 
 const HeroMembers = ({ backgroundHero, data, footer = true }) => {
   const classes = useStyles();
+  const [mobileView, setMobileView] = useState(window.innerWidth);
+  useEffect(() => {
+    console.log(mobileView);
+  }, [mobileView]);
   return (
     <>
       {data && (
@@ -57,18 +91,18 @@ const HeroMembers = ({ backgroundHero, data, footer = true }) => {
           >
             <ScrollAnimation animateIn="fadeIn">
               <div className={classes.headerMembers}>
-                <div className="row">
+                <div>
                   <div className="col-12">
                     <div className={classes.contentMembers}>
-                      <h1>{data.title}</h1>
+                      <h1 className={classes.heroTitle}>{data.title}</h1>
                     </div>
                   </div>
                   <div className="col-12">
                     <div className={classes.contentMembers}>
-                      <p>{data.description}</p>
+                      <p className={classes.heroDesc}>{data.description}</p>
                     </div>
                   </div>
-                  <div className="col-12">
+                  <div className="col-md-12 col-sm-12">
                     <div className={classes.buttonMembers}>
                       <ButtonTry />
                       <ButtonWatch />

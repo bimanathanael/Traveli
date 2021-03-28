@@ -106,7 +106,7 @@ const SupplierList = ({ url }) => {
           const hero = res.data.message.Hero;
           if (hero) {
             setTitle(hero.Title);
-            setDesc(hero.Descripiton);
+            setDesc(hero.Description);
           }
         }
       })

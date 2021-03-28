@@ -1,5 +1,10 @@
-.members-page h1,h2,h3,h4,h5,h6 {
-  font-family: 'Bristone';
+.members-page h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bristone";
 }
 
 .members-page h1 {
@@ -23,7 +28,7 @@
 }
 
 .members-page h6 {
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .members-page p {
@@ -37,10 +42,13 @@
   align-items: center;
 }
 
-
 @media screen and (max-width: 600px) {
   .content-members {
     max-width: 10rem;
+  }
+
+  .members-page h1 {
+    font-size: 1rem;
   }
 }
 
@@ -78,6 +86,5 @@
   display: flex;
   align-items: center;
   border-radius: 300px;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
-
