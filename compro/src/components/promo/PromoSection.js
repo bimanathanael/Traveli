@@ -5,15 +5,6 @@ import ScrollAnimation from "react-animate-on-scroll";
 import parse from "html-react-parser";
 
 export const PromoSection = ({ url }) => {
-  // const [mobileView, setMobileView] = useState(window.innerWidth)
-
-  // useEffect(()=> {
-  //     function handleResize() {
-  //         setMobileView(window.innerWidth)
-  //     }
-
-  //     window.addEventListener('resize', handleResize)
-  // },[])
 
   let [curr, setCurr] = useState(0);
   let [news, setNews] = useState();
@@ -73,7 +64,7 @@ export const PromoSection = ({ url }) => {
               </div>
             </div>
             <div className="col-md-10 text-center d-flex align-items-center">
-              <div>
+              <div className="col">
                 <img className="promoImage" src={promos[curr].image_url} />
               </div>
             </div>
@@ -103,7 +94,7 @@ export const PromoSection = ({ url }) => {
               </div>
             </div>
             <div className="col-md-10 text-center d-flex align-items-center">
-              <div>
+              <div className="col">
                 <img className="promoImage" src={promos[curr].image_url} />
               </div>
             </div>

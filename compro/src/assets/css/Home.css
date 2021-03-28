@@ -180,7 +180,7 @@
   }
 
   body .mobile-2{
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
   }
 
   body .mobile-full-100{
@@ -189,8 +189,21 @@
     max-width: 100% !important;
   }
 
+  body .container-contact{
+    padding: 31% 5% 10% 5% !important;
+  }
+
+  body .mobile-no-padding-bottom{
+    padding-bottom: 0px !important;
+  }
+
+  body .mobile-no-margin-top{
+    margin-top: 0px !important;
+  }
+
+
   body .mobile-1{
-     font-size: 1rem;
+     font-size: 1rem !important;
   }
 
   body .cardNewsPageBot{
@@ -231,11 +244,11 @@
   }
 
   body .mobile-only{
-    display: block;
+    display: block !important;
   }
 
   body .mobile-inline-block{
-    display: inline-block i !important;
+    display: inline-block !important;
   }
 
   body .container-news{
@@ -279,7 +292,7 @@
   }
 
   body .benefitTitle{
-    min-height: 0rem;
+    min-height: 3rem;
   }
 
   body .hero-title{
@@ -984,8 +997,8 @@
   font-family: 'Bristone';
 }
 
-.headingWhy{
-  font-size: 2.5rem;
+.headingWhyHome{
+  font-size: 2rem;
   font-weight: 400;
   padding-left: 50px;
   color:#48afd7;
@@ -996,7 +1009,7 @@
   font-size: 2.5rem;
   font-weight: 400;
   padding-left: 50px;
-  color:#48afd7;
+  color:white;
   font-family: 'Bristone';
 }
 
@@ -1314,7 +1327,7 @@ p{
 }
 
 .container-contact{
-  padding: 10% 0% 10% 0%;
+  padding: 10% 0% 0% 0%;
   background-image: url('../images/bgAbout.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -1322,7 +1335,9 @@ p{
 
 .promoImage{
   width: 100%;
+  text-align: center;
   border-radius: 20px;
+  height: 20rem;
   -webkit-box-shadow: 0px 5px 43px -11px rgba(0,0,0,0.39) !important;
   -moz-box-shadow: 0px 5px 43px -11px rgba(0,0,0,0.39) !important;
 }

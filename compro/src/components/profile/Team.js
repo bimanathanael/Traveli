@@ -39,7 +39,7 @@ export const Team = () => {
           </div>
         </div>
         <ScrollAnimation animateIn="bounceInRight">
-          <div className="row mb-5 mt-5 d-flex justify-content-center pl-5">
+          <div className="row mb-5 mt-5 d-flex justify-content-center pl-5 mobile-no-padding-bottom mobile-no-margin-top">
             <div className="col-md-3 d-flex justify-content-end mobile-center">
               <div className="teamCard ">
                 <img className="teamImg" src={deny} />
@@ -70,7 +70,7 @@ export const Team = () => {
           </div>
         </ScrollAnimation>
         <ScrollAnimation animateIn="bounceInLeft">
-          <div className="row mb-5 mt-5 d-flex justify-content-center pl-5">
+          <div className="row mb-5 mt-5 d-flex justify-content-center pl-5 mobile-no-margin-top">
             <div className="col-md-3 d-flex justify-content-end mobile-center">
               <div className="teamCard ">
                 <img className="teamImg" src={rivan} />

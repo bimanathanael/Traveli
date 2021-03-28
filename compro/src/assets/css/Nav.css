@@ -7,9 +7,15 @@
     margin-top: unset !important;
   }
 
+  body .navbar-nav .dropdown-menu{
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+  }
+
   body .nav-item{
     text-align: center !important;
-    width: 100%;
+    width: 90%;
     margin: 1rem !important;
     height: 2rem;
   }
