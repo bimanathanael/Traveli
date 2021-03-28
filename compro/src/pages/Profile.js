@@ -4,11 +4,11 @@ import { AboutUs } from "../components/profile/AboutUs";
 import { VisionMission } from "../components/profile/VisionMission";
 import { Team } from "../components/profile/Team";
 
-export const Profile = ({url}) => {
+export const Profile = ({ url }) => {
   const [data, setData] = useState("");
 
   useEffect(() => {
-    fetch( url + `id/Profile`)
+    fetch(url + `/Profile`)
       .then((resp) => {
         if (resp.ok) {
           return resp.json();
@@ -20,7 +20,7 @@ export const Profile = ({url}) => {
         setData(message);
       })
       .catch((err) => {});
-  }, []);
+  }, [url]);
 
   const filteringData = (section) => {
     let sortedList = {};

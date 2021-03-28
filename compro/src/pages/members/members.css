@@ -1,0 +1,83 @@
+.members-page h1,h2,h3,h4,h5,h6 {
+  font-family: 'Bristone';
+}
+
+.members-page h1 {
+  font-size: 1.5rem;
+}
+
+.members-page h2 {
+  font-size: 1.5rem;
+}
+
+.members-page h3 {
+  font-size: 1rem;
+}
+
+.members-page h4 {
+  font-size: 1rem;
+}
+
+.members-page h5 {
+  font-size: 1rem;
+}
+
+.members-page h6 {
+  font-size: .8rem;
+}
+
+.members-page p {
+  font-size: 0.75rem;
+  color: white;
+}
+
+.members-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media screen and (max-width: 600px) {
+  .content-members {
+    max-width: 10rem;
+  }
+}
+
+.button-try {
+  padding: 0.35rem;
+  border-radius: 300px;
+  background-color: #f6eb52;
+  transition: 0.2s ease-out;
+}
+
+.members-button:hover .button-try {
+  background-position: left;
+  padding: 0.35rem 2rem 0.35rem 0.35rem;
+}
+
+.members-button span {
+  color: white;
+  font-weight: bold;
+  font-size: 0.75rem;
+  margin-left: 0.75rem;
+}
+
+.icon-btn-try,
+.button-try a {
+  color: #07aed6;
+}
+
+.icon-btn-watch {
+  font-size: 2rem;
+  color: white;
+}
+
+.button-watch {
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  border-radius: 300px;
+  margin-top: .5rem;
+}
+
