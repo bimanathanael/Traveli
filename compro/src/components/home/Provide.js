@@ -522,7 +522,7 @@ export const Provide = ({
                                     </button>
                                   </div>
                                   <div className="col-md-9 pl-4 mobile-only">
-                                    <a href={`/${data.section}`}>
+                                    <a href={`/members/${data.section}`}>
                                       <button className="btn btn-yellow mobile-width-100" 
                                       onClick={() => changeMenu(data.section) } >
                                         { data.section } 
@@ -540,7 +540,7 @@ export const Provide = ({
                                     </button>
                                   </div>
                                   <div className="col-md-9 pl-4 mobile-only">
-                                    <a href={`/${data.section}`}>
+                                    <a href={`/members/${data.section}`}>
                                       <button className="btn btn-yellow mobile-width-100" 
                                       onClick={() => changeMenu(data.section) } >
                                         { data.section } 
