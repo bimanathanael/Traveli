@@ -19,7 +19,7 @@ import WorkThree from "../../assets/images/members/work-3.png";
 import processImage from "../../assets/images/members/supplier/process.png";
 import workBackground from "../../assets/images/members/supplier/work-background.png";
 
-const Supplier = () => {
+const Supplier = ({ url }) => {
   const [contentWork, setContentWork] = useState(null);
   const [contentFeature, setContentFeature] = useState(null);
   const [heroContent, setHeroContent] = useState(null);
@@ -27,7 +27,7 @@ const Supplier = () => {
   const [conditionContent, setConditionContent] = useState(null);
   useEffect(() => {
     axios
-      .get(`https://pacific-hamlet-79377.herokuapp.com/id/MembersSupplier`)
+      .get(`${url}/MembersSupplier`)
       .then((res) => {
         console.log(res.data.message);
         const dataRaw = res.data.message;
@@ -131,7 +131,7 @@ const Supplier = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [url]);
 
   return (
     <div className="members-page">

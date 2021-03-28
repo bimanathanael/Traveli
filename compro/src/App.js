@@ -6,7 +6,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import "./assets/css/App.css";
 
@@ -30,7 +30,7 @@ import SupplierList from "./pages/memberList/SupplierList";
 import DistributorList from "./pages/memberList/DistributorList";
 
 function App() {
-  const url = "https://pacific-hamlet-79377.herokuapp.com/";
+  const [url, setUrl] = useState(null);
   const scrollRef = React.createRef();
   // useEffect(()=>{
   // const scroll = new LocomotiveScroll({
@@ -40,29 +40,51 @@ function App() {
 
   // },[])
 
+  useEffect(() => {
+    const getItem = localStorage.getItem("language");
+    if (getItem) {
+      setUrl(`https://pacific-hamlet-79377.herokuapp.com/${getItem}`);
+    } else setUrl(`https://pacific-hamlet-79377.herokuapp.com/id`);
+  }, []);
+
+  const handleLanguage = (lang) => {
+    console.log(lang, `app`);
+    if (lang === "en") {
+      localStorage.setItem("language", lang);
+      const getItem = localStorage.getItem("language");
+      console.log(getItem, `string?`);
+      setUrl(`https://pacific-hamlet-79377.herokuapp.com/${getItem}`);
+    }
+
+    if (lang === "id") {
+      localStorage.setItem("language", lang);
+      const getItem = localStorage.getItem("language");
+      setUrl(`https://pacific-hamlet-79377.herokuapp.com/${getItem}`);
+    }
+  };
   return (
     <ParallaxProvider>
       {/* <div  data-scroll-container> */}
       <Router>
-        <Nav url={url} />
+        <Nav url={url} handleLanguage={handleLanguage} />
         <Switch>
           <Route exact path="/members/supplier">
-            <MemberSupplier />
+            <MemberSupplier url={url} />
           </Route>
           <Route exact path="/members/wholesaler">
-            <MembersWholesaler />
+            <MembersWholesaler url={url} />
           </Route>
           <Route exact path="/members/reseller">
-            <MembersReseller />
+            <MembersReseller url={url} />
           </Route>
           <Route exact path="/member-list/supplier">
-            <SupplierList />
+            <SupplierList url={url} />
           </Route>
           <Route exact path="/member-list/wholesaler">
-            <DistributorList />
+            <DistributorList url={url} />
           </Route>
           <Route exact path="/travelikuy">
-            <Travelikuy />
+            <Travelikuy url={url} />
           </Route>
           <Route path="/howItWorks">
             <HowItWorks url={url} />

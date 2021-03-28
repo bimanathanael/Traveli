@@ -6,28 +6,34 @@ import axios from "axios";
 // component
 import HeroMembers from "../../components/members/HeroMembers";
 import BenefitMembers from "../../components/members/BenefitMembers";
-import SupplierWork from "../../components/members/SupplierWork";
+import SupplierWorkReseller from "../../components/members/SupplierWorkReseller";
 import ProcessMembers from "../../components/members/ProcessMembers";
 import ConditionMembers from "../../components/members/ConditionMembers";
 import KeyFeatureMembers from "../../components/members/KeyFeatureMembers";
 
 // asset
 import heroBackground from "../../assets/images/members/reseller/hero.png";
-import WorkOne from "../../assets/images/members/work-1.png";
-import WorkTwo from "../../assets/images/members/work-2.png";
-import WorkThree from "../../assets/images/members/work-3.png";
+import WorkOneAgency from "../../assets/images/members/reseller/agency/work-1.png";
+import WorkTwoAgency from "../../assets/images/members/reseller/agency/work-2.png";
+import WorkThreeAgency from "../../assets/images/members/reseller/agency/work-3.png";
+import WorkFourAgency from "../../assets/images/members/reseller/agency/work-4.png";
+import WorkOneCorporate from "../../assets/images/members/reseller/corporate/work-1.png";
+import WorkTwoCorporate from "../../assets/images/members/reseller/corporate/work-2.png";
+import WorkThreeCorporate from "../../assets/images/members/reseller/corporate/work-3.png";
+import WorkFourCorporate from "../../assets/images/members/reseller/corporate/work-4.png";
 import processImage from "../../assets/images/members/reseller/process.png";
 import workBackground from "../../assets/images/members/reseller/bg.png";
 
-const Reseller = () => {
-  const [contentWork, setContentWork] = useState(null);
+const Reseller = ({ url }) => {
+  const [contentWorkAgent, setContentWorkAgent] = useState(null);
+  const [contentWorkCorporate, setContentWorkCorporate] = useState(null);
   const [contentFeature, setContentFeature] = useState(null);
   const [heroContent, setHeroContent] = useState(null);
   const [offerContent, setOfferContent] = useState(null);
   const [conditionContent, setConditionContent] = useState(null);
   useEffect(() => {
     axios
-      .get(`https://pacific-hamlet-79377.herokuapp.com/id/MembersReseller`)
+      .get(`${url}/MembersReseller`)
       .then((res) => {
         console.log(res.data.message);
         const dataRaw = res.data.message;
@@ -56,26 +62,57 @@ const Reseller = () => {
             setOfferContent(whatWeOffer);
           }
 
-          // How Supplier Works
+          // How Corporate Works
           if (dataRaw.HowCorporateWorksTitle) {
             const supplierWorks = {
               one: {
-                image: WorkOne,
+                image: WorkOneCorporate,
                 title: dataRaw.HowCorporateWorksTitle.Title1,
                 desc: dataRaw.HowCorporateWorksDescription.Description1,
               },
               two: {
-                image: WorkTwo,
+                image: WorkTwoCorporate,
                 title: dataRaw.HowCorporateWorksTitle.Title2,
                 desc: dataRaw.HowCorporateWorksDescription.Description2,
               },
               three: {
-                image: WorkThree,
+                image: WorkThreeCorporate,
                 title: dataRaw.HowCorporateWorksTitle.Title3,
                 desc: dataRaw.HowCorporateWorksDescription.Description3,
               },
+              four: {
+                image: WorkFourCorporate,
+                title: dataRaw.HowCorporateWorksTitle.Title4,
+                desc: dataRaw.HowCorporateWorksDescription.Description4,
+              },
             };
-            setContentWork(supplierWorks);
+            setContentWorkCorporate(supplierWorks);
+          }
+
+          if (dataRaw.HowAgencyOrSubAgentWorksTitle) {
+            const supplierWorks = {
+              one: {
+                image: WorkOneAgency,
+                title: dataRaw.HowAgencyOrSubAgentWorksTitle.Title1,
+                desc: dataRaw.HowAgencyOrSubAgentWorksDescription.Description1,
+              },
+              two: {
+                image: WorkTwoAgency,
+                title: dataRaw.HowAgencyOrSubAgentWorksTitle.Title2,
+                desc: dataRaw.HowAgencyOrSubAgentWorksDescription.Description2,
+              },
+              three: {
+                image: WorkThreeAgency,
+                title: dataRaw.HowAgencyOrSubAgentWorksTitle.Title3,
+                desc: dataRaw.HowAgencyOrSubAgentWorksDescription.Description3,
+              },
+              four: {
+                image: WorkFourAgency,
+                title: dataRaw.HowAgencyOrSubAgentWorksTitle.Title4,
+                desc: dataRaw.HowAgencyOrSubAgentWorksDescription.Description4,
+              },
+            };
+            setContentWorkAgent(supplierWorks);
           }
 
           // Condition
@@ -132,7 +169,7 @@ const Reseller = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [url]);
 
   return (
     <div className="members-page">
@@ -142,9 +179,10 @@ const Reseller = () => {
         textSubHeader={"WHAT WE OFFER"}
         data={offerContent}
       />
-      <SupplierWork
+      <SupplierWorkReseller
         title={"HOW RESELLER WORKS"}
-        content={contentWork}
+        contentAgent={contentWorkAgent}
+        contentCorporate={contentWorkCorporate}
         workBackground={workBackground}
       />
       <ProcessMembers processImg={processImage} />

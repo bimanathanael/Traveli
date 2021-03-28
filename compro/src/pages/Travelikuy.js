@@ -2,39 +2,55 @@ import React, { useState, useEffect } from "react";
 
 // package
 import axios from "axios";
+import { Button } from "@material-ui/core";
+import ScrollAnimation from "react-animate-on-scroll";
 
 // component
 import HeroMembers from "../components/members/HeroMembers";
 import BenefitMembers from "../components/members/BenefitMembers";
 import SupplierWork from "../components/members/SupplierWork";
 import ProcessMembers from "../components/members/ProcessMembers";
+import ProcessCustomer from "../components/members/ProcessCustomers";
 import ConditionMembers from "../components/members/ConditionMembers";
 import KeyFeatureMembers from "../components/members/KeyFeatureMembers";
 
 // asset
 import heroBackground from "../assets/images/travelikuy/hero.png";
-import WorkOne from "../assets/images/members/work-1.png";
-import WorkTwo from "../assets/images/members/work-2.png";
-import WorkThree from "../assets/images/members/work-3.png";
+import WorkOnePetra from "../assets/images/travelikuy/petra/work-1.png";
+import WorkTwoPetra from "../assets/images/travelikuy/petra/work-2.png";
+import WorkThreePetra from "../assets/images/travelikuy/petra/work-3.png";
+import WorkFourPetra from "../assets/images/travelikuy/petra/work-4.png";
+import WorkOneCustomer from "../assets/images/travelikuy/customer/work-1.png";
+import WorkTwoCustomer from "../assets/images/travelikuy/customer/work-2.png";
 import processImage from "../assets/images/travelikuy/process.png";
+import processCustomer from "../assets/images/travelikuy/process-customer.png";
 import workBackground from "../assets/images/travelikuy/bg_petra.png";
 
-const Supplier = () => {
+const Supplier = ({ url }) => {
   const [contentPetra, setContentPetra] = useState(null);
   const [featurePetra, setFeaturePetra] = useState(null);
   const [heroContent, setHeroContent] = useState(null);
   const [offerPetra, setOfferPetra] = useState(null);
   const [conditionPetra, setConditionPetra] = useState(null);
+  const [titleWork, setTitleWork] = useState(`HOW PETRA WORKS`);
+
+  const [petraPage, setPetraPage] = useState(true);
 
   const [benefitTitle, setBenefitTitle] = useState("FOR PETRA");
 
   const [contentCustomer, setContentCustomer] = useState(null);
-  const [featureCustomer, setFeatureCustomer] = useState(null);
   const [offerCustomer, setOfferCustomer] = useState(null);
-  const [conditionCustomer, setConditionCustomer] = useState(null);
+
+  const [triggerSub, setTriggerSub] = useState(`petra`);
+  const [colorButtonOne, setColorButtonOne] = useState("yellow");
+  const [colorButtonTwo, setColorButtonTwo] = useState("white");
+
+  const [oneClicked, setOneClicked] = useState(false);
+  const [twoClicked, setTwoClicked] = useState(false);
+
   useEffect(() => {
     axios
-      .get(`https://pacific-hamlet-79377.herokuapp.com/id/TraveliKuy`)
+      .get(`${url}/TraveliKuy`)
       .then((res) => {
         console.log(res.data.message);
         const dataRaw = res.data.message;
@@ -82,22 +98,22 @@ const Supplier = () => {
           if (dataRaw.HowPetraWorksTitle) {
             const supplierWorks = {
               one: {
-                image: WorkOne,
+                image: WorkOnePetra,
                 title: dataRaw.HowPetraWorksTitle.Title1,
                 desc: dataRaw.HowPetraWorksDescription.Description1,
               },
               two: {
-                image: WorkTwo,
+                image: WorkTwoPetra,
                 title: dataRaw.HowPetraWorksTitle.Title2,
                 desc: dataRaw.HowPetraWorksDescription.Description2,
               },
               three: {
-                image: WorkThree,
+                image: WorkThreePetra,
                 title: dataRaw.HowPetraWorksTitle.Title3,
                 desc: dataRaw.HowPetraWorksDescription.Description3,
               },
               four: {
-                image: WorkThree,
+                image: WorkFourPetra,
                 title: dataRaw.HowPetraWorksTitle.Title4,
                 desc: dataRaw.HowPetraWorksDescription.Description4,
               },
@@ -109,12 +125,12 @@ const Supplier = () => {
           if (dataRaw.HowCostumerWorksTitle) {
             const supplierWorks = {
               one: {
-                image: WorkOne,
+                image: WorkOneCustomer,
                 title: dataRaw.HowCostumerWorksTitle.Title1,
                 desc: dataRaw.HowCostumerWorksDescription.Description1,
               },
               two: {
-                image: WorkTwo,
+                image: WorkTwoCustomer,
                 title: dataRaw.HowCostumerWorksTitle.Title2,
                 desc: dataRaw.HowCostumerWorksDescription.Description2,
               },
@@ -174,7 +190,28 @@ const Supplier = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [url]);
+
+  const handleButtonOne = () => {
+    setColorButtonOne("yellow");
+    setColorButtonTwo("white");
+    setOneClicked(true);
+    setTwoClicked(false);
+    setTriggerSub("petra");
+    setPetraPage(true);
+    setBenefitTitle("FOR PETRA");
+  };
+
+  const handleButtonTwo = () => {
+    setColorButtonOne("white");
+    setColorButtonTwo("yellow");
+    setOneClicked(false);
+    setTwoClicked(true);
+    setTriggerSub("customer");
+    setPetraPage(false);
+    setTitleWork("HOW CUSTOMER WORKS");
+    setBenefitTitle("FOR CUSTOMERS");
+  };
 
   return (
     <div className="members-page">
@@ -183,22 +220,68 @@ const Supplier = () => {
         backgroundHero={heroBackground}
         footer={false}
       />
+      <div style={{ margin: "4rem auto 0 auto" }}>
+        <ScrollAnimation animateIn="fadeIn">
+          <div style={{ textAlign: "center", marginTop: "2rem" }}>
+            <h6>{`DO YOU WANT TO HAVE EXTRA INCOME?`}</h6>
+          </div>
+          <div
+            className="button-container"
+            style={{
+              backgroundColor: "white",
+              width: "30%",
+              marginTop: "2rem",
+            }}
+          >
+            <Button
+              style={{
+                backgroundColor: colorButtonOne,
+                borderRadius: "10rem",
+                color: oneClicked ? "#07AED6" : "#707070",
+                width: "50%",
+              }}
+              className="button-temp"
+              onClick={handleButtonOne}
+            >
+              {`PERSONAL TRAVELI (PETRA)`}
+            </Button>
+            <Button
+              style={{
+                backgroundColor: colorButtonTwo,
+                borderRadius: "10rem",
+                color: twoClicked ? "#07AED6" : "#707070",
+                width: "50%",
+              }}
+              className="button-temp"
+              onClick={handleButtonTwo}
+            >
+              {`CUSTOMER`}
+            </Button>
+          </div>
+        </ScrollAnimation>
+      </div>
       <BenefitMembers
         textHeader={"BENEFITS"}
         textSubHeader={benefitTitle}
-        data={offerPetra}
+        data={petraPage ? offerPetra : offerCustomer}
       />
       <SupplierWork
-        title={"HOW PETRA WORKS"}
-        content={contentPetra}
+        title={titleWork}
+        content={petraPage ? contentPetra : contentCustomer}
         workBackground={workBackground}
       />
-      <ProcessMembers processImg={processImage} />
-      <ConditionMembers data={conditionPetra} />
-      <KeyFeatureMembers
-        content={featurePetra}
-        title={"KEY FEATURES FOR PETRA"}
-      />
+      {petraPage ? (
+        <>
+          <ProcessMembers processImg={processImage} />
+          <ConditionMembers data={conditionPetra} />
+          <KeyFeatureMembers
+            content={featurePetra}
+            title={"KEY FEATURES FOR PETRA"}
+          />
+        </>
+      ) : (
+        <ProcessCustomer processImg={processCustomer} />
+      )}
     </div>
   );
 };

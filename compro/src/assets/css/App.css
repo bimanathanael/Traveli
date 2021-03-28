@@ -1,19 +1,17 @@
-
 @font-face {
-  font-family: 'Bristone';
-  src: url('../font/Bristone.otf');
-  src:  url('../font/Bristone.ttf') format('truetype')
+  font-family: "Bristone";
+  src: url("../font/Bristone.otf");
+  src: url("../font/Bristone.ttf") format("truetype");
 }
-
 
 .App {
   text-align: center;
   margin-top: 100px;
-  font-family: 'Roboto';
+  font-family: "Roboto";
 }
 
-body{
-  font-family: 'Roboto';
+body {
+  font-family: "Roboto";
 }
 
 .App-logo {
@@ -51,40 +49,37 @@ body{
   }
 }
 
-
-
-
 /* Custom */
 
-.personToBot{
+.personToBot {
   position: fixed;
   width: 10%;
   right: 0;
 }
 
-.serverImg{
+.serverImg {
   height: calc(100vh - 4.66667rem);
   width: 100%;
 }
 
-.cableContainer{
+.cableContainer {
   overflow: hidden;
   height: 100%;
 }
 
-.headBackground{
-  background-image: url('https://iti.ca/themes/iti/assets/images/static/header-person_bg.svg') ;
+.headBackground {
+  background-image: url("https://iti.ca/themes/iti/assets/images/static/header-person_bg.svg");
   transform: translateY(0);
-  transition: transform 2.4s cubic-bezier(.075,.82,.165,1);
+  transition: transform 2.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.headContent{
+.headContent {
   display: flex;
   align-items: center;
   height: 50vh;
 }
 
-.imageLineBot{
+.imageLineBot {
   max-height: 80%;
   margin-top: 100%;
   max-width: 105%;
@@ -98,7 +93,7 @@ body{
   margin-left: 15%;
 }
 
-.imagePeople{
+.imagePeople {
   max-height: 80%;
   margin-top: 12px;
   max-width: 105%;
@@ -110,69 +105,68 @@ body{
   transform: scaleX(1) scaleY(1);
 }
 
-.imagePeople.loaded img{
+.imagePeople.loaded img {
   padding-left: 6%;
 }
 
-.containerImg{
+.containerImg {
   height: 800px !important;
   overflow: hidden;
   position: relative;
 }
 
-.containerImg .parallax-banner-layer-0{
+.containerImg .parallax-banner-layer-0 {
   margin-top: 511px;
   transition: 1.5s ease-in-out;
 }
 
-.containerImg .parallax-banner-layer-0.loaded{
+.containerImg .parallax-banner-layer-0.loaded {
   height: 100% !important;
   margin-top: 0px;
 }
 
-.containerSolution{
+.containerSolution {
   height: 100% !important;
 }
 
-.animation1{
+.animation1 {
   position: absolute;
   top: 50%;
   left: 131px;
   transition: 0.5s ease-in-out;
 }
 
-.MuiTypography-body1{
+.MuiTypography-body1 {
   font-size: 1.6rem !important;
 }
 
-
-.animation1.loaded{
+.animation1.loaded {
   position: absolute;
   top: 5%;
   transition: all;
   left: 131px;
 }
 
-.animation2{
+.animation2 {
   position: absolute;
   top: 10%;
   transition: all 1.5s ease-in-out;
   transform: scaleX(2) scaleY(2) !important;
 }
-.animation2.loaded{
+.animation2.loaded {
   position: absolute;
   top: 10%;
   transform: scaleX(1) scaleY(1) !important;
 }
 
-.animation3{
+.animation3 {
   position: absolute;
   top: 59%;
   left: -176px;
   transition: all 0.5s ease-in-out;
   zoom: 200%;
 }
-.animation3.loaded{
+.animation3.loaded {
   position: absolute;
   top: 39%;
   transition: all;
@@ -180,131 +174,130 @@ body{
   zoom: 200%;
 }
 
-
-.containerBtm{
+.containerBtm {
   height: 1000px;
   overflow: hidden;
 }
 
-.textLeft{
+.textLeft {
   min-height: 600px;
   padding-top: 13%;
   padding-left: 6%;
 }
 
-.btn-slides{
-  width:100px;
+.btn-slides {
+  width: 100px;
   padding: 11px 18px;
-  text-align:center;
-  float:left;
+  text-align: center;
+  float: left;
   /* Old browsers */
   background: linear-gradient(to right, blue 50%, white 50%);
   background-size: 200% 100%;
-  background-position:right bottom;
-  margin-left:10px;
+  background-position: right bottom;
+  margin-left: 10px;
   /* transition:background-color .6s cubic-bezier(.075,.82,.165,1),color .6s cubic-bezier(.075,.82,.165,1); */
   transition: all 0.6s ease;
   width: 133px;
   overflow: hidden;
-  box-shadow: 0 0 50px 0 rgba(0,0,0,.1);
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.1);
   transform: translateZ(0);
-  border-radius: .46667rem;
+  border-radius: 0.46667rem;
 }
 
-.text-white{
+.text-white {
   color: white !important;
 }
 
-.rowBtn{
+.rowBtn {
   padding-top: 1px;
 }
 
-.innerBtnTxt{
+.innerBtnTxt {
   padding: 0px;
   padding-left: 10%;
 }
 
-.spanPlace{
+.spanPlace {
   padding: 0px;
   padding-top: 1%;
 }
 
-.btn-slides:hover{
-  background-position:left bottom;
+.btn-slides:hover {
+  background-position: left bottom;
   color: white;
-  border-radius: .46667rem;
+  border-radius: 0.46667rem;
   /* background-color: blue; */
 }
 
-.spanPlace{
-  color:rgb(39, 142, 253);
+.spanPlace {
+  color: rgb(39, 142, 253);
   transition: all 0.5s ease-in-out;
-  float: left
+  float: left;
 }
 
-.btn-slides:hover .spanPlace{
+.btn-slides:hover .spanPlace {
   color: rgb(72, 238, 187);
-  padding-left: 10%; 
+  padding-left: 10%;
 }
 
-.topSection{
+.topSection {
   background-color: #e1eff6;
   height: 800px;
 }
 
-.solutionSection{
+.solutionSection {
   background-color: #221e1e;
   margin-bottom: -6.2rem;
   padding-bottom: 32px;
   height: 900px;
 }
 
-.noBorder{
+.noBorder {
   border-radius: 18px !important;
   border-left: 0px !important;
   border-right: 0px !important;
   border-top: 0px !important;
   margin: 20px;
-  -webkit-box-shadow: 10px 10px 30px -11px rgba(0,0,0,0.39) !important;
-  -moz-box-shadow: 10px 10px 30px -11px rgba(0,0,0,0.39) !important;
-  box-shadow: 10px 10px 30px -11px rgba(0,0,0,0.39) !important;
+  -webkit-box-shadow: 10px 10px 30px -11px rgba(0, 0, 0, 0.39) !important;
+  -moz-box-shadow: 10px 10px 30px -11px rgba(0, 0, 0, 0.39) !important;
+  box-shadow: 10px 10px 30px -11px rgba(0, 0, 0, 0.39) !important;
 }
 
-.MuiAccordion-root.Mui-expanded{
+.MuiAccordion-root.Mui-expanded {
   margin: 20px !important;
 }
 
-.containerAccordion{
+.containerAccordion {
   position: relative;
   background-color: #fff;
   padding-top: 29px;
 }
 
-.accordionBox{
+.accordionBox {
   padding: 4rem 3.33333rem;
 }
 
-.accordionItem{
+.accordionItem {
   border-top: 1px solid #dddada;
   cursor: pointer;
 }
 
-.itemDetail{
+.itemDetail {
   font-size: 13pt !important;
 }
 
-.MuiSvgIcon-root{
+.MuiSvgIcon-root {
   font-size: 3.5rem !important;
   color: #007aff;
   transition: all 0.3s ease;
 }
 
-.solutionTI{
+.solutionTI {
   font-size: 21px !important;
   font-weight: 300 !important;
 }
 
-.MuiAccordionSummary-content{
+.MuiAccordionSummary-content {
   margin: 29px 0 !important;
 }
 
@@ -313,95 +306,106 @@ body{
   font-size: 2.6rem !important;
 } */
 
-.MuiIconButton-label{
+.MuiIconButton-label {
   transition: all 0.3s ease;
 }
 
-.MuiPaper-root:hover .MuiSvgIcon-root{
-  color:#3cedb7;
+.MuiPaper-root:hover .MuiSvgIcon-root {
+  color: #3cedb7;
 }
 
-#headAcc{
+#headAcc {
   transition: all 0.3s ease;
 }
 
-.MuiPaper-root:hover #headAcc{
-  color:#3cedb7;
+.MuiPaper-root:hover #headAcc {
+  color: #3cedb7;
 }
 
-.MuiPaper-root:hover .MuiIconButton-label{
+.MuiPaper-root:hover .MuiIconButton-label {
   padding-right: 15px;
 }
 
-.parallax-inner{
+.parallax-inner {
   transition: all 0.5s ease;
 }
 
-.containerBot{
-  box-shadow: inset 0 17px 11px #fff ;
+.containerBot {
+  box-shadow: inset 0 17px 11px #fff;
   overflow: hidden;
 }
 
-.p-3{
-  padding: 3%
+.p-3 {
+  padding: 3%;
 }
 
-.pl-1{
-  padding-left: 1%
+.pl-1 {
+  padding-left: 1%;
 }
 
-.pl-2{
-  padding-left: 2%
+.pl-2 {
+  padding-left: 2%;
 }
 
-.pl-3{
-  padding-left: 3%
+.pl-3 {
+  padding-left: 3%;
 }
 
-.mt-10{
-  margin-top: 10%
+.mt-10 {
+  margin-top: 10%;
 }
 
-.m-2{
-  margin: 2%
+.m-2 {
+  margin: 2%;
 }
-
-
-
-
-
 
 /* equal card height */
-.cardSlider{
+.cardSlider {
   height: 378px;
 }
-.row-equal > div[class*='col-'] {
+.row-equal > div[class*="col-"] {
   display: flex;
   flex: 1 0 auto;
 }
 
 .row-equal .card {
- width: 100%;
+  width: 100%;
 }
 
 /* ensure equal card height inside carousel */
-.carousel-inner>.row-equal.active, 
-.carousel-inner>.row-equal.next, 
-.carousel-inner>.row-equal.prev {
+.carousel-inner > .row-equal.active,
+.carousel-inner > .row-equal.next,
+.carousel-inner > .row-equal.prev {
   display: flex;
 }
 
 /* prevent flicker during transition */
-.carousel-inner>.row-equal.active.left, 
-.carousel-inner>.row-equal.active.right {
+.carousel-inner > .row-equal.active.left,
+.carousel-inner > .row-equal.active.right {
   opacity: 0.5;
   display: flex;
 }
 
-
 /* control image height */
 .card-img-top-250 {
   max-height: 250px;
-  overflow:hidden;
+  overflow: hidden;
 }
 
+.button-container {
+  margin: 0 auto;
+  width: 100%;
+  height: 4rem;
+  border-radius: 10rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button-temp {
+  border: none;
+  width: 33.33%;
+  height: 100%;
+  border-radius: 10rem;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-style: none;
+}

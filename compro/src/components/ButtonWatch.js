@@ -1,26 +1,24 @@
-import React from 'react';
-import '../pages/members/members.css';
-import strings from '../assets/constants/strings';
-import { ImPlay2 } from 'react-icons/im';
-import { IconContext } from 'react-icons';
+import React from "react";
+import "../pages/members/members.css";
+import strings from "../assets/constants/strings";
+import { ImPlay2 } from "react-icons/im";
+import { IconContext } from "react-icons";
 
 const ButtonWatch = () => {
-    return (
-        <>
-            <IconContext.Provider value={{size: '2.6em', color: 'white'}}>
-                <button type="button" className="btn button-watch">
-                    <div className="members-button">
-                        <div>
-                            <ImPlay2 />
-                        </div>
-                        <span>
-                            {strings.buttonWatchVideo}
-                        </span>
-                    </div>
-                </button>
-            </IconContext.Provider>
-        </>
-    )
-}
+  return (
+    <>
+      <IconContext.Provider value={{ size: "2.6em", color: "white" }}>
+        <button type="button" className="btn button-watch">
+          <div className="members-button">
+            <div>
+              <ImPlay2 />
+            </div>
+            <span>{strings.buttonWatchVideo}</span>
+          </div>
+        </button>
+      </IconContext.Provider>
+    </>
+  );
+};
 
-export default ButtonWatch
+export default ButtonWatch;

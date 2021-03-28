@@ -28,7 +28,7 @@ const useStyles = makeStyles((themes) => ({
     minHeight: "100vh",
     backgroundImage: `url(${backgroundSupplier})`,
     color: "white",
-    paddingTop: "5rem",
+    paddingTop: "10rem",
   },
   cardContainer: {
     width: "15rem",
@@ -57,7 +57,7 @@ const logo = [
   yukTravelLogo,
 ];
 
-const SupplierList = () => {
+const SupplierList = ({ url }) => {
   const classes = useStyles();
   const settings = {
     dots: true,
@@ -99,7 +99,7 @@ const SupplierList = () => {
 
   useEffect(() => {
     axios
-      .get(`https://pacific-hamlet-79377.herokuapp.com/id/MembersListSupplier`)
+      .get(`${url}/MembersListSupplier`)
       .then((res) => {
         if (res.data.message) {
           console.log(res.data.message);
@@ -113,7 +113,7 @@ const SupplierList = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [url]);
   return (
     <div className="members-page">
       <div className={classes.heroSupplier}>
@@ -163,7 +163,7 @@ const SupplierList = () => {
                 <div
                   className="col-12"
                   style={{
-                    marginTop: "5rem",
+                    marginTop: "2rem",
                     display: "flex",
                     justifyContent: "center",
                     flexDirection: "column",
@@ -193,7 +193,7 @@ const SupplierList = () => {
                 <h2>{"OUR SUPPLIER"}</h2>
               </div>
               <div className="col-12" style={{ fontSize: ".7rem" }}>
-                <p style={{color: 'black'}}>
+                <p style={{ color: "black" }}>
                   {
                     "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. "
                   }

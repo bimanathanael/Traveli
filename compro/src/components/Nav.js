@@ -1,48 +1,74 @@
-import '../assets/css/Nav.css';
+import "../assets/css/Nav.css";
 import { Link, useLocation, useParams } from "react-router-dom";
-import logo3 from '../assets/images/traveli_white2.png'
-import distributorImg from '../assets/images/distributorImg.png'
-import suppImg from '../assets/images/suppImg.png'
-import resellerImg from '../assets/images/resellerImg.png'
+import logo3 from "../assets/images/traveli_white2.png";
+import distributorImg from "../assets/images/distributorImg.png";
+import suppImg from "../assets/images/suppImg.png";
+import resellerImg from "../assets/images/resellerImg.png";
 
-export const Nav = () => {
+export const Nav = ({ handleLanguage }) => {
+  const location = useLocation();
 
-  const location = useLocation()
-  
-  let navbarClass = "navbar navbar-expand-lg navbar-light "
-  const locationNow = location.pathname.toLowerCase()
-  
-  let aboutUsUnderline = false
-  let memberUnderline = false
-  let memberListUnderline = false
-  console.log(locationNow, "<locationnow")
-  
-  if ( locationNow == "/profile" || locationNow == "/news" || locationNow.slice(0,5) === "/news" || 
-  locationNow == "/contactus") {
-    aboutUsUnderline = true
-    console.log("masuk atas NAV")
-    navbarClass += 'navBlue'
-  } else if ( locationNow == "/supplierlist" || locationNow == "/wholesaler" ) {
-    memberListUnderline = true
-    console.log("masuk else if 2 NAV")
-  } else if ( locationNow == "/supplier" || locationNow == "/wholesalermember" || 
-  locationNow == "/reseller") {
-    memberUnderline = true
-    console.log("masuk else if 3 NAV")
-  } else if (locationNow == '/promo' || locationNow == '/login' || locationNow == '/joinus' || locationNow == "/howitworks"){
-    navbarClass += 'navBlue'
-    console.log("masuk else  NAV")
+  let navbarClass = "navbar navbar-expand-lg navbar-light ";
+  const locationNow = location.pathname.toLowerCase();
+
+  let aboutUsUnderline = false;
+  let memberUnderline = false;
+  let memberListUnderline = false;
+  console.log(locationNow, "<locationnow");
+
+  if (
+    locationNow == "/profile" ||
+    locationNow == "/news" ||
+    locationNow.slice(0, 5) === "/news" ||
+    locationNow == "/contactus"
+  ) {
+    aboutUsUnderline = true;
+    console.log("masuk atas NAV");
+    navbarClass += "navBlue";
+  } else if (
+    locationNow == "/member-list/supplier" ||
+    locationNow == "/member-list/wholesaler"
+  ) {
+    memberListUnderline = true;
+    console.log("masuk else if 2 NAV");
+  } else if (
+    locationNow == "/members/supplier" ||
+    locationNow == "/members/wholesaler" ||
+    locationNow == "/reseller"
+  ) {
+    memberUnderline = true;
+    console.log("masuk else if 3 NAV");
+  } else if (
+    locationNow == "/promo" ||
+    locationNow == "/login" ||
+    locationNow == "/joinus" ||
+    locationNow == "/howitworks"
+  ) {
+    navbarClass += "navBlue";
+    console.log("masuk else  NAV");
   }
+
+  const handleLanguageButton = (lang) => {
+    handleLanguage(lang);
+  };
 
   return (
     <>
-      <nav className={navbarClass}  id="mainNavbar">
+      <nav className={navbarClass} id="mainNavbar">
         <a href="/">
           {/* <Link className="nav-link logo-link" to="/"> */}
-            <img className="logo" src={logo3}/>
+          <img className="logo" src={logo3} />
           {/* </Link> */}
         </a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
 
@@ -50,32 +76,56 @@ export const Nav = () => {
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0 ml-4">
             <li className="nav-item mobile-center">
               <Link to="/howItWorks">
-                <a className={`mobile-center mr-3 nav-link text-white ${locationNow.toLocaleLowerCase() == "/howitworks" ? "yellow-underline" : ""} `} id="howItWorks">
+                <a
+                  className={`mobile-center mr-3 nav-link text-white ${
+                    locationNow.toLocaleLowerCase() == "/howitworks"
+                      ? "yellow-underline"
+                      : ""
+                  } `}
+                  id="howItWorks"
+                >
                   How It Works
                 </a>
               </Link>
             </li>
             <li className="nav-item dropdown ml-3 members-dropdown supplier-menu">
-              <a className={`nav-link text-white dropdown-toggle ${memberUnderline ? "yellow-underline" : ""}`} 
-               href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a
+                className={`nav-link text-white dropdown-toggle ${
+                  memberUnderline ? "yellow-underline" : ""
+                }`}
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
                 Members
               </a>
-              <div className="dropdown-menu no-mobile" aria-labelledby="navbarDropdown">
+              <div
+                className="dropdown-menu no-mobile"
+                aria-labelledby="navbarDropdown"
+              >
                 <div className="row">
                   <div className="col-md-4">
                     <div className="row">
                       <div className="col-md-8">
-                        <a className="dropdown-item menu-heading" href="#">SUPPLIER</a>
+                        <Link
+                          to="/members/supplier"
+                          className="dropdown-item menu-heading"
+                        >
+                          SUPPLIER
+                        </Link>
                       </div>
                     </div>
                     <div className="row">
                       <div className="col-md-5 p-0">
-                        <img className="membersImg" src={suppImg}/>
+                        <img className="membersImg" src={suppImg} />
                       </div>
                       <div className="col-md-7 p-0">
                         <p>
-                          Pemilik produk dengan credensial khusus. Dapat mengubah dan mental produknya
-                          kedalam Traveli store.
+                          Pemilik produk dengan credensial khusus. Dapat
+                          mengubah dan mental produknya kedalam Traveli store.
                         </p>
                       </div>
                     </div>
@@ -83,17 +133,22 @@ export const Nav = () => {
                   <div className="col-md-4 borderLeft">
                     <div className="row">
                       <div className="col-md-8">
-                        <a className="dropdown-item menu-heading" href="#">WHOLESALER</a>
+                        <Link
+                          to="/members/wholesaler"
+                          className="dropdown-item menu-heading"
+                        >
+                          WHOLESALER
+                        </Link>
                       </div>
                     </div>
                     <div className="row">
                       <div className="col-md-5 p-0">
-                        <img className="membersImg" src={distributorImg}/>
+                        <img className="membersImg" src={distributorImg} />
                       </div>
                       <div className="col-md-7 p-0">
                         <p>
-                          Pemilik produk dengan credensial khusus. Dapat mengubah dan mental produknya
-                          kedalam Traveli store.
+                          Pemilik produk dengan credensial khusus. Dapat
+                          mengubah dan mental produknya kedalam Traveli store.
                         </p>
                       </div>
                     </div>
@@ -101,135 +156,228 @@ export const Nav = () => {
                   <div className="col-md-4 borderLeft">
                     <div className="row">
                       <div className="col-md-8">
-                        <a className="dropdown-item menu-heading" href="#">RESELLER</a>
+                        <Link
+                          to="/members/reseller"
+                          className="dropdown-item menu-heading"
+                        >
+                          RESELLER
+                        </Link>
                       </div>
                     </div>
                     <div className="row">
                       <div className="col-md-5 p-0">
-                        <img className="membersImg" src={resellerImg}/>
+                        <img className="membersImg" src={resellerImg} />
                       </div>
                       <div className="col-md-7 p-0">
                         <p>
-                          Pemilik produk dengan credensial khusus. Dapat mengubah dan mental produknya
-                          kedalam Traveli store.
+                          Pemilik produk dengan credensial khusus. Dapat
+                          mengubah dan mental produknya kedalam Traveli store.
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="dropdown-menu mobile-only" aria-labelledby="navbarDropdown">
-                <Link to="/Supplier">
-                  <a className="dropdown-item" href="#">Supplier</a>
+              <div
+                className="dropdown-menu mobile-only"
+                aria-labelledby="navbarDropdown"
+              >
+                <Link to="/members/supplier">
+                  <a className="dropdown-item" href="#">
+                    Supplier
+                  </a>
                 </Link>
-                <Link to="/Wholesaler">
-                  <a className="dropdown-item" href="#">Wholesaler</a>
+                <Link to="/members/wholesaler">
+                  <a className="dropdown-item" href="#">
+                    Wholesaler
+                  </a>
                 </Link>
-                <Link to="/Reseller">
-                  <a className="dropdown-item" href="#">Reseller</a>
+                <Link to="/members/reseller">
+                  <a className="dropdown-item" href="#">
+                    Reseller
+                  </a>
                 </Link>
               </div>
             </li>
             <li className="nav-item dropdown ml-3 member-list-dropdown">
-              <a className={`nav-link text-white dropdown-toggle ${memberListUnderline ? "yellow-underline" : ""}`} 
-              href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a
+                className={`nav-link text-white dropdown-toggle ${
+                  memberListUnderline ? "yellow-underline" : ""
+                }`}
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
                 Member List
               </a>
-              <div className="dropdown-menu p23 no-mobile" aria-labelledby="navbarDropdown">
+              <div
+                className="dropdown-menu p23 no-mobile"
+                aria-labelledby="navbarDropdown"
+              >
                 <div className="row">
                   <div className="col-md-6">
-                      <a className="dropdown-item menu-heading" href="#">SUPPLIER LIST</a>
-                      <p>
-                        Pemilik produk dengan credensial khusus. Dapat mengubah dan mental produknya
-                        kedalam Traveli store.
-                      </p>
+                    <Link
+                      to="/member-list/supplier"
+                      className="dropdown-item menu-heading"
+                    >
+                      SUPPLIER LIST
+                    </Link>
+                    <p>
+                      Pemilik produk dengan credensial khusus. Dapat mengubah
+                      dan mental produknya kedalam Traveli store.
+                    </p>
                   </div>
                   <div className="col-md-6 borderLeft">
-                      <a className="dropdown-item menu-heading" href="#">WHOLESALER</a>
-                      <p>
-                        Pemilik produk dengan credensial khusus. Dapat mengubah dan mental produknya
-                        kedalam Traveli store.
-                      </p>
+                    <Link
+                      to="/member-list/wholesaler"
+                      className="dropdown-item menu-heading"
+                    >
+                      WHOLESALER
+                    </Link>
+                    <p>
+                      Pemilik produk dengan credensial khusus. Dapat mengubah
+                      dan mental produknya kedalam Traveli store.
+                    </p>
                   </div>
                 </div>
               </div>
-              <div className="dropdown-menu mobile-only" aria-labelledby="navbarDropdown">
-                <Link to="/supplierList">
-                  <a className="dropdown-item" href="#">Supplier List</a>
+              <div
+                className="dropdown-menu mobile-only"
+                aria-labelledby="navbarDropdown"
+              >
+                <Link to="/member-list/supplier" className="dropdown-item">
+                  Supplier List
                 </Link>
-                <Link to="/wholesaler">
-                  <a className="dropdown-item" href="#">Wholesaler</a>
+                <Link to="/member-list/wholesaler">
+                  <a className="dropdown-item">Wholesaler</a>
                 </Link>
               </div>
             </li>
             <li className="nav-item">
               <Link to="/travelikuy">
-                <a className={`nav-link text-white ml-4 ${locationNow == "/travelikuy" ? "yellow-underline" : ""} `} >
+                <a
+                  className={`nav-link text-white ml-4 ${
+                    locationNow == "/travelikuy" ? "yellow-underline" : ""
+                  } `}
+                >
                   TraveliKuy
                 </a>
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/promo">
-                <a className={`nav-link text-white ml-4 ${locationNow == "/promo" ? "yellow-underline" : ""} `} >
+                <a
+                  className={`nav-link text-white ml-4 ${
+                    locationNow == "/promo" ? "yellow-underline" : ""
+                  } `}
+                >
                   Promo
                 </a>
               </Link>
             </li>
             <li className="nav-item dropdown ml-2">
-              <a className={`nav-link text-white dropdown-toggle ${aboutUsUnderline ? "yellow-underline" : ""}`} 
-              href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a
+                className={`nav-link text-white dropdown-toggle ${
+                  aboutUsUnderline ? "yellow-underline" : ""
+                }`}
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
                 About Us
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <Link to="/profile">
-                  <a className="dropdown-item" href="#">Profile</a>
+                  <a className="dropdown-item" href="#">
+                    Profile
+                  </a>
                 </Link>
                 <Link to="/news">
-                  <a className="dropdown-item" href="#">News and Updates</a>
+                  <a className="dropdown-item" href="#">
+                    News and Updates
+                  </a>
                 </Link>
                 <Link to="/contactUs">
-                  <a className="dropdown-item" href="#">Contact Us</a>
+                  <a className="dropdown-item" href="#">
+                    Contact Us
+                  </a>
                 </Link>
               </div>
             </li>
           </ul>
           <ul className="navbar-nav my-2 my-lg-0 pr-5 pt-2">
             <li className="nav-item dropdown space-left text-right">
-              <a className="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a
+                className="nav-link dropdown-toggle text-white"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                type="button"
+              >
                 ID
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item" href="#">ID</a>
-                <a className="dropdown-item" href="#">EN</a>
+                <a
+                  className="dropdown-item"
+                  href="javascript:void(0)"
+                  // type="button"
+                  onClick={() => handleLanguageButton("id")}
+                >
+                  ID
+                </a>
+                <a
+                  className="dropdown-item"
+                  href="javascript:void(0)"
+                  type="button"
+                  onClick={() => handleLanguageButton("en")}
+                >
+                  EN
+                </a>
               </div>
             </li>
             <div className="mobile-center mobile-only">
               <a href="/login">
                 <li className="nav-item text-right">
-                  <button type="button" className="btn btn-login">Login</button>
+                  <button type="button" className="btn btn-login">
+                    Login
+                  </button>
                 </li>
               </a>
               <a href="/joinUs">
                 <li className="nav-item">
-                  <button type="button" className="btn btn-join">Join Us</button>
+                  <button type="button" className="btn btn-join">
+                    Join Us
+                  </button>
                 </li>
               </a>
             </div>
             <a href="/login">
               <li className="nav-item text-right no-mobile">
-                <button type="button" className="btn btn-login">Login</button>
+                <button type="button" className="btn btn-login">
+                  Login
+                </button>
               </li>
             </a>
             <a href="/joinUs">
               <li className="nav-item no-mobile">
-                <button type="button" className="btn btn-join">Join Us</button>
+                <button type="button" className="btn btn-join">
+                  Join Us
+                </button>
               </li>
             </a>
           </ul>
         </div>
       </nav>
-      
+
       {/* <nav className={navbarClass} id="mainNavbars">
         
         <div>
@@ -288,5 +436,5 @@ export const Nav = () => {
 
       </nav> */}
     </>
-  )
-}
+  );
+};
