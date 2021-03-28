@@ -1,6 +1,6 @@
 import React from "react";
 import ButtonTry from "../ButtonTry";
-import { TiLocationArrow } from "react-icons/ti";
+
 import { makeStyles } from "@material-ui/core";
 import ScrollAnimation from "react-animate-on-scroll";
 import ArrowBlue from "../../assets/images/members/arrow_blue.png";

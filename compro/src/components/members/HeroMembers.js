@@ -77,10 +77,6 @@ const useStyles = makeStyles((themes) => ({
 
 const HeroMembers = ({ backgroundHero, data, footer = true }) => {
   const classes = useStyles();
-  const [mobileView, setMobileView] = useState(window.innerWidth);
-  useEffect(() => {
-    console.log(mobileView);
-  }, [mobileView]);
   return (
     <>
       {data && (

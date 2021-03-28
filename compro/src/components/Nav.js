@@ -186,10 +186,7 @@ export const Nav = ({ handleLanguage }) => {
               >
                 Members
               </a>
-              <div
-                className="dropdown-menu "
-                aria-labelledby="navbarDropdown"
-              >
+              <div className="dropdown-menu " aria-labelledby="navbarDropdown">
                 <Link to="/members/supplier">
                   <a className="dropdown-item mobile-1" href="#">
                     Supplier
@@ -207,7 +204,7 @@ export const Nav = ({ handleLanguage }) => {
                 </Link>
               </div>
             </li>
-            
+
             <li className="nav-item dropdown ml-3 member-list-dropdown no-mobile">
               <a
                 className={`nav-link text-white dropdown-toggle ${
@@ -254,7 +251,7 @@ export const Nav = ({ handleLanguage }) => {
                 </div>
               </div>
             </li>
-            
+
             <li className="nav-item dropdown ml-3 member-list-dropdown mobile-only">
               <a
                 className={`nav-link text-white dropdown-toggle ${
@@ -269,10 +266,7 @@ export const Nav = ({ handleLanguage }) => {
               >
                 Member List
               </a>
-              <div
-                className="dropdown-menu"
-                aria-labelledby="navbarDropdown"
-              >
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <Link to="/member-list/supplier">
                   <a className="dropdown-item mobile-1">Supplier List</a>
                 </Link>
@@ -348,7 +342,7 @@ export const Nav = ({ handleLanguage }) => {
                 aria-expanded="false"
                 type="button"
               >
-                ID
+                {localStorage.getItem("language") === "id" ? "ID" : "EN"}
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a

@@ -1,5 +1,4 @@
 import React from "react";
-import { TiLocationArrow } from "react-icons/ti";
 import conditionBackground from "../../assets/images/members/CONDITIONS.png";
 import arrowBlue from "../../assets/images/members/arrow_blue.png";
 import { makeStyles } from "@material-ui/core";

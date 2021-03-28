@@ -177,13 +177,8 @@
     padding-left: 0rem !important;
   }
 
-<<<<<<< HEAD
   body .mobile-2 {
-    font-size: 1.2rem;
-=======
-  body .mobile-2{
     font-size: 1.2rem !important;
->>>>>>> development
   }
 
   body .mobile-full-100 {
@@ -192,26 +187,20 @@
     max-width: 100% !important;
   }
 
-<<<<<<< HEAD
-  body .mobile-1 {
-    font-size: 1rem;
-=======
-  body .container-contact{
+  body .container-contact {
     padding: 31% 5% 10% 5% !important;
   }
 
-  body .mobile-no-padding-bottom{
+  body .mobile-no-padding-bottom {
     padding-bottom: 0px !important;
   }
 
-  body .mobile-no-margin-top{
+  body .mobile-no-margin-top {
     margin-top: 0px !important;
   }
 
-
-  body .mobile-1{
-     font-size: 1rem !important;
->>>>>>> development
+  body .mobile-1 {
+    font-size: 1rem !important;
   }
 
   body .cardNewsPageBot {
@@ -251,21 +240,12 @@
     height: 10rem;
   }
 
-<<<<<<< HEAD
   body .mobile-only {
-    display: block;
-  }
-
-  body .mobile-inline-block {
-    display: inline-block i !important;
-=======
-  body .mobile-only{
     display: block !important;
   }
 
-  body .mobile-inline-block{
+  body .mobile-inline-block {
     display: inline-block !important;
->>>>>>> development
   }
 
   body .container-news {
@@ -308,13 +288,8 @@
     width: 100% !important;
   }
 
-<<<<<<< HEAD
   body .benefitTitle {
-    min-height: 0rem;
-=======
-  body .benefitTitle{
     min-height: 3rem;
->>>>>>> development
   }
 
   body .hero-title {
@@ -1012,13 +987,8 @@
   font-family: "Bristone";
 }
 
-<<<<<<< HEAD
-.headingWhy {
-  font-size: 2.5rem;
-=======
-.headingWhyHome{
+.headingWhyHome {
   font-size: 2rem;
->>>>>>> development
   font-weight: 400;
   padding-left: 50px;
   color: #48afd7;
@@ -1029,13 +999,8 @@
   font-size: 2.5rem;
   font-weight: 400;
   padding-left: 50px;
-<<<<<<< HEAD
-  color: #48afd7;
+  color: white;
   font-family: "Bristone";
-=======
-  color:white;
-  font-family: 'Bristone';
->>>>>>> development
 }
 
 .needs-subheader {
@@ -1351,15 +1316,9 @@ p {
   background-repeat: no-repeat;
 }
 
-<<<<<<< HEAD
 .container-contact {
-  padding: 10% 0% 10% 0%;
-  background-image: url("../images/bgAbout.png");
-=======
-.container-contact{
   padding: 10% 0% 0% 0%;
-  background-image: url('../images/bgAbout.png');
->>>>>>> development
+  background-image: url("../images/bgAbout.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -1368,14 +1327,9 @@ p {
   width: 100%;
   text-align: center;
   border-radius: 20px;
-<<<<<<< HEAD
+  height: 20rem;
   -webkit-box-shadow: 0px 5px 43px -11px rgba(0, 0, 0, 0.39) !important;
   -moz-box-shadow: 0px 5px 43px -11px rgba(0, 0, 0, 0.39) !important;
-=======
-  height: 20rem;
-  -webkit-box-shadow: 0px 5px 43px -11px rgba(0,0,0,0.39) !important;
-  -moz-box-shadow: 0px 5px 43px -11px rgba(0,0,0,0.39) !important;
->>>>>>> development
 }
 
 .container-promo {
