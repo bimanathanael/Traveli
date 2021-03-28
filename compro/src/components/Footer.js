@@ -37,7 +37,7 @@ export const Footer = ({ url }) => {
       {data !== undefined && (
         <div className="container-footer text-white">
           <div className="row oneRem">
-            <div className="col-md-3">
+            <div className="col-md-3 no-mobile">
               <img className="w70" src={traveliFooter} />
               <div className="row no-mobile">
                 <div className="col-md-3">

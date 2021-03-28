@@ -1,16 +1,6 @@
 import { useEffect, useState } from "react";
 
 export const ContactInfo = ({ url }) => {
-  // const [mobileView, setMobileView] = useState(window.innerWidth)
-
-  // useEffect(()=> {
-  //     function handleResize() {
-  //         setMobileView(window.innerWidth)
-  //     }
-
-  //     window.addEventListener('resize', handleResize)
-  // },[])
-
   const [data, setData] = useState();
 
   useEffect(() => {
@@ -29,14 +19,13 @@ export const ContactInfo = ({ url }) => {
       .catch((err) => {});
   }, [url]);
 
-  console.log(data, "<<<contactInfo");
 
   return (
     <div>
       {data !== undefined && (
         <div className="container-contact">
           <div className="row">
-            <div className="col-md-5 offset-md-1">
+            <div className="col-md-5 offset-md-1 no-mobile">
               <div class="mapouter">
                 <div class="gmap_canvas">
                   <iframe
@@ -51,13 +40,13 @@ export const ContactInfo = ({ url }) => {
               </div>
             </div>
             <div className="col-md-3 offset-md-1 contactSection oneRem">
-              <p className="headingContact">Contact Information</p>
-              <p>
+              <p className="headingContact mobile-2">Contact Information</p>
+              <p className="mobile-1">
                 Give us a call or drop by anytime, we will answer all enquiries
                 within 24 hours on business days.
               </p>
               <br />
-              <p>
+              <p className="mobile-1">
                 <b>{data.ContactInformation.CompanyName}</b>
                 <br />
                 {data.ContactInformation.AdressStreet}

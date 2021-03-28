@@ -25,7 +25,7 @@ export const Why = ({dataDesc, dataTitle}) => {
                 <div className="row mb-5 mobile-no-margin-bottom">
                     <div className="col text-center">
                         <ScrollAnimation animateIn='zoomIn'>
-                            <p className="headingWhy mobile-2">
+                            <p className="headingWhyHome mobile-2">
                                 WHY CHOOSE TRAVELI
                             </p>
                         </ScrollAnimation>
