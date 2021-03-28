@@ -30,7 +30,7 @@ export const Footer = ({ url }) => {
         setData(message);
       })
       .catch((err) => {});
-  }, []);
+  }, [url]);
 
   return (
     <>
