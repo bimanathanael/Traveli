@@ -25,12 +25,12 @@ export const Testimonials = () => {
         <>
             <div className="mt-7">
                 <ScrollAnimation animateIn="fadeIn">
-                    <div className="row">
+                    <div className="row rowTesti">
                         <div className="col text-center">
-                            <p className="headingPartners">
+                            <p className="headingTesti mobile-2">
                                 TESTIMONIALS
                             </p>
-                            <p className="subHeadingTestimonials">
+                            <p className="subHeadingTestimonials mobile-1">
                                 Happy Clients Say 
                             </p>
                         </div>
@@ -40,29 +40,29 @@ export const Testimonials = () => {
             <div className="container-testimonials">
                 <ScrollAnimation animateIn="fadeIn">
                     <div className="row d-flex justify-content-center">
-                        <div className="col-md-4 cardTesti">
+                        <div className="col-md-4 cardTesti mobile-center ">
                             <div className="row">
                                 <div className="col-md-12">
                                     <img className="quote" src={quote}/>
                                 </div>
                                 <div className="col-md-12 mt-5 f-15">
-                                    <p className="oneRem">
+                                    <p className="oneRem mobile-1">
                                         "i shall see the fae of mars,
                                         i shall see the fae of mars
                                         i shall see the fae of mars,
                                         i shall see the fae of mars"
                                     </p>
                                 </div>
-                                <div className="col-md-12 mt-3">
+                                <div className="col-md-12 mt-3 mobile-center">
                                     <div className="row">
                                         <div className="col-md-3">
                                             <img className="w100" src={people1}/>
                                         </div>
                                         <div className="col-md-9 ">
-                                            <h2 className="oneHalfRem">
+                                            <h2 className="oneHalfRem mobile-2">
                                                 Nout Goldstein
                                             </h2>
-                                            <p className="oneRem">
+                                            <p className="oneRem mobile-1">
                                                 Apple Manager
                                             </p>
                                         </div>
@@ -70,29 +70,29 @@ export const Testimonials = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-4 cardTesti ml-4">
+                        <div className="col-md-4 cardTesti mobile-center">
                             <div className="row">
                                 <div className="col-md-12">
                                     <img className="quote" src={quote}/>
                                 </div>
                                 <div className="col-md-12 mt-5 f-15">
-                                    <p className="oneRem">
+                                    <p className="oneRem mobile-1">
                                         "i shall see the fae of mars,
                                         i shall see the fae of mars
                                         i shall see the fae of mars,
                                         i shall see the fae of mars"
                                     </p>
                                 </div>
-                                <div className="col-md-12 mt-3">
+                                <div className="col-md-12 mt-3 mobile-center">
                                     <div className="row">
                                         <div className="col-md-3">
                                             <img className="w100" src={people2}/>
                                         </div>
                                         <div className="col-md-9 ">
-                                            <h2 className="oneHalfRem">
+                                            <h2 className="oneHalfRem mobile-2">
                                                 Nout Goldstein
                                             </h2>
-                                            <p className="oneRem">
+                                            <p className="oneRem mobile-1">
                                                 Apple Manager
                                             </p>
                                         </div>

@@ -1,16 +1,9 @@
-import news1 from '../../assets/images/news1.png';
-import news2 from '../../assets/images/news2.png';
-import news3 from '../../assets/images/news3.png';
-import { useEffect, useState } from 'react';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-// import ArrowForwardIosOutlinedIcon from '@material-ui/icons/ArrowForwardIosOutlined';
-// import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
-// import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
+
+import parse from 'html-react-parser';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 
-export const News = () => {
+export const News = ({news}) => {
     // const [mobileView, setMobileView] = useState(window.innerWidth)
      
     // useEffect(()=> {
@@ -20,41 +13,25 @@ export const News = () => {
 
     //     window.addEventListener('resize', handleResize)
     // },[])
-    const latestNews = [
-        {
-            image: news3,
-            heading: "What looked like a small patch of purpble grass",
-            desc: "Truely it was a great juourney, anmd in it i met with amnu, who to know was to love ruely it was a great juourney, anmd in it i met wi"
-        },
-        {
-            image: news2,
-            heading: "Abouve five feet square, was moving accross",
-            desc: " was a great juourney, anmd  it was a great juourney, anmd i was a great juourney, anmd  to know was to love"
-        },
-        {
-            image: news3,
-            heading: "What looked like a small patch of purpble grass",
-            desc: "Truely it was a great juourney, anmd in it i met with amnu, who to know was to love"
-        },
-        {
-            image: news2,
-            heading: "Abouve five feet square, was moving accross",
-            desc: " was a great juourney, anmd  it was a great juourney, anmd i was a great juourney, anmd  to know was to love"
-        },
-    
-    ]
+    const latestNews = news.reverse()
+
+    for(let i = 0 ; i < news.length ; i++){
+        news[i].shortDesc = news[i].content.slice(0,80) 
+    }
+
+    console.log(latestNews, "<latestNews")
 
 
     return (
         <>
             <div className="container-news">
-                <div className="row mb-5  d-flex justify-content-center">
+                <div className="row mb-5  d-flex justify-content-center mobile-center">
                     <div className="col-md-9 text-center">
                         <ScrollAnimation animateIn="fadeIn">
-                            <p className="headingNews">
+                            <p className="headingNews mobile-2">
                                 NEWS AND UPDATES
                             </p>
-                            <p className="oneRem">
+                            <p className="oneRem mobile-1">
                                 See the face of mars, anyhow and that will be a rare experience seems to me that 
                                 a biew of the heavenly bodies through a fine telescope, as well as a tour round 
                                 the world
@@ -65,44 +42,49 @@ export const News = () => {
                 <ScrollAnimation animateIn="fadeIn">
                     <div className="row mb-5 d-flex justify-content-center">
                         {latestNews.map((item, index) => {
+                            console.log(item, "<item")
                             return (
                                 index == 0 ? 
-                                    <div className="col-md-12 cardNews mb-4">
+                                <a href={ '/news/'+item.timeInNumber }>
+                                    <div className="col-md-12 cardNews mb-4 mobile-center">
                                         <div className="row d-flex justify-content-center">
                                             <div className="col-md-5 text-right">
-                                                <img className="newsImageTop" src={item.image}/>
+                                                <img className="newsImageTop" src={item.image_url}/>
                                             </div>
                                             <div className="col-md-6">
-                                                <div className="row pt-5">
+                                                <div className="row pt-5 mobile-1-padding-top">
                                                     <div className="col-md-10">
                                                         <h3 className="newsHeadingHome"> 
-                                                            {item.heading}
+                                                            {item.title}
                                                         </h3>
                                                     </div>
                                                 </div>
                                                 <div className="row">
                                                     <div className="col-md-12">
                                                         <p  className="newsDescHome">
-                                                            {item.desc}
+                                                            {parse(item.shortDesc)}
                                                         </p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                </a>
                                 :
-                                    <div className="col-md-4">
-                                        <div className="row m-0 cardNews pt-4 pb-4">
+                                <div className="col-md-4  mobile-center">
+                                    <a href={ '/news/'+item.timeInNumber }>
+                                        <div className="row m-0 cardNews pt-4 pb-4 mb-2">
                                             <div className="col-md-12">
-                                                <img className="newsImageOther" src={item.image}/>
+                                                <img className="newsImageOther" src={item.image_url}/>
                                             </div>
                                             <div className="col-md-10 offset-md-1 mt-3">
                                                 <h3 className="newsSecHeading"> 
-                                                    {item.heading}
+                                                    {item.title}
                                                 </h3>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
+                                </div>
                             )
                         })}
                     </div>

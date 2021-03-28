@@ -1,32 +1,37 @@
 import '../assets/css/Nav.css';
 import { Link, useLocation, useParams } from "react-router-dom";
 import logo3 from '../assets/images/traveli_white2.png'
-// import distributorImg from '../assets/images/distributorImg.png'
-// import suppImg from '../assets/images/suppImg.png'
-// import resellerImg from '../assets/images/resellerImg.png'
+import distributorImg from '../assets/images/distributorImg.png'
+import suppImg from '../assets/images/suppImg.png'
+import resellerImg from '../assets/images/resellerImg.png'
 
 export const Nav = () => {
 
   const location = useLocation()
   
   let navbarClass = "navbar navbar-expand-lg navbar-light "
-  const locationNow = location.pathname
+  const locationNow = location.pathname.toLowerCase()
   
   let aboutUsUnderline = false
   let memberUnderline = false
   let memberListUnderline = false
+  console.log(locationNow, "<locationnow")
   
-  if ( locationNow == "/profile" || locationNow == "/news" || locationNow.slice(0,5) === "/news" || locationNow == "/contactUs") {
+  if ( locationNow == "/profile" || locationNow == "/news" || locationNow.slice(0,5) === "/news" || 
+  locationNow == "/contactus") {
     aboutUsUnderline = true
+    console.log("masuk atas NAV")
     navbarClass += 'navBlue'
-  } else if ( locationNow == "member-list/supplier" || locationNow == "member-list/wholesaler" ) {
+  } else if ( locationNow == "/supplierlist" || locationNow == "/wholesaler" ) {
     memberListUnderline = true
-    navbarClass += 'navBlue'
-  } else if ( locationNow == "members/supplier" || locationNow == "members/wholesaler" || locationNow == "members/reseller") {
+    console.log("masuk else if 2 NAV")
+  } else if ( locationNow == "/supplier" || locationNow == "/wholesalermember" || 
+  locationNow == "/reseller") {
     memberUnderline = true
+    console.log("masuk else if 3 NAV")
+  } else if (locationNow == '/promo' || locationNow == '/login' || locationNow == '/joinus' || locationNow == "/howitworks"){
     navbarClass += 'navBlue'
-  } else if (locationNow == '/promo' || locationNow == '/login' || locationNow == '/joinUs' ){
-    navbarClass += 'navBlue'
+    console.log("masuk else  NAV")
   }
 
   return (
@@ -43,9 +48,9 @@ export const Nav = () => {
 
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0 ml-4">
-            {/* <li className="nav-item">
-              <Link to="/howitworks">
-                <a className={`mr-3 nav-link text-white ${locationNow == "/howitworks" ? "yellow-underline" : ""} `} id="howItWorks">
+            <li className="nav-item mobile-center">
+              <Link to="/howItWorks">
+                <a className={`mobile-center mr-3 nav-link text-white ${locationNow.toLocaleLowerCase() == "/howitworks" ? "yellow-underline" : ""} `} id="howItWorks">
                   How It Works
                 </a>
               </Link>
@@ -55,7 +60,7 @@ export const Nav = () => {
                href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Members
               </a>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <div className="dropdown-menu no-mobile" aria-labelledby="navbarDropdown">
                 <div className="row">
                   <div className="col-md-4">
                     <div className="row">
@@ -113,13 +118,24 @@ export const Nav = () => {
                   </div>
                 </div>
               </div>
+              <div className="dropdown-menu mobile-only" aria-labelledby="navbarDropdown">
+                <Link to="/Supplier">
+                  <a className="dropdown-item" href="#">Supplier</a>
+                </Link>
+                <Link to="/Wholesaler">
+                  <a className="dropdown-item" href="#">Wholesaler</a>
+                </Link>
+                <Link to="/Reseller">
+                  <a className="dropdown-item" href="#">Reseller</a>
+                </Link>
+              </div>
             </li>
             <li className="nav-item dropdown ml-3 member-list-dropdown">
               <a className={`nav-link text-white dropdown-toggle ${memberListUnderline ? "yellow-underline" : ""}`} 
               href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Member List
               </a>
-              <div className="dropdown-menu p23" aria-labelledby="navbarDropdown">
+              <div className="dropdown-menu p23 no-mobile" aria-labelledby="navbarDropdown">
                 <div className="row">
                   <div className="col-md-6">
                       <a className="dropdown-item menu-heading" href="#">SUPPLIER LIST</a>
@@ -136,6 +152,14 @@ export const Nav = () => {
                       </p>
                   </div>
                 </div>
+              </div>
+              <div className="dropdown-menu mobile-only" aria-labelledby="navbarDropdown">
+                <Link to="/supplierList">
+                  <a className="dropdown-item" href="#">Supplier List</a>
+                </Link>
+                <Link to="/wholesaler">
+                  <a className="dropdown-item" href="#">Wholesaler</a>
+                </Link>
               </div>
             </li>
             <li className="nav-item">
@@ -168,10 +192,10 @@ export const Nav = () => {
                   <a className="dropdown-item" href="#">Contact Us</a>
                 </Link>
               </div>
-            </li> */}
+            </li>
           </ul>
           <ul className="navbar-nav my-2 my-lg-0 pr-5 pt-2">
-            {/* <li className="nav-item dropdown space-left text-right">
+            <li className="nav-item dropdown space-left text-right">
               <a className="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 ID
               </a>
@@ -179,22 +203,29 @@ export const Nav = () => {
                 <a className="dropdown-item" href="#">ID</a>
                 <a className="dropdown-item" href="#">EN</a>
               </div>
-            </li> */}
-            {/* <Link to="/login"> */}
+            </li>
+            <div className="mobile-center mobile-only">
               <a href="/login">
-
-              <li className="nav-item text-right">
-                <button type="button" className="btn btn-login">Login</button>
-              </li>
+                <li className="nav-item text-right">
+                  <button type="button" className="btn btn-login">Login</button>
+                </li>
               </a>
-            {/* </Link> */}
-            {/* <Link to="/joinUs"> */}
               <a href="/joinUs">
                 <li className="nav-item">
                   <button type="button" className="btn btn-join">Join Us</button>
                 </li>
               </a>
-            {/* </Link> */}
+            </div>
+            <a href="/login">
+              <li className="nav-item text-right no-mobile">
+                <button type="button" className="btn btn-login">Login</button>
+              </li>
+            </a>
+            <a href="/joinUs">
+              <li className="nav-item no-mobile">
+                <button type="button" className="btn btn-join">Join Us</button>
+              </li>
+            </a>
           </ul>
         </div>
       </nav>

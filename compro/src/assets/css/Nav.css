@@ -1,5 +1,30 @@
+@media (min-width: 300px) and (max-width: 600px) { 
+  body .navbar-nav{
+    background-color: #4db6d8;
+    padding-left: unset  !important;
+    padding-right: unset !important ;
+    margin-left: unset !important;
+    margin-top: unset !important;
+  }
+
+  body .nav-item{
+    text-align: center !important;
+    width: 100%;
+    margin: 1rem !important;
+    height: 2rem;
+  }
+
+  body .space-left{
+    padding-left: 0px !important;
+  }
+
+  body .nav-link{
+    margin-left:  0px !important;
+  }
+}
+
 .navbar{
-  padding-left: 6% ;
+  padding-left: 4% ;
   font-weight: 500;
   font-size: 1rem;
   color:white;
@@ -50,7 +75,7 @@
 }
 
 .bg-transBlue .logo{
-  width: 80% !important;
+  width: 100% !important;
 }
 
 .logo-link{
