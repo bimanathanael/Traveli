@@ -14,6 +14,7 @@ export const Home = ({ url }) => {
   let supplier, wholesaler, agency, corporate, petra;
 
   useEffect(() => {
+    console.log(`masuk home`);
     fetch(url + `/Home`)
       .then((resp) => {
         if (resp.ok) {
