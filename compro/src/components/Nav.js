@@ -14,7 +14,6 @@ export const Nav = ({ handleLanguage }) => {
   let aboutUsUnderline = false;
   let memberUnderline = false;
   let memberListUnderline = false;
-  console.log(locationNow, "<locationnow");
 
   if (
     locationNow == "/profile" ||
@@ -23,21 +22,18 @@ export const Nav = ({ handleLanguage }) => {
     locationNow == "/contactus"
   ) {
     aboutUsUnderline = true;
-    console.log("masuk atas NAV");
     navbarClass += "navBlue";
   } else if (
     locationNow == "/member-list/supplier" ||
     locationNow == "/member-list/wholesaler"
   ) {
     memberListUnderline = true;
-    console.log("masuk else if 2 NAV");
   } else if (
     locationNow == "/members/supplier" ||
     locationNow == "/members/wholesaler" ||
-    locationNow == "/reseller"
+    locationNow == "/members/reseller"
   ) {
     memberUnderline = true;
-    console.log("masuk else if 3 NAV");
   } else if (
     locationNow == "/promo" ||
     locationNow == "/login" ||
@@ -45,7 +41,6 @@ export const Nav = ({ handleLanguage }) => {
     locationNow == "/howitworks"
   ) {
     navbarClass += "navBlue";
-    console.log("masuk else  NAV");
   }
 
   const handleLanguageButton = (lang) => {
@@ -56,9 +51,7 @@ export const Nav = ({ handleLanguage }) => {
     <>
       <nav className={navbarClass} id="mainNavbar">
         <a href="/">
-          {/* <Link className="nav-link logo-link" to="/"> */}
           <img className="logo" src={logo3} />
-          {/* </Link> */}
         </a>
         <button
           className="navbar-toggler"
@@ -88,7 +81,7 @@ export const Nav = ({ handleLanguage }) => {
                 </a>
               </Link>
             </li>
-            <li className="nav-item dropdown ml-3 members-dropdown supplier-menu">
+            <li className="nav-item dropdown ml-3 members-dropdown supplier-menu no-mobile">
               <a
                 className={`nav-link text-white dropdown-toggle ${
                   memberUnderline ? "yellow-underline" : ""
@@ -178,28 +171,44 @@ export const Nav = ({ handleLanguage }) => {
                   </div>
                 </div>
               </div>
+            </li>
+            <li className="nav-item dropdown ml-3 members-dropdown supplier-menu mobile-only">
+              <a
+                className={`nav-link text-white dropdown-toggle ${
+                  memberUnderline ? "yellow-underline" : ""
+                }`}
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Members
+              </a>
               <div
-                className="dropdown-menu mobile-only"
+                className="dropdown-menu "
                 aria-labelledby="navbarDropdown"
               >
                 <Link to="/members/supplier">
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item mobile-1" href="#">
                     Supplier
                   </a>
                 </Link>
                 <Link to="/members/wholesaler">
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item mobile-1" href="#">
                     Wholesaler
                   </a>
                 </Link>
                 <Link to="/members/reseller">
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item mobile-1" href="#">
                     Reseller
                   </a>
                 </Link>
               </div>
             </li>
-            <li className="nav-item dropdown ml-3 member-list-dropdown">
+            
+            <li className="nav-item dropdown ml-3 member-list-dropdown no-mobile">
               <a
                 className={`nav-link text-white dropdown-toggle ${
                   memberListUnderline ? "yellow-underline" : ""
@@ -244,15 +253,31 @@ export const Nav = ({ handleLanguage }) => {
                   </div>
                 </div>
               </div>
+            </li>
+            
+            <li className="nav-item dropdown ml-3 member-list-dropdown mobile-only">
+              <a
+                className={`nav-link text-white dropdown-toggle ${
+                  memberListUnderline ? "yellow-underline" : ""
+                }`}
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Member List
+              </a>
               <div
-                className="dropdown-menu mobile-only"
+                className="dropdown-menu"
                 aria-labelledby="navbarDropdown"
               >
-                <Link to="/member-list/supplier" className="dropdown-item">
-                  Supplier List
+                <Link to="/member-list/supplier">
+                  <a className="dropdown-item mobile-1">Supplier List</a>
                 </Link>
                 <Link to="/member-list/wholesaler">
-                  <a className="dropdown-item">Wholesaler</a>
+                  <a className="dropdown-item mobile-1">Wholesaler</a>
                 </Link>
               </div>
             </li>
