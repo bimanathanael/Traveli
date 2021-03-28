@@ -25,7 +25,7 @@ const TheSidebar = () => {
       show={show}
       onShowChange={(val) => dispatch({ type: "set", sidebarShow: val })}
     >
-      <CSidebarBrand className="d-md-down-none" to="/cms/en">
+      <CSidebarBrand className="d-md-down-none" to="/">
         <CNavbarText>Traveli CMS</CNavbarText>
       </CSidebarBrand>
       <CSidebarNav>

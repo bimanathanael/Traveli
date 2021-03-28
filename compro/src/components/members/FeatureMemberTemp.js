@@ -55,7 +55,7 @@ const FeatureMemberTemp = ({imageContent, title, data, left}) => {
                                             ))
                                         }
                                         <div style={{margin: '2rem 0'}}>
-                                            <ButtonTry />
+                                            <ButtonTry feature={true}/>
                                         </div>
                                     </div>
                                 </div>
@@ -94,7 +94,7 @@ const FeatureMemberTemp = ({imageContent, title, data, left}) => {
                                         ))
                                     }
                                     <div style={{margin: '2rem 0'}}>
-                                        <ButtonTry />
+                                        <ButtonTry feature={true}/>
                                     </div>
                                 </div>
                             </div>

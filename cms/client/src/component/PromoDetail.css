@@ -1,0 +1,159 @@
+.containers-promoDetail {
+  width: 50%;
+  margin: 0 auto 40px auto;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 40px auto;
+}
+
+.button-item {
+  margin-right: 20px;
+}
+.container-detail {
+  box-shadow: grey 0px 0px 20px 0px;
+  border-radius: 50px;
+  border: black;
+  max-width: 700px;
+}
+
+.image-divDetailPromo {
+  display: flex;
+  justify-content: center;
+}
+
+.image-detailPromo {
+  border-radius: 20px 20px 0px 0px;
+  height: 350px;
+  object-fit: cover;
+}
+
+.date-detailPromo {
+}
+.title-detailPromo {
+  color: #2ab9dc;
+  font-weight: bold;
+  text-align: left;
+}
+
+.content-promo {
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 80px;
+  padding-top: 20px;
+}
+
+.content-titlePromo {
+  color: #7d7d7d;
+  text-align: left;
+  font-size: 14px;
+}
+
+.time-detail {
+  color: grey;
+}
+
+.container-image {
+  place-items: center;
+  text-align: center;
+  display: grid;
+  /* height: 100%; */
+}
+.container-formImage {
+  height: 350px;
+  width: 430px;
+  position: relative;
+}
+.container-formImage .wrapper {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  border-radius: 10px;
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.wrapper.active {
+  border: none;
+}
+.wrapper .image {
+  max-height: 350px;
+  max-width: 430px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.wrapper .icon {
+  font-size: 100px;
+  color: #9658fe;
+}
+.wrapper .text {
+  font-size: 20px;
+  font-weight: 500;
+  color: #5b5b7b;
+}
+.wrapper #cancel-btn i {
+  position: absolute;
+  font-size: 20px;
+  right: 15px;
+  top: 15px;
+  color: #9658fe;
+  cursor: pointer;
+  display: none;
+}
+.wrapper.active:hover #cancel-btn i {
+  display: block;
+}
+.wrapper #cancel-btn i:hover {
+  color: #e74c3c;
+}
+.wrapper .file-name {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 8px 0;
+  font-size: 18px;
+  color: #fff;
+  display: none;
+  background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+}
+.wrapper.active:hover .file-name {
+  display: block;
+}
+.container-formImage #custom-btn {
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+}
+
+#input[type="file"] {
+  display: none;
+}
+.container-formImage #text-custom-btn {
+  padding-top: 10px;
+  cursor: pointer;
+}

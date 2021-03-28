@@ -58,7 +58,7 @@ const ConditionMembers = ({data}) => {
                                             <TiLocationArrow  style={{fontSize: '1.5rem', color: '#07AED6',}}/>
                                         </div>
                                         <div className={classes.cardText}>
-                                            <h6>{item}</h6>
+                                            <p style={{color: 'black', fontSize: '1rem'}}>{item}</p>
                                         </div>
                                     </div>
                                 </div>

@@ -4,7 +4,7 @@ const { jwtVerifyUsername } = require("../../helpers/jsonwebtoken");
 
 export const getIndonesia = () => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/id/`)
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/id/`)
       .then((resp) => {
         if (resp.ok) {
           return resp.json();
@@ -19,14 +19,14 @@ export const getIndonesia = () => {
         });
       })
       .catch((err) => {
-        <Redirect to="/cms/id" />;
+        <Redirect to="/" />;
       });
   };
 };
 
 export const getIndonesiaByPages = (pages = "homepage", history) => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/id/${pages}`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/id/${pages}`, {
       method: "GET",
       mode: "cors",
       headers: {
@@ -48,22 +48,25 @@ export const getIndonesiaByPages = (pages = "homepage", history) => {
         });
       })
       .catch((err) => {
-        err.status === 404 && history.push("/cms/en");
+        err.status === 404 && history.push("/");
       });
   };
 };
 
 export const updateIndonesia = (paramPages, data, history, paramSection) => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/id/${paramPages}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        access_token: localStorage.getItem("access_token"),
-      },
-      body: JSON.stringify(data),
-    })
+    fetch(
+      `https://pacific-hamlet-79377.herokuapp.com/id/${paramPages}/${paramSection}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          access_token: localStorage.getItem("access_token"),
+        },
+        body: JSON.stringify(data),
+      }
+    )
       .then((resp) => {
         if (resp.ok) {
           return resp.json();
@@ -86,7 +89,7 @@ export const updateIndonesia = (paramPages, data, history, paramSection) => {
           section: paramSection,
         };
 
-        return fetch(`http://localhost:3000/history`, {
+        return fetch(`https://pacific-hamlet-79377.herokuapp.com/history`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -112,11 +115,11 @@ export const updateIndonesia = (paramPages, data, history, paramSection) => {
           icon: "success",
           text: "Success update!",
         });
-        history.push("/cms/en");
+        history.push("/");
       })
 
       .catch((err) => {
-        <Redirect to="/cms/id" />;
+        <Redirect to="/" />;
       });
   };
 };

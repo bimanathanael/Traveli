@@ -28,12 +28,26 @@ const UpdateCMS = () => {
 
   useEffect(() => {
     if (language === "en" && dataEnglish) {
-      setDataForm(dataEnglish);
+      let defaultData = {};
+      for (const [key, value] of Object.entries(dataEnglish)) {
+        if (key === section) {
+          defaultData = value;
+        }
+      }
+
+      setDataForm(defaultData);
     }
     if (language === "id" && dataIndonesia) {
-      setDataForm(dataIndonesia);
+      let defaultData = {};
+      for (const [key, value] of Object.entries(dataIndonesia)) {
+        if (key === section) {
+          defaultData = value;
+        }
+      }
+
+      setDataForm(defaultData);
     }
-  }, [dataEnglish, dataIndonesia, language]);
+  }, [dataEnglish, dataIndonesia, language, section]);
 
   const changeDataForm = (msg) => {
     setDataForm(msg);

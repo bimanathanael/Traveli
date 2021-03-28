@@ -47,13 +47,20 @@ const Login = () => {
       dispatch(loginAdmin(loginForm, history, setUsername, setPassword));
     }
   };
+
   return (
     <div className="c-app c-default-layout flex-row align-items-center">
       <CContainer>
         <CRow className="justify-content-center">
           <CCol md="8">
             <CCardGroup>
-              <CCard className="p-4">
+              <CCard
+                className="p-4"
+                style={{
+                  borderTopLeftRadius: "20px",
+                  borderBottomLeftRadius: "20px",
+                }}
+              >
                 <CCardBody>
                   <CForm onSubmit={(e) => loginHandler(e)}>
                     <h1>Login</h1>
@@ -86,7 +93,16 @@ const Login = () => {
                     </CInputGroup>
                     <CRow>
                       <CCol>
-                        <CButton type="submit" color="primary" className="px-4">
+                        <CButton
+                          type="submit"
+                          style={{
+                            backgroundColor: "#3FA1D9",
+                            color: "white",
+                            width: "100%",
+                          }}
+                          // color="primary"
+                          className="px-4"
+                        >
                           Login
                         </CButton>
                       </CCol>
@@ -95,12 +111,17 @@ const Login = () => {
                 </CCardBody>
               </CCard>
               <CCard
-                className="text-white bg-primary py-5 d-md-down-none"
-                style={{ width: "44%" }}
+                className="text-white py-5 d-md-down-none"
+                style={{
+                  width: "44%",
+                  backgroundColor: "#3FA1D9",
+                  borderTopRightRadius: "20px",
+                  borderBottomRightRadius: "20px",
+                }}
               >
                 <CCardBody className="text-center">
                   <div>
-                    <h2>Welcome to CMS System</h2>
+                    <h2>Welcome to Traveli CMS</h2>
                   </div>
                 </CCardBody>
               </CCard>

@@ -4,7 +4,7 @@ const { jwtVerifyUsername } = require("../../helpers/jsonwebtoken");
 
 export const getEnglish = () => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/en/`)
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/en/`)
       .then((resp) => {
         if (resp.ok) {
           return resp.json();
@@ -19,14 +19,14 @@ export const getEnglish = () => {
         });
       })
       .catch((err) => {
-        <Redirect to="/cms/en" />;
+        <Redirect to="/" />;
       });
   };
 };
 
 export const getEnglishByPages = (pages = "homepage", history) => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/en/${pages}`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/en/${pages}`, {
       method: "GET",
       mode: "cors",
       headers: {
@@ -48,7 +48,7 @@ export const getEnglishByPages = (pages = "homepage", history) => {
         });
       })
       .catch((err) => {
-        err.status === 404 && history.push("/cms/en");
+        err.status === 404 && history.push("/");
       });
   };
 };
@@ -59,7 +59,7 @@ export const getEnglishByPagesAndSection = (
   history
 ) => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/en/${pages}/${section}`, {
+    fetch(`https://pacific-hamlet-79377.herokuapp.com/en/${pages}/${section}`, {
       method: "GET",
       mode: "cors",
       headers: {
@@ -81,22 +81,25 @@ export const getEnglishByPagesAndSection = (
         });
       })
       .catch((err) => {
-        err.status === 404 && history.push("/cms/en");
+        err.status === 404 && history.push("/");
       });
   };
 };
 
 export const updateEnglish = (paramPages, data, history, paramSection) => {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/en/${paramPages}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        access_token: localStorage.getItem("access_token"),
-      },
-      body: JSON.stringify(data),
-    })
+    fetch(
+      `https://pacific-hamlet-79377.herokuapp.com/en/${paramPages}/${paramSection}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          access_token: localStorage.getItem("access_token"),
+        },
+        body: JSON.stringify(data),
+      }
+    )
       .then((resp) => {
         if (resp.ok) {
           return resp.json();
@@ -119,7 +122,7 @@ export const updateEnglish = (paramPages, data, history, paramSection) => {
           section: paramSection,
         };
 
-        return fetch(`http://localhost:3000/history`, {
+        return fetch(`https://pacific-hamlet-79377.herokuapp.com/history`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -145,11 +148,11 @@ export const updateEnglish = (paramPages, data, history, paramSection) => {
           icon: "success",
           text: "Success update!",
         });
-        history.push("/cms/en");
+        history.push("/");
       })
 
       .catch((err) => {
-        <Redirect to="/cms/en" />;
+        <Redirect to="/" />;
       });
   };
 };

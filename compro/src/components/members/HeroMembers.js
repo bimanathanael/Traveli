@@ -23,6 +23,7 @@ const useStyles = makeStyles((themes) =>({
     },
     buttonMembers: {
         display: 'flex',
+        alignItems: 'center',
     },
     footerMembers: {
         maxWidth: '25rem',

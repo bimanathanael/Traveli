@@ -15,7 +15,7 @@ const UpdateForm = ({ setDataForm, dataForm, data, language }) => {
   };
 
   const backToHome = (e) => {
-    history.push(`/cms/${language}`);
+    history.push(`/`);
   };
   const saveUpdate = (e) => {
     e.preventDefault();
@@ -25,23 +25,31 @@ const UpdateForm = ({ setDataForm, dataForm, data, language }) => {
       setDataForm("");
     }
     if (language === "id") {
+      console.log(dataForm);
       dispatch(updateIndonesia(pages, dataForm, history, section));
       setDataForm("");
     }
   };
 
   const filteringData = () => {
-    const newList = {};
+    let newList = {};
     for (const [key, value] of Object.entries(data)) {
-      if (key !== pages && key.split(/(?=[A-Z])/)[0] === section) {
-        newList[key] = value;
+      if (key === section) {
+        newList = value;
       }
     }
-    return newList;
+    let unordered = newList;
+    const ordered = Object.entries(unordered)
+      .sort()
+      .reduce((o, [k, v]) => ((o[k] = v), o), {});
+    return ordered;
   };
   return (
     <div>
-      <Container className="border border-secondary rounded shadow-lg">
+      <Container
+        className="border border-secondary rounded shadow-lg"
+        style={{ marginBottom: "20px" }}
+      >
         <Form onSubmit={(e) => saveUpdate(e)} style={{ margin: "20px" }}>
           {Object.entries(filteringData())
             .filter((filt) => filt[0] !== "pages")
@@ -51,13 +59,22 @@ const UpdateForm = ({ setDataForm, dataForm, data, language }) => {
                   <Form.Label style={{ textAlign: "left" }}>
                     {value[0].split(/(?=[A-Z])/).join(" ")}
                   </Form.Label>
-                  <Form.Control
-                    type="text"
-                    onChange={(e) => dataFormHandler(e)}
-                    name={value[0]}
-                    placeholder="Enter Header"
-                    defaultValue={value[1]}
-                  />
+                  {value[1].length < 120 ? (
+                    <Form.Control
+                      type="text"
+                      onChange={(e) => dataFormHandler(e)}
+                      name={value[0]}
+                      defaultValue={value[1]}
+                    />
+                  ) : (
+                    <Form.Control
+                      as="textarea"
+                      onChange={(e) => dataFormHandler(e)}
+                      name={value[0]}
+                      defaultValue={value[1]}
+                      rows={3}
+                    />
+                  )}
                 </Form.Group>
               </div>
             ))}

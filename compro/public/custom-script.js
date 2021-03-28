@@ -2,53 +2,57 @@ $(window).on('load', function() {
   // $('.next').click(function(){ $('.carousel').carousel('next');return false; });
   // $('.prev').click(function(){ $('.carousel').carousel('prev');return false; });  
 
-  $('#exampleModal').modal('show');
+  // $('#exampleModal').modal('show');
+  // $('#closeModal').click(function(){
+  //   $('#exampleModal').modal('hide');
+  // })
 
   const currLoc = window.location.pathname
 
-  console.log(currLoc),"currLoccurrLoc";
+  // console.log(currLoc),"currLoccurrLoc";
   
   $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
-    
-    if(scroll > 500){
+    // console.log(scroll, "scroll")
+    if(scroll > 100){
       $('#mainNavbar').addClass("bg-transBlue").fadeIn()
     }else {
-      $('#mainNavbar').removeClass("bg-transBlue").fadeOut()
+      $('#mainNavbar').removeClass("bg-transBlue")
     }
   });
 
-  if( currLoc === '/' || currLoc === '/homeSupp'){
-    const slider = document.querySelector('.items');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-  
-    // checkRadio();
+  if( currLoc === '/'  ){
+    setTimeout(function()   {
+      const slider = document.querySelector('.items');
+      let isDown = false;
+      let startX;
+      let scrollLeft;
     
-    slider.addEventListener('mousedown', (e) => {
-      isDown = true;
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-    slider.addEventListener('mouseleave', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-    slider.addEventListener('mouseup', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-    slider.addEventListener('mousemove', (e) => {
-      if(!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 1; //scroll-fast
-      slider.scrollLeft = scrollLeft - walk;
-      console.log(walk, slider.scrollLeft);
       // checkRadio();
-    });
-
+      
+      slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+      slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.classList.remove('active');
+      });
+      slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.classList.remove('active');
+      });
+      slider.addEventListener('mousemove', (e) => {
+        if(!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 1; //scroll-fast
+        slider.scrollLeft = scrollLeft - walk;
+        // console.log(walk, slider.scrollLeft);
+        // checkRadio();
+      });
+    }, 4000);
 
     let currSlider = 0
 
@@ -60,13 +64,13 @@ $(window).on('load', function() {
       //   }, 120);
       //   i -= 1
       // }
-      console.log(currSlider, "<currSlider")
+      // console.log(currSlider, "<currSlider")
       if( currSlider < 0 ){
         currSlider += 300
         $(".items").animate({left: currSlider});
       }
       
-      console.log(slider.scrollLeft);
+      // console.log(slider.scrollLeft);
       // checkRadio();
 
       // var currentPositionOfPage = window.scrollX;
@@ -81,14 +85,14 @@ $(window).on('load', function() {
       //   }, 120);
       //   i -= 1
       // }
-      console.log(currSlider, "<currSlider")
+      // console.log(currSlider, "<currSlider")
 
-      if(currSlider > -1200){
+      if(currSlider > -2500){
         currSlider -= 300
         $(".items").animate({left: currSlider});
       }
       
-      console.log(slider.scrollLeft);
+      // console.log(slider.scrollLeft);
       // checkRadio();
     });
 
@@ -129,7 +133,7 @@ $(window).on('load', function() {
 
     // features2
     $(".section2-1").mouseover(function(){
-      console.log("masuk");
+      // console.log("masuk");
       $(".supplier-overview2").addClass("imageSection1");
     });
 
@@ -162,25 +166,25 @@ $(window).on('load', function() {
       $(".supplier-overview2").removeClass("imageSection6");
     });
 
-    $(".rad1").click(function(){
-      slider.scrollLeft = 0
-      // checkRadio()
-    })
+    // $(".rad1").click(function(){
+    //   slider.scrollLeft = 0
+    //   // checkRadio()
+    // })
 
-    $(".rad2").click(function(){
-      slider.scrollLeft = 900
-      // checkRadio()
-    })
+    // $(".rad2").click(function(){
+    //   slider.scrollLeft = 900
+    //   // checkRadio()
+    // })
 
-    $(".rad3").click(function(){
-      slider.scrollLeft = 1800
-      // checkRadio()
-    })
+    // $(".rad3").click(function(){
+    //   slider.scrollLeft = 1800
+    //   // checkRadio()
+    // })
 
-    $(".rad4").click(function(){
-      slider.scrollLeft = 2700
-      // checkRadio()
-    })
+    // $(".rad4").click(function(){
+    //   slider.scrollLeft = 2700
+    //   // checkRadio()
+    // })
 
     // function checkRadio(){
     //   if (slider.scrollLeft >= 0 && slider.scrollLeft < 900) {
@@ -288,6 +292,24 @@ $(window).on('load', function() {
       }
       $("#caption-" + curr).fadeIn()
       $(".imageSlider").animate({left: poss});
+    });
+  }
+
+
+  //maps
+  // Initialize and add the map
+  function initMap() {
+    // The location of Uluru
+    const uluru = { lat: -25.344, lng: 131.036 };
+    // The map, centered at Uluru
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 4,
+      center: uluru,
+    });
+    // The marker, positioned at Uluru
+    const marker = new google.maps.Marker({
+      position: uluru,
+      map: map,
     });
   }
 });

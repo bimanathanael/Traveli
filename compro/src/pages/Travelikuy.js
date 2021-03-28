@@ -42,8 +42,7 @@ const Supplier = () => {
           // Hero
           const hero = {
             title: dataRaw.Hero.Title,
-            description: dataRaw.Hero.Description,
-            footer: "ARE YOU PRODUCT OWNERS LOOKING EXPAND SELLING CHANNEL?",
+            description: dataRaw.Hero.Descripiton,
           };
           setHeroContent(hero);
 

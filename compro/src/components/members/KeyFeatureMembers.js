@@ -43,7 +43,7 @@ const KeyFeatureMembers = ({content, title}) => {
                     <div style={{paddingTop: '15rem'}}>
                     <FeatureMemberTemp title={content.two.title} imageContent={featureTwo} data={content.two.data} left={false}/>
                     </div>
-                    <div style={{paddingTop: '15rem'}}>
+                    <div style={{paddingTop: '20rem'}}>
                         <FeatureMemberTemp title={content.three.title} imageContent={featureThree} data={content.three.data} left={true}/>
                     </div>
                 </>

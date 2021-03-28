@@ -96,6 +96,7 @@ import {
   cilPencil,
   cilPeople,
   cilPhone,
+  cilNewspaper,
   cilPrint,
   cilPuzzle,
   cilSave,
@@ -123,6 +124,7 @@ import {
   cilX,
   cilXCircle,
   cilWarning,
+  cilTag,
 } from "@coreui/icons";
 
 export const icons = Object.assign(
@@ -133,8 +135,10 @@ export const icons = Object.assign(
     logoNegative,
   },
   {
+    cilTag,
     cilAlignCenter,
     cilAlignLeft,
+    cilNewspaper,
     cilAlignRight,
     cilApplicationsSettings,
     cilArrowRight,
@@ -152,6 +156,7 @@ export const icons = Object.assign(
     cilChartPie,
     cilCheck,
     cilHistory,
+
     cilChevronBottom,
     cilChevronLeft,
     cilChevronRight,

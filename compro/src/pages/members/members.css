@@ -1,31 +1,34 @@
+.members-page h1,h2,h3,h4,h5,h6 {
+  font-family: 'Bristone';
+}
+
 .members-page h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+
+.members-page h2 {
+  font-size: 1.5rem;
+}
+
+.members-page h3 {
+  font-size: 1rem;
+}
+
+.members-page h4 {
+  font-size: 1rem;
+}
+
+.members-page h5 {
+  font-size: 1rem;
+}
+
+.members-page h6 {
+  font-size: .8rem;
 }
 
 .members-page p {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: white;
-}
-
-/* hero */
-.members-hero {
-  /* background-image: url("../../assets/images/members/HERO.png"); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  min-height: 100vh;
-  /* position: relative; */
-}
-
-.members-content-header {
-  padding-left: 6rem;
-  padding-top: 7rem;
-  color: white;
-}
-
-.members-content {
-  max-width: 25rem;
-  margin-bottom: 2rem;
 }
 
 .members-button {
@@ -34,19 +37,11 @@
   align-items: center;
 }
 
-.members-button-watch-icon {
-  color: white;
-  size: 10em;
-}
 
 @media screen and (max-width: 600px) {
   .content-members {
     max-width: 10rem;
   }
-}
-
-.button-content {
-  display: flex;
 }
 
 .button-try {
@@ -79,44 +74,10 @@
 }
 
 .button-watch {
-  margin-left: 1.5rem;
+  margin-left: 1rem;
   display: flex;
   align-items: center;
   border-radius: 300px;
+  margin-top: .5rem;
 }
 
-.hero-content-footer {
-  background-image: linear-gradient(#ebe485, white);
-  max-width: 25rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 18px 0 rgba(0, 0, 0, 0.19);
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  position: absolute;
-  margin-top: -3rem;
-  z-index: 1;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
-.hero-content-footer h6 {
-  padding: 1rem 1rem 0 1rem;
-  text-align: center;
-}
-
-/* benefit */
-.benefit-members {
-  /* background-image: url("../../assets/images/members/benefits-key.png"); */
-  background-size: 73rem;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  background-position: center;
-}
-
-.key-feature-members {
-  /* background-image: url("../../assets/images/members/key-features.png"); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 2000px;
-  /* min-width: 1500px; */
-}

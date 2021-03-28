@@ -1,18 +1,604 @@
-.hero{
+
+@media (min-width: 300px) and (max-width: 560px) { 
+  .navbar{
+    padding-left: 0%;
+  }
+
+  .logo{
+    width: 50%;
+  }
+
+  .hero-title {
+    font-size: 1.4rem !important;
+    margin-bottom: 4%;
+  }
+
+  .mobile-center{
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1500px) { 
+
+  body .headingContact{
+    font-size: 2rem;
+  }
+
+  body .hero-title {
+    font-family: 'Bristone';
+    font-size: 2.2rem;
+    margin-bottom: 4%;
+    margin-top: 15%;
+    font-weight: 300;
+    color: white;
+    text-transform: uppercase;
+    word-spacing: 0.5rem;
+  }
+
+  body #navbarDropdown{
+    padding-top: 9%;
+  }
+
+  body .MuiSvgIcon-root{
+    width: .6em;
+    height: 2rem;
+  }
+
+  body .arrow .MuiSvgIcon-root{
+    width: 1em;
+    height: 1em;
+  }
+
+  body .bg-transBlue .logo{
+    width: 8rem !important;
+  }
+
+  body .logo{
+    width: 8rem;
+  }
+
+  body .btn-login{
+      font-size: 0.8rem;
+  }
+
+  body .btn-join{
+      font-size: 0.8rem;
+  }
+
+  body .hero-subtitle{
+    font-size: 1.5rem;
+    margin-bottom: 1%;
+    font-weight: 400;
+    color: white;
+    text-transform: uppercase;
+  }
+
+  body .hero-desc{
+    font-size: 1rem;
+    margin-bottom: 0%;
+    padding-left: 0%;
+    color: white;
+    line-height: 25px;
+  }
+
+
+  body .btn-traveli{
+    font-size: 2.2rem;
+    display: inline-block;
+    border-radius: 37px;
+    text-align: center;
+    font-weight: 600;
+    color: black;
+    padding-left: 0px;
+    width: 220px;
+    z-index: 0;
+  }
+
+  body .btn-traveli:hover .arrow{
+    background-position: left;
+    padding: 14px 135px 15px 17pxx;
+  }
+
+  body .btn-font{
+    font-size: 0.8rem;
+    padding-top: 6%;
+    padding-left: 0%;
+  }
+
+  body .btn-blueTraveli{
+    font-size: 1.1rem;
+    padding-top: 6%;
+    padding-left: 9%;
+    transition: 0.2s all;
+    text-decoration: underline;
+    text-decoration-color: #48afd7;
+    color: #48afd7;
+  }
+
+  body .btn-traveli:hover .btn-font{
+    padding-right: 22px;
+    text-decoration: none;
+    color: black;
+  }
+
+  body .btn-v3-hero{
+    width: 13rem;
+  }
+
+  body .btn-v3-hero:hover .arrow{
+    background-position: left;
+    padding: 8px 100px 8px 10px;
+  }
+
+  body .btn-v3-hero:hover .btn-font{
+    color: #59a9da;
+    padding-right: 50px;
+  }
+
+  body .btn-v3-hero .btn-font{
+    text-decoration: underline;
+    text-decoration-color: white;
+    color: white;
+    padding-top: 6%;
+  }
+
+  body .btn-v3-hero .btn-font-blue{
+    text-decoration: underline;
+    text-decoration-color: white;
+    color: white;
+    padding-top: 5%;
+  }
+
+
+  body .btn-v3-hero:hover .btn-blueTraveli{
+    color: #59a9da;
+    padding-right: 50px;
+
+  }
+
+  body .btn-v3-hero .btn-blueTraveli{
+    text-decoration: underline;
+    text-decoration-color: #59a9da;
+    color: #59a9da;
+    padding-top: 5%;
+  }
+
+  body .btn-v3-hero .btn-blueTraveli{
+    text-decoration: underline;
+    text-decoration-color: #59a9da;
+    color: #59a9da;
+    padding-top: 5%;
+  }
+
+  body .btn-v3-hero .MuiSvgIcon-root{
+    color: #4ab1d8;
+    font-size: 1.5rem !important;
+  }
+
+  body .arrow{
+    background-color: #f2e968;
+    border-radius: 30px;
+    padding: 8px;
+    transition: .2s ease-out;
+    position: absolute;
+    font-size: 12pt;
+  }
+
+  body .headingNews{
+    font-size: 1.5rem;
+  }
+
+  body .descWhy{
+    font-size: 0.8rem;
+    text-align: justify;
+  }
+
+  body .headWhy{
+    font-size: 1.2rem;
+  }
+
+  body .card-style{
+    padding: 1rem 2rem !important;
+  }
+
+  body .headingWhy{
+    font-size: 1.5rem;
+  }
+  
+  body .headingPromo{
+    font-size: 1.5rem;
+  }
+
+  body .menu-section{
+    font-size: 1.2rem;
+  }  
+
+  body .menu-heading{
+    font-size: 1.2rem;
+  }
+  
+  body .menu-heading-provide{
+    font-size: 1.2rem;
+  }
+
+  body .menu-desc{
+    font-size : 1rem;
+  }
+
+  body .headingMember{
+    line-height: 36px;
+    font-size: 1.6rem;
+
+  }
+
+  body .bold2{
+    font-size: 1rem;
+  }
+
+  body .btn-v7-hero:hover .arrow{
+    background-position: left;
+    padding: 8px 120px 8px 10px;
+  }
+
+  body .btn-v7-hero:hover .btn-font{
+    color: #59a9da;
+    padding-right: 50px;
+  }
+
+  body .btn-v7-hero .btn-font{
+    text-decoration: underline;
+    text-decoration-color: white;
+    color: white;
+    padding-top: 6%;
+    padding-left: 0;
+  }
+
+  body .btn-v7-hero .btn-font-blue{
+    text-decoration: underline;
+    text-decoration-color: white;
+    color: white;
+    padding-top: 5%;
+  }
+
+  body .headingOffer{
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  body .btn-v7-hero:hover .btn-blueTraveli{
+    color: #59a9da;
+    padding-right: 50px;
+  }
+
+  body .btn-v7-hero .btn-blueTraveli{
+    text-decoration: underline;
+    text-decoration-color: #59a9da;
+    color: #59a9da;
+    padding-top: 5%;
+  }
+
+  body .btn-v7-hero .btn-blueTraveli{
+    text-decoration: underline;
+    text-decoration-color: #59a9da;
+    color: #59a9da;
+    padding-top: 5%;
+  }
+
+  body .btn-v7-hero .MuiSvgIcon-root{
+    color: #4ab1d8;
+    font-size: 1.5rem !important;
+  }
+
+  body .responsiveImg{
+    width: 100%;
+  }
+
+  body .right0{
+    padding-right: 0px !important;
+  }
+
+  body .benefitTitle{
+    font-size: 1.5rem;
+  }
+
+  body .pointMembership{
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-family: 'Bristone';
+  }
+
+  body .benefitDesc{
+    font-size: 1rem;
+    margin-top: 0px;
+    line-height: 21pt;
+  }
+
+  body .item{
+    max-width: 46rem;
+    max-height: 20rem;
+  }
+
+  body .headingBenefit{
+    font-size: 1.8rem;
+  }
+
+  body .members-dropdown p{
+    font-size: 0.7rem;
+  }
+
+  body .member-list-dropdown p{
+    font-size: 0.7rem;
+  }
+
+  body .responsiveImg2{
+    width: 70%;
+  }
+
+  body .headingAboutUs{
+    font-size: 1.5rem;
+  }
+
+  body .newsHeadingHome{
+    font-size: 1.5rem;
+  }
+  
+  body .newsDescHome{
+    font-size: 0.8rem;
+  }
+
+  body .browseAll{
+    background-color: #f9ee6f;
+    height: 2.5rem;
+    width: 9rem;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  body .headingPartners{
+    font-size: 1.2rem;
+  }
+
+  body .fb-13{
+    font-size: 0.9rem;
+  }
+
+  body .oneRem{
+    font-size: 0.8rem;
+  }
+
+  body .oneHalfRem{
+    font-size: 1rem !important;
+  }
+
+  body .promoModalHead{
+    font-size: 1.5rem;
+  }
+
+  body .btnYellowPromo{
+    width: 12rem;
+    height: 2rem;
+    font-size: 0.8rem;
+  }
+
+  body .modal-content{
+    height: 16rem;
+  }
+
+  body .hero-profile-title{
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 3rem;
+    word-spacing: 0.5rem;
+  }
+
+  body .descAboutUs{
+    font-size: 1rem;
+  }
+
+  body .prinsip{
+    font-size: 1.5rem;
+  }
+
+  body .headingVM{
+    font-size: 1.3rem;
+    letter-spacing: 1px;    
+  }
+
+  body .descVM{
+    font-size: 1.2rem;
+  }
+
+  body .headingTeam{
+    font-size: 1.7rem;
+  }
+
+  body .descTeam{
+    font-size: 1rem;
+  }
+
+  body .teamName{
+    font-size: 1.5rem;
+  }
+
+  body .teamPos{
+    font-size: 1.1rem;
+  }
+
+  body .specialCol{
+    -ms-flex: 0 0 50% !important;
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1300px) { 
+  body .logo{
+    width: 6rem;
+  }
+  
+  body .bg-transBlue .logo{
+    width: 6rem;
+  }
+
+  body .promoModalHead{
+    font-size: 1.5rem;
+  }
+
+  body .btnYellowPromo{
+    width: 12rem;
+    height: 2rem;
+    font-size: 0.8rem;
+  }
+
+  body .modal-content{
+    height: 16rem;
+  }
+
+}
+
+
+@media only screen and (min-width: 1500px) and (max-width: 1800px) { 
+  body .hero-profile-title{
+    font-size: 2.8rem;
+    line-height: 3.5rem;
+  }
+
+  body .headingAboutUs{
+    font-size: 1.5rem;
+  }
+}
+
+.text-black{
+  color: black !important;
+}
+
+
+.headWhy{
+  font-size: 2rem ;
+}
+
+.descWhy{
+  font-size: 1rem ;
+  text-align: center !important;
+}
+
+.descJoinUs{
+  font-size: 1rem ;
+  text-align: center !important;
+  min-height: 7rem;
+  color: white;
+}
+
+.MuiSvgIcon-root{
+  width: 1rem;
+}
+
+.headingOffer{
+  font-family: 'Bristone';
+  font-size: 2rem;
+  font-weight: 300;
+  color: #48AFD7;
+  text-transform: uppercase;
+  line-height: 3rem;
+  word-spacing: 0.5rem;
+}
+
+.headingNewsDetails{
+  font-family: 'Bristone';
+  font-size: 1rem;
+  font-weight: 300;
+  color: #48AFD7;
+  word-spacing: 0.5rem;
+}
+
+.btnOnLogin{
+  font-size: 0.9rem;
+  background-color: rgb(255 255 255 / 0.7);
+  padding: 5% 20%;
+  border-radius: 5px;
+  font-family: 'Bristone';
+  font-weight: 400;
+  border: none;
+  color: rgb(89 169 218 / 0.6);
+  transition: 0.5s all ;
+}
+
+.btnOnLogin:hover{
+  background-color: rgb(255 255 255 / 0.9);
+}
+
+.borderTop{
+  border-top: 2px solid white;
+}
+
+.loginContainer{
   background: #48AFD7;
+  background-image: url('../images/bgJoinUs.png');
+  padding: 10%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.heroContainer{
+  background: #00ADD9;
   background-image: url('../images/home_Hero.png');
+  padding: 3% 0% 4% 7%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.heroProfileContainer{
+  background: #48AFD7;
+  background-image: url('../images/bgProfile.png');
+  padding: 4% 0% 4% 7%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(0.9);
+  height: 55rem;
+}
+
+.hero-profile-title{
+  font-family: 'Bristone';
+  font-size: 3.3rem;
+  margin-bottom: 4%;
+  margin-top: 33%;
+  font-weight: 400;
+  color: white;
+  text-transform: uppercase;
+  line-height: 4rem;
+  word-spacing: 0.5rem;
+}
+
+.specialCol{
+  -ms-flex: 0 0 58.333333% !important;
+  flex: 0 0 58.333333% !important;
+  max-width: 58.333333% !important;
 }
 
 .hero-title{
-  font-size: 3.5rem !important;
+  font-family: 'Bristone';
+  font-size: 2.4rem;
   margin-bottom: 4%;
-  font-weight: 600;
+  margin-top: 15%;
+  font-weight: 300;
   color: white;
-  line-height: 42pt;
+  text-transform: uppercase;
+  line-height: 2.5rem;
+  word-spacing: 0.5rem;
 }
 
 .hero-subtitle{
-  font-size: 1.5rem !important;
+  font-size: 2.5rem;
+  margin-bottom: 1%;
+  font-weight: 400;
+  color: white;
+  text-transform: uppercase;
+  line-height: 3rem;
+}
+
+.hero-desc{
+  font-size: 1.5rem;
   margin-bottom: 0%;
   padding-left: 0%;
   color: white;
@@ -57,12 +643,17 @@
   color: #2f7996;
 }
 
-.needs-subheader{
-  font-size: 1.3rem;
+
+.headingNews{
+  font-size: 2.5rem;
+  font-weight: 400;
+  padding-left: 50px;
+  color:#48afd7;
+  font-family: 'Bristone';
 }
 
-.hero{
-  padding: 6%
+.needs-subheader{
+  font-size: 1.3rem;
 }
 
 .heroSulutions{
@@ -80,7 +671,39 @@
 
 .container-joinUs{
   background-color: white;
-  padding: 10% 6% 6% 6%;;
+  padding: 10% 6% 6% 6%;
+}
+
+.container-news{
+  padding: 6% 13%;
+}
+
+.pt-8{
+  padding-top: 8%;
+}
+
+.newsImageOther{
+  width: 100%;
+}
+
+.newsImageTop{
+  width: 100%;
+}
+
+.subHeadingTestimonials{
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+.quote{
+  border-radius: 15px;
+  width: 19%;
+}
+
+.cardTesti{
+  background-color: rgb(147 200 221 / 0.6);
+  border-radius: 15px;
+  padding: 3%;
 }
 
 .container-howItWorks{
@@ -91,6 +714,23 @@
   background-repeat: no-repeat;
   min-height: 220vh;
   padding: 10% 6% 0% 6%;
+}
+
+.container-partners{
+  background-color: #ffffff;
+  background-image: url('../images/partners.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 10% 6% 0% 6%;
+}
+
+.container-testimonials{
+  background-color: #ffffff;
+  background-image: url('../images/bgTesti.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 5%;
+  padding-bottom: 14%;
 }
 
 .pLR-6{
@@ -259,9 +899,199 @@ p{
 }
 
 .container-benefits{
-  background-color: #eeeeee;
+  background-image: url('../images/home_benefits.png');
+  padding: 15% 0% 10% 0%;
+  background-size: cover;
+}
+
+.headingMembership{
+  font-family: 'Bristone';
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+.headingAboutUs{
+  font-weight: 600 !important;
+}
+
+.headingVM{
+  font-family: 'Bristone';
+  font-size: 1.8rem;
+  letter-spacing: 3px;
+  font-weight: 400;
+  color: #f8f092;
+  text-transform: uppercase;
+}
+
+.descVM{
+  font-size: 2rem;
+  color: white;
+  font-weight: 600;
+}
+
+.mt-6{
+  margin-top: 6rem;
+}
+
+.descAboutUs{
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: black;
+  margin-top: 2rem;
+  text-align: justify;
+  padding-right: 3rem;
+}
+
+.aboutUsImg{
+  border-radius: 20px;
+}
+
+.stepImg{
+  width: 100%;
+  height: auto;
+}
+
+.container-why{
+  padding: 4% 0% 5% 0%;
+}
+
+.container-profile-why{
   padding: 4% 0% 10% 0%;
-  height: 93vh;
+  background-image: url('../images/bgAbout.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container-contact{
+  padding: 10% 0% 10% 0%;
+  background-image: url('../images/bgAbout.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.promoImage{
+  width: 100%;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 5px 43px -11px rgba(0,0,0,0.39) !important;
+  -moz-box-shadow: 0px 5px 43px -11px rgba(0,0,0,0.39) !important;
+}
+
+.container-promo{
+  padding: 10% 6% 10% 6%;
+}
+
+.titlePromo{
+  font-weight: 600;
+}
+
+.w-55{
+  width: 55%;
+}
+
+.container-profile-team{
+  margin-bottom: 7%;
+  margin-top: 10%;
+  background-image: url('../images/bgTeam.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container-vision-mission{
+  padding: 6% 0% 2% 0%;
+  margin-top: 3%;
+  background-image: url('../images/bgVisiMisi.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container-provide{
+  background-image: url('../images/bgProvide.png');
+  padding: 4% 0% 10% 0%;
+  background-size: cover;
+  background-repeat: round;
+}
+
+/* Set the size of the div element that contains the map */
+.mapouter{
+  height:55rem;
+  width:100%;
+}
+
+.gmap_canvas {
+  height:100%;
+  width:100%;
+}
+
+#gmap_canvas{
+  height: 90%;
+  width: 110%;
+  border-radius: 20px;
+}
+
+.contactSection{
+  padding-top: 10%;
+}
+
+.oneRem{
+  font-size: 1rem;
+}
+
+.oneHalfRem{
+  font-size: 1.5rem;
+}
+
+
+.newsSecHeading{
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.f-15{
+  font-size: 15pt;
+}
+
+.f-14{
+  font-size: 14;
+}
+
+.f-13{
+  font-size: 13pt;
+}
+
+.fb-13{
+  font-size: 13pt;
+  font-weight: 500;
+}
+
+.bold{
+  font-size: 15pt;
+  font-weight: 600;
+}
+
+.pointMembership{
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-family: 'Bristone';
+}
+
+.membership-section{
+  margin-top:18% ;
+}
+
+.thumbnail-provide{
+  max-width: 90%;
+  height: auto;
+}
+
+.icon-provide{
+  width: 4rem;
+  height: auto;
+}
+
+.radius-1{
+  border-radius: 5px;
 }
 
 .container-solution{
@@ -270,11 +1100,38 @@ p{
 }
 
 .container-footer{
-  background-color: #eeeeee;
-  margin-top: 2%;
-  background-image: url('../images/footer_group.jpg');
-  padding: 6%;
+  background-color: #48afd7;
+  background-image: url('../images/bgFooter.png');
+  padding: 2% 6% 1% 6%;
   background-size: cover;
+}
+
+.socialIcon{
+  width: 10%;
+  margin: 0.5%;
+}
+
+.pr-7{
+  padding-right: 5rem;
+}
+
+.w100{
+  width: 100%;
+}
+
+.w70{
+  width: 70%
+}
+
+.w50{
+  width: 50%
+}
+
+.bg-blue2{
+  background-color: #b0dcec;
+  border-radius: 5px;
+  margin-top: 1%;
+
 }
 
 .MuiIconButton-label .MuiSvgIcon-root{
@@ -289,9 +1146,16 @@ p{
   position: initial;
 }
 
+.card-style{
+  border-radius: 30px;
+  -moz-box-shadow: 0px 5px 43px -11px rgba(0,0,0,0.39) !important;
+  box-shadow: 0px 5px 43px -11px rgba(0,0,0,0.39) !important;
+  padding-bottom: 2rem !important;
+  background-color: white;
+}
+
 .btnArrow{
-  padding: 6px;
-  border: 2px solid #48afd7;
+  padding: 0px;
   border-radius: 48px;
 }
 
@@ -339,13 +1203,19 @@ button{
   overflow:hidden;
 }
 
-.img-fluid{
-  width: 830px !important;
-  min-height: 417px;
+.cardBenefits{
   border-radius: 20px;
   -webkit-box-shadow: 0px 5px 43px -11px rgba(0,0,0,0.39) !important;
   -moz-box-shadow: 0px 5px 43px -11px rgba(0,0,0,0.39) !important;
   box-shadow: 0px 5px 43px -11px rgba(0,0,0,0.39) !important;
+}
+
+.img-fluid{
+  border-radius: 20px;
+}
+
+.text-black{
+  color: black;
 }
 
 .carousel-item-next{
@@ -379,17 +1249,73 @@ button{
   max-width: 100%;
 }
 
+.padding-7{
+  padding-top:7%
+}
+
+.radio{
+  width: 74%;
+}
+
+.btn-membership{
+  font-size: 1rem;
+  border-radius: 15px;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 5%;
+  text-transform: uppercase;
+}
+
+.membership-active{
+  font-weight: 700;
+  background-color: #d0e6ef;
+}
+
+.subMenu{
+  height: 30px;
+}
+
+.sub-menu-button{
+  text-transform: uppercase;
+  color: #b2e6f2;
+  font-size: 1rem;
+  padding: 0% 7% !important;
+  margin: 0px 10px;
+  letter-spacing: 2px;
+}
+
+
+.sub-menu-button-active{
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  padding: 0% 7% !important;
+  border: 1px solid white;
+}
+
+.blue-soft{
+  color: #b2e6f2;
+}
+
+.sub-menu{
+  font-size: 15pt;
+  cursor: pointer;
+}
+
+.sub-menu-active{
+  font-weight: 600;
+}
 
 .btn-traveli{
   font-size: 1.2rem;
   display: inline-block;
   border-radius: 37px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
   color: black;
   padding-left: 0px;
   width: 220px;
-  z-index: 100;
+  z-index: 0;
 }
 
 .btn-traveli:hover .arrow{
@@ -398,6 +1324,16 @@ button{
 }
 
 .btn-font{
+  font-size: 1.1rem;
+  padding-top: 6%;
+  padding-left: 9%;
+  transition: 0.2s all;
+  text-decoration: underline;
+  text-decoration-color: #48afd7;
+  color: #48afd7;
+}
+
+.btn-blueTraveli{
   font-size: 1.1rem;
   padding-top: 6%;
   padding-left: 9%;
@@ -441,12 +1377,15 @@ button{
 
 .btn-v3-hero:hover .arrow{
   background-position: left;
-  padding: 14px 160px 15px 17px;
+  padding: 14px 150px 15px 17px;
 }
 
 .btn-v3-hero:hover .btn-font{
   color: #59a9da;
+  padding-right: 50px;
+
 }
+
 
 .btn-v3-hero .btn-font{
   text-decoration: underline;
@@ -455,6 +1394,40 @@ button{
   padding-top: 5%;
 }
 
+.btn-v3-hero .btn-font-blue{
+  text-decoration: underline;
+  text-decoration-color: white;
+  color: white;
+  padding-top: 5%;
+}
+
+
+.btn-v3-hero:hover .btn-blueTraveli{
+  color: #59a9da;
+  padding-right: 50px;
+
+}
+
+.btn-v3-hero .btn-blueTraveli{
+  text-decoration: underline;
+  text-decoration-color: #59a9da;
+  color: #59a9da;
+  padding-top: 5%;
+}
+
+.btn-v3-hero .btn-blueTraveli{
+  text-decoration: underline;
+  text-decoration-color: #59a9da;
+  color: #59a9da;
+  padding-top: 5%;
+}
+
+.btn-v3-hero .MuiSvgIcon-root{
+  color: #4ab1d8;
+  font-size: 1.5rem !important;
+}
+
+
 .btn-v4{
   width: 240px;
 }
@@ -462,6 +1435,11 @@ button{
 .btn-v4:hover .arrow{
   background-position: left;
   padding: 14px 160px 15px 17px;
+}
+
+.btn-v4 .MuiSvgIcon-root{
+  color: #4ab1d8;
+  font-size: 1.5rem !important;
 }
 
 .btn-v5{
@@ -498,21 +1476,261 @@ button{
   padding: 14px 160px 15px 17px;
 }
 
+.btn-v7-hero{
+  width: 310px;
+}
+
+.btn-v7-hero:hover .arrow{
+  background-position: left;
+  padding: 14px 180px 15px 17px;
+}
+
+.btn-v7-hero:hover .btn-font{
+  color: #59a9da;
+  padding-right: 50px;
+}
+
+.btn-v7-hero .btn-font{
+  text-decoration: underline;
+  text-decoration-color: white;
+  color: white;
+  padding-top: 5%;
+  padding-left: 0;
+}
+
+.btn-v7-hero .btn-font-blue{
+  text-decoration: underline;
+  text-decoration-color: white;
+  color: white;
+  padding-top: 5%;
+}
+
+
+.btn-v7-hero:hover .btn-blueTraveli{
+  color: #59a9da;
+  padding-right: 50px;
+}
+
+.btn-v7-hero .btn-blueTraveli{
+  text-decoration: underline;
+  text-decoration-color: #59a9da;
+  color: #59a9da;
+  padding-top: 5%;
+}
+
+.btn-v7-hero .btn-blueTraveli{
+  text-decoration: underline;
+  text-decoration-color: #59a9da;
+  color: #59a9da;
+  padding-top: 5%;
+}
+
+.btn-v7-hero .MuiSvgIcon-root{
+  color: #4ab1d8;
+  font-size: 1.5rem !important;
+}
+
 .MuiAccordionSummary-root{
   padding: 0px 31px !important;
   height: 72px !important;
 }
 
-.btn-v3-hero .MuiSvgIcon-root{
-  color: #4ab1d8;
-  font-size: 1.5rem !important;
+.blueTraveli{
+  color: #49b1d8;
+}
+
+.mt-5{
+  margin-top: 5rem ;
+}
+
+.mt-10{
+  margin-top: 10rem ;
+}
+
+.menu-section{
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: inherit;
+  font-family: 'Bristone';
+
+}
+
+.responsiveImg{
+  width: 100%;
+  height: auto;
+}
+
+.clientLogo{
+  width: 75%;
+  height: auto;
+}
+
+.menu-heading{
+  font-size: 1.5rem;
+  margin-top: 2%;
+  letter-spacing: inherit !important;
+}
+
+.menu-heading-provide{
+  font-size: 1.5rem;
+  margin-top: 2%;
+  font-family: 'roboto';
+  letter-spacing: inherit !important;
+}
+
+.menu-desc{
+  margin-top: 3%;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.ml-6{
+  margin-left: 4rem !important;
+}
+
+.cardNewsPage{
+  border: 1px solid #efe7e7;
+  border-radius: 25px;
+  padding: 2%;
+  transition: 0.3s all;
+  -webkit-box-shadow: 0px 6px 71px 11px rgba(0,0,0,0.15) !important;
+  -moz-box-shadow: 0px 6px 71px 11px rgba(0,0,0,0.15) !important;
+  box-shadow: 0px 6px 71px 11px rgba(0,0,0,0.15) !important;
+}
+
+.cardNewsPageBot{
+  border: 1px solid #efe7e7;
+  border-radius: 10px;
+  padding: 2%;
+  transition: 0.3s all;
+  -webkit-box-shadow: 0px 6px 71px 11px rgba(0,0,0,0.15) !important;
+  -moz-box-shadow: 0px 6px 71px 11px rgba(0,0,0,0.15) !important;
+  box-shadow: 0px 6px 71px 11px rgba(0,0,0,0.15) !important;
+}
+
+.cardNews{
+  border: 1px solid #efe7e7;
+  border-radius: 10px;
+  padding: 2%;
+  transition: 0.3s all;
+}
+
+.cardNews:hover{
+  -webkit-box-shadow: 0px 6px 71px 11px rgba(0,0,0,0.15) !important;
+  -moz-box-shadow: 0px 6px 71px 11px rgba(0,0,0,0.15) !important;
+  box-shadow: 0px 6px 71px 11px rgba(0,0,0,0.15) !important;
+}
+
+.browseAll{
+  background-color: #f9ee6f;
+  height: 3rem;
+  width: 10rem;
+  font-size: 1.3rem;
+  font-weight: 400;
+  border: none;
+  border-radius: 10px;
+}
+
+.headingPromo{
+  font-size: 2rem;
+  font-weight: 400;
+  padding-left: 50px;
+  color:#48afd7;
+  font-family: 'Bristone';
+}
+
+.headingContact{
+  font-size: 2.5rem;
+  font-weight: 400;
+  color:#48afd7;
+  font-family: 'Bristone';
+}
+
+.headingTeam{
+  font-size: 2.5rem;
+  font-weight: 400;
+  color:#48afd7;
+  font-family: 'Bristone';
+}
+
+.descTeam{
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
 .headingBenefit{
-  font-size: 3.5rem;
-  color: #2f7996;
-  font-weight: 600;
+  font-family: 'Bristone';
+  font-size: 2rem;
+  font-weight: 400;
   padding-left: 50px;
+  color:white;
+}
+
+
+.headingPartners{
+  font-family: 'Bristone';
+  font-size: 1.5rem;
+  color: #48afd7;
+  font-weight: 400;
+  letter-spacing: 5px;
+  /* padding-left: 50px; */
+}
+
+.headingWhy{
+  font-size: 2rem;
+  color: white;
+  font-weight: 400;
+  font-family: 'Bristone';
+  padding-left: 50px; 
+  word-spacing: 5px;
+  line-height: 41px;
+}
+
+.floatingWA{
+  width: 3.4rem;
+  position: fixed;
+  right: 2.5rem;
+  bottom: 2.5rem;
+  z-index: 3;
+  transition: 0.3s all;
+}
+
+.floatingWA:hover{
+  width: 3.9rem;
+}
+
+.whySectionImg{
+  width: 100%;
+}
+
+.headingMember{
+  font-family: 'Bristone';
+  font-size: 2rem;
+  color: #46add8;
+  font-weight: 400;
+  word-spacing: 5px;
+  line-height: 47px;
+}
+
+.teamImg{
+  border-radius: 15px;
+  width: 100%;
+}
+
+.teamCard{
+  border-radius: 30px;
+  -moz-box-shadow: 0px 5px 43px -11px rgba(0,0,0,0.39) !important;
+  box-shadow: 0px 5px 43px -11px rgba(0,0,0,0.39) !important;
+  background-color: white;
+  width: 74.5%;
+}
+
+.descTeam{
+  padding: 4% 0% 9% 9%;
+}
+
+.teamPos{
+  color: #46add8;
 }
 
 .solutionDesc{
@@ -522,7 +1740,6 @@ button{
   font-size: 1rem;
   color: black;
   margin-top: 3%;
-
 }
 
 .solutionTitle{
@@ -576,6 +1793,25 @@ button{
 .textSlider{
   margin-top: 3%;
   min-height: 57vh;
+}
+
+.traveliColor{
+  color: #59a9da !important;
+}
+
+.benefitTitle{
+  font-weight: 600;
+  font-size: 1.7rem;
+  min-height: 7rem;
+  font-family: 'Bristone';
+}
+
+.benefitDesc{
+  font-weight: 400;
+  font-size: 1rem;
+  margin-top: 8%;
+  line-height: 26pt;
+  font-family: 'roboto';
 }
 
 .bg-yellow2{
@@ -838,20 +2074,24 @@ button{
     height: 83vh;
     overflow: hidden;
     position: absolute;
+    right: 0 !important;
   }
 
   .items.active {
     background: rgba(255,255,255,0.3);
     cursor: grabbing;
     cursor: -webkit-grabbing;
-    transform: scale(1);
+    transform: scale(1); 
   }
 
   .item {
     display: inline-block;
-    /* min-height: 250px; */
-    min-width: 287px;
+    min-width: 9rem;
+    white-space: normal;
     margin: 2em 1.5em;
+    max-width: 51rem;
+    background-color: white;
+    border-radius: 20px;
     @media screen and (max-width: 500px) {
       min-height: 200px;
       min-width: 200px;
@@ -936,6 +2176,85 @@ button{
   -ms-transition: opacity 0.5s ease-in-out;
   -o-transition: opacity 0.5s ease-in-out;
   opacity: 0;
+}
+
+.readMore{
+  margin-right: 2%;
+  font-weight: 500;
+}
+
+.readMoreBot{
+  font-size: 0.6rem;
+}
+
+.newsTopTitle{
+  color: #00add9;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.newsBotTitle{
+  color: #00add9;
+  font-weight: 400;
+  font-size: 1rem;
+  padding-right: 2%;
+  line-height: 1.2rem;
+}
+
+.shortDesc{
+  font-size: .7rem;
+}
+
+.newsTopImg{
+  width: 95%;
+  -webkit-box-shadow: 0px 8px 21px 16px rgba(0,0,0,0.15) !important; 
+  -moz-box-shadow: 0px 8px 21px 16px rgba(0,0,0,0.15) !important; 
+  box-shadow: 0px 8px 21px 16px rgba(0,0,0,0.15) !important;
+  border-radius: 25px;
+}
+
+.detailNews{
+  padding: 1% 7% 10% 7%;
+}
+
+.newsDetailImg{
+  width: 100%;
+  -webkit-box-shadow: 9px 4px 14px 4px rgba(0,0,0,0.15) !important; 
+  -moz-box-shadow: 9px 4px 14px 4px rgba(0,0,0,0.15) !important; 
+  box-shadow: 9px 4px 14px 4px rgba(0,0,0,0.15) !important;
+  border-radius: 25px 25px 0px 0px;
+}
+
+.newsBotImg{
+  width: 100%;
+  -webkit-box-shadow: 0px 2px 15px 3px rgba(0,0,0,0.15) !important; 
+  -moz-box-shadow: 0px 2px 15px 3px rgba(0,0,0,0.15) !important; 
+  box-shadow: 0px 2px 15px 3px rgba(0,0,0,0.15) !important;
+  border-radius: 1px;
+}
+
+.containerNews{
+  background-image: url('../images/bgNews.png');
+  padding: 11%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.containerNewsDetails{
+  background-image: url('../images/bgNews.png');
+  padding: 8%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dateNews{
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+.dateNewsBot{
+  margin-top: 1rem;
+  font-size: 0.7rem;
 }
 
 .hover-effect:hover .hover-image{
@@ -1173,16 +2492,20 @@ button{
   }
 
   .modal-content{
-    width: 60vw;
-    height: 70vh;
-    margin-top: 13%;
+    color: white;
+    width: 82%;
+    height: 22rem;
+    position: fixed;
+    background-color: #48afd7;
+    left: 9%;
+    bottom: 4%;
     border-radius: 29px;
   }
 
   iframe{
-    width: 24vw;
-    height: 36vh;
-    border-radius: 29px;
+    width: 20vw;
+    height: 28vh;
+    border-radius: 15px;
   }
 }
 
@@ -1198,3 +2521,32 @@ button{
   border: 1px solid #f9ee6f;
   overflow: hidden;
 }
+
+.promoModalHead{
+  font-size: 2.3rem;
+}
+
+.promoModalDesc{
+  font-size: 1.1rem;
+  color: white;
+}
+
+.btnYellowPromo{
+  width: 15rem;
+  height: 3rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #f7ec1e;
+  -webkit-box-shadow: 0px 5px 43px 3px rgba(0,0,0,0.39) !important;
+  -moz-box-shadow: 0px 5px 43px 3px rgba(0,0,0,0.39) !important;
+  box-shadow: 0px 5px 43px 3px rgba(0,0,0,0.39) !important;
+}
+
+.imagePromo{
+  -webkit-box-shadow: 0px 5px 43px 3px rgba(0,0,0,0.39) !important;
+  -moz-box-shadow: 0px 5px 43px 3px rgba(0,0,0,0.39) !important;
+  box-shadow: 0px 5px 43px 3px rgba(0,0,0,0.39) !important;
+  border-radius: 15px;
+  width: 70%;
+}
+

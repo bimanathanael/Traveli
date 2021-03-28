@@ -155,7 +155,7 @@ const DistributorList = () => {
   //   };
 
   return (
-    <div className="">
+    <div className="members-page">
       <div className={classes.heroDistributor}>
         {title && desc && (
           <>
@@ -200,7 +200,7 @@ const DistributorList = () => {
               <h2>{"THE WHOLESALER"}</h2>
             </div>
             <div className="col-12" style={{ fontSize: ".7rem" }}>
-              <p>
+              <p style={{color: 'black'}}>
                 {
                   "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. "
                 }
@@ -227,21 +227,22 @@ const DistributorList = () => {
                       <p
                         style={{
                           width: "50%",
+                          padding: '0 1rem 0 0',
                           //   fontSize: ".5rem",
                           color: "white",
                         }}
                       >
-                        sokdpaofkeop kfopakaoasda;a kasd;ka ;askd;akw'dkp[ado
-                        ;ad;adlawppkoakdwopdk
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
                       </p>
                       <p
                         style={{
                           width: "50%",
+                          padding: '0 2rem 0 0',
                           //   fontSize: ".5rem",
                           color: "white",
                         }}
                       >
-                        asdkjaiojawoeja wopejwapoej wapoejwaopej
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem
                       </p>
                     </div>
                   </div>
@@ -260,7 +261,7 @@ const DistributorList = () => {
                   }}
                 >
                   <div>
-                    <h6>Select Parent Company</h6>
+                    <span style={{fontWeight: 'bold'}}>Select Parent Company</span>
                   </div>
                   <div>
                     <div style={{ display: "flex" }}>

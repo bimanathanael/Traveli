@@ -1,4 +1,4 @@
-const db = require("../config/firebaseSetup");
+const { db } = require("../config/firebaseSetup");
 const indonesiaCollection = db.collection("Indonesia");
 
 class IndonesiaModel {

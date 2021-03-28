@@ -20,13 +20,13 @@ const useStyles = makeStyles((themes) => ({
     benefitMembersContent: {
       backgroundSize: '73rem',
       backgroundRepeat: 'no-repeat',
-      minHeight: '100vh',
+      minHeight: '110vh',
       backgroundPosition: 'center',
       backgroundImage: `url(${BenefitBackground})`,
   }, 
   cardContainer: {
       margin: '2rem auto 0 auto',
-      maxWidth: '50%'
+      maxWidth: '57%'
   },
   cardContent: {
       marginTop: '1rem',

@@ -7,7 +7,7 @@ import { IconContext } from 'react-icons';
 const ButtonWatch = () => {
     return (
         <>
-            <IconContext.Provider value={{size: '2em', color: 'white'}}>
+            <IconContext.Provider value={{size: '2.6em', color: 'white'}}>
                 <button type="button" className="btn button-watch">
                     <div className="members-button">
                         <div>

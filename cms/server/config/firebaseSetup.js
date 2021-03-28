@@ -13,7 +13,9 @@ const configs = {
   client_x509_cert_url: process.env.CLIENT_CERT,
 };
 
-admin.initializeApp({ credential: admin.credential.cert(configs) });
+const apps = admin.initializeApp({
+  credential: admin.credential.cert(configs),
+});
 const db = admin.firestore();
 
-module.exports = db;
+module.exports = { db, apps };

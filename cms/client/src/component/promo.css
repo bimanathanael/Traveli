@@ -1,0 +1,97 @@
+.button-containerPromo {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.cards-containerPromo {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.cardsPromo {
+  height: auto;
+  display: flex;
+  margin: 10px;
+  background-color: white;
+  border-radius: 5px;
+  height: 320px;
+}
+.cardPromo {
+  cursor: pointer;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  width: 250px;
+  overflow: hidden;
+}
+
+.card-divImagePromo {
+  display: flex;
+  justify-content: center;
+}
+.card-imagePromo {
+  padding: 0px;
+  height: 180px;
+  margin: 0;
+  object-fit: cover;
+}
+
+.card-contentPromo {
+  margin: 0;
+  padding: 10px;
+}
+.card-titlePromo {
+  margin: 0;
+  margin-top: 10px;
+  height: 40px;
+  color: #2ab9dc;
+  font-size: 12px;
+}
+.card-contentsPromo {
+  margin: 0;
+  color: #7d7d7d;
+  font-size: 10px;
+}
+.card-readmorePromo {
+  margin: 0;
+  color: black;
+  text-align: right;
+  margin-top: 10px;
+  font-size: 8px;
+}
+
+.card-timePromo {
+  font-size: 9px;
+  margin: 0;
+}
+
+.image-divPromo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.image-promo {
+  max-height: 400px;
+  max-width: 670px;
+}
+@media only screen and (max-width: 991px) {
+  .image-promo {
+    max-height: 400px;
+    max-width: 440px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .image-promo {
+    max-height: 400px;
+    max-width: 280px;
+  }
+}
+
+.button-promo {
+  place-items: center;
+  text-align: center;
+}

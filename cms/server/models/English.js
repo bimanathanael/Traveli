@@ -1,4 +1,4 @@
-const db = require("../config/firebaseSetup");
+const { db } = require("../config/firebaseSetup");
 const englishCollection = db.collection("English");
 
 class English {
@@ -10,7 +10,7 @@ class English {
     return englishCollection.doc(content).get();
   }
 
-  static addEnglish(newData, content) {
+  static addEnglish(content, newData) {
     return englishCollection.doc(content).set(newData);
   }
   static deleteEnglish(content) {
