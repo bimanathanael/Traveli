@@ -82,7 +82,7 @@ export const Benefits = ({dataTitle, dataDesc}) => {
                                             dataBenefits.map( data => {
                                                 return (            
                                                 <div className="item cardBenefits">
-                                                    <div className="row p-5 right0">
+                                                    <div className="row p-5 right0 card-row">
                                                         <div className="col-md-7">
                                                             <h1 className="benefitTitle traveliColor mobile-2">
                                                                 {data.title}

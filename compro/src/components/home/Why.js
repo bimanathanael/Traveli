@@ -35,21 +35,21 @@ export const Why = ({dataDesc, dataTitle}) => {
                     <div className="row mb-5 d-flex justify-content-center">
                         <div className="col-md-3 text-center card-style m-4 p-5 mobile-1-padding">
                             <img className="whySectionImg" src={cardImage1}/>
-                            <h3 className="headWhy mobile-2"> { dataTitle.Title1 } </h3>
+                            <h3 className="headWhy mobile-2 mt-3"> { dataTitle.Title1 } </h3>
                             <p className="descWhy mobile-1">
                                 { dataDesc.Description1 }
                             </p>
                         </div>
                         <div className="col-md-3 text-center card-style m-4 p-5 mobile-1-padding">
                             <img className="whySectionImg" src={cardImage2}/>
-                            <h3 className="headWhy mobile-2"> { dataTitle.Title2 } </h3>
+                            <h3 className="headWhy mobile-2 mt-3"> { dataTitle.Title2 } </h3>
                             <p className="descWhy mobile-1">
                                 { dataDesc.Description2 }
                             </p>
                         </div>
                         <div className="col-md-3 text-center card-style m-4 p-5 mobile-1-padding">
                             <img className="whySectionImg" src={cardImage3}/>
-                            <h3 className="headWhy mobile-2"> { dataTitle.Title3 } </h3>
+                            <h3 className="headWhy mobile-2 mt-3"> { dataTitle.Title3 } </h3>
                             <p className="descWhy mobile-1">
                                 { dataDesc.Description3 }
                             </p>

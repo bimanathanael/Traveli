@@ -35,11 +35,13 @@ export const News = ({ url }) => {
             {news.map((oneNews, idx) => {
               return idx == 0 ? (
                 <div className="col-md-12 cardNewsPage pl-5 pt-5">
-                  <div className="row">
-                    <img
-                      className="newsTopImg m-auto"
-                      src={oneNews.image_url}
-                    />
+                  <div className="col-md-12">
+                    <a href={"/news/" + oneNews.timeInNumber}>
+                      <img
+                        className="newsTopImg m-auto"
+                        src={oneNews.image_url}
+                      />
+                    </a>
                   </div>
                   <div className="col-md-12">
                     <p className="dateNews">{oneNews.time}</p>
@@ -61,7 +63,11 @@ export const News = ({ url }) => {
               ) : (
                 <div className="col-md-4 mt-2 pt-4 pl-4 pr-4 mobile-center">
                   <div className="row cardNewsPageBot p-2 mobile-center">
-                    <img className="newsBotImg " src={oneNews.image_url} />
+                    <div className="col-md-12">
+                      <a href={"/news/" + oneNews.timeInNumber}>
+                        <img className="newsBotImg " src={oneNews.image_url} />
+                      </a>
+                    </div>
                     <div className="col-md-12">
                       <p className="dateNewsBot no-mobile">11 February 2021</p>
                     </div>

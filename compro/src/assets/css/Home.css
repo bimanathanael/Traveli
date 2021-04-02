@@ -7,6 +7,10 @@
     margin-top: 0px;
   }
 
+  body .card-row{
+    min-height: unset;
+  }
+
   body .container-promo {
     padding: 30% 0% 10% 6%;
   }
@@ -232,12 +236,17 @@
     width: 73%;
   }
 
+  body .text-black-mobile-white{
+    color: white !important;
+  }
+
   body .containerNews {
     padding: 40% 11% 11% 11%;
   }
 
   body .newsTopImg {
     height: 10rem;
+    width: 91%;
   }
 
   body .mobile-only {
@@ -339,6 +348,19 @@
 
   body .rowTesti {
     padding-left: 2rem;
+  }
+
+  body .descTeam{
+    padding: 0% !important;
+  }
+
+  body .teamName {
+    margin-top: 0.5rem !important;
+    font-size: 1rem !important;
+  }
+
+  body .teamPos {
+    font-size: 0.8rem !important;
   }
 }
 
@@ -634,7 +656,7 @@
 
   body .pointMembership {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: 2px;
     font-family: "Bristone";
   }
@@ -749,17 +771,23 @@
   }
 
   body .teamName {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   body .teamPos {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   body .specialCol {
     -ms-flex: 0 0 50% !important;
     flex: 0 0 50% !important;
     max-width: 50% !important;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  body .text-black-mobile-white{
+    color: black !important;
   }
 }
 
@@ -808,6 +836,7 @@
 
 .headWhy {
   font-size: 2rem;
+  font-family: 'roboto';
 }
 
 .descWhy {
@@ -1046,6 +1075,20 @@
 .subHeadingTestimonials {
   font-weight: 600;
   font-size: 2.5rem;
+}
+
+.teamName {
+  font-size: 0.8rem !important;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 0.4rem !important;
+  font-family: "Bristone";
+}
+
+.teamPos {
+  color: #46add8;
+  font-weight: 600;
+  font-size: 0.7rem !important;
 }
 
 .quote {
@@ -1394,6 +1437,9 @@ p {
 
 .oneHalfRem {
   font-size: 1.5rem;
+  font-family: 'roboto';
+  padding-top: 3px !important;
+  margin: 0px !important;
 }
 
 .newsSecHeading {
@@ -1419,13 +1465,17 @@ p {
 }
 
 .bold {
-  font-size: 15pt;
+  font-size: 0.8rem;
   font-weight: 600;
+}
+
+.text-black-mobile-white{
+  color: black !important;
 }
 
 .pointMembership {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 2px;
   font-family: "Bristone";
 }
@@ -2162,16 +2212,21 @@ button {
   color: #59a9da !important;
 }
 
+.card-row{
+  min-height: 20rem;
+}
+
 .benefitTitle {
   font-weight: 600;
   font-size: 1.7rem;
-  min-height: 7rem;
+  text-align: center;
   font-family: "Bristone";
 }
 
 .benefitDesc {
   font-weight: 400;
   font-size: 1rem;
+  text-align: center;
   margin-top: 8%;
   line-height: 26pt;
   font-family: "roboto";
@@ -2582,7 +2637,7 @@ button {
 }
 
 .newsTopImg {
-  width: 95%;
+  width: 98%;
   -webkit-box-shadow: 0px 16px 30px 3px rgba(0, 0, 0, 0.15) !important;
   -moz-box-shadow: 0px 16px 30px 3px rgba(0, 0, 0, 0.15) !important;
   box-shadow: 0px 16px 30px 3px rgba(0, 0, 0, 0.15) !important;
