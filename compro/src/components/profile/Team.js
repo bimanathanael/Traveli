@@ -44,8 +44,8 @@ export const Team = () => {
               <div className="teamCard ">
                 <img className="teamImg" src={deny} />
                 <div className="descTeam">
-                  <h3 className="teamName mobile-1">Deny Fajar</h3>
-                  <h5 className="teamPos mobile-1">{"Founder & CEO"}</h5>
+                  <p className="teamName ">Deny Fajar</p>
+                  <p className="teamPos ">{"Founder & CEO"}</p>
                 </div>
               </div>
             </div>
@@ -53,8 +53,8 @@ export const Team = () => {
               <div className="teamCard ">
                 <img className="teamImg" src={deka} />
                 <div className="descTeam">
-                  <h3 className="teamName mobile-1">Deka Fandestia</h3>
-                  <h5 className="teamPos mobile-1">{"Co-Founder"}</h5>
+                  <p className="teamName ">Deka Fandestia</p>
+                  <p className="teamPos ">{"Co-Founder"}</p>
                 </div>
               </div>
             </div>
@@ -62,8 +62,8 @@ export const Team = () => {
               <div className="teamCard ">
                 <img className="teamImg" src={jefry} />
                 <div className="descTeam">
-                  <h3 className="teamName mobile-1">Jefry L. Lydia</h3>
-                  <h5 className="teamPos mobile-1">{"Co-Founder"}</h5>
+                  <p className="teamName ">Jefry L. Lydia</p>
+                  <p className="teamPos ">{"Co-Founder"}</p>
                 </div>
               </div>
             </div>
@@ -75,8 +75,8 @@ export const Team = () => {
               <div className="teamCard ">
                 <img className="teamImg" src={rivan} />
                 <div className="descTeam">
-                  <h3 className="teamName mobile-1">Rivan</h3>
-                  <h5 className="teamPos mobile-1">{"Business Development"}</h5>
+                  <p className="teamName ">Rivan</p>
+                  <p className="teamPos ">{"Business Development"}</p>
                 </div>
               </div>
             </div>
@@ -84,8 +84,8 @@ export const Team = () => {
               <div className="teamCard ">
                 <img className="teamImg" src={pongky} />
                 <div className="descTeam">
-                  <h3 className="teamName mobile-1">Pongku Koesasi</h3>
-                  <h5 className="teamPos mobile-1">{"Sales & Marketing"}</h5>
+                  <p className="teamName ">Pongku Koesasi</p>
+                  <p className="teamPos ">{"Sales & Marketing"}</p>
                 </div>
               </div>
             </div>
@@ -93,8 +93,8 @@ export const Team = () => {
               <div className="teamCard ">
                 <img className="teamImg" src={aafiyah} />
                 <div className="descTeam">
-                  <h3 className="teamName mobile-1">Aafiyah Salam</h3>
-                  <h5 className="teamPos mobile-1">{"Corporate Secretary"}</h5>
+                  <p className="teamName ">Aafiyah Salam</p>
+                  <p className="teamPos ">{"Corporate Secretary"}</p>
                 </div>
               </div>
             </div>

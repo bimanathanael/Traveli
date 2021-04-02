@@ -1,7 +1,7 @@
 import "../assets/css/Nav.css";
 import { Link, useLocation, useParams } from "react-router-dom";
 import logo3 from "../assets/images/traveli_white2.png";
-import distributorImg from "../assets/images/distributorImg.png";
+import wholesalerImg from "../assets/images/wholesalerImg.png";
 import suppImg from "../assets/images/suppImg.png";
 import resellerImg from "../assets/images/resellerImg.png";
 
@@ -13,6 +13,7 @@ export const Nav = ({ handleLanguage }) => {
 
   let aboutUsUnderline = false;
   let memberUnderline = false;
+  let blackText = false
   let memberListUnderline = false;
 
   if (
@@ -33,6 +34,7 @@ export const Nav = ({ handleLanguage }) => {
     locationNow == "/members/wholesaler" ||
     locationNow == "/members/reseller"
   ) {
+    blackText = true
     memberUnderline = true;
   } else if (
     locationNow == "/promo" ||
@@ -41,6 +43,10 @@ export const Nav = ({ handleLanguage }) => {
     locationNow == "/howitworks"
   ) {
     navbarClass += "navBlue";
+  } else if (
+    locationNow == "/travelikuy"
+  ) {
+    blackText = true
   }
 
   const handleLanguageButton = (lang) => {
@@ -66,7 +72,7 @@ export const Nav = ({ handleLanguage }) => {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul className="navbar-nav mr-auto mt-2 mt-lg-0 ml-4">
+          <ul className="navbar-nav mr-auto mt-2 mt-lg-0 ml-5">
             <li className="nav-item mobile-center">
               <Link to="/howItWorks">
                 <a
@@ -84,8 +90,8 @@ export const Nav = ({ handleLanguage }) => {
             <li className="nav-item dropdown ml-3 members-dropdown supplier-menu no-mobile">
               <a
                 className={`nav-link text-white dropdown-toggle ${
-                  memberUnderline ? "yellow-underline" : ""
-                }`}
+                  memberUnderline ? "yellow-underline" : "" 
+                } `}
                 href="#"
                 id="navbarDropdown"
                 role="button"
@@ -136,7 +142,7 @@ export const Nav = ({ handleLanguage }) => {
                     </div>
                     <div className="row">
                       <div className="col-md-5 p-0">
-                        <img className="membersImg" src={distributorImg} />
+                        <img className="membersImg" src={wholesalerImg} />
                       </div>
                       <div className="col-md-7 p-0">
                         <p>
@@ -241,7 +247,7 @@ export const Nav = ({ handleLanguage }) => {
                       to="/member-list/wholesaler"
                       className="dropdown-item menu-heading"
                     >
-                      WHOLESALER
+                      WHOLESALER LIST
                     </Link>
                     <p>
                       Pemilik produk dengan credensial khusus. Dapat mengubah
@@ -291,7 +297,9 @@ export const Nav = ({ handleLanguage }) => {
                 <a
                   className={`nav-link text-white ml-4 ${
                     locationNow == "/promo" ? "yellow-underline" : ""
-                  } `}
+                  } ${
+                    blackText ? "text-black-mobile-white" : "text-white" 
+                  }`}
                 >
                   Promo
                 </a>
@@ -299,8 +307,10 @@ export const Nav = ({ handleLanguage }) => {
             </li>
             <li className="nav-item dropdown ml-2">
               <a
-                className={`nav-link text-white dropdown-toggle ${
+                className={`nav-link dropdown-toggle aboutUs ${
                   aboutUsUnderline ? "yellow-underline" : ""
+                } ${
+                  blackText ? "text-black-mobile-white" : "text-white" 
                 }`}
                 href="#"
                 id="navbarDropdown"
@@ -333,7 +343,9 @@ export const Nav = ({ handleLanguage }) => {
           <ul className="navbar-nav my-2 my-lg-0 pr-5 pt-2">
             <li className="nav-item dropdown space-left text-right">
               <a
-                className="nav-link dropdown-toggle text-white"
+                className={`nav-link dropdown-toggle language ${
+                  memberUnderline ? "text-black-mobile-white" : "text-white" 
+                }`}
                 href="#"
                 id="navbarDropdown"
                 role="button"
@@ -351,7 +363,7 @@ export const Nav = ({ handleLanguage }) => {
                   // type="button"
                   onClick={() => handleLanguageButton("id")}
                 >
-                  ID
+                  Bahasa Indonesia
                 </a>
                 <a
                   className="dropdown-item"
@@ -359,7 +371,7 @@ export const Nav = ({ handleLanguage }) => {
                   type="button"
                   onClick={() => handleLanguageButton("en")}
                 >
-                  EN
+                  English
                 </a>
               </div>
             </li>
