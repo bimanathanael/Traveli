@@ -1,22 +1,12 @@
 import benefits1 from '../../assets/images/benefits1.png';
 import benefits1New from '../../assets/images/benefits1New.gif';
-import benefits2 from '../../assets/images/benefits2.png';
 import benefits2New from '../../assets/images/benefits2New.gif';
 import benefits3New from '../../assets/images/benefits3New.gif';
 import benefits4New from '../../assets/images/benefits4New.gif';
 import { useEffect, useState } from 'react';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-// import ArrowForwardIosOutlinedIcon from '@material-ui/icons/ArrowForwardIosOutlined';
-// import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
-// import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
 import ScrollAnimation from 'react-animate-on-scroll';
 import prev from '../../assets/images/prev.png';
 import next from '../../assets/images/next.png';
-import ScrollMenu from 'react-horizontal-scrolling-menu';
-
-import {MobileBenefits} from './MobileBenefits'
-
 
 export const Benefits = ({dataTitle, dataDesc}) => {
     const [mobileView, setMobileView] = useState(window.innerWidth)
@@ -49,7 +39,6 @@ export const Benefits = ({dataTitle, dataDesc}) => {
         window.addEventListener('resize', handleResize)
     },[])
 
-    console.log("masuk benefit", dataTitle)
     return (
         <>
             <div className="container-benefits">
@@ -66,8 +55,6 @@ export const Benefits = ({dataTitle, dataDesc}) => {
                     <div className="col-md-5 offset-md-1 pl-5 arrow-provide">
                         <img className="btnArrow prev"  src={prev} />
                         <img className="btnArrow next ml-4" src={next} />
-                        {/* <button className="btnArrow prev"> <ArrowBackIcon/> </button>
-                        <button className="btnArrow next ml-4"> <ArrowForwardIcon/>  </button> */}
                     </div>
                 </div>
                 <ScrollAnimation animateIn="bounceInRight" animateOut='bounceOutRight'>
@@ -123,8 +110,6 @@ export const Benefits = ({dataTitle, dataDesc}) => {
                     </div>
                 </ScrollAnimation>
         </div>
-        
-        <MobileBenefits className="mobile-only" dataBenefits={dataBenefits}/>
     </>
   )
 }

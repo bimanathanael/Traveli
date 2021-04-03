@@ -14,12 +14,11 @@ export const JoinUs = ({url}) => {
         if (resp.ok) {
           return resp.json();
         } else {
-          console.log(resp)
           throw resp;
         }
       })
       .then(({ message }) => {
-        console.log(message.Hero, "messag gero")
+        console.log(message.Hero, "messag hero")
         setData(message.Hero);
       })
       .catch((err) => {});

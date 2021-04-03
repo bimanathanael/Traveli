@@ -787,7 +787,11 @@
 
 @media only screen and (min-width: 1200px) and (max-width: 1400px) {
   body .text-black-mobile-white{
-    color: black !important;
+    color: black
+  }
+
+  body .bg-transBlue .nav-link{
+    color: white !important
   }
 }
 
@@ -1373,6 +1377,46 @@ p {
   height: 20rem;
   -webkit-box-shadow: 0px 5px 43px -11px rgba(0, 0, 0, 0.39) !important;
   -moz-box-shadow: 0px 5px 43px -11px rgba(0, 0, 0, 0.39) !important;
+}
+.card-visitor{
+  -moz-box-shadow: 0px 5px 43px -11px rgba(0, 0, 0, 0.39) !important;
+  box-shadow: 0px 5px 43px -11px rgba(0, 0, 0, 0.39) !important;
+  border-radius: 5px;
+  border: 1px #e5e9ee solid;
+  background-color: white;
+  margin: 5% 0% 0% 5% ;
+  padding: 5% 0% 0% 0% ;
+}
+
+.details-container{
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+  text-align: center;
+  overflow: hidden;
+}
+
+.details-visitor{
+  margin-bottom: 0px !important;
+  font-size: 0.7rem;
+  background: rgb(203,203,203);
+  background: linear-gradient(0deg, rgba(203,203,203,1) 0%, rgba(242,241,241,1) 46%, rgba(255,255,255,1) 100%); 
+}
+
+.number-visitor{
+  color: #394153;
+  font-size: 2.5rem;
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
+  height: 2.9rem;
+  font-weight: 300;
+}
+
+.tag-visitor{
+  color: #b9c0ce;
+  margin-top: 0px !important;
+  padding-top: 0px !important;
+  font-weight: 400;
+  font-size: 0.7rem;
 }
 
 .container-promo {

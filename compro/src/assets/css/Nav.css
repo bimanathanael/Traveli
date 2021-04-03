@@ -246,6 +246,10 @@ a:hover {
   margin-bottom: 0.5rem;
 }
 
+.navbar-light .navbar-nav .nav-link{
+  color: white;
+}
+
 .members-dropdown p {
   font-size: 11pt;
   font-weight: 400;

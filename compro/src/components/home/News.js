@@ -4,23 +4,11 @@ import ScrollAnimation from 'react-animate-on-scroll';
 
 
 export const News = ({news}) => {
-    // const [mobileView, setMobileView] = useState(window.innerWidth)
-     
-    // useEffect(()=> {
-    //     function handleResize() {
-    //         setMobileView(window.innerWidth)
-    //     }
-
-    //     window.addEventListener('resize', handleResize)
-    // },[])
     const latestNews = news.reverse()
 
     for(let i = 0 ; i < news.length ; i++){
         news[i].shortDesc = news[i].content.slice(0,80) 
     }
-
-    console.log(latestNews, "<latestNews")
-
 
     return (
         <>
@@ -42,7 +30,6 @@ export const News = ({news}) => {
                 <ScrollAnimation animateIn="fadeIn">
                     <div className="row mb-5 d-flex justify-content-center">
                         {latestNews.map((item, index) => {
-                            console.log(item, "<item")
                             return (
                                 index == 0 ? 
                                 <a href={ '/news/'+item.timeInNumber }>

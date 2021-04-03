@@ -3,7 +3,6 @@ import parse from "html-react-parser";
 
 export const News = ({ url }) => {
   const [news, setNews] = useState([]);
-  // let newsList = []
 
   useEffect(() => {
     fetch(`https://pacific-hamlet-79377.herokuapp.com/newsletter`)
@@ -30,7 +29,7 @@ export const News = ({ url }) => {
   return (
     <>
       {news.length !== 0 && (
-        <div class="containerNews">
+        <div className="containerNews">
           <div className="row m-auto">
             {news.map((oneNews, idx) => {
               return idx == 0 ? (

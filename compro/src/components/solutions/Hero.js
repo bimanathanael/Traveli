@@ -4,7 +4,6 @@ import playvideo from '../../assets/images/playvideo.png'
 
 export const Hero = ({data}) => {
 
-  console.log(data,"<hero")
   return (
     <>
       <div className="heroSulutions">

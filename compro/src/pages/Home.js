@@ -14,18 +14,15 @@ export const Home = ({ url }) => {
   let supplier, wholesaler, agency, corporate, petra;
 
   useEffect(() => {
-    console.log(`masuk home`);
     fetch(url + `/Home`)
       .then((resp) => {
         if (resp.ok) {
           return resp.json();
         } else {
-          console.log(resp);
           throw resp;
         }
       })
       .then(({ message }) => {
-        console.log(message, "<<< home");
         setData(message);
       })
       .catch((err) => {});
@@ -35,12 +32,10 @@ export const Home = ({ url }) => {
         if (resp.ok) {
           return resp.json();
         } else {
-          console.log(resp);
           throw resp;
         }
       })
       .then(({ message }) => {
-        console.log(message, "<< news");
         setNews(message);
       })
       .catch((err) => {});

@@ -1,7 +1,4 @@
 $(window).on('load', function() {
-  // $('.next').click(function(){ $('.carousel').carousel('next');return false; });
-  // $('.prev').click(function(){ $('.carousel').carousel('prev');return false; });  
-
   const currLoc = window.location.pathname
 
   $(window).scroll(function (event) {
@@ -20,31 +17,6 @@ $(window).on('load', function() {
       let startX;
       let scrollLeft;
     
-      // $('#exampleModal').modal('show');
-      // $('#closeModal').click(function(){
-      //   $('#exampleModal').modal('hide');
-      // })
-
-      // $(".items").click('touchstart', (e) => {
-      //   isDown = true;
-      //   startX = e.pageX - slider.offsetLeft;
-      //   scrollLeft = slider.scrollLeft;
-      //   console.log(isDown, startX, scrollLeft, "<<<< TOUCHSTART",e.pageX ,slider.offsetLeft)
-      // })
-      // $(".items").click('touchend', function(){
-      //   isDown = false;
-      //   slider.classList.remove('active');
-      // })
-      // $(".items").click('touchmove', function(e){
-      //   if(!isDown) return;
-      //   e.preventDefault();
-      //   const x = e.pageX - slider.offsetLeft;
-      //   const walk = (x - startX) * 1; //scroll-fast
-      //   slider.scrollLeft = scrollLeft - walk;
-      //   console.log(walk, slider.scrollLeft);
-      //   // checkRadio();
-      // })
-
       slider.addEventListener('touchstart', (e) => {
         isDown = true;
         startX = e.changedTouches[0].screenX - slider.offsetLeft;
@@ -60,7 +32,6 @@ $(window).on('load', function() {
         const x = e.changedTouches[0].screenX - slider.offsetLeft;
         const walk = (x - startX) * 1; //scroll-fast
         slider.scrollLeft = scrollLeft - walk;
-        // checkRadio();
       });
       
       
@@ -84,54 +55,26 @@ $(window).on('load', function() {
         const x = e.pageX - slider.offsetLeft;
         const walk = (x - startX) * 1; //scroll-fast
         slider.scrollLeft = scrollLeft - walk;
-        // checkRadio();
       });
 
       let currSlider = 0
 
       $('.prev').click(function (){ 
         let i = 300
-        // while( i >= 0 ){
-        //   setTimeout(function(){ 
-        //     slider.scrollLeft -= 1;
-        //   }, 120);
-        //   i -= 1
-        // }
-        // console.log(currSlider, "<currSlider")
         if( currSlider < 0 ){
           currSlider += 300
           $(".items").animate({left: currSlider});
         }
-        
-        // console.log(slider.scrollLeft);
-        // checkRadio();
-
-        // var currentPositionOfPage = window.scrollX;
-        // window.scrollTo(0, currentPositionOfPage + 150);
       });
       
       $('.next').click(function(){ 
         let i = 300
-        // while ( i >= 0 ){
-        //   setTimeout(function(){ 
-        //     slider.scrollLeft += 1;
-        //   }, 120);
-        //   i -= 1
-        // }
-        // console.log(currSlider, "<currSlider")
-
         if(currSlider > -2500){
           currSlider -= 300
           $(".items").animate({left: currSlider});
         }
-        
-        // console.log(slider.scrollLeft);
-        // checkRadio();
       });
-
     }, 4000);
-
-
 
     // features
     $(".section-1").mouseover(function(){
@@ -166,77 +109,6 @@ $(window).on('load', function() {
       $(".supplier-overview").removeClass("imageSection5");
       $(".supplier-overview").removeClass("imageSection6");
     });
-
-    // features2
-    $(".section2-1").mouseover(function(){
-      // console.log("masuk");
-      $(".supplier-overview2").addClass("imageSection1");
-    });
-
-    $(".section2-2").mouseover(function(){
-      $(".supplier-overview2").addClass("imageSection2");
-    });
-
-    $(".section2-3").mouseover(function(){
-      $(".supplier-overview2").addClass("imageSection3");
-    });
-
-    $(".section2-4").mouseover(function(){
-      $(".supplier-overview2").addClass("imageSection4");
-    });
-
-    $(".section2-5").mouseover(function(){
-      $(".supplier-overview2").addClass("imageSection5");
-    });
-
-    $(".section2-6").mouseover(function(){
-      $(".supplier-overview2").addClass("imageSection6");
-    });
-
-    $(".hover-effect2").mouseleave(function(){
-      $(".supplier-overview2").removeClass("imageSection1");
-      $(".supplier-overview2").removeClass("imageSection2");
-      $(".supplier-overview2").removeClass("imageSection3");
-      $(".supplier-overview2").removeClass("imageSection4");
-      $(".supplier-overview2").removeClass("imageSection5");
-      $(".supplier-overview2").removeClass("imageSection6");
-    });
-
-    // $(".rad1").click(function(){
-    //   slider.scrollLeft = 0
-    //   // checkRadio()
-    // })
-
-    // $(".rad2").click(function(){
-    //   slider.scrollLeft = 900
-    //   // checkRadio()
-    // })
-
-    // $(".rad3").click(function(){
-    //   slider.scrollLeft = 1800
-    //   // checkRadio()
-    // })
-
-    // $(".rad4").click(function(){
-    //   slider.scrollLeft = 2700
-    //   // checkRadio()
-    // })
-
-    // function checkRadio(){
-    //   if (slider.scrollLeft >= 0 && slider.scrollLeft < 900) {
-    //     $(".rad1").addClass("radioFilled");
-    //     $(".rad2, .rad3, .rad4").removeClass("radioFilled");
-    //   } else if (slider.scrollLeft >= 900 && slider.scrollLeft < 1800){
-    //     $(".rad2").addClass("radioFilled");
-    //     $(".rad1, .rad3, .rad4").removeClass("radioFilled");
-    //   } else if (slider.scrollLeft >= 1800 && slider.scrollLeft < 2700){
-    //     $(".rad3").addClass("radioFilled");
-    //     $(".rad1, .rad2, .rad4").removeClass("radioFilled");
-    //   } else {
-    //     $(".rad4").addClass("radioFilled");
-    //     $(".rad1, .rad2, .rad3").removeClass("radioFilled");
-    //   } 
-    // }
 
     $(".heroSection-1").click(function(){
       $(".heroSlider").addClass("heroSliderImg1");
@@ -290,9 +162,7 @@ $(window).on('load', function() {
       $(this).addClass('hover');
     })
 
-
     var curr = 0
-
     $("#caption-0").show()
     $("#caption-1").hide()
     $("#caption-2").hide()
@@ -328,24 +198,6 @@ $(window).on('load', function() {
       }
       $("#caption-" + curr).fadeIn()
       $(".imageSlider").animate({left: poss});
-    });
-  }
-
-
-  //maps
-  // Initialize and add the map
-  function initMap() {
-    // The location of Uluru
-    const uluru = { lat: -25.344, lng: 131.036 };
-    // The map, centered at Uluru
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 4,
-      center: uluru,
-    });
-    // The marker, positioned at Uluru
-    const marker = new google.maps.Marker({
-      position: uluru,
-      map: map,
     });
   }
 });

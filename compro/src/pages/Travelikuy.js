@@ -71,7 +71,6 @@ const Supplier = ({ url }) => {
     axios
       .get(`${url}/TraveliKuy`)
       .then((res) => {
-        console.log(res.data.message);
         const dataRaw = res.data.message;
         if (dataRaw) {
           // Hero
@@ -118,12 +117,10 @@ const Supplier = ({ url }) => {
               .reduce((o, [k, v]) => ((o[k] = v), o), {});
 
             for (let key in ordered) {
-              // console.log(key)
               whatWeOffer.push({ title: dataRaw.BenefitForCustomerTitle[key] });
             }
             let index = 0;
             for (let key in orderedDesc) {
-              // console.log(key)
               whatWeOffer[index].description =
                 dataRaw.BenefitForCustomerDescription[key];
               index++;
@@ -192,7 +189,6 @@ const Supplier = ({ url }) => {
                 dataRaw.KeyFeaturesForPetraOnlineReport[key]
               );
             }
-            console.log(dataOnlineBilling);
             const dataSupportingTools = [];
             for (let key in dataRaw.KeyFeaturesForPetraOthers) {
               dataSupportingTools.push(dataRaw.KeyFeaturesForPetraOthers[key]);

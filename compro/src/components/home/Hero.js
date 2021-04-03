@@ -9,7 +9,6 @@ import parse from 'html-react-parser';
 
 export const Hero = ({data, promo}) => {
 
-  console.log(promo, "<<promo")
   promo.shortDesc = promo.content.slice(0,80) 
 
   return (

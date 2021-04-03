@@ -297,8 +297,6 @@ export const Nav = ({ handleLanguage }) => {
                 <a
                   className={`nav-link text-white ml-4 ${
                     locationNow == "/promo" ? "yellow-underline" : ""
-                  } ${
-                    blackText ? "text-black-mobile-white" : "text-white" 
                   }`}
                 >
                   Promo
@@ -310,7 +308,7 @@ export const Nav = ({ handleLanguage }) => {
                 className={`nav-link dropdown-toggle aboutUs ${
                   aboutUsUnderline ? "yellow-underline" : ""
                 } ${
-                  blackText ? "text-black-mobile-white" : "text-white" 
+                  blackText ? "text-black-mobile-white" : "" 
                 }`}
                 href="#"
                 id="navbarDropdown"
@@ -344,7 +342,7 @@ export const Nav = ({ handleLanguage }) => {
             <li className="nav-item dropdown space-left text-right">
               <a
                 className={`nav-link dropdown-toggle language ${
-                  memberUnderline ? "text-black-mobile-white" : "text-white" 
+                  blackText ? "text-black-mobile-white" : "text-white" 
                 }`}
                 href="#"
                 id="navbarDropdown"
