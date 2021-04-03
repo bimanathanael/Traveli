@@ -24,31 +24,11 @@ export const NewsDetails = ({ url }) => {
       .catch((err) => {});
   }, [params]);
 
-  // let oneNews = {
-  //   id: 5,
-  //   img: newsPage1,
-  //   title: "3Traveli expands tax-saving commuter benefits to all it's members and user",
-  //   desc: `3bound of xomponents will help you to prototype design &build much faster bound
-  //   of xomponents will help you to prototype design &build much faster bound of xomponents
-  //   will help you to prototype design &build much faster bound of xomponents will help you
-  //   to prototype design &build much faster, 3bound of xomponents will help you to prototype design &build much faster bound
-  //   of xomponents will help you to prototype design &build much faster bound of xomponents
-  //   will help you to prototype design &build much faster bound of xomponents will help you
-  //   to prototype design &build much faster, 3bound of xomponents will help you to prototype design &build much faster bound
-  //   of xomponents will help you to prototype design &build much faster bound of xomponents
-  //   will help you to prototype design &build much faster bound of xomponents will help you
-  //   to prototype design &build much faster, 3bound of xomponents will help you to prototype design &build much faster bound
-  //   of xomponents will help you to prototype design &build much faster bound of xomponents
-  //   will help you to prototype design &build much faster bound of xomponents will help you
-  //   to prototype design &build much faster`
-  // }
-
-  // console.log(params,"<params.id")
 
   return (
     <>
       {oneNews !== undefined && (
-        <div class="containerNewsDetails">
+        <div className="containerNewsDetails">
           <div className="row d-flex justify-content-center">
             <div className="col text-center mt-5">
               <ScrollAnimation animateIn="zoomIn">

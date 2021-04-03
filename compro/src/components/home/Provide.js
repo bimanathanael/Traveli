@@ -435,7 +435,7 @@ export const Provide = ({
           <div className="row">
             <div className="col-md-5 offset-md-1 text-right mt-5 no-mobile">
               <ScrollAnimation animateIn='bounceInLeft' >
-                <img class="thumbnail-provide " src={currProvide.thumbnail}/>
+                <img className="thumbnail-provide " src={currProvide.thumbnail}/>
               </ScrollAnimation>
             </div>
             <div className="col-md-5 text-left ml-5 pl-5 mobile-provide-box">

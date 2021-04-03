@@ -16,7 +16,6 @@ export const PromoSection = ({ url }) => {
         if (resp.ok) {
           return resp.json();
         } else {
-          console.log(resp);
           throw resp;
         }
       })
@@ -37,10 +36,8 @@ export const PromoSection = ({ url }) => {
   const move = (direction) => {
     if (direction == "left" && curr - 1 >= 0) {
       setCurr((curr -= 1));
-      console.log("masuk atas");
     } else if (direction == "right" && curr + 1 < promos.length) {
       setCurr((curr += 1));
-      console.log("masuk bawah");
     }
   };
 

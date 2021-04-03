@@ -20,7 +20,6 @@ export const Login = ({url}) => {
         }
       })
       .then(({ message }) => {
-        console.log(message.Hero, "messag gero")
         setData(message.Hero);
       })
       .catch((err) => {});

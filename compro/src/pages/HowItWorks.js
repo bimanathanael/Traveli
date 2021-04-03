@@ -10,23 +10,18 @@ export const HowItWorks = ({url}) => {
       function handleResize() {
         setMobileView(window.innerWidth)
       }
-      
-      console.log("useeffect")
       window.addEventListener('resize', handleResize())
     },[])
     
     if(mobileView < 600){
-      console.log("masuk atas")
       image = howItWorksMobile
     } else {
-      console.log("masuk bawah")
       image = howItWorks
     }
-  console.log(mobileView, "<<mobileView", image)
 
   return (
     <>
-      <div class="containerHowItWorks">
+      <div className="containerHowItWorks">
         <img className="responsiveImg" src={image}/>
       </div>
     </>

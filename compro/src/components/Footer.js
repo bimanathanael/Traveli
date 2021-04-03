@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 
 export const Footer = ({ url }) => {
   const [data, setData] = useState();
+  const [toggle, toggleSet] = useState(false)
 
   useEffect(() => {
     fetch(url + `/ContactUs`)
@@ -26,11 +27,14 @@ export const Footer = ({ url }) => {
         }
       })
       .then(({ message }) => {
-        console.log(message, "<<< footer");
         setData(message);
       })
       .catch((err) => {});
   }, [url]);
+
+  const toggleDetails = () => {
+    toggleSet(!toggle)
+  }
 
   return (
     <>
@@ -50,27 +54,76 @@ export const Footer = ({ url }) => {
                   </div>
                 </div>
               </div>
-              <div className="row">
+
+              {/* Temporary hide base on client request */}
+              {/* <div className="row">
                 <div className="col-md-3">
-                  {/* <img className="w100" src={whatsapp}/> */}
+                  <img className="w100" src={whatsapp}/>
                 </div>
                 <div className="col-md-9">
-                  <div className="col-md-12">{/* Whatsapp */}</div>
+                  <div className="col-md-12">Whatsapp</div>
                   <div className="col-md-12">
-                    <b>{/* 0858 1150 0888 */}</b>
+                    <b>0858 1150 0888</b>
                   </div>
                 </div>
               </div>
               <div className="row">
                 <div className="col-md-3">
-                  {/* <img className="w100" src={callCenter}/> */}
+                  <img className="w100" src={callCenter}/>
                 </div>
                 <div className="col-md-9">
                   <div className="col-md-12 text-white">
-                    {/* Call Center */}
+                    Call Center
                   </div>
                   <div className="col-md-12 text-white">
-                    <b>{/* 021-71793669 */}</b>
+                    <b>{data.ContactInformation.TeleponNumber}</b>
+                  </div>
+                </div>
+              </div> */}
+
+
+              <div className="row">
+                <div className="col-md-8 card-visitor no-mobile" onClick= { () => toggleDetails() }>
+                  <div>
+                    <div className="col-md-12 text-center">
+                      <p className="number-visitor">
+                        920
+                      </p>
+                    </div>
+                    <div className="col-md-12 text-center">
+                      <p className="tag-visitor">
+                        VISITORS <b>TODAY</b>
+                      </p>
+                    </div>
+                  </div>
+                  { toggle && 
+                    <div className="show-details">
+                      <div className="col-md-12 text-center">
+                        <p className="number-visitor">
+                          4235
+                        </p>
+                      </div>
+                      <div className="col-md-12 text-center">
+                        <p className="tag-visitor">
+                          VISITORS THIS <b>MONTH</b>
+                        </p>
+                      </div>
+                      <div className="col-md-12 text-center">
+                        <p className="number-visitor">
+                          12462
+                        </p>
+                      </div>
+                      <div className="col-md-12 text-center">
+                        <p className="tag-visitor">
+                          TOTAL VISITORS
+                        </p>
+                      </div>
+                    </div>
+                  }
+                  <div className="col-md-12 details-container">
+                    <p className="details-visitor">
+                      see <b> details </b>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -105,17 +158,17 @@ export const Footer = ({ url }) => {
                   <b> Members </b>
                   <br />
                   <br />
-                  <a className="text-white" href="/supplier">
+                  <a className="text-white" href="/members/supplier">
                     {" "}
                     Supplier{" "}
                   </a>
                   <br />
-                  <a className="text-white" href="/Wholesaler">
+                  <a className="text-white" href="/members/Wholesaler">
                     {" "}
                     Wholesaler{" "}
                   </a>
                   <br />
-                  <a className="text-white" href="/Reseller">
+                  <a className="text-white" href="/members/reseller">
                     {" "}
                     Reseller{" "}
                   </a>
@@ -125,12 +178,12 @@ export const Footer = ({ url }) => {
                     TraveliKuy{" "}
                   </a>
                   <br />
-                  <a className="text-white" href="/SupplierList">
+                  <a className="text-white" href="/member-list/supplier">
                     {" "}
                     Supplier List{" "}
                   </a>
                   <br />
-                  <a className="text-white" href="/WholesalerList">
+                  <a className="text-white" href="/member-list/wholesaler">
                     {" "}
                     Wholesaler List{" "}
                   </a>
@@ -172,7 +225,7 @@ export const Footer = ({ url }) => {
                 <br />
                 {/* {data.ContactInformation.TeleponNumber */}
               </p>
-              <div className="col mt-4 pr-0 pt-4 mobile-no-margin-padding">
+              <div className="col mt-4 pr-0 pt-4 no-mobile">
                 <img className="radius-1 ml-2 mb-2 w50" src={appStore} />
                 <img className="radius-1 ml-2 mb-2 w50" src={googlePlay} />
               </div>

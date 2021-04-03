@@ -45,14 +45,13 @@ function App() {
     if (getItem) {
       setUrl(`https://pacific-hamlet-79377.herokuapp.com/${getItem}`);
     } else setUrl(`https://pacific-hamlet-79377.herokuapp.com/id`);
+    
   }, []);
 
   const handleLanguage = (lang) => {
-    console.log(lang, `app`);
     if (lang === "en") {
       localStorage.setItem("language", lang);
       const getItem = localStorage.getItem("language");
-      console.log(getItem, `string?`);
       setUrl(`https://pacific-hamlet-79377.herokuapp.com/${getItem}`);
     }
 

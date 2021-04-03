@@ -9,7 +9,6 @@ export const ContactInfo = ({ url }) => {
         if (resp.ok) {
           return resp.json();
         } else {
-          console.log(resp);
           throw resp;
         }
       })
@@ -26,8 +25,8 @@ export const ContactInfo = ({ url }) => {
         <div className="container-contact">
           <div className="row">
             <div className="col-md-5 offset-md-1 no-mobile">
-              <div class="mapouter">
-                <div class="gmap_canvas">
+              <div className="mapouter">
+                <div className="gmap_canvas">
                   <iframe
                     id="gmap_canvas"
                     frameborder="0"
