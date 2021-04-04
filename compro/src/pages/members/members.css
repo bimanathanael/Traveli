@@ -8,7 +8,7 @@ h6 {
 }
 
 .members-page h1 {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .members-page h2 {
@@ -32,7 +32,7 @@ h6 {
 }
 
 .members-page p {
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: white;
 }
 
@@ -82,9 +82,10 @@ h6 {
 }
 
 .button-watch {
-  margin-left: 1rem;
+  /* margin-left: 0rem; */
   display: flex;
   align-items: center;
   border-radius: 300px;
   margin-top: 0.5rem;
+  /* width: "100%"; */
 }

@@ -44,7 +44,7 @@ const useStyles = makeStyles((themes) => ({
     color: "white",
     paddingTop: "50%",
     paddingBottom: "50%",
-    width: "90%",
+    // width: "90%",
     // margin: "0",
     paddingLeft: "2rem",
     borderTopRightRadius: "2rem",
@@ -83,8 +83,8 @@ const useStyles = makeStyles((themes) => ({
     },
   },
   cardCompany: {
-    width: "13rem",
-    height: "13rem",
+    width: "16rem",
+    height: "16rem",
     [themes.breakpoints.down("sm")]: {
       width: "6rem",
       height: "6rem",
@@ -94,6 +94,7 @@ const useStyles = makeStyles((themes) => ({
     backgroundColor: "#F7EC18",
     marginBottom: ".5rem",
     fontSize: ".7rem",
+    transition: "2s ease-in",
     [themes.breakpoints.down("sm")]: {
       fontSize: ".3rem",
     },
@@ -248,7 +249,17 @@ const DistributorList = ({ url }) => {
                   </Slider>
                 </ScrollAnimation>
               </div>
-              <div style={{ margin: "10rem auto 0 auto" }}>
+              <div
+                style={{
+                  // textAlign: "center",
+                  display: "block",
+                  position: "absolute",
+                  bottom: 0,
+                  left: "50%",
+                  transform: "translate(-50%, 0)",
+                  margin: "10rem auto 0 auto",
+                }}
+              >
                 <ScrollAnimation animateIn="fadeIn">
                   <div
                     style={{
@@ -265,9 +276,13 @@ const DistributorList = ({ url }) => {
                   >
                     <Button
                       style={{
+                        fontFamily: "Bristone",
                         backgroundColor: colorButtonOne,
                         borderRadius: "10rem",
-                        color: oneClicked ? "#07AED6" : "#707070",
+                        color:
+                          oneClicked || colorButtonOne === "yellow"
+                            ? "#07AED6"
+                            : "#707070",
                       }}
                       className="button-temp"
                       onClick={handleButtonOne}
@@ -276,9 +291,13 @@ const DistributorList = ({ url }) => {
                     </Button>
                     <Button
                       style={{
+                        fontFamily: "Bristone",
                         backgroundColor: colorButtonTwo,
                         borderRadius: "10rem",
-                        color: twoClicked ? "#07AED6" : "#707070",
+                        color:
+                          twoClicked || colorButtonTwo === "yellow"
+                            ? "#07AED6"
+                            : "#707070",
                       }}
                       className="button-temp"
                       onClick={handleButtonTwo}
@@ -287,9 +306,13 @@ const DistributorList = ({ url }) => {
                     </Button>
                     <Button
                       style={{
+                        fontFamily: "Bristone",
                         backgroundColor: colorButtonThree,
                         borderRadius: "10rem",
-                        color: threeClicked ? "#07AED6" : "#707070",
+                        color:
+                          threeClicked || colorButtonThree === "yellow"
+                            ? "#07AED6"
+                            : "#707070",
                       }}
                       className="button-temp"
                       onClick={handleButtonThree}
@@ -322,7 +345,7 @@ const DistributorList = ({ url }) => {
         <div className="row">
           <div className="col-6">
             <ScrollAnimation animateIn="fadeInLeft">
-              <div className={`col-12 ${classes.companyBackground}`}>
+              <div className={`${classes.companyBackground}`}>
                 {openBtn && (
                   <div className={classes.companyDetail}>
                     <div
@@ -398,7 +421,7 @@ const DistributorList = ({ url }) => {
                     </div>
                   </div>
                 </div>
-                <div className="row">
+                <div className="row" style={{ width: "33rem" }}>
                   {[
                     logoOyo,
                     yukTravel,
@@ -422,12 +445,13 @@ const DistributorList = ({ url }) => {
                           <img
                             src={item}
                             width={
-                              openBtn && currentIndex === index ? "70%" : "90%"
+                              openBtn && currentIndex === index ? "80%" : "90%"
                             }
                             alt="logo-oyo"
                             style={{
                               objectFit: "contain",
                               margin: "auto auto",
+                              transition: ".3s ease-in",
                             }}
                           />
                           {openBtn && currentIndex === index && (
@@ -436,6 +460,7 @@ const DistributorList = ({ url }) => {
                                 display: "flex",
                                 flexDirection: "column",
                                 margin: "1rem auto",
+                                // transition: "3s ease-in",
                               }}
                             >
                               <Button

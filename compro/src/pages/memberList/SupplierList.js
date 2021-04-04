@@ -31,8 +31,8 @@ const useStyles = makeStyles((themes) => ({
     paddingTop: "10rem",
   },
   cardContainer: {
-    width: "15rem",
-    height: "15rem",
+    width: "17rem",
+    height: "17rem",
     [themes.breakpoints.down("sm")]: {
       width: "10rem",
       height: "10rem",
@@ -134,7 +134,7 @@ const SupplierList = ({ url }) => {
                 <ScrollAnimation animateIn="zoomIn">
                   <div
                     className="col-12"
-                    style={{ maxWidth: "50%", margin: "5rem auto" }}
+                    style={{ maxWidth: "40rem", margin: "5rem auto" }}
                   >
                     <Slider {...settings}>
                       {logo.map((item, index) => (
@@ -142,8 +142,8 @@ const SupplierList = ({ url }) => {
                           <img
                             src={item}
                             alt={`logo${index}`}
-                            width={"130rem"}
-                            height={"60rem"}
+                            width={"170rem"}
+                            height={"80rem"}
                             style={{
                               margin: "0 auto",
                               padding: ".7rem 1rem .7rem 1rem",
@@ -158,7 +158,10 @@ const SupplierList = ({ url }) => {
                 </ScrollAnimation>
               </div>
             </div>
-            <div className="col-12">
+            <div
+              className="col-12"
+              style={{ display: "block", bottom: 50, position: "absolute" }}
+            >
               <ScrollAnimation animateIn="bounce" initiallyVisible={true}>
                 <div
                   className="col-12"
@@ -207,7 +210,7 @@ const SupplierList = ({ url }) => {
         <ScrollAnimation animateIn="fadeInUpBig">
           <div
             className="row"
-            style={{ maxWidth: "80%", margin: "0 auto 5rem auto" }}
+            style={{ maxWidth: "75rem", margin: "0 auto 5rem auto" }}
           >
             {[
               logoOyo,

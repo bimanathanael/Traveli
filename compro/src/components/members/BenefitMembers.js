@@ -20,13 +20,14 @@ const useStyles = makeStyles((themes) => ({
     marginTop: ".5rem",
   },
   benefitMembersContent: {
-    backgroundSize: "80rem",
+    backgroundSize: "60rem",
+    // backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     minHeight: "100vh",
     backgroundPosition: "center",
     backgroundImage: `url(${BenefitBackground})`,
     margin: "2rem auto 0 auto",
-    // width: "50%",
+    // width: "30rem",
     [themes.breakpoints.down("sm")]: {
       // minHeight: "100vh",
       width: "65%",
@@ -36,7 +37,7 @@ const useStyles = makeStyles((themes) => ({
     },
   },
   cardContainer: {
-    width: "50%",
+    width: "42rem",
     margin: "0 auto",
     [themes.breakpoints.down("sm")]: {
       width: "100%",
@@ -53,7 +54,7 @@ const useStyles = makeStyles((themes) => ({
     color: "#07AED6",
   },
   cardTitle: {
-    height: "4.2rem",
+    height: "5rem",
   },
   benefitTitle: {
     textAlign: "center",
@@ -88,7 +89,12 @@ const BenefitMembers = ({ textHeader, textSubHeader, data }) => {
                     <div className={`${classes.cardContent} card`}>
                       <div className="card-body">
                         <div className={classes.cardTitle}>
-                          <h6 className="card-title">{item.title}</h6>
+                          <h6
+                            className="card-title"
+                            style={{ lineHeight: "1.5" }}
+                          >
+                            {item.title}
+                          </h6>
                         </div>
                         <p
                           style={{ color: "grey", fontSize: ".7rem" }}

@@ -264,9 +264,13 @@ const Supplier = ({ url }) => {
           <div className={`button-container ${classes.buttonOption}`}>
             <Button
               style={{
+                fontFamily: "Bristone",
                 backgroundColor: colorButtonOne,
                 borderRadius: "10rem",
-                color: oneClicked ? "#07AED6" : "#707070",
+                color:
+                  oneClicked || colorButtonOne === "yellow"
+                    ? "#07AED6"
+                    : "#707070",
                 width: "50%",
               }}
               className="button-temp"
@@ -276,9 +280,13 @@ const Supplier = ({ url }) => {
             </Button>
             <Button
               style={{
+                fontFamily: "Bristone",
                 backgroundColor: colorButtonTwo,
                 borderRadius: "10rem",
-                color: twoClicked ? "#07AED6" : "#707070",
+                color:
+                  twoClicked || colorButtonTwo === "yellow"
+                    ? "#07AED6"
+                    : "#707070",
                 width: "50%",
               }}
               className="button-temp"

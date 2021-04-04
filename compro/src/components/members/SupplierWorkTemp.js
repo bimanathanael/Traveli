@@ -15,6 +15,7 @@ const UseStyles = makeStyles((themes) => ({
   displayFlexCenter: {
     display: "flex",
     justifyContent: "center",
+    alignItems: "center",
     [themes.breakpoints.down("sm")]: {
       flexDirection: "column",
       alignItems: "center",
