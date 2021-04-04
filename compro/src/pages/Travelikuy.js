@@ -306,6 +306,7 @@ const Supplier = ({ url }) => {
         title={titleWork}
         content={petraPage ? contentPetra : contentCustomer}
         workBackground={workBackground}
+        customerPage={!petraPage && true}
       />
       {petraPage ? (
         <>

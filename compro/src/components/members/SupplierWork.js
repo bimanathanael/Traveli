@@ -8,7 +8,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
-    minHeight: "200vh",
     [theme.breakpoints.down("sm")]: {
       minHeight: "110vh",
     },
@@ -21,12 +20,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SupplierWork = ({ content, title, workBackground }) => {
+const SupplierWork = ({
+  content,
+  title,
+  workBackground,
+  customerPage = false,
+}) => {
   const classes = useStyles();
   return (
     <div
       className={classes.supplierContainer}
-      style={{ backgroundImage: `url(${workBackground})` }}
+      style={{
+        backgroundImage: `url(${workBackground})`,
+        minHeight: customerPage ? "100vh" : "275vh",
+      }}
     >
       <div>
         <div className={`col-12 ${classes.titleContent}`}>
