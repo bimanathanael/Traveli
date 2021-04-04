@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
-    minHeight: "140vh",
+    minHeight: "200vh",
     [theme.breakpoints.down("sm")]: {
       minHeight: "110vh",
     },
@@ -34,42 +34,50 @@ const SupplierWork = ({ content, title, workBackground }) => {
             <h2>{title}</h2>
           </ScrollAnimation>
         </div>
-        {content && (
-          <>
-            {content.one && (
-              <SupplierWorkTemp
-                contentSupplier={content.one.image}
-                textTitle={content.one.title}
-                textSub={content.one.desc}
-                left={true}
-              />
-            )}
-            {content.two && (
-              <SupplierWorkTemp
-                contentSupplier={content.two.image}
-                textTitle={content.two.title}
-                textSub={content.two.desc}
-                left={false}
-              />
-            )}
-            {content.three && (
-              <SupplierWorkTemp
-                contentSupplier={content.three.image}
-                textTitle={content.three.title}
-                textSub={content.three.desc}
-                left={true}
-              />
-            )}
-            {content.four && (
-              <SupplierWorkTemp
-                contentSupplier={content.four.image}
-                textTitle={content.four.title}
-                textSub={content.four.desc}
-                left={false}
-              />
-            )}
-          </>
-        )}
+        <div
+          style={{
+            margin: "0 auto",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          {content && (
+            <>
+              {content.one && (
+                <SupplierWorkTemp
+                  contentSupplier={content.one.image}
+                  textTitle={content.one.title}
+                  textSub={content.one.desc}
+                  left={true}
+                />
+              )}
+              {content.two && (
+                <SupplierWorkTemp
+                  contentSupplier={content.two.image}
+                  textTitle={content.two.title}
+                  textSub={content.two.desc}
+                  left={false}
+                />
+              )}
+              {content.three && (
+                <SupplierWorkTemp
+                  contentSupplier={content.three.image}
+                  textTitle={content.three.title}
+                  textSub={content.three.desc}
+                  left={true}
+                />
+              )}
+              {content.four && (
+                <SupplierWorkTemp
+                  contentSupplier={content.four.image}
+                  textTitle={content.four.title}
+                  textSub={content.four.desc}
+                  left={false}
+                />
+              )}
+            </>
+          )}
+        </div>
       </div>
     </div>
   );

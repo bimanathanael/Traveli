@@ -10,7 +10,7 @@ const useStyles = makeStyles((themes) => ({
     backgroundColor: "#07AED6",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
-    minHeight: "120vh",
+    minHeight: "110vh",
     [themes.breakpoints.down("sm")]: {
       minHeight: "100vh",
     },
@@ -19,16 +19,16 @@ const useStyles = makeStyles((themes) => ({
     paddingLeft: "6rem",
     paddingTop: "10rem",
     color: "white",
+    width: "85%",
     [themes.breakpoints.down("sm")]: {
       paddingLeft: "0",
       paddingRight: "0",
-      width: "85%",
       margin: "0 auto",
       paddingTop: "10rem",
     },
   },
   contentMembers: {
-    maxWidth: "25rem",
+    maxWidth: "34rem",
     marginBottom: "2rem",
     [themes.breakpoints.down("sm")]: {
       backgroundColor: `rgb(0,0,0, 0.3)`,
@@ -85,8 +85,8 @@ const HeroMembers = ({ backgroundHero, data, footer = true }) => {
             className={classes.heroMembers}
             style={{ backgroundImage: `url(${backgroundHero})` }}
           >
-            <ScrollAnimation animateIn="fadeIn">
-              <div className={classes.headerMembers}>
+            <div className={classes.headerMembers}>
+              <ScrollAnimation animateIn="fadeIn">
                 <div>
                   <div className="col-12">
                     <div className={classes.contentMembers}>
@@ -105,8 +105,8 @@ const HeroMembers = ({ backgroundHero, data, footer = true }) => {
                     </div>
                   </div>
                 </div>
-              </div>
-            </ScrollAnimation>
+              </ScrollAnimation>
+            </div>
           </div>
           {footer && (
             <ScrollAnimation animateIn="zoomIn">

@@ -10,8 +10,8 @@ const useStyles = makeStyles((themes) => ({
     padding: "5rem 0",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-    backgroundPosition: "top",
-    minHeight: "110vh",
+    backgroundPosition: "center",
+    minHeight: "90vh",
   },
   conditionHeader: {
     color: "#07AED6",

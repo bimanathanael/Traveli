@@ -100,7 +100,11 @@ const SupplierWorkReseller = ({
                 style={{
                   backgroundColor: colorButtonOne,
                   borderRadius: "10rem",
-                  color: oneClicked ? "#07AED6" : "#707070",
+                  fontFamily: "Bristone",
+                  color:
+                    oneClicked || colorButtonOne === "yellow"
+                      ? "#07AED6"
+                      : "#707070",
                   width: "50%",
                 }}
                 className="button-temp"
@@ -110,9 +114,13 @@ const SupplierWorkReseller = ({
               </Button>
               <Button
                 style={{
+                  fontFamily: "Bristone",
                   backgroundColor: colorButtonTwo,
                   borderRadius: "10rem",
-                  color: twoClicked ? "#07AED6" : "#707070",
+                  color:
+                    twoClicked || colorButtonTwo === "yellow"
+                      ? "#07AED6"
+                      : "#707070",
                   width: "50%",
                 }}
                 className="button-temp"
