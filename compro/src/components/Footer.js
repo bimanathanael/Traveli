@@ -13,7 +13,7 @@ import appStore from "../assets/images/appStore.png";
 import googlePlay from "../assets/images/googlePlay.png";
 import { useEffect, useState } from "react";
 
-export const Footer = ({ url }) => {
+export const Footer = ({ url, visitor }) => {
   const [data, setData] = useState();
   const [toggle, toggleSet] = useState(false)
 
@@ -87,7 +87,7 @@ export const Footer = ({ url }) => {
                   <div>
                     <div className="col-md-12 text-center">
                       <p className="number-visitor">
-                        920
+                        { visitor.Day }
                       </p>
                     </div>
                     <div className="col-md-12 text-center">
@@ -100,7 +100,7 @@ export const Footer = ({ url }) => {
                     <div className="show-details">
                       <div className="col-md-12 text-center">
                         <p className="number-visitor">
-                          4235
+                          { visitor.Month }
                         </p>
                       </div>
                       <div className="col-md-12 text-center">
@@ -110,7 +110,7 @@ export const Footer = ({ url }) => {
                       </div>
                       <div className="col-md-12 text-center">
                         <p className="number-visitor">
-                          12462
+                          { visitor.Total }
                         </p>
                       </div>
                       <div className="col-md-12 text-center">

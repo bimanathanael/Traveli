@@ -40,6 +40,7 @@ export const Home = ({ url }) => {
       })
       .catch((err) => {});
 
+    
     fetch(`https://pacific-hamlet-79377.herokuapp.com/lastPromo`)
       .then((resp) => {
         if (resp.ok) {

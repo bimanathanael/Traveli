@@ -28,17 +28,11 @@ import MembersReseller from "./pages/members/Reseller";
 import Travelikuy from "./pages/Travelikuy";
 import SupplierList from "./pages/memberList/SupplierList";
 import DistributorList from "./pages/memberList/DistributorList";
+import axios from "axios"
 
 function App() {
   const [url, setUrl] = useState(null);
-  const scrollRef = React.createRef();
-  // useEffect(()=>{
-  // const scroll = new LocomotiveScroll({
-  // el: document.querySelector('[data-scroll-container]'),
-  // smooth: true
-  // });
-
-  // },[])
+  const [visitor, setVisitor] = useState({});
 
   useEffect(() => {
     const getItem = localStorage.getItem("language");
@@ -46,7 +40,22 @@ function App() {
       setUrl(`https://pacific-hamlet-79377.herokuapp.com/${getItem}`);
     } else setUrl(`https://pacific-hamlet-79377.herokuapp.com/id`);
     
-  }, []);
+    let Day = Number(new Date().getDate())
+    let Month = Number(new Date().getMonth() + 1)
+    let Year = Number(new Date().getFullYear())
+
+    axios.post('https://pacific-hamlet-79377.herokuapp.com/visitor',{
+      Day,
+      Month,
+      Year
+    })
+    .then( ({data}) =>{
+      setVisitor(data.message)
+    })
+    .catch( (err) => {
+      console.log(err)
+    })
+  }, [url]);
 
   const handleLanguage = (lang) => {
     if (lang === "en") {
@@ -113,7 +122,7 @@ function App() {
             <Home url={url} />
           </Route>
         </Switch>
-        <Footer url={url} />
+        <Footer url={url} visitor={visitor}/>
       </Router>
 
       {/* </div> */}
