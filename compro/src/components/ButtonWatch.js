@@ -7,13 +7,13 @@ import { IconContext } from "react-icons";
 const ButtonWatch = () => {
   return (
     <>
-      <IconContext.Provider value={{ size: "2.7em", color: "white" }}>
+      <IconContext.Provider value={{ size: "3rem", color: "white" }}>
         <button type="button" className="btn button-watch">
           <div className="members-button">
             <div>
               <ImPlay2 />
             </div>
-            <span>{strings.buttonWatchVideo}</span>
+            <span style={{ fontSize: "1rem" }}>{strings.buttonWatchVideo}</span>
           </div>
         </button>
       </IconContext.Provider>
