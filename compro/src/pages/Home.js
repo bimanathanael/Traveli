@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 
 export const Home = ({ url }) => {
   const [data, setData] = useState();
+  const [waNumber, setWaNumber] = useState();
   const [news, setNews] = useState();
   const [promo, setPromo] = useState();
   let supplier, wholesaler, agency, corporate, petra;
@@ -54,6 +55,19 @@ export const Home = ({ url }) => {
         setPromo(message);
       })
       .catch((err) => {});
+
+      fetch(url + `/ContactUs`)
+      .then((resp) => {
+        if (resp.ok) {
+          return resp.json();
+        } else {
+          throw resp;
+        }
+      })
+      .then(({ message }) => {
+        setWaNumber(message);
+      })
+      .catch((err) => {});
   }, [url]);
 
   if (data !== undefined) {
@@ -86,10 +100,10 @@ export const Home = ({ url }) => {
 
   return (
     <>
-      {data !== undefined && news !== undefined && promo !== undefined && (
+      {data !== undefined && news !== undefined && promo !== undefined && waNumber !== undefined && (
         <div>
           {/* <Hero data={ data.Hero } /> */}
-          <Hero data={data.Hero} promo={promo} />
+          <Hero data={data.Hero} promo={promo} waNumber={waNumber.ContactInformation.WhatsappNumber} />
           <Why
             dataDesc={data.WhyChooseTraveliDescription}
             dataTitle={data.WhyChooseTraveliTitle}
