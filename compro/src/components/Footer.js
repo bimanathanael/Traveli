@@ -56,14 +56,14 @@ export const Footer = ({ url, visitor }) => {
               </div>
 
               {/* Temporary hide base on client request */}
-              {/* <div className="row">
+              <div className="row">
                 <div className="col-md-3">
                   <img className="w100" src={whatsapp}/>
                 </div>
                 <div className="col-md-9">
                   <div className="col-md-12">Whatsapp</div>
                   <div className="col-md-12">
-                    <b>0858 1150 0888</b>
+                    <b>{data.ContactInformation.WhatsappNumber}</b>
                   </div>
                 </div>
               </div>
@@ -77,53 +77,6 @@ export const Footer = ({ url, visitor }) => {
                   </div>
                   <div className="col-md-12 text-white">
                     <b>{data.ContactInformation.TeleponNumber}</b>
-                  </div>
-                </div>
-              </div> */}
-
-
-              <div className="row">
-                <div className="col-md-8 card-visitor no-mobile" onClick= { () => toggleDetails() }>
-                  <div>
-                    <div className="col-md-12 text-center">
-                      <p className="number-visitor">
-                        { visitor.Day }
-                      </p>
-                    </div>
-                    <div className="col-md-12 text-center">
-                      <p className="tag-visitor">
-                        VISITORS <b>TODAY</b>
-                      </p>
-                    </div>
-                  </div>
-                  { toggle && 
-                    <div className="show-details">
-                      <div className="col-md-12 text-center">
-                        <p className="number-visitor">
-                          { visitor.Month }
-                        </p>
-                      </div>
-                      <div className="col-md-12 text-center">
-                        <p className="tag-visitor">
-                          VISITORS THIS <b>MONTH</b>
-                        </p>
-                      </div>
-                      <div className="col-md-12 text-center">
-                        <p className="number-visitor">
-                          { visitor.Total }
-                        </p>
-                      </div>
-                      <div className="col-md-12 text-center">
-                        <p className="tag-visitor">
-                          TOTAL VISITORS
-                        </p>
-                      </div>
-                    </div>
-                  }
-                  <div className="col-md-12 details-container">
-                    <p className="details-visitor">
-                      see <b> details </b>
-                    </p>
                   </div>
                 </div>
               </div>
@@ -225,9 +178,59 @@ export const Footer = ({ url, visitor }) => {
                 <br />
                 {/* {data.ContactInformation.TeleponNumber */}
               </p>
-              <div className="col mt-4 pr-0 pt-4 no-mobile">
-                <img className="radius-1 ml-2 mb-2 w50" src={appStore} />
-                <img className="radius-1 ml-2 mb-2 w50" src={googlePlay} />
+              <div className="row mr-0 ml-0">
+
+                <div className="col-md-6 no-mobile">
+                  <img className="radius-1 ml-2 mb-2 w100" src={appStore} />
+                  <img className="radius-1 ml-2 mb-2 w100" src={googlePlay} />
+                </div>
+                <div className="col-md-6 mr-0 pr-0 no-mobile">
+                  <div className="row mr-0 ml-0">
+                    <div className="col-md-12 card-visitor" onClick= { () => toggleDetails() }>
+                      <div>
+                        <div className="col-md-12 text-center">
+                          <p className="number-visitor">
+                            { visitor.Day }
+                          </p>
+                        </div>
+                        <div className="col-md-12 text-center">
+                          <p className="tag-visitor">
+                            VISITORS <b>TODAY</b>
+                          </p>
+                        </div>
+                      </div>
+                      { toggle && 
+                        <div className="show-details">
+                          <div className="col-md-12 text-center">
+                            <p className="number-visitor">
+                              { visitor.Month }
+                            </p>
+                          </div>
+                          <div className="col-md-12 text-center">
+                            <p className="tag-visitor">
+                              VISITORS THIS <b>MONTH</b>
+                            </p>
+                          </div>
+                          <div className="col-md-12 text-center">
+                            <p className="number-visitor">
+                              { visitor.Total }
+                            </p>
+                          </div>
+                          <div className="col-md-12 text-center">
+                            <p className="tag-visitor">
+                              TOTAL VISITORS
+                            </p>
+                          </div>
+                        </div>
+                      }
+                      <div className="col-md-12 details-container">
+                        <p className="details-visitor">
+                          see <b> details </b>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -7,7 +7,7 @@ import promo from '../../assets/images/promo.png'
 import parse from 'html-react-parser';
 
 
-export const Hero = ({data, promo}) => {
+export const Hero = ({data, promo, waNumber}) => {
 
   promo.shortDesc = promo.content.slice(0,80) 
 
@@ -109,7 +109,7 @@ export const Hero = ({data, promo}) => {
             </div>
           </div> */}
         </div>
-        <a href="http://wa.me/+6285712559445?text=Hallo%20Customer%20Care%20Traveli"  target="_blank">
+        <a href={`http://wa.me/${waNumber}?text=Hallo%20Customer%20Care%20Traveli`}  target="_blank">
           <img className="floatingWA" src={whatsapp2}/>
         </a>
       </div>

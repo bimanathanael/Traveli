@@ -1,6 +1,6 @@
 import deny from "../../assets/images/deny.png";
 import deka from "../../assets/images/deka.png";
-import jefry from "../../assets/images/jefry.png";
+import jefry from "../../assets/images/jefry.jpg";
 import rivan from "../../assets/images/rivan.png";
 import pongky from "../../assets/images/pongky.png";
 import aafiyah from "../../assets/images/aafiyah.png";

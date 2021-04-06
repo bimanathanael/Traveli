@@ -70,17 +70,27 @@ export const Benefits = ({dataTitle, dataDesc}) => {
                                                 return (            
                                                 <div className="item cardBenefits">
                                                     <div className="row p-5 right0 card-row">
-                                                        <div className="col-md-7">
-                                                            <h1 className="benefitTitle traveliColor mobile-2">
-                                                                {data.title}
-                                                            </h1>
-                                                            <p className="benefitDesc mobile-1">
-                                                                {data.desc}
-                                                            </p>
+                                                        <div className="col-md-7 vertical-align-middle">
+                                                            <div className="row">
+                                                                <div className="col-md-12">
+                                                                    <h1 className="benefitTitle traveliColor mobile-2">
+                                                                        {data.title}
+                                                                    </h1>
+                                                                </div>
+                                                                <div className="col-md-12">
+                                                                    <p className="benefitDesc mobile-1">
+                                                                        {data.desc}
+                                                                    </p>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div className="col-md-5 text-center no-mobile">
-                                                            <img className="img-fluid responsiveImg2" 
-                                                            src={data.image} alt="Carousel 1"/>
+                                                        <div className="col-md-5 text-center no-mobile vertical-align-middle">
+                                                            <div className="row">
+                                                                <div className="col-md-12">
+                                                                    <img className="img-fluid responsiveImg2" 
+                                                                    src={data.image} alt="Carousel 1"/>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
