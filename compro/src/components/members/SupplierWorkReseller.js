@@ -24,6 +24,7 @@ const SupplierWorkReseller = ({
   contentCorporate,
   title,
   workBackground,
+  handleProcessImage,
 }) => {
   const classes = useStyles();
 
@@ -55,6 +56,7 @@ const SupplierWorkReseller = ({
     setOneClicked(true);
     setTwoClicked(false);
     setTriggerSub("agent");
+    handleProcessImage("agent");
   };
 
   const handleButtonTwo = () => {
@@ -63,6 +65,7 @@ const SupplierWorkReseller = ({
     setOneClicked(false);
     setTwoClicked(true);
     setTriggerSub("corporate");
+    handleProcessImage("corporate");
   };
 
   return (
