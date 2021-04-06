@@ -7,20 +7,20 @@ import ScrollAnimation from "react-animate-on-scroll";
 const useStyles = makeStyles((themes) => ({
   containerCondition: {
     backgroundImage: `url(${conditionBackground})`,
-    padding: "5rem 0",
+    padding: "5rem 0 7rem 0",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
-    minHeight: "90vh",
+    minHeight: "60vh",
   },
   conditionHeader: {
     color: "#07AED6",
-    marginBottom: "2rem",
+    marginBottom: "4rem",
     textAlign: "center",
   },
   conditionContent: {
-    width: "60%",
-    margin: "0rem auto",
+    width: "50%",
+    margin: "auto auto",
     [themes.breakpoints.down("sm")]: {
       width: "90%",
     },
@@ -57,28 +57,30 @@ const ConditionMembers = ({ data }) => {
               <h2>CONDITIONS</h2>
             </ScrollAnimation>
           </div>
-          <div className={classes.conditionContent}>
-            <ScrollAnimation animateIn="fadeIn">
-              {data &&
-                data.map((item, index) => (
-                  <div
-                    key={index}
-                    className={`col-12 ${classes.cardContainer}`}
-                  >
-                    <div className={classes.displayFlexCenter}>
-                      <div className={classes.cardArrow}>
-                        <img src={arrowBlue} alt="arrow" />
-                        {/* <TiLocationArrow  style={{fontSize: '1.5rem', color: '#07AED6',}}/> */}
-                      </div>
-                      <div className={classes.cardText}>
-                        <p style={{ color: "black", fontSize: "1rem" }}>
-                          {item}
-                        </p>
+          <div className={classes.conditionPaper}>
+            <div className={classes.conditionContent}>
+              <ScrollAnimation animateIn="fadeIn">
+                {data &&
+                  data.map((item, index) => (
+                    <div
+                      key={index}
+                      className={`col-12 ${classes.cardContainer}`}
+                    >
+                      <div className={classes.displayFlexCenter}>
+                        <div className={classes.cardArrow}>
+                          <img src={arrowBlue} alt="arrow" />
+                          {/* <TiLocationArrow  style={{fontSize: '1.5rem', color: '#07AED6',}}/> */}
+                        </div>
+                        <div className={classes.cardText}>
+                          <p style={{ color: "black", fontSize: "1rem" }}>
+                            {item}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
-            </ScrollAnimation>
+                  ))}
+              </ScrollAnimation>
+            </div>
           </div>
         </div>
       </div>

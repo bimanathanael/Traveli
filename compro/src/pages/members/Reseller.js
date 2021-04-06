@@ -22,6 +22,7 @@ import WorkTwoCorporate from "../../assets/images/members/reseller/corporate/wor
 import WorkThreeCorporate from "../../assets/images/members/reseller/corporate/work-3.png";
 import WorkFourCorporate from "../../assets/images/members/reseller/corporate/work-4.png";
 import processImage from "../../assets/images/members/reseller/process.png";
+import processImageCorporate from "../../assets/images/members/reseller/process_corporate.png";
 import workBackground from "../../assets/images/members/reseller/bg.png";
 
 const Reseller = ({ url }) => {
@@ -31,6 +32,7 @@ const Reseller = ({ url }) => {
   const [heroContent, setHeroContent] = useState(null);
   const [offerContent, setOfferContent] = useState(null);
   const [conditionContent, setConditionContent] = useState(null);
+  const [agentProcess, setAgentProcess] = useState(true);
   useEffect(() => {
     axios
       .get(`${url}/MembersReseller`)
@@ -178,6 +180,14 @@ const Reseller = ({ url }) => {
       });
   }, [url]);
 
+  const handleProcessImage = (type) => {
+    if (type === "agent") {
+      setAgentProcess(true);
+    } else {
+      setAgentProcess(false);
+    }
+  };
+
   return (
     <div className="members-page">
       <HeroMembers data={heroContent} backgroundHero={heroBackground} />
@@ -191,8 +201,11 @@ const Reseller = ({ url }) => {
         contentAgent={contentWorkAgent}
         contentCorporate={contentWorkCorporate}
         workBackground={workBackground}
+        handleProcessImage={handleProcessImage}
       />
-      <ProcessMembers processImg={processImage} />
+      <ProcessMembers
+        processImg={agentProcess ? processImage : processImageCorporate}
+      />
       <ConditionMembers data={conditionContent} />
       <KeyFeatureMembers
         content={contentFeature}

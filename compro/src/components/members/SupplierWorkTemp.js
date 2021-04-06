@@ -22,8 +22,8 @@ const UseStyles = makeStyles((themes) => ({
     },
   },
   cardContent: {
-    margin: "3rem 1rem 0rem 1rem",
-    width: "18rem",
+    margin: "1rem 3rem 0rem 3rem",
+    width: "22rem",
     minHeight: "15rem",
     border: "none",
     [themes.breakpoints.down("sm")]: {
@@ -33,15 +33,22 @@ const UseStyles = makeStyles((themes) => ({
   },
   cardBody: {
     color: "#07AED6",
+    fontSize: "1.5rem !important",
   },
   cardParagraph: {
     color: "grey !important",
     lineHeight: "2",
-    fontSize: ".7rem !important",
+    fontSize: "1rem !important",
   },
 }));
 
-const SupplierWorkTemp = ({ contentSupplier, textTitle, textSub, left }) => {
+const SupplierWorkTemp = ({
+  contentSupplier,
+  textTitle,
+  textSub,
+  left,
+  supplier,
+}) => {
   const classes = UseStyles();
   return (
     <div className={`col-12 ${classes.cardContainer}`}>
@@ -68,7 +75,7 @@ const SupplierWorkTemp = ({ contentSupplier, textTitle, textSub, left }) => {
                   <img
                     src={contentSupplier}
                     alt="splr-1"
-                    width={"90%"}
+                    width={supplier ? "90%" : "70%"}
                     style={{ margin: "0 auto" }}
                   />
                 </ScrollAnimation>

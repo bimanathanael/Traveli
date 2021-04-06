@@ -32,7 +32,7 @@ const SupplierWork = ({
       className={classes.supplierContainer}
       style={{
         backgroundImage: `url(${workBackground})`,
-        minHeight: customerPage ? "100vh" : "275vh",
+        minHeight: customerPage ? "80vh" : "271vh",
       }}
     >
       <div>
@@ -55,6 +55,7 @@ const SupplierWork = ({
                   contentSupplier={content.one.image}
                   textTitle={content.one.title}
                   textSub={content.one.desc}
+                  supplier={content.one.supplier}
                   left={true}
                 />
               )}
@@ -63,6 +64,7 @@ const SupplierWork = ({
                   contentSupplier={content.two.image}
                   textTitle={content.two.title}
                   textSub={content.two.desc}
+                  supplier={content.two.supplier}
                   left={false}
                 />
               )}
@@ -71,6 +73,7 @@ const SupplierWork = ({
                   contentSupplier={content.three.image}
                   textTitle={content.three.title}
                   textSub={content.three.desc}
+                  supplier={content.three.supplier}
                   left={true}
                 />
               )}
@@ -79,6 +82,7 @@ const SupplierWork = ({
                   contentSupplier={content.four.image}
                   textTitle={content.four.title}
                   textSub={content.four.desc}
+                  supplier={content.four.supplier}
                   left={false}
                 />
               )}

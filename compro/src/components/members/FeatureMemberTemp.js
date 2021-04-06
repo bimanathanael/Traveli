@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "1rem",
     padding: "1rem",
     margin: "1rem 1rem 0rem 1rem",
-    width: "15rem",
+    width: "17rem",
     border: "none",
     [theme.breakpoints.down("sm")]: {
       //   width: "10rem:

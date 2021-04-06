@@ -14,7 +14,9 @@ const ButtonTry = ({ feature }) => {
               <ArrowForwardIosOutlinedIcon />{" "}
             </a>
           </div>
-          <div className="col btn-font">Try it for Free</div>
+          <div className="col btn-font" style={{ color: feature && "#07AED6" }}>
+            Try it for Free
+          </div>
         </div>
       </button>
       <button className="mobile-only btn btn-yellow mt-3">

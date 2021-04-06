@@ -11,6 +11,7 @@ import BenefitBackground from "../../assets/images/members/benefits-background.p
 const useStyles = makeStyles((themes) => ({
   containerBenefit: {
     marginTop: "7rem",
+    marginBottom: "7rem",
   },
   alignPosition: {
     textAlign: "center",
@@ -23,8 +24,8 @@ const useStyles = makeStyles((themes) => ({
     backgroundSize: "60rem",
     // backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-    minHeight: "100vh",
-    backgroundPosition: "center",
+    // minHeight: "100vh",
+    backgroundPosition: "top",
     backgroundImage: `url(${BenefitBackground})`,
     margin: "2rem auto 0 auto",
     // width: "30rem",

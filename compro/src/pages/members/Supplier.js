@@ -71,16 +71,19 @@ const Supplier = ({ url }) => {
                 image: WorkOne,
                 title: dataRaw.HowSupplierWorksTitle.Title1,
                 desc: dataRaw.HowSupplierWorksDescription.Description1,
+                supplier: true,
               },
               two: {
                 image: WorkTwo,
                 title: dataRaw.HowSupplierWorksTitle.Title2,
                 desc: dataRaw.HowSupplierWorksDescription.Description2,
+                supplier: true,
               },
               three: {
                 image: WorkThree,
                 title: dataRaw.HowSupplierWorksTitle.Title3,
                 desc: dataRaw.HowSupplierWorksDescription.Description3,
+                supplier: true,
               },
             };
             setContentWork(supplierWorks);

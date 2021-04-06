@@ -28,7 +28,7 @@ const useStyles = makeStyles((themes) => ({
     },
   },
   contentMembers: {
-    maxWidth: "34rem",
+    maxWidth: "40rem",
     marginBottom: "2rem",
     [themes.breakpoints.down("sm")]: {
       backgroundColor: `rgb(0,0,0, 0.3)`,
@@ -90,7 +90,9 @@ const HeroMembers = ({ backgroundHero, data, footer = true }) => {
                 <div>
                   <div className="col-12">
                     <div className={classes.contentMembers}>
-                      <h1 className={classes.heroTitle}>{data.title}</h1>
+                      <h1 className={classes.heroTitle}>
+                        {data.title.toUpperCase()}
+                      </h1>
                     </div>
                   </div>
                   <div className="col-12">

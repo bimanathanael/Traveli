@@ -16,7 +16,7 @@ const useStyles = makeStyles((themes) => ({
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     // width: '100%',
-    minHeight: "170rem",
+    // minHeight: "170rem",
     paddingTop: "3rem",
   },
   stylePaddingOne: {
