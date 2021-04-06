@@ -32,7 +32,7 @@ const SupplierWork = ({
       className={classes.supplierContainer}
       style={{
         backgroundImage: `url(${workBackground})`,
-        minHeight: customerPage ? "80vh" : "271vh",
+        minHeight: customerPage ? "80vh" : "252vh",
       }}
     >
       <div>
