@@ -55,9 +55,9 @@ export const ContactInfo = ({ url }) => {
                 {data.ContactInformation.AdressProvince}
                 <br />
                 <br />
-                <b> {data.ContactInformation.TeleponNumber}</b>
+                <b> Phone : {data.ContactInformation.TeleponNumber}</b>
                 <br />
-                <b> Email. : {data.ContactInformation.Email}</b>
+                <b> Email : {data.ContactInformation.Email}</b>
               </p>
             </div>
           </div>

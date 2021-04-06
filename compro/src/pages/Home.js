@@ -100,7 +100,7 @@ export const Home = ({ url }) => {
 
   return (
     <>
-      {data !== undefined && news !== undefined && promo !== undefined && (
+      {data !== undefined && news !== undefined && promo !== undefined && waNumber !== undefined && (
         <div>
           {/* <Hero data={ data.Hero } /> */}
           <Hero data={data.Hero} promo={promo} waNumber={waNumber.ContactInformation.WhatsappNumber} />
