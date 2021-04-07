@@ -155,12 +155,22 @@ export const Footer = ({ url, visitor }) => {
                   <h4 className="oneRem">Follow Us</h4>
                 </div>
                 <div className="col-md-12 text-center">
-                  <img className="socialIcon" src={facebook} />
+                  <a href="https://www.facebook.com/We-Traveli-107690237944504" target="_blank">
+                    <img className="socialIcon" src={facebook} />
+                  </a>
                   <img className="socialIcon" src={tiktok} />
-                  <img className="socialIcon" src={linkedin} />
-                  <img className="socialIcon" src={twitter} />
-                  <img className="socialIcon" src={youtube} />
-                  <img className="socialIcon" src={instagram} />
+                  <a href="https://www.linkedin.com/company/72018396" target="_blank">
+                    <img className="socialIcon" src={linkedin} />
+                  </a>
+                  <a href="https://twitter.com/wetraveli" target="_blank">
+                    <img className="socialIcon" src={twitter} />
+                  </a>
+                  <a href="https://www.youtube.com/channel/UCuTqy_SepBmRB0E8FFARYJg" target="_blank">
+                    <img className="socialIcon" src={youtube} />
+                  </a>
+                  <a href="https://instagram.com/wetraveli?igshid=xrr25r70fmfs" target="_blank">
+                    <img className="socialIcon" src={instagram} />
+                  </a>
                 </div>
               </div>
             </div>
