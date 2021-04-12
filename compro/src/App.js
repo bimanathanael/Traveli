@@ -37,14 +37,14 @@ function App() {
   useEffect(() => {
     const getItem = localStorage.getItem("language");
     if (getItem) {
-      setUrl(`https://pacific-hamlet-79377.herokuapp.com/${getItem}`);
-    } else setUrl(`https://pacific-hamlet-79377.herokuapp.com/id`);
+      setUrl(`https://be.traveli.co.id/${getItem}`);
+    } else setUrl(`https://be.traveli.co.id/id`);
     
     let Day = Number(new Date().getDate())
     let Month = Number(new Date().getMonth() + 1)
     let Year = Number(new Date().getFullYear())
 
-    axios.post('https://pacific-hamlet-79377.herokuapp.com/visitor',{
+    axios.post('https://be.traveli.co.id/visitor',{
       Day,
       Month,
       Year
@@ -61,13 +61,13 @@ function App() {
     if (lang === "en") {
       localStorage.setItem("language", lang);
       const getItem = localStorage.getItem("language");
-      setUrl(`https://pacific-hamlet-79377.herokuapp.com/${getItem}`);
+      setUrl(`https://be.traveli.co.id/${getItem}`);
     }
 
     if (lang === "id") {
       localStorage.setItem("language", lang);
       const getItem = localStorage.getItem("language");
-      setUrl(`https://pacific-hamlet-79377.herokuapp.com/${getItem}`);
+      setUrl(`https://be.traveli.co.id/${getItem}`);
     }
   };
   return (
