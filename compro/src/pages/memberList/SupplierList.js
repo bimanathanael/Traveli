@@ -2,15 +2,11 @@ import React, { useEffect, useState } from "react";
 
 // assets
 import backgroundSupplier from "../../assets/images/background-supplier.png";
-import logoOyo from "../../assets/images/oyo-logo.png";
-import accorHotelsLogo from "../../assets/images/accor-hotels.png";
-import airyRoomLogo from "../../assets/images/airy-rooms.png";
-import avisLogo from "../../assets/images/avis.png";
-import witaTourLogo from "../../assets/images/wita-tour.png";
-import yukTravelLogo from "../../assets/images/yuk-travel.png";
-import travelingYuk from "../../assets/images/travelingyuk.png";
-import kanoLogo from "../../assets/images/logo kano.png";
-import goldenRama from "../../assets/images/golden_rama.png";
+import liburania from "../../assets/images/liburania.png";
+import rodex from "../../assets/images/rodex.png";
+import hotelinx from "../../assets/images/hotelinx.png";
+import mgBedBank from "../../assets/images/mgBedBank.png";
+import voltras from "../../assets/images/voltras.png";
 
 // package
 import { BsChevronDoubleDown } from "react-icons/bs";
@@ -49,13 +45,24 @@ const useStyles = makeStyles((themes) => ({
   },
 }));
 
-const logo = [
-  accorHotelsLogo,
-  airyRoomLogo,
-  avisLogo,
-  witaTourLogo,
-  yukTravelLogo,
-];
+const supplierListItems = [
+  {
+    img:liburania,
+    url: ""
+  },{
+    img:rodex,
+    url: ""
+  },{
+    img:hotelinx,
+    url: ""
+  },{
+    img:mgBedBank,
+    url: ""
+  },{
+    img:voltras,
+    url: ""
+  },
+]
 
 const SupplierList = ({ url }) => {
   const classes = useStyles();
@@ -137,20 +144,22 @@ const SupplierList = ({ url }) => {
                     style={{ maxWidth: "40rem", margin: "5rem auto" }}
                   >
                     <Slider {...settings}>
-                      {logo.map((item, index) => (
+                      {supplierListItems.map((item, index) => (
                         <div key={index}>
-                          <img
-                            src={item}
-                            alt={`logo${index}`}
-                            width={"170rem"}
-                            height={"80rem"}
-                            style={{
-                              margin: "0 auto",
-                              padding: ".7rem 1rem .7rem 1rem",
-                              background: "rgba(255, 255, 255, 0.8)",
-                              borderRadius: ".5rem",
-                            }}
-                          />
+                          <a href={item.url} target="__blank">
+                            <img
+                              src={item.img}
+                              alt={`logo${index}`}
+                              width={"170rem"}
+                              height={"80rem"}
+                              style={{
+                                margin: "0 auto",
+                                padding: ".7rem 1rem .7rem 1rem",
+                                background: "rgba(255, 255, 255, 0.8)",
+                                borderRadius: ".5rem",
+                              }}
+                            />
+                          </a>
                         </div>
                       ))}
                     </Slider>
@@ -212,38 +221,27 @@ const SupplierList = ({ url }) => {
             className="row"
             style={{ maxWidth: "75rem", margin: "0 auto 5rem auto" }}
           >
-            {[
-              logoOyo,
-              accorHotelsLogo,
-              avisLogo,
-              airyRoomLogo,
-              kanoLogo,
-              kanoLogo,
-              airyRoomLogo,
-              witaTourLogo,
-              travelingYuk,
-              travelingYuk,
-              goldenRama,
-              goldenRama,
-            ].map((item, index) => (
+            {supplierListItems.map((item, index) => (
               <div
                 key={index}
                 className="col-md-3 col-sm-12"
                 style={{ margin: "1rem 0" }}
               >
+                  <a href={item.url} target="__blank">
                 <div className={`${classes.cardContainer} card text-center`}>
-                  <img
-                    src={item}
-                    width={"80%"}
-                    alt="logo-oyo"
-                    style={{
-                      margin: "auto auto",
-                      objectFit: "contain",
-                    }}
-                  />
+                    <img
+                      src={item.img}
+                      width={"80%"}
+                      alt="logo-oyo"
+                      style={{
+                        margin: "auto auto",
+                        objectFit: "contain",
+                      }}
+                    />
                   {/* <div className="card-body">
                                         </div> */}
                 </div>
+                                        </a>
               </div>
             ))}
           </div>
