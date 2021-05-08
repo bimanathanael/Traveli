@@ -252,15 +252,17 @@ const DistributorList = ({ url }) => {
               <div className={`col-md-8 col-sm-12 ${classes.sliderHero}`}>
                 <ScrollAnimation animateIn="fadeInRight">
                   <Slider {...settings}>
-                    {[sekai].map((item, index) => (
+                    {distributorListItems.map((item, index) => (
                       <div key={index}>
-                        <img
-                          src={item}
-                          alt={`logo-travel`}
-                          width={"230rem"}
-                          height={"80rem"}
-                          className={classes.sliderImage}
-                        />
+                        <a href={item.url} target="__blank">
+                          <img
+                            src={item.img}
+                            alt={`logo-travel`}
+                            width={"230rem"}
+                            height={"80rem"}
+                            className={classes.sliderImage}
+                            />
+                        </a>
                       </div>
                     ))}
                   </Slider>
