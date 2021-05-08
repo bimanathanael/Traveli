@@ -4,13 +4,11 @@ import React, { useState, useEffect } from "react";
 import backgroundDistributor from "../../assets/images/background-distributor.png";
 import yukTravel from "../../assets/images/yuk-travel.png";
 import backgroundCompany from "../../assets/images/background-company.png";
-import logoOyo from "../../assets/images/oyo-logo.png";
+import sekai from "../../assets/images/sekai.png";
 import travelingYuk from "../../assets/images/travelingyuk.png";
-import kanoLogo from "../../assets/images/logo kano.png";
-import goldenRama from "../../assets/images/golden_rama.png";
 
 // package
-import { makeStyles, IconButton, Button } from "@material-ui/core";
+import { makeStyles, IconButton, Button, useTheme } from "@material-ui/core";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ScrollAnimation from "react-animate-on-scroll";
@@ -108,6 +106,7 @@ const useStyles = makeStyles((themes) => ({
     },
   },
 }));
+
 const DistributorList = ({ url }) => {
   const classes = useStyles();
   const settings = {
@@ -116,18 +115,33 @@ const DistributorList = ({ url }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-
+  
   const [title, setTitle] = useState(null);
   const [desc, setDesc] = useState(null);
   const [subTitle, setSubTitle] = useState(null);
   const [subDesc, setSubDesc] = useState(null);
   const [openBtn, setOpenBtn] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(null);
+  
+  const distributorListItems = [
+    {
+      img: sekai,
+      url: "https://sekaitour.com"
+    }
+  ]
+  
+  const agencyListItems = [
+  ]
+  
+  const corporateListItems = [
+  ]
 
   const [triggerSub, setTriggerSub] = useState(`wholesaler`);
   const [colorButtonOne, setColorButtonOne] = useState("yellow");
   const [colorButtonTwo, setColorButtonTwo] = useState("white");
   const [colorButtonThree, setColorButtonThree] = useState("white");
+  const [currentList, setCurrentList] = useState(distributorListItems)
+  
 
   const [oneClicked, setOneClicked] = useState(false);
   const [twoClicked, setTwoClicked] = useState(false);
@@ -195,6 +209,7 @@ const DistributorList = ({ url }) => {
     setTwoClicked(false);
     setThreeClicked(false);
     setTriggerSub("wholesaler");
+    setCurrentList(distributorListItems)
   };
 
   const handleButtonTwo = () => {
@@ -205,6 +220,7 @@ const DistributorList = ({ url }) => {
     setTwoClicked(true);
     setThreeClicked(false);
     setTriggerSub("agency");
+    setCurrentList(agencyListItems)
   };
 
   const handleButtonThree = () => {
@@ -215,6 +231,7 @@ const DistributorList = ({ url }) => {
     setTwoClicked(false);
     setThreeClicked(true);
     setTriggerSub("corporate");
+    setCurrentList(corporateListItems)
   };
 
   return (
@@ -353,7 +370,7 @@ const DistributorList = ({ url }) => {
                         textDecoration: "underline",
                       }}
                     >
-                      <h5>Hello</h5>
+                      {/* <h5>Hello</h5> */}
                     </div>
                     <div className={classes.paragraphContainer}>
                       <p
@@ -364,13 +381,13 @@ const DistributorList = ({ url }) => {
                           color: "white",
                         }}
                       >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore
                         magna aliqua. Ut enim ad minim veniam, quis nostrud
                         exercitation ullamco laboris nisi ut aliquip ex ea
                         commodo consequat. Duis aute irure dolor in
                         reprehenderit in voluptate velit esse cillum dolore eu
-                        fugiat nulla pariatur.
+                        fugiat nulla pariatur. */}
                       </p>
                       <p
                         style={{
@@ -380,14 +397,14 @@ const DistributorList = ({ url }) => {
                           color: "white",
                         }}
                       >
-                        Sed ut perspiciatis unde omnis iste natus error sit
+                        {/* Sed ut perspiciatis unde omnis iste natus error sit
                         voluptatem accusantium doloremque laudantium, totam rem
                         aperiam, eaque ipsa quae ab illo inventore veritatis et
                         quasi architecto beatae vitae dicta sunt explicabo. Nemo
                         enim ipsam voluptatem quia voluptas sit aspernatur aut
                         odit aut fugit, sed quia consequuntur magni dolores eos
                         qui ratione voluptatem sequi nesciunt. Neque porro
-                        quisquam est, qui dolorem
+                        quisquam est, qui dolorem */}
                       </p>
                     </div>
                   </div>
@@ -422,14 +439,7 @@ const DistributorList = ({ url }) => {
                   </div>
                 </div>
                 <div className="row" style={{ width: "33rem" }}>
-                  {[
-                    logoOyo,
-                    yukTravel,
-                    travelingYuk,
-                    kanoLogo,
-                    goldenRama,
-                    goldenRama,
-                  ].map((item, index) => (
+                  {currentList.map((item, index) => (
                     <div key={index} className="col-md-6 col-sm-6">
                       <button
                         style={{
@@ -443,7 +453,7 @@ const DistributorList = ({ url }) => {
                           className={`card text-center ${classes.cardCompany}`}
                         >
                           <img
-                            src={item}
+                            src={item.img}
                             width={
                               openBtn && currentIndex === index ? "80%" : "90%"
                             }
@@ -469,7 +479,9 @@ const DistributorList = ({ url }) => {
                                 variant="contained"
                                 // fullWidth={true}
                               >
-                                set as parent
+                                <a href={item.url} target="__blank">
+                                  Visit
+                                </a>
                               </Button>
                             </div>
                           )}
