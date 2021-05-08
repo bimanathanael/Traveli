@@ -1131,10 +1131,10 @@
 
 .container-partners {
   background-color: #ffffff;
-  background-image: url("../images/partners.png");
+  /* background-image: url("../images/partners.png"); */
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 10% 6% 0% 6%;
+  padding: 10% 6% 10% 6%;
 }
 
 .container-testimonials {
@@ -2269,6 +2269,10 @@ button {
 
 .card-row{
   min-height: 20rem;
+}
+
+.clientLogoHome{
+  width: 80%;
 }
 
 .benefitTitle {
