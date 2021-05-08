@@ -80,25 +80,31 @@ export const JoinUs = ({url}) => {
             </div>
             <div className="row pt-3  d-flex justify-content-center borderTop pt-5 mobile-top-padding">
               <div className="col-md-3 text-center">
-                <button className="btnOnLogin"
-                onMouseEnter={ ()=> { setDesc(texts.agency) }}
-                onMouseLeave={ ()=> { setDesc("") }}>
-                  AGENCY
-                </button>
+                <a href="/member-list/wholesaler">
+                  <button className="btnOnLogin"
+                  onMouseEnter={ ()=> { setDesc(texts.agency) }}
+                  onMouseLeave={ ()=> { setDesc("") }}>
+                    AGENCY
+                  </button>
+                </a>
               </div>
               <div className="col-md-3 text-center">
-                <button className="btnOnLogin"
-                onMouseEnter={ ()=> { setDesc(texts.corp) }}
-                onMouseLeave={ ()=> { setDesc("") }}>
-                  CORPORATE
-                </button>
+                <a href="/member-list/wholesaler">
+                  <button className="btnOnLogin"
+                  onMouseEnter={ ()=> { setDesc(texts.corp) }}
+                  onMouseLeave={ ()=> { setDesc("") }}>
+                    CORPORATE
+                  </button>
+                </a>
               </div>
               <div className="col-md-3 text-center">
-                <button className="btnOnLogin"
-                onMouseEnter={ ()=> { setDesc(texts.petra) }}
-                onMouseLeave={ ()=> { setDesc("") }}>
-                  PETRA
-                </button>
+                <a href="/member-list/wholesaler">
+                  <button className="btnOnLogin"
+                  onMouseEnter={ ()=> { setDesc(texts.petra) }}
+                  onMouseLeave={ ()=> { setDesc("") }}>
+                    PETRA
+                  </button>
+                </a>
               </div>
             </div>
           </ScrollAnimation>

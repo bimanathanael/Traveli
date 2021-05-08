@@ -38,21 +38,31 @@ export const Partners = () => {
                     <div className="row d-flex justify-content-center mt-3">
                         <div className="row justify-content-center">
                             <div className="col-md-3 text-center mt-2">
-                                <img className="clientLogoHome" src={voltras}/>
+                                <a href="">
+                                    <img className="clientLogoHome" src={voltras}/>
+                                </a>
                             </div>
                             <div className="col-md-3 text-center mt-2">
-                                <img className="clientLogoHome" src={rodex}/>
+                                <a href="">
+                                    <img className="clientLogoHome" src={rodex}/>
+                                </a>
                             </div>
                             <div className="col-md-3 text-center mt-2">
-                                <img className="clientLogoHome" src={sekai}/>
+                                <a href="https://sekaitour.com" target="__blank">
+                                    <img className="clientLogoHome" src={sekai}/>
+                                </a>
                             </div>
                         </div>
                         <div className="row justify-content-center mt-3">
                             <div className="col-md-4 text-center mt-2">
-                                <img className="clientLogoHome" src={hotelinx}/>
+                                <a href="">
+                                    <img className="clientLogoHome" src={hotelinx}/>
+                                </a>
                             </div>
                             <div className="col-md-4 text-center mt-2">
-                                <img className="clientLogoHome" src={mgBedBank}/>
+                                <a href="">
+                                    <img className="clientLogoHome" src={mgBedBank}/>
+                                </a>
                             </div>
                         </div>
                     </div>
