@@ -252,7 +252,7 @@ const DistributorList = ({ url }) => {
               <div className={`col-md-8 col-sm-12 ${classes.sliderHero}`}>
                 <ScrollAnimation animateIn="fadeInRight">
                   <Slider {...settings}>
-                    {[yukTravel, travelingYuk].map((item, index) => (
+                    {[sekai].map((item, index) => (
                       <div key={index}>
                         <img
                           src={item}
