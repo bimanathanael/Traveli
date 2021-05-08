@@ -33,7 +33,7 @@ export const ContactInfo = ({ url }) => {
                     scrolling="no"
                     marginheight="0"
                     marginwidth="0"
-                    src="https://maps.google.com/maps?q=melawai&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                    src="https://maps.google.com/maps?q=gedung%20victoria&t=&z=17&ie=UTF8&iwloc=&output=embed"
                   ></iframe>
                 </div>
               </div>
