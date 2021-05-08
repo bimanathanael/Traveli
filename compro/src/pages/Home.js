@@ -122,8 +122,8 @@ export const Home = ({ url }) => {
             dataDesc={data.KeyBenefitsDescription}
           />
           {/* <News news={news} /> */}
-          <Partners />
-          <Testimonials />
+          <Partners/>
+          {/* <Testimonials /> */}
         </div>
       )}
     </>

@@ -1,4 +1,9 @@
 import clientsLogo from '../../assets/images/clientsLogo.png';
+import sekai from '../../assets/images/sekai.png';
+import rodex from "../../assets/images/rodex.png";
+import hotelinx from "../../assets/images/hotelinx.png";
+import mgBedBank from "../../assets/images/mgBedBank.png";
+import voltras from "../../assets/images/voltras.png";
 import { useEffect, useState } from 'react';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
@@ -30,8 +35,26 @@ export const Partners = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="row d-flex justify-content-center">
-                        <img className="clientLogo" src={clientsLogo}/>
+                    <div className="row d-flex justify-content-center mt-3">
+                        <div className="row justify-content-center">
+                            <div className="col-md-3 text-center mt-2">
+                                <img className="clientLogoHome" src={voltras}/>
+                            </div>
+                            <div className="col-md-3 text-center mt-2">
+                                <img className="clientLogoHome" src={rodex}/>
+                            </div>
+                            <div className="col-md-3 text-center mt-2">
+                                <img className="clientLogoHome" src={sekai}/>
+                            </div>
+                        </div>
+                        <div className="row justify-content-center mt-3">
+                            <div className="col-md-4 text-center mt-2">
+                                <img className="clientLogoHome" src={hotelinx}/>
+                            </div>
+                            <div className="col-md-4 text-center mt-2">
+                                <img className="clientLogoHome" src={mgBedBank}/>
+                            </div>
+                        </div>
                     </div>
                 </ScrollAnimation>
             </div>

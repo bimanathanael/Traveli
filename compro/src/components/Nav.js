@@ -123,8 +123,8 @@ export const Nav = ({ handleLanguage }) => {
                       </div>
                       <div className="col-md-7 p-0">
                         <p>
-                          Pemilik produk dengan credensial khusus. Dapat
-                          mengubah dan mental produknya kedalam Traveli store.
+                          Pemilik produk dengan credential khusus. Dapat mengunggah dan menjual
+                          produknya ke dalam Traveli Store 
                         </p>
                       </div>
                     </div>
@@ -146,8 +146,8 @@ export const Nav = ({ handleLanguage }) => {
                       </div>
                       <div className="col-md-7 p-0">
                         <p>
-                          Pemilik produk dengan credensial khusus. Dapat
-                          mengubah dan mental produknya kedalam Traveli store.
+                          Pembeli, penjual, dan penyuplai produk ke jaringan yang dimiliki dengan
+                          credential khusus dan dapat bertransaksi B2B 
                         </p>
                       </div>
                     </div>
@@ -169,8 +169,8 @@ export const Nav = ({ handleLanguage }) => {
                       </div>
                       <div className="col-md-7 p-0">
                         <p>
-                          Pemilik produk dengan credensial khusus. Dapat
-                          mengubah dan mental produknya kedalam Traveli store.
+                          Down-line distributor yang memiliki market yang luas dan variatif, dapat langsung 
+                          menjual ke End Customer
                         </p>
                       </div>
                     </div>
