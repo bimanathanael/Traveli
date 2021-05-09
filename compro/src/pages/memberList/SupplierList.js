@@ -48,19 +48,19 @@ const useStyles = makeStyles((themes) => ({
 const supplierListItems = [
   {
     img:liburania,
-    url: ""
+    url: "https://liburania.com"
   },{
     img:rodex,
-    url: ""
+    url: "https://rodextrip.com"
   },{
     img:hotelinx,
-    url: ""
+    url: "https://hotelinx.com"
   },{
     img:mgBedBank,
-    url: ""
+    url: "https://mgbedbank.com"
   },{
     img:voltras,
-    url: ""
+    url: "http://voltras.co.id"
   },
 ]
 

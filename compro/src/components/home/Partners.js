@@ -38,12 +38,12 @@ export const Partners = () => {
                     <div className="row d-flex justify-content-center mt-3">
                         <div className="row justify-content-center">
                             <div className="col-md-3 text-center mt-2">
-                                <a href="">
+                                <a href="http://voltras.co.id" target="__blank">
                                     <img className="clientLogoHome" src={voltras}/>
                                 </a>
                             </div>
                             <div className="col-md-3 text-center mt-2">
-                                <a href="">
+                                <a href="https://rodextrip.com" target="__blank">
                                     <img className="clientLogoHome" src={rodex}/>
                                 </a>
                             </div>
@@ -55,12 +55,12 @@ export const Partners = () => {
                         </div>
                         <div className="row justify-content-center mt-3">
                             <div className="col-md-4 text-center mt-2">
-                                <a href="">
+                                <a href="https://hotelinx.com" target="__blank">
                                     <img className="clientLogoHome" src={hotelinx}/>
                                 </a>
                             </div>
                             <div className="col-md-4 text-center mt-2">
-                                <a href="">
+                                <a href="https://mgbedbank.com" target="__blank">
                                     <img className="clientLogoHome" src={mgBedBank}/>
                                 </a>
                             </div>
