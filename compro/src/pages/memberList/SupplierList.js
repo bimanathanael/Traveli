@@ -109,7 +109,6 @@ const SupplierList = ({ url }) => {
       .get(`${url}/MembersListSupplier`)
       .then((res) => {
         if (res.data.message) {
-          console.log(res.data.message);
           const hero = res.data.message.Hero;
           if (hero) {
             setTitle(hero.Title);

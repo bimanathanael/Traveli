@@ -25,11 +25,15 @@ const Supplier = ({ url }) => {
   const [heroContent, setHeroContent] = useState(null);
   const [offerContent, setOfferContent] = useState(null);
   const [conditionContent, setConditionContent] = useState(null);
+  const btnData ={
+    title: "Supplier List",
+    link: "/member-list/supplier"
+  }
+
   useEffect(() => {
     axios
       .get(`${url}/MembersSupplier`)
       .then((res) => {
-        console.log(res.data.message);
         const dataRaw = res.data.message;
         if (dataRaw) {
           // Hero
@@ -49,14 +53,11 @@ const Supplier = ({ url }) => {
             const orderedDesc = Object.entries(dataRaw.WhatWeOfferDescription)
               .sort()
               .reduce((o, [k, v]) => ((o[k] = v), o), {});
-            console.log(ordered, `order`);
             for (let key in ordered) {
-              console.log(key);
               whatWeOffer.push({ title: dataRaw.WhatWeOfferTitle[key] });
             }
             let index = 0;
             for (let key in orderedDesc) {
-              console.log(key);
               whatWeOffer[index].description =
                 dataRaw.WhatWeOfferDescription[key];
               index++;
@@ -106,7 +107,6 @@ const Supplier = ({ url }) => {
                 dataRaw.KeyFeaturesForSupplierOnlineBillingDocument[key]
               );
             }
-            console.log(dataOnlineBilling);
             const dataSupportingTools = [];
             for (let key in dataRaw.KeyFeaturesForSupplierSupportingTools) {
               dataSupportingTools.push(
@@ -147,7 +147,12 @@ const Supplier = ({ url }) => {
 
   return (
     <div className="members-page">
-      <HeroMembers data={heroContent} backgroundHero={heroBackground} />
+      <HeroMembers 
+        data={heroContent} 
+        btnData={btnData} 
+        backgroundHero={heroBackground}
+        btnHero={true} 
+      />
       <BenefitMembers
         textHeader={"FOR SUPPLIER"}
         textSubHeader={"WHAT WE OFFER"}

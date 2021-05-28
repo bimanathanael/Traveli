@@ -6,25 +6,25 @@ import { Button, makeStyles } from "@material-ui/core";
 import ScrollAnimation from "react-animate-on-scroll";
 
 // component
-import HeroMembers from "../components/members/HeroMembers";
-import BenefitMembers from "../components/members/BenefitMembers";
-import SupplierWork from "../components/members/SupplierWork";
-import ProcessMembers from "../components/members/ProcessMembers";
-import ProcessCustomer from "../components/members/ProcessCustomers";
-import ConditionMembers from "../components/members/ConditionMembers";
-import KeyFeatureMembers from "../components/members/KeyFeatureMembers";
+import HeroMembers from "../../components/members/HeroMembers";
+import BenefitMembers from "../../components/members/BenefitMembers";
+import SupplierWork from "../../components/members/SupplierWork";
+import ProcessMembers from "../../components/members/ProcessMembers";
+import ProcessCustomer from "../../components/members/ProcessCustomers";
+import ConditionMembers from "../../components/members/ConditionMembers";
+import KeyFeatureMembers from "../../components/members/KeyFeatureMembers";
 
 // asset
-import heroBackground from "../assets/images/travelikuy/hero.png";
-import WorkOnePetra from "../assets/images/travelikuy/petra/work-1.png";
-import WorkTwoPetra from "../assets/images/travelikuy/petra/work-2.png";
-import WorkThreePetra from "../assets/images/travelikuy/petra/work-3.png";
-import WorkFourPetra from "../assets/images/travelikuy/petra/work-4.png";
-import WorkOneCustomer from "../assets/images/travelikuy/customer/work-1.png";
-import WorkTwoCustomer from "../assets/images/travelikuy/customer/work-2.png";
-import processImage from "../assets/images/travelikuy/process.png";
-import processCustomer from "../assets/images/travelikuy/process-customer.png";
-import workBackground from "../assets/images/travelikuy/bg_petra.png";
+import heroBackground from "../../assets/images/travelikuy/hero.png";
+import WorkOnePetra from "../../assets/images/travelikuy/petra/work-1.png";
+import WorkTwoPetra from "../../assets/images/travelikuy/petra/work-2.png";
+import WorkThreePetra from "../../assets/images/travelikuy/petra/work-3.png";
+import WorkFourPetra from "../../assets/images/travelikuy/petra/work-4.png";
+import WorkOneCustomer from "../../assets/images/travelikuy/customer/work-1.png";
+import WorkTwoCustomer from "../../assets/images/travelikuy/customer/work-2.png";
+import processImage from "../../assets/images/travelikuy/process.png";
+import processCustomer from "../../assets/images/travelikuy/process-customer.png";
+import workBackground from "../../assets/images/travelikuy/bg_petra.png";
 
 const useStyles = makeStyles((theme) => ({
   buttonOption: {
@@ -255,6 +255,7 @@ const Supplier = ({ url }) => {
         data={heroContent}
         backgroundHero={heroBackground}
         footer={false}
+        btnHero={false}
       />
       <div style={{ margin: "4rem auto 0 auto" }}>
         <ScrollAnimation animateIn="fadeIn">

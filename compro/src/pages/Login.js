@@ -15,7 +15,6 @@ export const Login = ({url}) => {
         if (resp.ok) {
           return resp.json();
         } else {
-          console.log(resp)
           throw resp;
         }
       })

@@ -56,7 +56,7 @@
   }
 
   body .container-profile-why {
-    padding: 4% 0% 10% 5%;
+    padding: 4% 0% 0% 5%;
   }
 
   body .headingAboutUs {
@@ -517,6 +517,67 @@
     font-size: 1.5rem !important;
   }
 
+  body .btn-v8-hero {
+    width: 13rem;
+  }
+
+  body .btn-v8-hero:hover .arrow {
+    background-position: left;
+    padding: 11px 103px 11px 13px;
+  }
+
+  body .btn-v8-hero:hover .btn-font {
+    color: #59a9da;
+    padding-right: 50px;
+  }
+
+  body .btn-v8-hero .btn-font {
+    text-decoration: underline;
+    text-decoration-color: white;
+    color: white;
+    padding-top: 7.5%;
+  }
+
+  body .btn-v8-hero .btn-font-blue {
+    text-decoration: underline;
+    text-decoration-color: white;
+    color: white;
+    padding-top: 5%;
+  }
+
+  body .btn-v8-hero:hover .btn-blueTraveli {
+    color: #59a9da;
+    padding-right: 50px;
+  }
+
+  body .btn-v8-hero .btn-blueTraveli {
+    text-decoration: underline;
+    text-decoration-color: #59a9da;
+    color: #59a9da;
+    padding-top: 5%;
+  }
+
+  body .btn-v8-hero .btn-blueTraveli {
+    text-decoration: underline;
+    text-decoration-color: #59a9da;
+    color: #59a9da;
+    padding-top: 5%;
+  }
+
+  body .btn-v8-hero .MuiSvgIcon-root {
+    color: #4ab1d8;
+    font-size: 1.5rem !important;
+  }
+
+  body .btn-v8-hero .arrow {
+    background-color: #f2e968;
+    border-radius: 30px;
+    padding: 11px;
+    transition: 0.2s ease-out;
+    position: absolute;
+    font-size: 12pt;
+  }
+
   body .arrow {
     background-color: #f2e968;
     border-radius: 30px;
@@ -689,7 +750,8 @@
   }
 
   body .headingAboutUs {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    line-height: 26pt;
   }
 
   body .newsHeadingHome {
@@ -771,7 +833,7 @@
   }
 
   body .descVM {
-    font-size: 1.2rem;
+    font-size: 1.1rem !important;
   }
 
   body .headingTeam {
@@ -917,6 +979,13 @@
   background-size: cover;
 }
 
+.followUsFont{
+  font-size: 14pt;
+  font-weight: 600;
+  color: #4fb9dd;
+  margin-bottom: 5px;
+}
+
 .heroContainer {
   background: #00add9;
   background-image: url("../images/home_Hero.jpg");
@@ -1036,6 +1105,14 @@
   font-size: 2rem;
   font-weight: 400;
   padding-left: 50px;
+  color: #48afd7;
+  font-family: "Bristone";
+}
+
+.headingHowItWorks{
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 3%;
   color: #48afd7;
   font-family: "Bristone";
 }
@@ -1326,6 +1403,7 @@ p {
 
 .headingAboutUs {
   font-weight: 600 !important;
+  margin-top: 5%;
 }
 
 .headingVM {
@@ -1337,8 +1415,12 @@ p {
   text-transform: uppercase;
 }
 
+.mb-05{
+  margin-bottom: 0.5rem;
+}
+
 .descVM {
-  font-size: 2rem;
+  font-size: 1.1rem !important;
   color: white;
   font-weight: 600;
 }
@@ -1350,7 +1432,7 @@ p {
 .descAboutUs {
   font-size: 1.3rem;
   font-weight: 400;
-  color: black;
+  color: #525050;
   margin-top: 2rem;
   text-align: justify;
 }
@@ -1369,7 +1451,7 @@ p {
 }
 
 .container-profile-why {
-  padding: 4% 0% 10% 0%;
+  padding: 7% 0% 6% 0%;
   background-image: url("../images/bgAbout.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -1451,7 +1533,7 @@ p {
 }
 
 .container-vision-mission {
-  padding: 6% 2% 4% 2%;
+  padding: 4% 6% 4% 6%;
   margin-top: 3%;
   background-image: url("../images/bgVisiMisi.png");
   background-size: cover;
@@ -1568,6 +1650,11 @@ p {
 .socialIcon {
   width: 10%;
   margin: 0.5%;
+}
+
+.socialIconBlue {
+  width: 13%;
+  margin: 0% 1%;
 }
 
 .pr-7 {
@@ -1754,7 +1841,8 @@ button {
 }
 
 .sub-menu {
-  font-size: 15pt;
+  font-size: 11pt;
+  padding-top: 2%;
   cursor: pointer;
 }
 
@@ -1979,6 +2067,61 @@ button {
   color: #4ab1d8;
   font-size: 1.5rem !important;
 }
+
+
+.btn-v8-hero {
+  width: 253px;
+  padding-top: 0px !important;
+}
+
+.btn-v8-hero:hover .arrow {
+  background-position: left;
+  padding: 14px 150px 15px 17px;
+}
+
+.btn-v8-hero:hover .btn-font {
+  color: #59a9da;
+  padding-right: 50px;
+}
+
+.btn-v8-hero .btn-font {
+  text-decoration: underline;
+  text-decoration-color: white;
+  color: white;
+  padding-top: 5%;
+}
+
+.btn-v8-hero .btn-font-blue {
+  text-decoration: underline;
+  text-decoration-color: white;
+  color: white;
+  padding-top: 5%;
+}
+
+.btn-v8-hero:hover .btn-blueTraveli {
+  color: #59a9da;
+  padding-right: 50px;
+}
+
+.btn-v8-hero .btn-blueTraveli {
+  text-decoration: underline;
+  text-decoration-color: #59a9da;
+  color: #59a9da;
+  padding-top: 5%;
+}
+
+.btn-v8-hero .btn-blueTraveli {
+  text-decoration: underline;
+  text-decoration-color: #59a9da;
+  color: #59a9da;
+  padding-top: 5%;
+}
+
+.btn-v8-hero .MuiSvgIcon-root {
+  color: #4ab1d8;
+  font-size: 1.5rem !important;
+}
+
 
 .MuiAccordionSummary-root {
   padding: 0px 31px !important;
@@ -2734,7 +2877,7 @@ button {
 }
 
 .containerHowItWorks {
-  padding: 15% 5% 5% 5%;
+  padding: 13% 5% 5% 5%;
 }
 
 .containerNews {

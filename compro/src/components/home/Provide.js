@@ -42,6 +42,7 @@ import radioSelected from '../../assets/images/radioSelected.png';
 
 import petraStepImg from '../../assets/images/petraStepImg.png';
 import corporateStepImg from '../../assets/images/corporateStepImg.png';
+import customerStepImg from '../../assets/images/customerStepImg.png';
 import agencyStepImg from '../../assets/images/agencyStepImg.png';
 import wholesalerStepImg from '../../assets/images/wholesalerStepImg.png';
 import supplierStepImg from '../../assets/images/supplierStepImg.png';
@@ -208,8 +209,14 @@ export const Provide = ({
               corporate.conditions.Condition2,
               corporate.conditions.Condition3,
             ]
-          },{
-            isActive: false,
+          }
+        ],
+      },{
+        isActive: false,
+        section: "Customer",
+        availMenu: [
+          {
+            isActive: true,
             section: "Petra",
             heading: petra.header.Title,
             img: petraImg,
@@ -227,6 +234,24 @@ export const Provide = ({
               petra.conditions.Condition1,
               petra.conditions.Condition2,
               petra.conditions.Condition3,
+            ]
+          }
+          ,{
+            isActive: false,
+            section: "Customer",
+            heading: `Customer`,
+            img: petraImg,
+            stepImg: customerStepImg,
+            desc: `Salah satu unit Travel Agent yang ditujukan khusus untuk 
+            pribadi/perseorangan yang meiliki minat 
+            untuk bergabung dan menjalankan bisnis kepariwisataan`,
+            benefits: [
+              "Akses Ke Produk Wisata",
+              "Promo dan Penawaran Terbaru",
+              "Poin Transaksi",
+              "News and Update Informasi",
+              "Customer Care",
+              "Virtual Account",
             ]
           }
         ],
@@ -386,20 +411,33 @@ export const Provide = ({
       setCurrMembership(selectedData)
     }
 
-    const changeSubMenu = (section) =>{
+    const changeSubMenu = (section, mainSection) =>{
       let newData = membershipSectionData
       let selectedData = {}
 
-      newData[2].availMenu.forEach(data => {
-        if (data.section == section) {
-          data.isActive = true
-
-        } else {
-          data.isActive = false
-        }
-      })
-
-      selectedData = newData[2]
+      if(mainSection == "Reseller"){
+        newData[2].availMenu.forEach(data => {
+          if (data.section == section) {
+            data.isActive = true
+  
+          } else {
+            data.isActive = false
+          }
+        })
+  
+        selectedData = newData[2]
+      } else {
+        newData[3].availMenu.forEach(data => {
+          if (data.section == section) {
+            data.isActive = true
+  
+          } else {
+            data.isActive = false
+          }
+        })
+  
+        selectedData = newData[3]
+      }
       setTrigger(trigger += 1)
       setMembershipSectionData(newData)
       setCurrMembership(selectedData)
@@ -552,27 +590,27 @@ export const Provide = ({
                           })
                         }
                         {
-                          currMembership.section == "Reseller" ?
+                          currMembership.section == "Reseller" || currMembership.section == "Customer" ?
                             currMembership.availMenu.map( data => {
                               return(
                                 data.isActive == true ? 
-                                  <div className="row subMenu mt-2 no-mobile">
+                                  <div className="row subMenu no-mobile">
                                     <div className="col-md-3 offset-md-2 text-center">
                                       <img className="radio" src={radioSelected}/>
                                     </div>
-                                    <div className="col-md-7 pl-4">
-                                      <p className="sub-menu sub-menu-active" onClick={() => changeSubMenu(data.section) } > 
+                                    <div className="col-md-7 pl-0 pr-0">
+                                      <p className="sub-menu sub-menu-active" onClick={() => changeSubMenu(data.section, currMembership.section) } > 
                                         { data.section } 
                                       </p>
                                     </div>
                                   </div>
                                 :
-                                  <div className="row subMenu mt-2 no-mobile">
+                                  <div className="row subMenu no-mobile">
                                     <div className="col-md-3 offset-md-2 text-center">
                                       <img className="radio" src={radio}/>
                                     </div>
-                                    <div className="col-md-7 pl-4">
-                                      <p className="sub-menu" onClick={() => changeSubMenu(data.section) } > 
+                                    <div className="col-md-7 pl-0 pr-0">
+                                      <p className="sub-menu" onClick={() => changeSubMenu(data.section, currMembership.section) } > 
                                         { data.section } 
                                       </p>
                                     </div>
@@ -619,13 +657,13 @@ export const Provide = ({
                     {currMembership.availMenu.map(data => {
                       return (
                         data.isActive == true ?
-                          <div className="col-md-4 text-center">
+                          <div className="col-md-3">
                             <button className="btn btn-default sub-menu-button sub-menu-button-active"
                             onClick={() => changeSubMenu(data.section)}> 
                               {data.section} </button>
                           </div>
                         :
-                          <div className="col-md-4 text-center">
+                          <div className="col-md-3">
                             <button className="btn btn-default sub-menu-button"
                             onClick={() => changeSubMenu(data.section)}> 
                               {data.section} </button>
@@ -664,7 +702,7 @@ export const Provide = ({
                                   <div className="col-md-1 offset-md-1 ">
                                     <img src={checklist}/>
                                   </div>
-                                  <div className="col-md-8 ">
+                                  <div className="col-md-10">
                                     <p className="text-white mb-0 fb-13"> 
                                       { benefit } 
                                     </p>
@@ -673,27 +711,32 @@ export const Provide = ({
                               )
                             })}
                           </div>
-                          <div className="col-md-3 mt-4 pl-4 ml-3">
-                            <h5 className="text-white pointMembership">
-                              CONDITION
-                            </h5>
-                          </div>
-                          <div className="col-md-8 mt-4">
-                            {data.conditions.map(condition => {
-                              return (
-                                <div className="row">
-                                  <div className="col-md-1 offset-md-1 ">
-                                    <img src={checklist}/>
-                                  </div>
-                                  <div className="col-md-8 ">
-                                    <p className="text-white mb-0 fb-13"> 
-                                      { condition } 
-                                    </p>
-                                  </div>
-                                </div>
-                              )
-                            })}
-                          </div>
+                          {
+                            data.conditions && 
+                            <>
+                              <div className="col-md-3 mt-4 pl-4 ml-3">
+                                <h5 className="text-white pointMembership">
+                                  CONDITION
+                                </h5>
+                              </div>
+                              <div className="col-md-8 mt-4">
+                                {data.conditions.map(condition => {
+                                  return (
+                                    <div className="row">
+                                      <div className="col-md-1 offset-md-1 ">
+                                        <img src={checklist}/>
+                                      </div>
+                                      <div className="col-md-10">
+                                        <p className="text-white mb-0 fb-13"> 
+                                          { condition } 
+                                        </p>
+                                      </div>
+                                    </div>
+                                  )
+                                })}
+                              </div>
+                            </>
+                          }
                           <div className="col-md-12 mt-10 ">
                             <img className="stepImg" src={data.stepImg}/>
                           </div>

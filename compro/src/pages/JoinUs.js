@@ -18,7 +18,6 @@ export const JoinUs = ({url}) => {
         }
       })
       .then(({ message }) => {
-        console.log(message.Hero, "messag hero")
         setData(message.Hero);
       })
       .catch((err) => {});

@@ -33,11 +33,15 @@ const Reseller = ({ url }) => {
   const [offerContent, setOfferContent] = useState(null);
   const [conditionContent, setConditionContent] = useState(null);
   const [agentProcess, setAgentProcess] = useState(true);
+  const btnData ={
+    title: "Reseller List",
+    link: "/member-list/reseller"
+  }
+
   useEffect(() => {
     axios
       .get(`${url}/MembersReseller`)
       .then((res) => {
-        console.log(res.data.message);
         const dataRaw = res.data.message;
         if (dataRaw) {
           // Hero
@@ -141,7 +145,6 @@ const Reseller = ({ url }) => {
                 dataRaw.KeyFeaturesForResellerOnlineBillingDocument[key]
               );
             }
-            console.log(dataOnlineBilling);
             const dataSupportingTools = [];
             for (let key in dataRaw.KeyFeaturesForResellerSupportingTools) {
               dataSupportingTools.push(
@@ -190,7 +193,12 @@ const Reseller = ({ url }) => {
 
   return (
     <div className="members-page">
-      <HeroMembers data={heroContent} backgroundHero={heroBackground} />
+      <HeroMembers 
+        data={heroContent} 
+        btnData={btnData} 
+        backgroundHero={heroBackground} 
+        btnHero={true}
+      />
       <BenefitMembers
         textHeader={"FOR RESELLER"}
         textSubHeader={"WHAT WE OFFER"}

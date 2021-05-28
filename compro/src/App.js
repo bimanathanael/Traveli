@@ -25,7 +25,7 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import MemberSupplier from "./pages/members/Supplier";
 import MembersWholesaler from "./pages/members/Wholesaler";
 import MembersReseller from "./pages/members/Reseller";
-import Travelikuy from "./pages/Travelikuy";
+import Customer from "./pages/members/Customer";
 import SupplierList from "./pages/memberList/SupplierList";
 import DistributorList from "./pages/memberList/DistributorList";
 import axios from "axios"
@@ -85,14 +85,17 @@ function App() {
           <Route exact path="/members/reseller">
             <MembersReseller url={url} />
           </Route>
+          <Route exact path="/members/customer">
+            <Customer url={url} />
+          </Route>
           <Route exact path="/member-list/supplier">
             <SupplierList url={url} />
           </Route>
           <Route exact path="/member-list/wholesaler">
-            <DistributorList url={url} />
+            <DistributorList url={url} fromWholeSaler={true}/>
           </Route>
-          <Route exact path="/travelikuy">
-            <Travelikuy url={url} />
+          <Route exact path="/member-list/reseller">
+            <DistributorList url={url} fromWholeSaler={false}/>
           </Route>
           <Route path="/howItWorks">
             <HowItWorks url={url} />

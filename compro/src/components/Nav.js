@@ -2,8 +2,9 @@ import "../assets/css/Nav.css";
 import { Link, useLocation, useParams } from "react-router-dom";
 import logo3 from "../assets/images/traveli_white2.png";
 import wholesalerImg from "../assets/images/wholesalerImg.png";
-import suppImg from "../assets/images/suppImg.png";
+import suppImg from "../assets/images/supplierImg.png";
 import resellerImg from "../assets/images/resellerImg.png";
+import customerImg from "../assets/images/customerImg.png";
 
 export const Nav = ({ handleLanguage }) => {
   const location = useLocation();
@@ -32,7 +33,8 @@ export const Nav = ({ handleLanguage }) => {
   } else if (
     locationNow == "/members/supplier" ||
     locationNow == "/members/wholesaler" ||
-    locationNow == "/members/reseller"
+    locationNow == "/members/reseller" ||
+    locationNow == "/members/customer"
   ) {
     blackText = true
     memberUnderline = true;
@@ -74,18 +76,16 @@ export const Nav = ({ handleLanguage }) => {
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0 ml-5">
             <li className="nav-item mobile-center">
-              <Link to="/howItWorks">
-                <a
-                  className={`mobile-center mr-3 nav-link text-white ${
-                    locationNow.toLocaleLowerCase() == "/howitworks"
-                      ? "yellow-underline"
-                      : ""
-                  } `}
-                  id="howItWorks"
-                >
-                  How It Works
-                </a>
-              </Link>
+              <a
+                className={`mobile-center mr-3 nav-link text-white ${
+                  locationNow.toLocaleLowerCase() == "/howitworks"
+                    ? "yellow-underline"
+                    : ""
+                } `}
+                id="howItWorks" href="/howItWorks"
+              >
+                How It Works
+              </a>
             </li>
             <li className="nav-item dropdown ml-3 members-dropdown supplier-menu no-mobile">
               <a
@@ -106,15 +106,12 @@ export const Nav = ({ handleLanguage }) => {
                 aria-labelledby="navbarDropdown"
               >
                 <div className="row">
-                  <div className="col-md-4">
+                  <div className="col-md-3">
                     <div className="row">
                       <div className="col-md-8">
-                        <Link
-                          to="/members/supplier"
-                          className="dropdown-item menu-heading"
-                        >
+                        <a className="dropdown-item menu-heading" href="/members/supplier">
                           SUPPLIER
-                        </Link>
+                        </a>
                       </div>
                     </div>
                     <div className="row">
@@ -122,22 +119,19 @@ export const Nav = ({ handleLanguage }) => {
                         <img className="membersImg" src={suppImg} />
                       </div>
                       <div className="col-md-7 p-0">
-                        <p>
+                        <p className="mb-0">
                           Pemilik produk dengan credential khusus. Dapat mengunggah dan menjual
                           produknya ke dalam Traveli Store 
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-4 borderLeft">
+                  <div className="col-md-3 borderLeft">
                     <div className="row">
                       <div className="col-md-8">
-                        <Link
-                          to="/members/wholesaler"
-                          className="dropdown-item menu-heading"
-                        >
+                        <a href="/members/wholesaler" className="dropdown-item menu-heading">
                           WHOLESALER
-                        </Link>
+                        </a>
                       </div>
                     </div>
                     <div className="row">
@@ -145,22 +139,19 @@ export const Nav = ({ handleLanguage }) => {
                         <img className="membersImg" src={wholesalerImg} />
                       </div>
                       <div className="col-md-7 p-0">
-                        <p>
+                        <p className="mb-0">
                           Pembeli, penjual, dan penyuplai produk ke jaringan yang dimiliki dengan
                           credential khusus dan dapat bertransaksi B2B 
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-4 borderLeft">
+                  <div className="col-md-3 borderLeft">
                     <div className="row">
                       <div className="col-md-8">
-                        <Link
-                          to="/members/reseller"
-                          className="dropdown-item menu-heading"
-                        >
+                        <a href="/members/reseller" className="dropdown-item menu-heading">
                           RESELLER
-                        </Link>
+                        </a>
                       </div>
                     </div>
                     <div className="row">
@@ -168,7 +159,27 @@ export const Nav = ({ handleLanguage }) => {
                         <img className="membersImg" src={resellerImg} />
                       </div>
                       <div className="col-md-7 p-0">
-                        <p>
+                        <p className="mb-0">
+                          Down-line distributor yang memiliki market yang luas dan variatif, dapat langsung 
+                          menjual ke End Customer
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-3 borderLeft">
+                    <div className="row">
+                      <div className="col-md-8">
+                        <a href="/members/customer" className="dropdown-item menu-heading">
+                          CUSTOMER
+                        </a>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-md-5 p-0">
+                        <img className="membersImg" src={customerImg} />
+                      </div>
+                      <div className="col-md-7 p-0">
+                        <p className="mb-0">
                           Down-line distributor yang memiliki market yang luas dan variatif, dapat langsung 
                           menjual ke End Customer
                         </p>
@@ -193,25 +204,19 @@ export const Nav = ({ handleLanguage }) => {
                 Members
               </a>
               <div className="dropdown-menu " aria-labelledby="navbarDropdown">
-                <Link to="/members/supplier">
-                  <a className="dropdown-item mobile-1" href="#">
-                    Supplier
-                  </a>
-                </Link>
-                <Link to="/members/wholesaler">
-                  <a className="dropdown-item mobile-1" href="#">
-                    Wholesaler
-                  </a>
-                </Link>
-                <Link to="/members/reseller">
-                  <a className="dropdown-item mobile-1" href="#">
-                    Reseller
-                  </a>
-                </Link>
+                <a className="dropdown-item mobile-1" href="/members/supplier">
+                  Supplier
+                </a>
+                <a className="dropdown-item mobile-1" href="/members/wholesaler">
+                  Wholesaler
+                </a>
+                <a className="dropdown-item mobile-1" href="/members/reseller">
+                  Reseller
+                </a>
               </div>
             </li>
 
-            <li className="nav-item dropdown ml-3 member-list-dropdown no-mobile">
+            {/* <li className="nav-item dropdown ml-3 member-list-dropdown no-mobile">
               <a
                 className={`nav-link text-white dropdown-toggle ${
                   memberListUnderline ? "yellow-underline" : ""
@@ -281,6 +286,7 @@ export const Nav = ({ handleLanguage }) => {
                 </Link>
               </div>
             </li>
+            
             <li className="nav-item">
               <Link to="/travelikuy">
                 <a
@@ -292,7 +298,8 @@ export const Nav = ({ handleLanguage }) => {
                 </a>
               </Link>
             </li>
-            <li className="nav-item">
+             */}
+            {/* <li className="nav-item">
               <Link to="/promo">
                 <a
                   className={`nav-link text-white ml-4 ${
@@ -302,14 +309,12 @@ export const Nav = ({ handleLanguage }) => {
                   Promo
                 </a>
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item dropdown ml-2">
               <a
                 className={`nav-link dropdown-toggle aboutUs ${
                   aboutUsUnderline ? "yellow-underline" : ""
-                } ${
-                  blackText ? "text-black-mobile-white" : "" 
-                }`}
+                } `}
                 href="#"
                 id="navbarDropdown"
                 role="button"
@@ -320,21 +325,15 @@ export const Nav = ({ handleLanguage }) => {
                 About Us
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <Link to="/profile">
-                  <a className="dropdown-item" href="#">
-                    Profile
-                  </a>
-                </Link>
-                <Link to="/news">
-                  <a className="dropdown-item" href="#">
-                    News and Updates
-                  </a>
-                </Link>
-                <Link to="/contactUs">
-                  <a className="dropdown-item" href="#">
-                    Contact Us
-                  </a>
-                </Link>
+                <a className="dropdown-item" href="/profile">
+                  Profile
+                </a>
+                <a className="dropdown-item" href="/news">
+                  News and Updates
+                </a>
+                <a className="dropdown-item" href="/contactUs">
+                  Contact Us
+                </a>
               </div>
             </li>
           </ul>
