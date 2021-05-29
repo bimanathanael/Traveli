@@ -75,7 +75,7 @@ const useStyles = makeStyles((themes) => ({
   },
 }));
 
-const HeroMembers = ({ backgroundHero, data, footer = true }) => {
+const HeroMembers = ({ backgroundHero, data, footer = true, btnData, btnHero }) => {
   const classes = useStyles();
   return (
     <>
@@ -102,8 +102,13 @@ const HeroMembers = ({ backgroundHero, data, footer = true }) => {
                   </div>
                   <div className="col-md-12 col-sm-12">
                     <div className={classes.buttonMembers}>
-                      <ButtonTry />
-                      <ButtonWatch />
+                      {
+                        btnHero &&
+                          <>
+                            <ButtonTry btnData={btnData}/>
+                            <ButtonWatch />
+                          </>
+                      }
                     </div>
                   </div>
                 </div>

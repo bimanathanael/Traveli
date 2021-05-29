@@ -168,11 +168,12 @@ export const Footer = ({ url, visitor }) => {
                   <a href="https://www.youtube.com/channel/UCuTqy_SepBmRB0E8FFARYJg" target="_blank">
                     <img className="socialIcon" src={youtube} />
                   </a>
-                  <a href="https://instagram.com/wetraveli?igshid=xrr25r70fmfs" target="_blank">
+                  <a href="https://www.instagram.com/sobattraveli/" target="_blank">
                     <img className="socialIcon" src={instagram} />
                   </a>
                 </div>
               </div>
+            
             </div>
             <div className="col-md-12 mobile-only">
               <img className="w70" src={traveliFooter} />

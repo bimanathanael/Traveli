@@ -1,4 +1,10 @@
 import { useEffect, useState } from "react";
+import facebook from "../../assets/images/facebookBlue.png";
+import tiktok from "../../assets/images/tiktokBlue.png";
+import linkedin from "../../assets/images/linkedinBlue.png";
+import twitter from "../../assets/images/twitterBlue.png";
+import youtube from "../../assets/images/youtubeBlue.png";
+import instagram from "../../assets/images/instagramBlue.png";
 
 export const ContactInfo = ({ url }) => {
   const [data, setData] = useState();
@@ -59,8 +65,32 @@ export const ContactInfo = ({ url }) => {
                 <br />
                 <b> Email : {data.ContactInformation.Email}</b>
               </p>
+              <div className="col-md-12 mt-5 p-0">
+                <p className="followUsFont">Follow Us</p>
+              </div>
+              <div className="col-md-12 p-0">
+                <a href="https://www.facebook.com/We-Traveli-107690237944504" target="_blank">
+                  <img className="socialIconBlue" src={facebook} />
+                </a>
+                {/* <a href="#" target="_blank">
+                  <img className="socialIconBlue" src={tiktok} />
+                </a> */}
+                <a href="https://www.linkedin.com/company/72018396" target="_blank">
+                  <img className="socialIconBlue" src={linkedin} />
+                </a>
+                <a href="https://twitter.com/wetraveli" target="_blank">
+                  <img className="socialIconBlue" src={twitter} />
+                </a>
+                <a href="https://www.youtube.com/channel/UCuTqy_SepBmRB0E8FFARYJg" target="_blank">
+                  <img className="socialIconBlue" src={youtube} />
+                </a>
+                <a href="https://instagram.com/wetraveli?igshid=xrr25r70fmfs" target="_blank">
+                  <img className="socialIconBlue" src={instagram} />
+                </a>
+              </div>
             </div>
           </div>
+          
         </div>
       )}
     </div>

@@ -88,7 +88,9 @@
 }
 
 .borderLeft{
-  border-left: 1px solid #8c8c8cb5;
+  border-left: 1px solid #bfbfbfb5;
+  padding-left: 30px;
+  padding-right: 0px;
 }
 
 .logo{
@@ -237,7 +239,7 @@ a:hover {
 }
 
 .members-dropdown:hover .dropdown-menu{
-  width: 56vw;
+  width: 70vw;
 }
 
 .members-dropdown .dropdown-item {
@@ -256,14 +258,14 @@ a:hover {
 }
 
 .dropdown:hover .dropdown-menu{
-  padding: 12px 0px 12px 0px;
+  padding: 4px 0px 4px 0px;
   text-decoration: none;
   font-size: 0.8rem;
   display: block;
 }
 
 .supplier-menu:hover .dropdown-menu{
-  padding: 12px 0px 12px 29px;
+  padding: 12px 0px 20px 29px;
   text-decoration: none;
   display: block;
 }
@@ -281,7 +283,7 @@ a:hover {
 
 .dropdown-menu{
   border: 0px;
-  border-radius: 10px;
+  border-radius: 6px;
   -webkit-box-shadow: -1px 7px 30px -11px rgba(0,0,0,0.39);
   -moz-box-shadow: -1px 7px 30px -11px rgba(0,0,0,0.39);
   box-shadow: -1px 7px 30px -11px rgba(0,0,0,0.39);

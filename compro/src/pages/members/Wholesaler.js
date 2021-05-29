@@ -26,11 +26,15 @@ const Wholesaler = ({ url }) => {
   const [heroContent, setHeroContent] = useState(null);
   const [offerContent, setOfferContent] = useState(null);
   const [conditionContent, setConditionContent] = useState(null);
+  const btnData ={
+    title: "Wholesaler List",
+    link: "/member-list/wholesaler"
+  }
+
   useEffect(() => {
     axios
       .get(`${url}/MembersWholesaler`)
       .then((res) => {
-        console.log(res.data.message);
         const dataRaw = res.data.message;
         if (dataRaw) {
           // Hero
@@ -108,7 +112,6 @@ const Wholesaler = ({ url }) => {
                 dataRaw.KeyFeaturesForWholesalerOnlineBillingDocument[key]
               );
             }
-            console.log(dataOnlineBilling);
             const dataSupportingTools = [];
             for (let key in dataRaw.KeyFeaturesForWholesalerSupportingTools) {
               dataSupportingTools.push(
@@ -149,7 +152,12 @@ const Wholesaler = ({ url }) => {
 
   return (
     <div className="members-page">
-      <HeroMembers data={heroContent} backgroundHero={heroBackground} />
+      <HeroMembers 
+        data={heroContent} 
+        btnData={btnData} 
+        backgroundHero={heroBackground}
+        btnHero={true} 
+      />
       <BenefitMembers
         textHeader={"FOR WHOLESALER"}
         textSubHeader={"WHAT WE OFFER"}

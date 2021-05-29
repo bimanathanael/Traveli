@@ -107,7 +107,7 @@ const useStyles = makeStyles((themes) => ({
   },
 }));
 
-const DistributorList = ({ url }) => {
+const DistributorList = ({ url, fromWholeSaler }) => {
   const classes = useStyles();
   const settings = {
     infinite: false,
@@ -148,11 +148,15 @@ const DistributorList = ({ url }) => {
   const [threeClicked, setThreeClicked] = useState(false);
 
   useEffect(() => {
+    fromWholeSaler ? handleButtonOne() : handleButtonTwo()
+
+  }, [fromWholeSaler])
+  
+  useEffect(() => {
     axios
       .get(`${url}/MembersListWholesaler`)
       .then((res) => {
         if (res.data.message) {
-          console.log(res.data.message);
           const hero = res.data.message.Hero;
           if (hero) {
             setTitle(hero.Title);
@@ -233,7 +237,7 @@ const DistributorList = ({ url }) => {
     setTriggerSub("corporate");
     setCurrentList(corporateListItems)
   };
-
+  
   return (
     <div className="members-page">
       <div className={classes.heroDistributor}>

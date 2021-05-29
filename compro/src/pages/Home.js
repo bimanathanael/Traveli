@@ -10,8 +10,9 @@ import { useEffect, useState } from "react";
 export const Home = ({ url }) => {
   const [data, setData] = useState();
   const [waNumber, setWaNumber] = useState();
-  const [news, setNews] = useState();
-  const [promo, setPromo] = useState();
+  // const [news, setNews] = useState();
+  // const [promo, setPromo] = useState();
+  // const [isLoading, setIsLoading] = useState(true);
   let supplier, wholesaler, agency, corporate, petra;
 
   useEffect(() => {
@@ -28,33 +29,33 @@ export const Home = ({ url }) => {
       })
       .catch((err) => {});
 
-    fetch(`https://pacific-hamlet-79377.herokuapp.com/lastFourNews`)
-      .then((resp) => {
-        if (resp.ok) {
-          return resp.json();
-        } else {
-          throw resp;
-        }
-      })
-      .then(({ message }) => {
-        setNews(message);
-      })
-      .catch((err) => {});
+    // fetch(`https://pacific-hamlet-79377.herokuapp.com/lastFourNews`)
+    //   .then((resp) => {
+    //     if (resp.ok) {
+    //       return resp.json();
+    //     } else {
+    //       throw resp;
+    //     }
+    //   })
+    //   .then(({ message }) => {
+    //     setNews(message);
+    //   })
+    //   .catch((err) => {});
 
     
-    fetch(`https://pacific-hamlet-79377.herokuapp.com/lastPromo`)
-      .then((resp) => {
-        if (resp.ok) {
-          return resp.json();
-        } else {
-          console.log(resp);
-          throw resp;
-        }
-      })
-      .then(({ message }) => {
-        setPromo(message);
-      })
-      .catch((err) => {});
+    // fetch(`https://pacific-hamlet-79377.herokuapp.com/lastPromo`)
+    //   .then((resp) => {
+    //     if (resp.ok) {
+    //       return resp.json();
+    //     } else {
+    //       console.log(resp);
+    //       throw resp;
+    //     }
+    //   })
+    //   .then(({ message }) => {
+    //     setPromo(message);
+    //   })
+    //   .catch((err) => {});
 
       fetch(url + `/ContactUs`)
       .then((resp) => {
@@ -100,10 +101,12 @@ export const Home = ({ url }) => {
 
   return (
     <>
-      {data !== undefined && news !== undefined && promo !== undefined && waNumber !== undefined && (
+      {data !== undefined && waNumber !== undefined && (
+      // {data !== undefined && news !== undefined && promo !== undefined && waNumber !== undefined && (
         <div>
           {/* <Hero data={ data.Hero } /> */}
-          <Hero data={data.Hero} promo={promo} waNumber={waNumber.ContactInformation.WhatsappNumber} />
+          <Hero data={data.Hero} waNumber={waNumber.ContactInformation.WhatsappNumber} />
+          {/* <Hero data={data.Hero} promo={promo} waNumber={waNumber.ContactInformation.WhatsappNumber} /> */}
           <Why
             dataDesc={data.WhyChooseTraveliDescription}
             dataTitle={data.WhyChooseTraveliTitle}

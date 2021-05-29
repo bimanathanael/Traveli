@@ -9,7 +9,7 @@ import parse from 'html-react-parser';
 
 export const Hero = ({data, promo, waNumber}) => {
 
-  promo.shortDesc = promo.content.slice(0,80) 
+  // promo.shortDesc = promo.content.slice(0,80) 
 
   return (
     <>
@@ -61,13 +61,12 @@ export const Hero = ({data, promo, waNumber}) => {
                 <div className="modal-body" style={{ "visibility": "hidden"}}>
                   <iframe width="120" height="115"
                   // src="https://www.youtube.com/embed/YuAya0hRjwU?autoplay=1&mute=1"
-                  src="https://www.youtube.com/embed/YuAya0hRjwU"
                   >
                   </iframe>
                 </div>
               </ScrollAnimation>
 
-              <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              {/* <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog" role="document">
                   <div className="modal-content">
                     <div className="modal-header">
@@ -98,7 +97,7 @@ export const Hero = ({data, promo, waNumber}) => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           {/* <div className="col-md-1 offset-md-4 d-flex align-items-end pb-5">
