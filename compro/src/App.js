@@ -31,20 +31,23 @@ import DistributorList from "./pages/memberList/DistributorList";
 import axios from "axios"
 
 function App() {
-  const [url, setUrl] = useState(null);
+  const mainUrl = 'https://nameless-sea-46356.herokuapp.com'
+  const [url, setUrl] = useState(mainUrl);
   const [visitor, setVisitor] = useState({});
 
   useEffect(() => {
     const getItem = localStorage.getItem("language");
     if (getItem) {
-      setUrl(`https://be.traveli.co.id/${getItem}`);
-    } else setUrl(`https://be.traveli.co.id/id`);
+      setUrl(`${mainUrl}/${getItem}`);
+    } else {
+      setUrl(`${mainUrl}/id`);
+    }
     
     let Day = Number(new Date().getDate())
     let Month = Number(new Date().getMonth() + 1)
     let Year = Number(new Date().getFullYear())
 
-    axios.post('https://be.traveli.co.id/visitor',{
+    axios.post(`${mainUrl}/visitor`,{
       Day,
       Month,
       Year
@@ -61,13 +64,13 @@ function App() {
     if (lang === "en") {
       localStorage.setItem("language", lang);
       const getItem = localStorage.getItem("language");
-      setUrl(`https://be.traveli.co.id/${getItem}`);
+      setUrl(`${mainUrl}/${getItem}`);
     }
 
     if (lang === "id") {
       localStorage.setItem("language", lang);
       const getItem = localStorage.getItem("language");
-      setUrl(`https://be.traveli.co.id/${getItem}`);
+      setUrl(`${mainUrl}/${getItem}`);
     }
   };
   return (
@@ -75,6 +78,7 @@ function App() {
       {/* <div  data-scroll-container> */}
       <Router>
         <Nav url={url} handleLanguage={handleLanguage} />
+        {console.log(url, "<<<url")}
         <Switch>
           <Route exact path="/members/supplier">
             <MemberSupplier url={url} />
@@ -89,19 +93,19 @@ function App() {
             <Customer url={url} />
           </Route>
           <Route exact path="/member-list/supplier">
-            <SupplierList url={url} />
+            <SupplierList url={url} mainUrl={mainUrl} />
           </Route>
           <Route exact path="/member-list/wholesaler">
-            <DistributorList url={url} fromWholeSaler={true}/>
+            <DistributorList url={url} mainUrl={mainUrl} fromWholeSaler={true}/>
           </Route>
           <Route exact path="/member-list/reseller">
-            <DistributorList url={url} fromWholeSaler={false}/>
+            <DistributorList url={url} mainUrl={mainUrl} fromWholeSaler={false}/>
           </Route>
           <Route path="/howItWorks">
             <HowItWorks url={url} />
           </Route>
           <Route path="/profile">
-            <Profile url={url} />
+            <Profile url={url} mainUrl={mainUrl} />
           </Route>
           <Route path="/news/:id">
             <NewsDetails url={url} />
@@ -122,7 +126,7 @@ function App() {
             <JoinUs url={url} />
           </Route>
           <Route path="/">
-            <Home url={url} />
+            <Home url={url} mainUrl={mainUrl} />
           </Route>
         </Switch>
         <Footer url={url} visitor={visitor}/>

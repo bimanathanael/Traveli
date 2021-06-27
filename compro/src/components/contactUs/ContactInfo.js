@@ -7,9 +7,11 @@ import youtube from "../../assets/images/youtubeBlue.png";
 import instagram from "../../assets/images/instagramBlue.png";
 
 export const ContactInfo = ({ url }) => {
-  const [data, setData] = useState();
+  const [data, setData] = useState("");
+  const [sosmed, setSosmed] = useState("");
 
   useEffect(() => {
+    
     fetch(`${url}/ContactUs`)
       .then((resp) => {
         if (resp.ok) {
@@ -22,12 +24,23 @@ export const ContactInfo = ({ url }) => {
         setData(message);
       })
       .catch((err) => {});
+    fetch(`${url}/SocialMedia`)
+      .then((resp) => {
+        if (resp.ok) {
+          return resp.json();
+        } else {
+          throw resp;
+        }
+      })
+      .then(({ message }) => {
+        setSosmed(message);
+      })
+      .catch((err) => {});
   }, [url]);
-
 
   return (
     <div>
-      {data !== undefined && (
+      {data !== "" && sosmed !== "" && (
         <div className="container-contact">
           <div className="row">
             <div className="col-md-5 offset-md-1 no-mobile">
@@ -69,24 +82,48 @@ export const ContactInfo = ({ url }) => {
                 <p className="followUsFont">Follow Us</p>
               </div>
               <div className="col-md-12 p-0">
-                <a href="https://www.facebook.com/We-Traveli-107690237944504" target="_blank">
-                  <img className="socialIconBlue" src={facebook} />
-                </a>
-                {/* <a href="#" target="_blank">
-                  <img className="socialIconBlue" src={tiktok} />
-                </a> */}
-                <a href="https://www.linkedin.com/company/72018396" target="_blank">
-                  <img className="socialIconBlue" src={linkedin} />
-                </a>
-                <a href="https://twitter.com/wetraveli" target="_blank">
-                  <img className="socialIconBlue" src={twitter} />
-                </a>
-                <a href="https://www.youtube.com/channel/UCuTqy_SepBmRB0E8FFARYJg" target="_blank">
-                  <img className="socialIconBlue" src={youtube} />
-                </a>
-                <a href="https://instagram.com/wetraveli?igshid=xrr25r70fmfs" target="_blank">
-                  <img className="socialIconBlue" src={instagram} />
-                </a>
+                {
+                  sosmed.Facebook.show && (
+                    <a href={sosmed.Facebook.link} target="_blank">
+                      <img className="socialIconBlue" src={facebook} />
+                    </a>
+                  )
+                }
+                {
+                  sosmed.Tiktok.show && (
+                    <a href={sosmed.Tiktok.show.link} target="_blank">
+                      <img className="socialIconBlue" src={tiktok} />
+                    </a>
+                  )
+                }
+                {
+                  sosmed.Linkedin.show && (
+                    <a href={sosmed.Linkedin.link} target="_blank">
+                      <img className="socialIconBlue" src={linkedin} />
+                    </a>
+                  )
+                }
+                {
+                  sosmed.Twitter.show && (
+                    <a href={sosmed.Twitter.link} target="_blank">
+                      <img className="socialIconBlue" src={twitter} />
+                    </a>
+                  )
+                }
+                {
+                  sosmed.Youtube.show && (
+                    <a href={sosmed.Youtube.link} target="_blank">
+                      <img className="socialIconBlue" src={youtube} />
+                    </a>
+                  )
+                }
+                {
+                  sosmed.Instagram.show && (
+                    <a href={sosmed.Instagram.link} target="_blank">
+                      <img className="socialIconBlue" src={instagram} />
+                    </a>
+                  )
+                }
               </div>
             </div>
           </div>

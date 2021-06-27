@@ -11,7 +11,7 @@ import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import ScrollAnimation from "react-animate-on-scroll";
 
-export const Team = () => {
+export const Team = ({ profileList }) => {
   const [mobileView, setMobileView] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -25,8 +25,8 @@ export const Team = () => {
   return (
     <>
       <div className="container-profile-team">
-        <div className="row mb-5 mt-5 d-flex justify-content-center">
-          <div className="col-md-7 text-center">
+        <div className="row mt-5 d-flex justify-content-center">
+          <div className="text-center">
             <ScrollAnimation animateIn="zoomIn">
               <p className="headingTeam mobile-2">our team</p>
               <p className="descTeam mobile-1">
@@ -39,65 +39,18 @@ export const Team = () => {
           </div>
         </div>
         <ScrollAnimation animateIn="bounceInRight">
-          <div className="row mb-5 mt-5 d-flex justify-content-center pl-5 mobile-no-padding-bottom mobile-no-margin-top">
-            <div className="col-md-3 d-flex justify-content-end mobile-center">
-              <div className="teamCard ">
-                <img className="teamImg" src={deny} />
-                <div className="descTeam">
-                  <p className="teamName ">Deny Fajar</p>
-                  <p className="teamPos ">{"Founder & CEO"}</p>
+          <div className="row mb-5 d-flex justify-content-center mobile-no-padding-bottom mobile-no-margin-top">
+            {profileList && profileList.map((item, index) => (
+                <div className="col-md-4 mb-4 d-flex justify-content-end mobile-center">
+                  <div className="teamCard ">
+                    <img className="teamImg" src={item.image_url} />
+                    <div className="descTeam">
+                      <p className="teamName ">{item.name}</p>
+                      <p className="teamPos ">{item.job}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className="col-md-3 d-flex justify-content-center mobile-center">
-              <div className="teamCard ">
-                <img className="teamImg" src={deka} />
-                <div className="descTeam">
-                  <p className="teamName ">Deka Fandestia</p>
-                  <p className="teamPos ">{"Co-Founder"}</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3 d-flex justify-content-start mobile-center">
-              <div className="teamCard ">
-                <img className="teamImg" src={jefry} />
-                <div className="descTeam">
-                  <p className="teamName ">Jefry L. Lydia</p>
-                  <p className="teamPos ">{"Co-Founder"}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </ScrollAnimation>
-        <ScrollAnimation animateIn="bounceInLeft">
-          <div className="row mb-5 mt-5 d-flex justify-content-center pl-5 mobile-no-margin-top">
-            <div className="col-md-3 d-flex justify-content-end mobile-center">
-              <div className="teamCard ">
-                <img className="teamImg" src={rivan} />
-                <div className="descTeam">
-                  <p className="teamName ">Rivan</p>
-                  <p className="teamPos ">{"Business Development"}</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3 d-flex justify-content-center mobile-center">
-              <div className="teamCard ">
-                <img className="teamImg" src={pongky} />
-                <div className="descTeam">
-                  <p className="teamName ">Pongku Koesasi</p>
-                  <p className="teamPos ">{"Sales & Marketing"}</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3 d-flex justify-content-start mobile-center">
-              <div className="teamCard ">
-                <img className="teamImg" src={aafiyah} />
-                <div className="descTeam">
-                  <p className="teamName ">Aafiyah Salam</p>
-                  <p className="teamPos ">{"Corporate Secretary"}</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </ScrollAnimation>
       </div>
