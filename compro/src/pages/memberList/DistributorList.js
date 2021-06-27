@@ -107,7 +107,7 @@ const useStyles = makeStyles((themes) => ({
   },
 }));
 
-const DistributorList = ({ url, fromWholeSaler }) => {
+const DistributorList = ({ url, fromWholeSaler, mainUrl }) => {
   const classes = useStyles();
   const settings = {
     infinite: false,
@@ -122,26 +122,15 @@ const DistributorList = ({ url, fromWholeSaler }) => {
   const [subDesc, setSubDesc] = useState(null);
   const [openBtn, setOpenBtn] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(null);
-  
-  const distributorListItems = [
-    {
-      img: sekai,
-      url: "https://sekaitour.com"
-    }
-  ]
-  
-  const agencyListItems = [
-  ]
-  
-  const corporateListItems = [
-  ]
 
   const [triggerSub, setTriggerSub] = useState(`wholesaler`);
   const [colorButtonOne, setColorButtonOne] = useState("yellow");
   const [colorButtonTwo, setColorButtonTwo] = useState("white");
   const [colorButtonThree, setColorButtonThree] = useState("white");
-  const [currentList, setCurrentList] = useState(distributorListItems)
-  
+  const [distributorListItems, setDistributorListItems] = useState([])  
+  const [agencyListItems, setAgencyListItems] = useState([])  
+  const [corporateListItems, setCorporateListItems] = useState([])  
+  const [currentList, setCurrentList] = useState([])
 
   const [oneClicked, setOneClicked] = useState(false);
   const [twoClicked, setTwoClicked] = useState(false);
@@ -153,57 +142,92 @@ const DistributorList = ({ url, fromWholeSaler }) => {
   }, [fromWholeSaler])
   
   useEffect(() => {
+    
     axios
-      .get(`${url}/MembersListWholesaler`)
-      .then((res) => {
+    .get(`${url}/MembersListWholesaler`)
+    .then((res) => {
+      if (res.data.message) {
+        const hero = res.data.message.Hero;
+        if (hero) {
+          setTitle(hero.Title);
+          setDesc({
+            descOne: hero.Description1,
+            descTwo: hero.Description2,
+          });
+        }
+        if (triggerSub === "wholesaler") {
+          const wholesalerList = res.data.message.WholesalerList;
+          if (wholesalerList) {
+            setSubTitle(wholesalerList.Title);
+            setSubDesc(wholesalerList.Description);
+          }
+        }
+        
+        if (triggerSub === "corporate") {
+          const corporateList = res.data.message.CorporateList;
+          if (corporateList) {
+            setSubTitle(corporateList.Title);
+            setSubDesc(corporateList.Description);
+          }
+        }
+        
+        if (triggerSub === "agency") {
+          const agencyList = res.data.message.AgencyList;
+          if (agencyList) {
+            setSubTitle(agencyList.Title);
+            setSubDesc(agencyList.Description);
+          }
+        }
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }, [triggerSub, url]);
+  
+  const openButton = (index) => {
+    setCurrentIndex(index);
+    setOpenBtn(true);
+  };
+  
+  useEffect( () => {
+    axios
+    .get(`${mainUrl}/wholesaler`)
+    .then((res) => {
+      if (res.data.message) {
+        setDistributorListItems(res.data.message)
+        if (fromWholeSaler) {
+          setCurrentList(res.data.message) 
+        }
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+    axios
+    .get(`${mainUrl}/reseller`)
+    .then((res) => {
         if (res.data.message) {
-          const hero = res.data.message.Hero;
-          if (hero) {
-            setTitle(hero.Title);
-            setDesc({
-              descOne: hero.Description1,
-              descTwo: hero.Description2,
-            });
-          }
-          if (triggerSub === "wholesaler") {
-            const wholesalerList = res.data.message.WholesalerList;
-            if (wholesalerList) {
-              setSubTitle(wholesalerList.Title);
-              setSubDesc(wholesalerList.Description);
-            }
-          }
-
-          if (triggerSub === "corporate") {
-            const corporateList = res.data.message.CorporateList;
-            if (corporateList) {
-              setSubTitle(corporateList.Title);
-              setSubDesc(corporateList.Description);
-            }
-          }
-
-          if (triggerSub === "agency") {
-            const agencyList = res.data.message.AgencyList;
-            if (agencyList) {
-              setSubTitle(agencyList.Title);
-              setSubDesc(agencyList.Description);
-            }
+          setAgencyListItems(res.data.message)
+          if (fromWholeSaler == false) {
+            setCurrentList(res.data.message) 
           }
         }
       })
       .catch((err) => {
         console.log(err);
       });
-  }, [triggerSub, url]);
-
-  const openButton = (index) => {
-    setCurrentIndex(index);
-    setOpenBtn(true);
-  };
-
-  //   const handleCloseButton = () => {
-  //     setCurrentIndex(null);
-  //     setOpenBtn(false);
-  //   };
+    axios
+      .get(`${mainUrl}/corporate`)
+      .then((res) => {
+        if (res.data.message) {
+          setCorporateListItems(res.data.message)
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [mainUrl])
 
   const handleButtonOne = () => {
     setColorButtonOne("yellow");
@@ -256,11 +280,11 @@ const DistributorList = ({ url, fromWholeSaler }) => {
               <div className={`col-md-8 col-sm-12 ${classes.sliderHero}`}>
                 <ScrollAnimation animateIn="fadeInRight">
                   <Slider {...settings}>
-                    {distributorListItems.map((item, index) => (
+                    {currentList.length > 0  && currentList.map((item, index) => (
                       <div key={index}>
-                        <a href={item.url} target="__blank">
+                        <a href={item.link} target="__blank">
                           <img
-                            src={item.img}
+                            src={item.image_url}
                             alt={`logo-travel`}
                             width={"230rem"}
                             height={"80rem"}
@@ -445,7 +469,7 @@ const DistributorList = ({ url, fromWholeSaler }) => {
                   </div>
                 </div>
                 <div className="row" style={{ width: "33rem" }}>
-                  {currentList.map((item, index) => (
+                  {currentList.length > 0  && currentList.map((item, index) => (
                     <div key={index} className="col-md-6 col-sm-6">
                       <button
                         style={{
@@ -459,7 +483,7 @@ const DistributorList = ({ url, fromWholeSaler }) => {
                           className={`card text-center ${classes.cardCompany}`}
                         >
                           <img
-                            src={item.img}
+                            src={item.image_url}
                             width={
                               openBtn && currentIndex === index ? "80%" : "90%"
                             }
@@ -485,7 +509,7 @@ const DistributorList = ({ url, fromWholeSaler }) => {
                                 variant="contained"
                                 // fullWidth={true}
                               >
-                                <a href={item.url} target="__blank">
+                                <a href={item.link} target="__blank">
                                   Visit
                                 </a>
                               </Button>

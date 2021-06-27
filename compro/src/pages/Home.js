@@ -7,8 +7,9 @@ import { Why } from "../components/home/Why";
 import { Provide } from "../components/home/Provide";
 import { useEffect, useState } from "react";
 
-export const Home = ({ url }) => {
+export const Home = ({ url, mainUrl }) => {
   const [data, setData] = useState();
+  const [favPartner, setFavPartner] = useState();
   const [waNumber, setWaNumber] = useState();
   // const [news, setNews] = useState();
   // const [promo, setPromo] = useState();
@@ -57,7 +58,7 @@ export const Home = ({ url }) => {
     //   })
     //   .catch((err) => {});
 
-      fetch(url + `/ContactUs`)
+    fetch(url + `/ContactUs`)
       .then((resp) => {
         if (resp.ok) {
           return resp.json();
@@ -70,6 +71,24 @@ export const Home = ({ url }) => {
       })
       .catch((err) => {});
   }, [url]);
+
+  useEffect(() =>{
+    console.log(mainUrl + `/favoritePartner`)
+    fetch(mainUrl + `/favoritePartner`)
+      .then((resp) => {
+        if (resp.ok) {
+          return resp.json();
+        } else {
+          throw resp;
+        }
+      })
+      .then(({ message }) => {
+        setFavPartner(message)
+      })
+      .catch((err) => {
+        console.log(err)
+      });
+  }, [mainUrl])
 
   if (data !== undefined) {
     supplier = {
@@ -101,7 +120,7 @@ export const Home = ({ url }) => {
 
   return (
     <>
-      {data !== undefined && waNumber !== undefined && (
+      {data !== undefined && waNumber !== undefined && favPartner &&(
       // {data !== undefined && news !== undefined && promo !== undefined && waNumber !== undefined && (
         <div>
           {/* <Hero data={ data.Hero } /> */}
@@ -125,7 +144,7 @@ export const Home = ({ url }) => {
             dataDesc={data.KeyBenefitsDescription}
           />
           {/* <News news={news} /> */}
-          <Partners/>
+          <Partners favPartner={favPartner}/>
           {/* <Testimonials /> */}
         </div>
       )}

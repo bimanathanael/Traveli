@@ -4,8 +4,9 @@ import { AboutUs } from "../components/profile/AboutUs";
 import { VisionMission } from "../components/profile/VisionMission";
 import { Team } from "../components/profile/Team";
 
-export const Profile = ({ url }) => {
-  const [data, setData] = useState("");
+export const Profile = ({ url, mainUrl }) => {
+  const [dataProfile, setDataProfile] = useState();
+  const [profileList, setProfileList] = useState("");
 
   useEffect(() => {
     fetch(url + `/Profile`)
@@ -17,14 +18,29 @@ export const Profile = ({ url }) => {
         }
       })
       .then(({ message }) => {
-        setData(message);
+        setDataProfile(message);
       })
       .catch((err) => {});
   }, [url]);
+  
+  useEffect(() => {
+    fetch(mainUrl + `/Profile`)
+      .then((resp) => {
+        if (resp.ok) {
+          return resp.json();
+        } else {
+          throw resp;
+        }
+      })
+      .then(({ message }) => {
+        setProfileList(message);
+      })
+      .catch((err) => {});
+  }, [mainUrl]);
 
   const filteringData = (section) => {
     let sortedList = {};
-    for (let [key, value] of Object.entries(data)) {
+    for (let [key, value] of Object.entries(dataProfile)) {
       if (key === section) {
         sortedList = value;
       }
@@ -33,7 +49,7 @@ export const Profile = ({ url }) => {
   };
   return (
     <>
-      {data.length !== 0 && (
+      {dataProfile && profileList && (
         <div>
           <Hero dataHero={filteringData("Hero")} />
           <AboutUs
@@ -41,8 +57,8 @@ export const Profile = ({ url }) => {
             dataAboutUsBottom={filteringData("AboutUsBottom")}
             dataAboutUsCaption={filteringData("AboutUsCaption")}
           />
-          <VisionMission dataVisiMisi={filteringData("VisiMisi")} />
-          <Team />
+          <VisionMission dataVisi={dataProfile.Visi} dataMisi={dataProfile.Misi} />
+          <Team profileList={profileList}/>
         </div>
       )}
     </>

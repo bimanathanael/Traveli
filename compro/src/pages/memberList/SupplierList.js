@@ -45,26 +45,7 @@ const useStyles = makeStyles((themes) => ({
   },
 }));
 
-const supplierListItems = [
-  {
-    img:liburania,
-    url: "https://liburania.com"
-  },{
-    img:rodex,
-    url: "https://rodextrip.com"
-  },{
-    img:hotelinx,
-    url: "https://hotelinx.com"
-  },{
-    img:mgBedBank,
-    url: "https://mgbedbank.com"
-  },{
-    img:voltras,
-    url: "http://voltras.co.id"
-  },
-]
-
-const SupplierList = ({ url }) => {
+const SupplierList = ({ url, mainUrl }) => {
   const classes = useStyles();
   const settings = {
     dots: true,
@@ -103,6 +84,7 @@ const SupplierList = ({ url }) => {
 
   const [title, setTitle] = useState(null);
   const [desc, setDesc] = useState(null);
+  const [list, setList] = useState(null);
 
   useEffect(() => {
     axios
@@ -120,6 +102,20 @@ const SupplierList = ({ url }) => {
         console.log(err);
       });
   }, [url]);
+
+  useEffect( () => {
+    axios
+      .get(`${mainUrl}/supplier`)
+      .then((res) => {
+        if (res.data.message) {
+          setList(res.data.message)
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [mainUrl])
+
   return (
     <div className="members-page">
       <div className={classes.heroSupplier}>
@@ -143,11 +139,11 @@ const SupplierList = ({ url }) => {
                     style={{ maxWidth: "40rem", margin: "5rem auto" }}
                   >
                     <Slider {...settings}>
-                      {supplierListItems.map((item, index) => (
+                      {list && list.map((item, index) => (
                         <div key={index}>
-                          <a href={item.url} target="__blank">
+                          <a href={item.link} target="__blank">
                             <img
-                              src={item.img}
+                              src={item.image_url}
                               alt={`logo${index}`}
                               width={"170rem"}
                               height={"80rem"}
@@ -220,27 +216,25 @@ const SupplierList = ({ url }) => {
             className="row"
             style={{ maxWidth: "75rem", margin: "0 auto 5rem auto" }}
           >
-            {supplierListItems.map((item, index) => (
+            {list && list.map((item, index) => (
               <div
                 key={index}
                 className="col-md-3 col-sm-12"
                 style={{ margin: "1rem 0" }}
               >
-                  <a href={item.url} target="__blank">
-                <div className={`${classes.cardContainer} card text-center`}>
-                    <img
-                      src={item.img}
-                      width={"80%"}
-                      alt="logo-oyo"
-                      style={{
-                        margin: "auto auto",
-                        objectFit: "contain",
-                      }}
-                    />
-                  {/* <div className="card-body">
-                                        </div> */}
-                </div>
-                                        </a>
+                <a href={item.link} target="__blank">
+                  <div className={`${classes.cardContainer} card text-center`}>
+                      <img
+                        src={item.image_url}
+                        width={"80%"}
+                        alt="logo-oyo"
+                        style={{
+                          margin: "auto auto",
+                          objectFit: "contain",
+                        }}
+                      />
+                  </div>
+                </a>
               </div>
             ))}
           </div>

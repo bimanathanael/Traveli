@@ -53,6 +53,7 @@ export const Nav = ({ handleLanguage }) => {
 
   const handleLanguageButton = (lang) => {
     handleLanguage(lang);
+    window.location.reload();
   };
 
   return (

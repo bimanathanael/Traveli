@@ -1379,10 +1379,6 @@
   width: 61px;
 }
 
-p {
-  color: grey;
-}
-
 .packageContainer {
   margin-bottom: 52vh;
   background-color: transparent;
@@ -1525,8 +1521,7 @@ p {
 }
 
 .container-profile-team {
-  margin-bottom: 7%;
-  margin-top: 10%;
+  margin: 10% 15% 7% 15%;
   background-image: url("../images/bgTeam.png");
   background-size: cover;
   background-repeat: no-repeat;

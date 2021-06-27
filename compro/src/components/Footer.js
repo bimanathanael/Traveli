@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 
 export const Footer = ({ url, visitor }) => {
   const [data, setData] = useState();
+  const [sosmed, setSosmed] = useState();
   const [toggle, toggleSet] = useState(false)
 
   useEffect(() => {
@@ -30,6 +31,18 @@ export const Footer = ({ url, visitor }) => {
         setData(message);
       })
       .catch((err) => {});
+    fetch(`${url}/SocialMedia`)
+      .then((resp) => {
+        if (resp.ok) {
+          return resp.json();
+        } else {
+          throw resp;
+        }
+      })
+      .then(({ message }) => {
+        setSosmed(message);
+      })
+      .catch((err) => {});
   }, [url]);
 
   const toggleDetails = () => {
@@ -38,7 +51,7 @@ export const Footer = ({ url, visitor }) => {
 
   return (
     <>
-      {data !== undefined && (
+      {data !== undefined && sosmed && (
         <div className="container-footer text-white">
           <div className="row oneRem">
             <div className="col-md-3 no-mobile">
@@ -155,22 +168,48 @@ export const Footer = ({ url, visitor }) => {
                   <h4 className="oneRem">Follow Us</h4>
                 </div>
                 <div className="col-md-12 text-center">
-                  <a href="https://www.facebook.com/We-Traveli-107690237944504" target="_blank">
-                    <img className="socialIcon" src={facebook} />
-                  </a>
-                  <img className="socialIcon" src={tiktok} />
-                  <a href="https://www.linkedin.com/company/72018396" target="_blank">
-                    <img className="socialIcon" src={linkedin} />
-                  </a>
-                  <a href="https://twitter.com/wetraveli" target="_blank">
-                    <img className="socialIcon" src={twitter} />
-                  </a>
-                  <a href="https://www.youtube.com/channel/UCuTqy_SepBmRB0E8FFARYJg" target="_blank">
-                    <img className="socialIcon" src={youtube} />
-                  </a>
-                  <a href="https://www.instagram.com/sobattraveli/" target="_blank">
-                    <img className="socialIcon" src={instagram} />
-                  </a>
+                  {
+                    sosmed.Facebook.show && (
+                      <a href={sosmed.Facebook.link} target="_blank">
+                        <img className="socialIcon" src={facebook} />
+                      </a>
+                    )
+                  }
+                  {
+                    sosmed.Tiktok.show && (
+                      <a href={sosmed.Tiktok.show.link} target="_blank">
+                        <img className="socialIcon" src={tiktok} />
+                      </a>
+                    )
+                  }
+                  {
+                    sosmed.Linkedin.show && (
+                      <a href={sosmed.Linkedin.link} target="_blank">
+                        <img className="socialIcon" src={linkedin} />
+                      </a>
+                    )
+                  }
+                  {
+                    sosmed.Twitter.show && (
+                      <a href={sosmed.Twitter.link} target="_blank">
+                        <img className="socialIcon" src={twitter} />
+                      </a>
+                    )
+                  }
+                  {
+                    sosmed.Youtube.show && (
+                      <a href={sosmed.Youtube.link} target="_blank">
+                        <img className="socialIcon" src={youtube} />
+                      </a>
+                    )
+                  }
+                  {
+                    sosmed.Instagram.show && (
+                      <a href={sosmed.Instagram.link} target="_blank">
+                        <img className="socialIcon" src={instagram} />
+                      </a>
+                    )
+                  }
                 </div>
               </div>
             
