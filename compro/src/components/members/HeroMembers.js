@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import parse from 'html-react-parser';
 import { makeStyles } from "@material-ui/core";
 import ButtonTry from "../ButtonTry";
 import ButtonWatch from "../ButtonWatch";
@@ -97,7 +98,9 @@ const HeroMembers = ({ backgroundHero, data, footer = true, btnData, btnHero }) 
                   </div>
                   <div className="col-12">
                     <div className={classes.contentMembers}>
-                      <p className={classes.heroDesc}>{data.description}</p>
+                      <div className={classes.heroDesc}>
+                        {parse(data.description)}
+                      </div>
                     </div>
                   </div>
                   <div className="col-md-12 col-sm-12">

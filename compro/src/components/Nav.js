@@ -26,15 +26,15 @@ export const Nav = ({ handleLanguage }) => {
     aboutUsUnderline = true;
     navbarClass += "navBlue";
   } else if (
-    locationNow == "/member-list/supplier" ||
-    locationNow == "/member-list/wholesaler"
+    locationNow == "/supplier-list" ||
+    locationNow == "/wholesaler-list"
   ) {
     memberListUnderline = true;
   } else if (
-    locationNow == "/members/supplier" ||
-    locationNow == "/members/wholesaler" ||
-    locationNow == "/members/reseller" ||
-    locationNow == "/members/customer"
+    locationNow == "/supplier-members" ||
+    locationNow == "/wholesaler-members" ||
+    locationNow == "/reseller-members" ||
+    locationNow == "/customer-members"
   ) {
     blackText = true
     memberUnderline = true;
@@ -110,7 +110,7 @@ export const Nav = ({ handleLanguage }) => {
                   <div className="col-md-3">
                     <div className="row">
                       <div className="col-md-8">
-                        <a className="dropdown-item menu-heading" href="/members/supplier">
+                        <a className="dropdown-item menu-heading" href="/supplier-members">
                           SUPPLIER
                         </a>
                       </div>
@@ -130,7 +130,7 @@ export const Nav = ({ handleLanguage }) => {
                   <div className="col-md-3 borderLeft">
                     <div className="row">
                       <div className="col-md-8">
-                        <a href="/members/wholesaler" className="dropdown-item menu-heading">
+                        <a href="/wholesaler-members" className="dropdown-item menu-heading">
                           WHOLESALER
                         </a>
                       </div>
@@ -150,7 +150,7 @@ export const Nav = ({ handleLanguage }) => {
                   <div className="col-md-3 borderLeft">
                     <div className="row">
                       <div className="col-md-8">
-                        <a href="/members/reseller" className="dropdown-item menu-heading">
+                        <a href="/reseller-members" className="dropdown-item menu-heading">
                           RESELLER
                         </a>
                       </div>
@@ -170,7 +170,7 @@ export const Nav = ({ handleLanguage }) => {
                   <div className="col-md-3 borderLeft">
                     <div className="row">
                       <div className="col-md-8">
-                        <a href="/members/customer" className="dropdown-item menu-heading">
+                        <a href="/customer-members" className="dropdown-item menu-heading">
                           CUSTOMER
                         </a>
                       </div>
@@ -181,8 +181,8 @@ export const Nav = ({ handleLanguage }) => {
                       </div>
                       <div className="col-md-7 p-0">
                         <p className="mb-0">
-                          Down-line distributor yang memiliki market yang luas dan variatif, dapat langsung 
-                          menjual ke End Customer
+                        Pelaku transaksi sebagai pembeli sekaligus pengguna produk Pariwisata. 
+                        Bisa juga bergabung sebagai Personal Travel Agent
                         </p>
                       </div>
                     </div>
@@ -205,13 +205,13 @@ export const Nav = ({ handleLanguage }) => {
                 Members
               </a>
               <div className="dropdown-menu " aria-labelledby="navbarDropdown">
-                <a className="dropdown-item mobile-1" href="/members/supplier">
+                <a className="dropdown-item mobile-1" href="/supplier-members">
                   Supplier
                 </a>
-                <a className="dropdown-item mobile-1" href="/members/wholesaler">
+                <a className="dropdown-item mobile-1" href="/wholesaler-members">
                   Wholesaler
                 </a>
-                <a className="dropdown-item mobile-1" href="/members/reseller">
+                <a className="dropdown-item mobile-1" href="/reseller-members">
                   Reseller
                 </a>
               </div>
@@ -238,7 +238,7 @@ export const Nav = ({ handleLanguage }) => {
                 <div className="row">
                   <div className="col-md-6">
                     <Link
-                      to="/member-list/supplier"
+                      to="/supplier-list"
                       className="dropdown-item menu-heading"
                     >
                       SUPPLIER LIST
@@ -250,7 +250,7 @@ export const Nav = ({ handleLanguage }) => {
                   </div>
                   <div className="col-md-6 borderLeft">
                     <Link
-                      to="/member-list/wholesaler"
+                      to="/wholesaler-list"
                       className="dropdown-item menu-heading"
                     >
                       WHOLESALER LIST
@@ -279,10 +279,10 @@ export const Nav = ({ handleLanguage }) => {
                 Member List
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <Link to="/member-list/supplier">
+                <Link to="/supplier-list">
                   <a className="dropdown-item mobile-1">Supplier List</a>
                 </Link>
-                <Link to="/member-list/wholesaler">
+                <Link to="/wholesaler-list">
                   <a className="dropdown-item mobile-1">Wholesaler</a>
                 </Link>
               </div>

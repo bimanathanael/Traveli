@@ -6,7 +6,7 @@ import { Team } from "../components/profile/Team";
 
 export const Profile = ({ url, mainUrl }) => {
   const [dataProfile, setDataProfile] = useState();
-  const [profileList, setProfileList] = useState("");
+  const [profileList, setProfileList] = useState();
 
   useEffect(() => {
     fetch(url + `/Profile`)
@@ -18,6 +18,7 @@ export const Profile = ({ url, mainUrl }) => {
         }
       })
       .then(({ message }) => {
+        console.log(message,"<<<< PROFIle JS")
         setDataProfile(message);
       })
       .catch((err) => {});
@@ -56,6 +57,7 @@ export const Profile = ({ url, mainUrl }) => {
             dataAboutUsTop={filteringData("AboutUsTop")}
             dataAboutUsBottom={filteringData("AboutUsBottom")}
             dataAboutUsCaption={filteringData("AboutUsCaption")}
+            dataProfile={dataProfile}
           />
           <VisionMission dataVisi={dataProfile.Visi} dataMisi={dataProfile.Misi} />
           <Team profileList={profileList}/>

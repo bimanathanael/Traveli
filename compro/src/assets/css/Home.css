@@ -1211,7 +1211,7 @@
   /* background-image: url("../images/partners.png"); */
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 10% 6% 10% 6%;
+  padding: 10% 15% 10% 15%;
 }
 
 .container-testimonials {
@@ -1817,17 +1817,19 @@ button {
 .sub-menu-button {
   text-transform: uppercase;
   color: #b2e6f2;
-  font-size: 1rem;
+  font-size: 0.8rem;
   padding: 0% 7% !important;
   margin: 0px 10px;
+  font-family: 'Bristone';
   letter-spacing: 2px;
 }
 
 .sub-menu-button-active {
   border-radius: 8px;
   color: white;
-  font-size: 1rem;
+  font-size: 0.8rem;
   padding: 0% 7% !important;
+  font-family: 'Bristone';
   border: 1px solid white;
 }
 
@@ -2168,7 +2170,7 @@ button {
 .menu-desc {
   margin-top: 3%;
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .ml-6 {
@@ -2430,7 +2432,7 @@ button {
 .benefitDesc {
   font-weight: 400;
   margin-bottom: 0px;
-
+  color: #6a7794;
   font-size: 1rem;
   text-align: left;
   margin-top: 8%;

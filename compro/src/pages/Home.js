@@ -10,11 +10,10 @@ import { useEffect, useState } from "react";
 export const Home = ({ url, mainUrl }) => {
   const [data, setData] = useState();
   const [favPartner, setFavPartner] = useState();
-  const [waNumber, setWaNumber] = useState();
   // const [news, setNews] = useState();
   // const [promo, setPromo] = useState();
   // const [isLoading, setIsLoading] = useState(true);
-  let supplier, wholesaler, agency, corporate, petra;
+  let supplier, wholesaler, agency, corporate, petra, customer;
 
   useEffect(() => {
     fetch(url + `/Home`)
@@ -26,6 +25,7 @@ export const Home = ({ url, mainUrl }) => {
         }
       })
       .then(({ message }) => {
+        console.log(message, "<<< setData(message);")
         setData(message);
       })
       .catch((err) => {});
@@ -57,23 +57,9 @@ export const Home = ({ url, mainUrl }) => {
     //     setPromo(message);
     //   })
     //   .catch((err) => {});
-
-    fetch(url + `/ContactUs`)
-      .then((resp) => {
-        if (resp.ok) {
-          return resp.json();
-        } else {
-          throw resp;
-        }
-      })
-      .then(({ message }) => {
-        setWaNumber(message);
-      })
-      .catch((err) => {});
   }, [url]);
 
   useEffect(() =>{
-    console.log(mainUrl + `/favoritePartner`)
     fetch(mainUrl + `/favoritePartner`)
       .then((resp) => {
         if (resp.ok) {
@@ -111,6 +97,10 @@ export const Home = ({ url, mainUrl }) => {
       conditions: data.TraveliMembershipCorporateCondition,
       header: data.TraveliMembershipCorporateHeader,
     };
+    customer = {
+      benefits: data.TraveliMembershipCustomerBenefits,
+      header: data.TraveliMembershipCustomerHeader,
+    };
     petra = {
       benefits: data.TraveliMembershipPersonalTraveliBenefits,
       conditions: data.TraveliMembershipPersonalTraveliCondition,
@@ -120,12 +110,11 @@ export const Home = ({ url, mainUrl }) => {
 
   return (
     <>
-      {data !== undefined && waNumber !== undefined && favPartner &&(
-      // {data !== undefined && news !== undefined && promo !== undefined && waNumber !== undefined && (
+      {data !== undefined && favPartner &&(
         <div>
           {/* <Hero data={ data.Hero } /> */}
-          <Hero data={data.Hero} waNumber={waNumber.ContactInformation.WhatsappNumber} />
-          {/* <Hero data={data.Hero} promo={promo} waNumber={waNumber.ContactInformation.WhatsappNumber} /> */}
+          <Hero data={data.Hero}  />
+          {/* <Hero data={data.Hero} promo={promo} /> */}
           <Why
             dataDesc={data.WhyChooseTraveliDescription}
             dataTitle={data.WhyChooseTraveliTitle}
@@ -138,6 +127,7 @@ export const Home = ({ url, mainUrl }) => {
             agency={agency}
             corporate={corporate}
             petra={petra}
+            customer={customer}
           />
           <Benefits
             dataTitle={data.KeyBenefitsTitle}

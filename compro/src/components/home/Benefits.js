@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
 import prev from '../../assets/images/prev.png';
 import next from '../../assets/images/next.png';
+import parse from 'html-react-parser';
 
 export const Benefits = ({dataTitle, dataDesc}) => {
     const [mobileView, setMobileView] = useState(window.innerWidth)
@@ -14,19 +15,19 @@ export const Benefits = ({dataTitle, dataDesc}) => {
     const dataBenefits = [
         {
             title: dataTitle.Title1,
-            desc: dataDesc.Description1,
+            desc: dataDesc.Description1_RT,
             image: benefits1New,
         },{
             title: dataTitle.Title2,
-            desc: dataDesc.Description2,
+            desc: dataDesc.Description2_RT,
             image: benefits2New,
         },{
             title: dataTitle.Title3,
-            desc: dataDesc.Description3,
+            desc: dataDesc.Description3_RT,
             image: benefits3New,
         },{
             title: dataTitle.Title4,
-            desc: dataDesc.Description4,
+            desc: dataDesc.Description4_RT,
             image: benefits4New,
         }
     ]
@@ -78,9 +79,9 @@ export const Benefits = ({dataTitle, dataDesc}) => {
                                                                     </h1>
                                                                 </div>
                                                                 <div className="col-md-12">
-                                                                    <p className="benefitDesc mobile-1">
-                                                                        {data.desc}
-                                                                    </p>
+                                                                    <div className="benefitDesc mobile-1">
+                                                                        {parse(data.desc)}
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>

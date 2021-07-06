@@ -27,7 +27,7 @@ const Supplier = ({ url }) => {
   const [conditionContent, setConditionContent] = useState(null);
   const btnData ={
     title: "Supplier List",
-    link: "/member-list/supplier"
+    link: "/supplier-list"
   }
 
   useEffect(() => {
@@ -39,7 +39,7 @@ const Supplier = ({ url }) => {
           // Hero
           const hero = {
             title: dataRaw.Hero.Title,
-            description: dataRaw.Hero.Description,
+            description: dataRaw.Hero.Description_RT,
             footer: dataRaw.Hero.Footer,
           };
           setHeroContent(hero);
@@ -151,7 +151,7 @@ const Supplier = ({ url }) => {
         data={heroContent} 
         btnData={btnData} 
         backgroundHero={heroBackground}
-        btnHero={true} 
+        btnHero={true}
       />
       <BenefitMembers
         textHeader={"FOR SUPPLIER"}

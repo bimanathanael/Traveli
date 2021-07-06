@@ -38,7 +38,6 @@ const useStyles = makeStyles((themes) => ({
     },
   },
   companyDetail: {
-    backgroundColor: "rgba(0, 0, 0, 0.6)",
     color: "white",
     paddingTop: "50%",
     paddingBottom: "50%",
@@ -459,12 +458,12 @@ const DistributorList = ({ url, fromWholeSaler, mainUrl }) => {
                   </div>
                   <div>
                     <div style={{ display: "flex" }}>
-                      <IconButton size="small">
+                      {/* <IconButton size="small">
                         <ChevronLeftIcon style={{ color: "black" }} />
                       </IconButton>
                       <IconButton size="small">
                         <ChevronRightIcon style={{ color: "black" }} />
-                      </IconButton>
+                      </IconButton> */}
                     </div>
                   </div>
                 </div>
