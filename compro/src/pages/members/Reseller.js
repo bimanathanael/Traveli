@@ -35,7 +35,7 @@ const Reseller = ({ url }) => {
   const [agentProcess, setAgentProcess] = useState(true);
   const btnData ={
     title: "Reseller List",
-    link: "/member-list/reseller"
+    link: "/reseller-list"
   }
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const Reseller = ({ url }) => {
           // Hero
           const hero = {
             title: dataRaw.Hero.Title,
-            description: dataRaw.Hero.Description,
+            description: dataRaw.Hero.Description_RT,
             footer:
               "ARE YOU AN AGENT OR RESELLER LOOKING TO GAIN COMPETITIVE ADVANTAGE?",
           };

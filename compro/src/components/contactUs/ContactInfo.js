@@ -48,10 +48,10 @@ export const ContactInfo = ({ url }) => {
                 <div className="gmap_canvas">
                   <iframe
                     id="gmap_canvas"
-                    frameborder="0"
+                    frameBorder="0"
                     scrolling="no"
-                    marginheight="0"
-                    marginwidth="0"
+                    marginHeight="0"
+                    marginWidth="0"
                     src="https://maps.google.com/maps?q=gedung%20victoria&t=&z=17&ie=UTF8&iwloc=&output=embed"
                   ></iframe>
                 </div>

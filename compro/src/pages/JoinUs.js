@@ -79,7 +79,7 @@ export const JoinUs = ({url}) => {
             </div>
             <div className="row pt-3  d-flex justify-content-center borderTop pt-5 mobile-top-padding">
               <div className="col-md-3 text-center">
-                <a href="/member-list/wholesaler">
+                <a href="/wholesaler-list">
                   <button className="btnOnLogin"
                   onMouseEnter={ ()=> { setDesc(texts.agency) }}
                   onMouseLeave={ ()=> { setDesc("") }}>
@@ -88,7 +88,7 @@ export const JoinUs = ({url}) => {
                 </a>
               </div>
               <div className="col-md-3 text-center">
-                <a href="/member-list/wholesaler">
+                <a href="/wholesaler-list">
                   <button className="btnOnLogin"
                   onMouseEnter={ ()=> { setDesc(texts.corp) }}
                   onMouseLeave={ ()=> { setDesc("") }}>
@@ -97,7 +97,7 @@ export const JoinUs = ({url}) => {
                 </a>
               </div>
               <div className="col-md-3 text-center">
-                <a href="/member-list/wholesaler">
+                <a href="/wholesaler-list">
                   <button className="btnOnLogin"
                   onMouseEnter={ ()=> { setDesc(texts.petra) }}
                   onMouseLeave={ ()=> { setDesc("") }}>

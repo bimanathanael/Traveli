@@ -29,10 +29,12 @@ import Customer from "./pages/members/Customer";
 import SupplierList from "./pages/memberList/SupplierList";
 import DistributorList from "./pages/memberList/DistributorList";
 import axios from "axios"
+import whatsapp2 from './assets/images/whatsapp2.png'
 
 function App() {
   const mainUrl = 'https://nameless-sea-46356.herokuapp.com'
-  const [url, setUrl] = useState(mainUrl);
+  const [url, setUrl] = useState();
+  const [waNumber, setWaNumber] = useState();
   const [visitor, setVisitor] = useState({});
 
   useEffect(() => {
@@ -58,6 +60,31 @@ function App() {
     .catch( (err) => {
       console.log(err)
     })
+
+    axios.post(`${mainUrl}/visitorHistory`,{
+      Day,
+      Month,
+      Year
+    })
+    .then( ({data}) =>{
+      console.log("Success")
+    })
+    .catch( (err) => {
+      console.log(err)
+    })
+
+    fetch(url + `/ContactUs`)
+    .then((resp) => {
+      if (resp.ok) {
+        return resp.json();
+      } else {
+        throw resp;
+      }
+    })
+    .then(({ message }) => {
+      setWaNumber(message.ContactInformation.WhatsappNumber);
+    })
+    .catch((err) => {});
   }, [url]);
 
   const handleLanguage = (lang) => {
@@ -75,30 +102,30 @@ function App() {
   };
   return (
     <ParallaxProvider>
-      {/* <div  data-scroll-container> */}
+      { url && ( 
+        
       <Router>
         <Nav url={url} handleLanguage={handleLanguage} />
-        {console.log(url, "<<<url")}
         <Switch>
-          <Route exact path="/members/supplier">
+          <Route exact path="/supplier-members">
             <MemberSupplier url={url} />
           </Route>
-          <Route exact path="/members/wholesaler">
+          <Route exact path="/wholesaler-members">
             <MembersWholesaler url={url} />
           </Route>
-          <Route exact path="/members/reseller">
+          <Route exact path="/reseller-members">
             <MembersReseller url={url} />
           </Route>
-          <Route exact path="/members/customer">
+          <Route exact path="/customer-members">
             <Customer url={url} />
           </Route>
-          <Route exact path="/member-list/supplier">
+          <Route exact path="/supplier-list">
             <SupplierList url={url} mainUrl={mainUrl} />
           </Route>
-          <Route exact path="/member-list/wholesaler">
+          <Route exact path="/wholesaler-list">
             <DistributorList url={url} mainUrl={mainUrl} fromWholeSaler={true}/>
           </Route>
-          <Route exact path="/member-list/reseller">
+          <Route exact path="/reseller-list">
             <DistributorList url={url} mainUrl={mainUrl} fromWholeSaler={false}/>
           </Route>
           <Route path="/howItWorks">
@@ -108,10 +135,10 @@ function App() {
             <Profile url={url} mainUrl={mainUrl} />
           </Route>
           <Route path="/news/:id">
-            <NewsDetails url={url} />
+            <NewsDetails mainUrl={mainUrl} />
           </Route>
           <Route path="/news">
-            <News url={url} />
+            <News mainUrl={mainUrl} />
           </Route>
           <Route path="/contactUs">
             <ContactUs url={url} />
@@ -131,8 +158,10 @@ function App() {
         </Switch>
         <Footer url={url} visitor={visitor}/>
       </Router>
-
-      {/* </div> */}
+      )}
+      <a href={`http://wa.me/${waNumber}?text=Hallo%20Customer%20Care%20Traveli`}  target="_blank">
+        <img className="floatingWA" src={whatsapp2}/>
+      </a>
     </ParallaxProvider>
   );
 }

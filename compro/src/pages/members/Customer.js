@@ -69,14 +69,14 @@ const Supplier = ({ url }) => {
 
   useEffect(() => {
     axios
-      .get(`${url}/TraveliKuy`)
+      .get(`${url}/Customer`)
       .then((res) => {
         const dataRaw = res.data.message;
         if (dataRaw) {
           // Hero
           const hero = {
             title: dataRaw.Hero.Title,
-            description: dataRaw.Hero.Descripiton,
+            description: dataRaw.Hero.Description_RT,
           };
           setHeroContent(hero);
 

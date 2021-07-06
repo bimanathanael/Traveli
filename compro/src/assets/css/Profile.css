@@ -862,7 +862,7 @@ button{
 .menu-desc{
   margin-top: 3%;
   font-size: 15pt;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .ml-6{
@@ -1021,9 +1021,10 @@ button{
 
 .benefitDesc{
   font-weight: 500;
-    font-size: 14pt;
-    margin-top: 8%;
-    line-height: 26pt;
+  font-size: 14pt;
+  margin-top: 8%;
+  color: #6a7794;
+  line-height: 26pt;
 }
 
 .bg-yellow2{

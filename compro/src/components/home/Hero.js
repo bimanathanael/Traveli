@@ -2,14 +2,9 @@ import ScrollAnimation from 'react-animate-on-scroll';
 import { Link } from "react-router-dom";
 
 import ArrowForwardIosOutlinedIcon from '@material-ui/icons/ArrowForwardIosOutlined';
-import whatsapp2 from '../../assets/images/whatsapp2.png'
-import promo from '../../assets/images/promo.png'
 import parse from 'html-react-parser';
 
-
-export const Hero = ({data, promo, waNumber}) => {
-
-  // promo.shortDesc = promo.content.slice(0,80) 
+export const Hero = ({data, promo}) => {
 
   return (
     <>
@@ -29,9 +24,9 @@ export const Hero = ({data, promo, waNumber}) => {
             <div className="row">
               <div className="col-md-9 pl-3">
                 <ScrollAnimation animateIn='zoomIn'animateOut='fadeOut' delay="200">
-                  <p className="hero-desc mobile-1">
-                    {data.Description}
-                  </p>
+                  <div className="hero-desc mobile-1">
+                    {parse(data.Description_RT)}
+                  </div>
                 </ScrollAnimation>
               </div>
             </div>
@@ -108,9 +103,6 @@ export const Hero = ({data, promo, waNumber}) => {
             </div>
           </div> */}
         </div>
-        <a href={`http://wa.me/${waNumber}?text=Hallo%20Customer%20Care%20Traveli`}  target="_blank">
-          <img className="floatingWA" src={whatsapp2}/>
-        </a>
       </div>
     </>
   )

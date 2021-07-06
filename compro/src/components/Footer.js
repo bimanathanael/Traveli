@@ -124,32 +124,32 @@ export const Footer = ({ url, visitor }) => {
                   <b> Members </b>
                   <br />
                   <br />
-                  <a className="text-white" href="/members/supplier">
+                  <a className="text-white" href="/supplier-members">
                     {" "}
                     Supplier{" "}
                   </a>
                   <br />
-                  <a className="text-white" href="/members/Wholesaler">
+                  <a className="text-white" href="/Wholesaler-members">
                     {" "}
                     Wholesaler{" "}
                   </a>
                   <br />
-                  <a className="text-white" href="/members/reseller">
+                  <a className="text-white" href="/reseller-members">
                     {" "}
                     Reseller{" "}
                   </a>
                   <br />
-                  <a className="text-white" href="/TraveliKuy">
+                  <a className="text-white" href="/customer-members">
                     {" "}
                     TraveliKuy{" "}
                   </a>
                   <br />
-                  <a className="text-white" href="/member-list/supplier">
+                  <a className="text-white" href="/supplier-list">
                     {" "}
                     Supplier List{" "}
                   </a>
                   <br />
-                  <a className="text-white" href="/member-list/wholesaler">
+                  <a className="text-white" href="/wholesaler-list">
                     {" "}
                     Wholesaler List{" "}
                   </a>

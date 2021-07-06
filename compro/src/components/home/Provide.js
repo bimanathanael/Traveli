@@ -46,11 +46,11 @@ import customerStepImg from '../../assets/images/customerStepImg.png';
 import agencyStepImg from '../../assets/images/agencyStepImg.png';
 import wholesalerStepImg from '../../assets/images/wholesalerStepImg.png';
 import supplierStepImg from '../../assets/images/supplierStepImg.png';
-import supplierImg from '../../assets/images/supplierImg.png';
-import wholesalerImg from '../../assets/images/wholesalerImg.png';
-import petraImg from '../../assets/images/petraImg.png';
-import agencyImg from '../../assets/images/agencyImg.png';
-import corporateImg from '../../assets/images/corporateImg.png';
+import supplierImg from '../../assets/images/supplierImg2.png';
+import wholesalerImg from '../../assets/images/wholeSalerImg2.png';
+import petraImg from '../../assets/images/petraImg2.png';
+import agencyImg from '../../assets/images/agencyImg2.png';
+import corporateImg from '../../assets/images/corporateImg2.png';
 import checklist from '../../assets/images/checklist.png';
 
 // import { MembershipMobile } from './MembershipMobile.js'
@@ -68,7 +68,8 @@ export const Provide = ({
   wholesaler,
   agency,
   corporate,
-  petra
+  petra,
+  customer
 }) => {
     // const [mobileView, setMobileView] = useState(window.innerWidth)
     let [trigger, setTrigger] = useState(1)
@@ -92,6 +93,7 @@ export const Provide = ({
           isActive: true,
           section: "Supplier",
           heading: supplier.header.Title,
+          link: '/supplier-members',
           img: supplierImg,
           stepImg: supplierStepImg,
           desc: supplier.header.Description,
@@ -121,6 +123,7 @@ export const Provide = ({
             isActive: true,
             section: "Supplier",
             heading: supplier.header.Title,
+            link: '/supplier-members',
             img: supplierImg,
             stepImg: supplierStepImg,
             desc: supplier.header.Description,
@@ -147,6 +150,7 @@ export const Provide = ({
             isActive: true,
             section: "Wholesaler",
             heading: wholesaler.header.Title,
+            link: '/wholesaler-members',
             img: wholesalerImg,
             stepImg: wholesalerStepImg,
             desc: wholesaler.header.Description,
@@ -173,6 +177,7 @@ export const Provide = ({
             isActive: true,
             section: "Agency",
             heading: agency.header.Title,
+            link: '/reseller-members',
             img: agencyImg,
             stepImg: agencyStepImg,
             desc: agency.header.Description,
@@ -193,6 +198,7 @@ export const Provide = ({
             isActive: false,
             section: "Corporate",
             heading: corporate.header.Title,
+            link: '/reseller-members',
             img: corporateImg,
             stepImg: corporateStepImg,
             desc: corporate.header.Description,
@@ -219,6 +225,7 @@ export const Provide = ({
             isActive: true,
             section: "Petra",
             heading: petra.header.Title,
+            link: '/customer-members',
             img: petraImg,
             stepImg: petraStepImg,
             desc: petra.header.Description,
@@ -239,19 +246,18 @@ export const Provide = ({
           ,{
             isActive: false,
             section: "Customer",
-            heading: `Customer`,
+            heading: customer.header.Title,
+            link: '/customer-members',
             img: petraImg,
             stepImg: customerStepImg,
-            desc: `Salah satu unit Travel Agent yang ditujukan khusus untuk 
-            pribadi/perseorangan yang meiliki minat 
-            untuk bergabung dan menjalankan bisnis kepariwisataan`,
+            desc: customer.header.Description,
             benefits: [
-              "Akses Ke Produk Wisata",
-              "Promo dan Penawaran Terbaru",
-              "Poin Transaksi",
-              "News and Update Informasi",
-              "Customer Care",
-              "Virtual Account",
+              customer.benefits.Benefit1,
+              customer.benefits.Benefit2,
+              customer.benefits.Benefit3,
+              customer.benefits.Benefit4,
+              customer.benefits.Benefit5,
+              customer.benefits.Benefit6,
             ]
           }
         ],
@@ -686,7 +692,7 @@ export const Provide = ({
                             </p>
                           </div>
                           <div className="col-md-11 ml-4 mb-5 mt-4">
-                            <a className="text-white bold" href="#">
+                            <a className="text-white bold" href={data.link}>
                               {"Learn more >>"}
                             </a>
                           </div>

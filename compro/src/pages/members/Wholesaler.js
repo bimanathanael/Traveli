@@ -28,7 +28,7 @@ const Wholesaler = ({ url }) => {
   const [conditionContent, setConditionContent] = useState(null);
   const btnData ={
     title: "Wholesaler List",
-    link: "/member-list/wholesaler"
+    link: "/wholesaler-list"
   }
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const Wholesaler = ({ url }) => {
           // Hero
           const hero = {
             title: dataRaw.Hero.Title,
-            description: dataRaw.Hero.Description,
+            description: dataRaw.Hero.Description_RT,
             footer:
               "ARE YOU COMPANY LOOKING TO EXPAND SELLING CHANNEL AND NETWORK?",
           };
