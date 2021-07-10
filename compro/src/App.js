@@ -12,6 +12,8 @@ import "./assets/css/App.css";
 
 import { Home } from "./pages/Home";
 import { Profile } from "./pages/Profile";
+import { Faq } from "./pages/Faq";
+import { Tnc } from "./pages/Tnc";
 import { ContactUs } from "./pages/ContactUs";
 import { Promo } from "./pages/Promo";
 import { Login } from "./pages/Login";
@@ -151,6 +153,12 @@ function App() {
           </Route>
           <Route path="/joinUs">
             <JoinUs url={url} />
+          </Route>
+          <Route path="/faq">
+            <Faq url={url} />
+          </Route>
+          <Route path="/tnc">
+            <Tnc url={url} />
           </Route>
           <Route path="/">
             <Home url={url} mainUrl={mainUrl} />
