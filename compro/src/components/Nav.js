@@ -20,6 +20,8 @@ export const Nav = ({ handleLanguage }) => {
   if (
     locationNow == "/profile" ||
     locationNow == "/news" ||
+    locationNow == "/faq" ||
+    locationNow == "/tnc" ||
     locationNow.slice(0, 5) === "/news" ||
     locationNow == "/contactus"
   ) {

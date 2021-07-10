@@ -141,7 +141,7 @@ export const Footer = ({ url, visitor }) => {
                   <br />
                   <a className="text-white" href="/customer-members">
                     {" "}
-                    TraveliKuy{" "}
+                    Customer{" "}
                   </a>
                   <br />
                   <a className="text-white" href="/supplier-list">
@@ -158,9 +158,9 @@ export const Footer = ({ url, visitor }) => {
                   <b> Privacy Policy </b>
                   <br />
                   <br />
-                  <a> Terms and Conditions </a>
+                  <a className="text-white" href="/tnc"> Terms and Conditions </a>
                   <br />
-                  <a> FAQ </a>
+                  <a className="text-white" href="/faq"> FAQ </a>
                 </div>
               </div>
               <div className="row d-flex pr-7 mt-4">
