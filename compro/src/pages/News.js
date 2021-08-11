@@ -15,7 +15,6 @@ export const News = ({ mainUrl }) => {
         }
       })
       .then(({ message }) => {
-        console.log(message, "<<< NEWS")
         setNews(message);
       })
       .catch((err) => {});

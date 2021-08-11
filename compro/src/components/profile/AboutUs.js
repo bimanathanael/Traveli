@@ -23,8 +23,6 @@ export const AboutUs = ({
     window.addEventListener("resize", handleResize);
   }, []);
 
-  console.log(dataProfile, "<<<<<")
-
   return (
     <>
       <div className="container-profile-why">

@@ -18,7 +18,6 @@ export const Profile = ({ url, mainUrl }) => {
         }
       })
       .then(({ message }) => {
-        console.log(message,"<<<< PROFIle JS")
         setDataProfile(message);
       })
       .catch((err) => {});
