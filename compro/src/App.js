@@ -47,9 +47,9 @@ function App() {
       setUrl(`${mainUrl}/id`);
     }
     
-    let Day = Number(new Date().getDate())
-    let Month = Number(new Date().getMonth() + 1)
-    let Year = Number(new Date().getFullYear())
+    let Day = Number(new Date().getUTCDate())
+    let Month = Number(new Date().getUTCMonth() + 1)
+    let Year = Number(new Date().getUTCFullYear())
 
     axios.post(`${mainUrl}/visitor`,{
       Day,
@@ -69,7 +69,6 @@ function App() {
       Year
     })
     .then( ({data}) =>{
-      console.log("Success")
     })
     .catch( (err) => {
       console.log(err)
@@ -170,6 +169,7 @@ function App() {
       <a href={`http://wa.me/${waNumber}?text=Hallo%20Customer%20Care%20Traveli`}  target="_blank">
         <img className="floatingWA" src={whatsapp2}/>
       </a>
+      { console.clear() }
     </ParallaxProvider>
   );
 }

@@ -485,11 +485,11 @@ export const Provide = ({
             <div className="col-md-5 text-left ml-5 pl-5 mobile-provide-box">
               <div className="row mb-5 d-flex justify-content-center">
                 {
-                  provideSectionData.map(data => {
+                  provideSectionData.map((id, data) => {
                     return (
                       <div className="col-md-2 mb-3 pr-0 mobile-icon">
                         <img className="icon-provide" src={data.isActive == true ? data.iconActive : data.icon}
-                        onClick={ () => clickIcon(data.section)}/>
+                        onClick={ () => clickIcon(data.section)} key={id}/>
                       </div>
                     )
                   })

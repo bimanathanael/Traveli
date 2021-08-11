@@ -25,7 +25,6 @@ export const Home = ({ url, mainUrl }) => {
         }
       })
       .then(({ message }) => {
-        console.log(message, "<<< setData(message);")
         setData(message);
       })
       .catch((err) => {});
